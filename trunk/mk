@@ -1,0 +1,1 @@
+make install PREFIX=/opt/crossc/i586-elf CFLAGS=-g

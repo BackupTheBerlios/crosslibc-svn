@@ -1,0 +1,43 @@
+HOW TO USE CROSSLIBC:
+
+(This tutorial uses /opt/crossc/i586-elf as the prefix, you can change it as
+you please)
+
+
+First you need binutils and gcc compiled for i586-elf, like so:
+
+binutils:
+./configure --prefix=/opt/crossc/i586-elf --target=i586-elf --disable-multilib \
+ --enable-targets=i586-elf,i586-mingw32
+make all install
+
+gcc:
+./configure --prefix=/opt/crossc/i586-elf --target=i586-elf \
+ --without-headers --with-newlib --disable-threads \
+ --disable-shared --enable-static --enable-languages=c \
+ --disable-libssp
+make all install
+
+
+After binutils and gcc are installed, add them to your path:
+export PATH="/opt/crossc/i586-elf/bin:$PATH"
+
+
+Now extract newlib and put it in a directory named "newlib", next to the
+directory "crosslibc":
+tar zxf newlib-1.13.0.tar.gz
+mv newlib-1.13.0 newlib
+
+
+Don't compile anything in the newlib directory, crosslibc will handle it for
+you. cd into crosslibc and build it:
+cd crosslibc
+make install PREFIX=/opt/crossc/i586-elf
+
+
+Now you can use i586-elf-gcc to make cross-compatible binaries! After making a
+binary, use clcfixelf to fix it:
+
+clcfixelf a.out
+
+Then it should work on anything.

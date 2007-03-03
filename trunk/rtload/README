@@ -1,0 +1,16 @@
+This is a runtime loader for a.out binary files. It is a proof-of-concept for a
+future runtime ELF loader, which will allow crosslibc binaries to run on non-
+ELF platforms.
+
+Right now, however, it only runs a.out binaries.
+
+
+You may notice that rtload uses the stack extensively, and this may seem unsafe
+to you. This is obviously unsafe, but there are two mitigating factors:
+
+1) The stack is the /only/ area in memory which will reliably remain
+   un-clobbered after loading a binary.
+2) The problem of stack-overflow is moot: A stack overflow would allow a
+   maliciously written binary run arbitrary code, but the purpose of this
+   program is to let a binary run arbitrary code. Taking advantage of a stack
+   overflow wouldn't actually be helpful in this regard.
