@@ -1,8 +1,6 @@
-This is a runtime loader for a.out binary files. It is a proof-of-concept for a
-future runtime ELF loader, which will allow crosslibc binaries to run on non-
-ELF platforms.
-
-Right now, however, it only runs a.out binaries.
+This is a runtime loader for a.out and static ELF binary files. It is not bug
+free (amongst other things, ELF binaries segfault after finishing ...), but it
+works.
 
 
 You may notice that rtload uses the stack extensively, and this may seem unsafe
