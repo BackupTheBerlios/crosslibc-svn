@@ -25,6 +25,7 @@
 
 /* often-useful exact addresses */
 extern int (*_xact_fprintf)(FILE *, const char *, ...);
+extern int (*_xact_fflush)(FILE *);
 extern void (*_xact_perror)(const char *);
 extern void (*_xact_exit)(int);
 extern void (*_xact_free)(void *);

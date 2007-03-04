@@ -3,7 +3,9 @@ CFLAGS=-g
 LDFLAGS=
 EXEEXT=
 
-RTLOAD_OBJS=rtload.o ldaout.o ldelf.o bbuffer.o
+FORMATS=-DRTLOAD_ELF -DRTLOAD_AOUT
+
+RTLOAD_OBJS=rtload.o ldrs.o bbuffer.o
 
 all: rtload$(EXEEXT)
 
@@ -13,7 +15,7 @@ rtload$(EXEEXT): $(RTLOAD_OBJS)
 .SUFFIXES: .c .o
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(FORMATS) -c $< -o $@
 
 clean:
 	rm -f rtload$(EXEEXT) $(RTLOAD_OBJS)

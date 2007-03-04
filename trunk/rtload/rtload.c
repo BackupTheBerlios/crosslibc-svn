@@ -33,6 +33,7 @@
 
 /* often-useful exact addresses */
 int (*_xact_fprintf)(FILE *, const char *, ...) = fprintf;
+int (*_xact_fflush)(FILE *) = fflush;
 void (*_xact_perror)(const char *) = perror;
 void (*_xact_exit)(int) = exit;
 void (*_xact_free)(void *) = free;
@@ -41,8 +42,15 @@ void (*_xact_free)(void *) = free;
 #include "bbuffer.h"
 
 /* loaders */
-#include "ldaout.h"
+#ifdef RTLOAD_ELF
 #include "ldelf.h"
+#endif
+#ifdef RTLOAD_STATICELF
+#include "ldstaticelf.h"
+#endif
+#ifdef RTLOAD_AOUT
+#include "ldaout.h"
+#endif
 
 int rtload(int argc, char **argv, char **envp);
 
@@ -148,13 +156,25 @@ int rtload(int argc, char **argv, char **envp)
     memcpy(bbf, bbuffer, bbfsz);
     
     /* choose a loader */
+#ifdef RTLOAD_ELF
     if (isELF(prog, pread)) {
         origldr = loadELF;
         ldrsz = loadELFEnd - loadELF;
-    } else if (isAOut(prog, pread)) {
+    } else
+#endif
+#if defined(RTLOAD_STATICELF) && !defined(RTLOAD_ELF)
+    if (isStaticELF(prog, pread)) {
+        origldr = loadStaticELF;
+        ldrsz = loadStaticELFEnd - loadStaticELF;
+    } else
+#endif
+#ifdef RTLOAD_AOUT
+    if (isAOut(prog, pread)) {
         origldr = loadAOut;
         ldrsz = loadAOutEnd - loadAOut;
-    } else {
+    } else
+#endif
+    {
         fprintf(stderr, "%s is of an unrecognized type.\n", argv[0]);
         return 1;
     }

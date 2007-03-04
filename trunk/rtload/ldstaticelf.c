@@ -19,12 +19,12 @@
  * IN THE SOFTWARE.
  */
 
-#include "ldelf.h"
+#include "ldstaticelf.h"
 
 #include "elf.h"
 #include "exec.h"
 
-void loadELF(void *prog, size_t psz,
+void loadStaticELF(void *prog, size_t psz,
              char *nm, int argc, char **argv, char **envp,
              bbuffer_t bbuffer)
 {
@@ -120,9 +120,9 @@ void loadELF(void *prog, size_t psz,
     EXEC_REORDERED(ehdr->e_entry);
 }
 
-void loadELFEnd() {}
+void loadStaticELFEnd() {}
 
-int isELF(void *prog, size_t psz)
+int isStaticELF(void *prog, size_t psz)
 {
     /* Elf32_Ehdr is the header to this file */
     Elf32_Ehdr *ehdr = (Elf32_Ehdr *) prog;
