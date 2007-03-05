@@ -24,14 +24,37 @@
 #include "elf.h"
 #include "exec.h"
 
+struct ElfFile {
+    char *nm;
+    void *prog;
+    size_t psz;
+    
+    void *alloc; /* where this file will be allocated */
+    void *min, *max; /* its internal view of allocation */
+    
+    /* the ELF header */
+    Elf32_Ehdr *ehdr;
+    
+    /* prerequisite libraries [as indexes into the string table] */
+#define NEEDED_SZ 255
+    Elf32_Word needed[NEEDED_SZ];
+    int neededC;
+};
+
 void loadELF(void *prog, size_t psz,
              char *nm, int argc, char **argv, char **envp,
              bbuffer_t bbuffer)
 {
-    /* Elf32_Ehdr is the header to this file */
-    Elf32_Ehdr *ehdr = (Elf32_Ehdr *) prog;
-    void *cur, *min, *max;
-    uint16_t on;
+    /* We can have at max 255 files (can't just reallocate wildly on the
+     * stack) */
+#define FILES_SZ 255
+    struct ElfFile files[FILES_SZ];
+    struct ElfFile *f;
+    int fileC = 1;
+    int onFile = 0;
+    
+    void *cur, *min, *max; /* minimum and maximum total allocation */
+    int i, j;
     Elf32_Shdr *curshdr;
     Elf32_Phdr *curphdr;
     union {
@@ -39,85 +62,130 @@ void loadELF(void *prog, size_t psz,
         char c[2];
     } endianCheck;
     
+    INLINE_MEMZERO(&files, FILES_SZ * sizeof(struct ElfFile));
+    
+    /* start up file 0 */
+    f = &(files[0]);
+    f->nm = nm;
+    f->prog = prog;
+    f->psz = psz;
+    f->ehdr = (Elf32_Ehdr *) prog;
+    
+    /* and using no memory */
+    min = ((void *) -1);
+    max = NULL;
+    
+    elfstepone: /* load in a file from the list */
+    
     /* Sanity */
-    if (psz < sizeof(Elf32_Ehdr) ||
-        ehdr->e_ident[0] != '\x7f' ||
-        ehdr->e_ident[1] != 'E' ||
-        ehdr->e_ident[2] != 'L' ||
-        ehdr->e_ident[3] != 'F') {
-        _xact_fprintf(stderr, "%s does not appear to be a vaild ELF binary.\n", nm);
+    if (f->psz < sizeof(Elf32_Ehdr) ||
+        f->ehdr->e_ident[0] != '\x7f' ||
+        f->ehdr->e_ident[1] != 'E' ||
+        f->ehdr->e_ident[2] != 'L' ||
+        f->ehdr->e_ident[3] != 'F') {
+        _xact_fprintf(stderr, "%s does not appear to be a vaild ELF binary.\n", f->nm);
         _xact_exit(1);
     }
     
     /* Only 32-bit supported right now */
-    if (ehdr->e_ident[4] != ELFCLASS32) {
-        _xact_fprintf(stderr, "%s is not a 32-bit ELF binary.\n", nm);
+    if (f->ehdr->e_ident[4] != ELFCLASS32) {
+        _xact_fprintf(stderr, "%s is not a 32-bit ELF binary.\n", f->nm);
         _xact_exit(1);
     }
     
     /* Check the endianness */
     endianCheck.i = 1;
     if ((endianCheck.c[0] == 1 &&
-         ehdr->e_ident[5] != ELFDATA2LSB) ||
+         f->ehdr->e_ident[5] != ELFDATA2LSB) ||
         (endianCheck.c[0] == 0 &&
-         ehdr->e_ident[5] != ELFDATA2MSB)) {
-        _xact_fprintf(stderr, "%s is of the wrong endianness.\n", nm);
+         f->ehdr->e_ident[5] != ELFDATA2MSB)) {
+        _xact_fprintf(stderr, "%s is of the wrong endianness.\n", f->nm);
         _xact_exit(1);
     }
     
     /* Make sure it's an executable */
-    if (ehdr->e_type != ET_EXEC) {
-        _xact_fprintf(stderr, "%s is not an executable.\n", nm);
+    if (f->ehdr->e_type != ET_EXEC) {
+        _xact_fprintf(stderr, "%s is not an executable.\n", f->nm);
         _xact_exit(1);
     }
     
     /* 1) Figure out the mapping */
-    min = ((void *) -1);
-    max = NULL;
+    f->min = ((void *) -1);
+    f->max = NULL;
     
     /* Go through each section */
-    if (ehdr->e_shoff) {
-        cur = prog + ehdr->e_shoff - ehdr->e_shentsize;
-        for (on = ehdr->e_shnum; on > 0; on--) {
+    if (f->ehdr->e_phoff) {
+        cur = f->prog + f->ehdr->e_phoff - f->ehdr->e_phentsize;
+        for (i = f->ehdr->e_phnum; i > 0; i--) {
             /* Get to the right entry */
-            cur += ehdr->e_shentsize;
-            curshdr = (Elf32_Shdr *) cur;
+            cur += f->ehdr->e_phentsize;
+            curphdr = (Elf32_Phdr *) cur;
             
             /* Perhaps load it in */
-            if (curshdr->sh_type == SHT_PROGBITS ||
-                curshdr->sh_type == SHT_NOBITS) {
-                if ((void *) curshdr->sh_addr < min) {
-                    min = (void *) curshdr->sh_addr;
+            if (curphdr->p_type == PT_LOAD) {
+                if ((void *) curphdr->p_vaddr < f->min) {
+                    f->min = (void *) curphdr->p_vaddr;
                 }
-                if ((void *) curshdr->sh_addr + curshdr->sh_size > max) {
-                    max = (void *) curshdr->sh_addr + curshdr->sh_size;
+                if ((void *) curphdr->p_vaddr + curphdr->p_memsz > f->max) {
+                    f->max = (void *) curphdr->p_vaddr + curphdr->p_memsz;
+                }
+                
+            } else if (curphdr->p_type == PT_DYNAMIC) {
+                Elf32_Dyn *dynfo = (Elf32_Dyn *) (f->prog + curphdr->p_offset);
+                
+                if (dynfo->d_tag == DT_NEEDED) {
+                    /* add a prerequisite library */
+                    f->needed[f->neededC] = dynfo->d_un.d_val;
+                    f->neededC++;
+                    if (f->neededC >= NEEDED_SZ)
+                        f->neededC = NEEDED_SZ - 1;
+                    
                 }
             }
         }
     }
+    
+    /* FIXME: more file loading goes here */
+    
+    min = f->min;
+    max = f->max;
+    f->alloc = min;
+    
+    _xact_fprintf(stdout, "Foo %p %p.\n", min, max);
     
     /* 2) Load in the actual data */
     bbuffer(min, max - min);
     
+    /* For every file ... */
+    onFile = 0;
+    f = &(files[0]);
+    elfsteptwo:
+    
     /* Go through each section */
-    if (ehdr->e_shoff) {
-        cur = prog + ehdr->e_shoff - ehdr->e_shentsize;
-        for (on = ehdr->e_shnum; on > 0; on--) {
+    if (f->ehdr->e_phoff) {
+        cur = f->prog + f->ehdr->e_phoff - f->ehdr->e_phentsize;
+        for (i = f->ehdr->e_phnum; i > 0; i--) {
             /* Get to the right entry */
-            cur += ehdr->e_shentsize;
-            curshdr = (Elf32_Shdr *) cur;
+            cur += f->ehdr->e_phentsize;
+            curphdr = (Elf32_Phdr *) cur;
             
             /* Perhaps load it in */
-            if (curshdr->sh_type == SHT_PROGBITS) {
-                INLINE_MEMCPY(curshdr->sh_addr, prog + curshdr->sh_offset, curshdr->sh_size);
-            } else if (curshdr->sh_type == SHT_NOBITS) {
-                INLINE_MEMZERO(curshdr->sh_addr, curshdr->sh_size);
+            if (curphdr->p_type == PT_LOAD) {
+                INLINE_MEMZERO(curphdr->p_vaddr, curphdr->p_memsz);
+                INLINE_MEMCPY(curphdr->p_vaddr, f->prog + curphdr->p_offset, curphdr->p_filesz);
             }
         }
     }
     
+    /* Perhaps loop */
+    onFile++;
+    if (onFile < fileC) {
+        f = &(files[onFile]);
+        goto elfsteptwo;
+    }
+    
     /* Now run! */
-    EXEC_REORDERED(ehdr->e_entry);
+    EXEC_REORDERED(files[0].ehdr->e_entry);
 }
 
 void loadELFEnd() {}

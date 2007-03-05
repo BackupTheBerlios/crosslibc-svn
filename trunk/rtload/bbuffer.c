@@ -33,6 +33,7 @@ void  *(*_xact_mmap)(void *, size_t, int, int, int,
                      off_t) = mmap;
 
 #if __i386__ && linux
+
 #define INLINE_MMAP(ret, buf, sz, prot, flags, fd, offset) \
 { \
     asm( \
@@ -72,6 +73,51 @@ void  *(*_xact_mmap)(void *, size_t, int, int, int,
          : "g"(buf), "g"(sz), "g"(prot), "g"(flags), "g"(fd), "g"(offset) \
          : "eax", "ebx"); \
 }
+
+
+#elif __i386__ && ( BSD || __APPLE__ )
+
+#define INLINE_MMAP(ret, buf, sz, prot, flags, fd, offset) \
+{ \
+    asm( \
+         "push %%ebp;\n" \
+         "subl $32, %%esp;\n" /* get space for the call */ \
+         \
+         "movl %1, %%eax;\n" \
+         "movl %%eax, 4(%%esp);\n" /* buf */ \
+         \
+         "movl %2, %%eax;\n" \
+         "movl %%eax, 8(%%esp);\n" /* sz */ \
+         \
+         "movl %3, %%eax;\n" \
+         "movl %%eax, 12(%%esp);\n" /* prot */ \
+         \
+         "movl %4, %%eax;\n" \
+         "movl %%eax, 16(%%esp);\n" /* flags */ \
+         \
+         "movl %5, %%eax;\n" \
+         "movl %%eax, 20(%%esp);\n" /* fd */ \
+         \
+         "movl $0, 24(%%esp);\n" \
+         "movl %6, %%eax;\n" \
+         "movl %%eax, 28(%%esp);\n" /* offset */ \
+         \
+         "movl %%esp, %%ebp;\n" /* save stack pointer */ \
+         \
+         "movl $197, %%eax;\n" \
+         "int $0x80;\n" /* call mmap */ \
+         \
+         "movl %%ebp, %%esp;\n" \
+         "addl $32, %%esp;\n" \
+         "pop %%ebp;\n" /* get things back to normal */ \
+         \
+         "movl %%eax, %0;\n" /* save result */ \
+         : "=g"(ret) \
+         : "g"(buf), "g"(sz), "g"(prot), "g"(flags), "g"(fd), "g"(offset) \
+         : "eax", "ebx"); \
+}
+
+
 #endif
 
 
@@ -121,49 +167,83 @@ void bbufferEnd() {}
 #endif
 #include <windows.h>
 
-WINBASEAPI HANDLE WINAPI (*_xact_CreateFileMappingA)(HANDLE,LPSECURITY_ATTRIBUTES,DWORD,DWORD,
-                                   DWORD,LPCSTR) =
-    CreateFileMappingA;
+#include <malloc.h>
 
-WINBASEAPI PVOID WINAPI (*_xact_MapViewOfFileEx)(HANDLE,DWORD,DWORD,DWORD,DWORD,PVOID) =
-    MapViewOfFileEx;
+void *(*_xact_malloc)(size_t) = malloc;
+
+WINBASEAPI PVOID WINAPI (*_xact_VirtualAlloc)(PVOID,DWORD,DWORD,DWORD) =
+        VirtualAlloc;
+
+WINBASEAPI DWORD WINAPI (*_xact_VirtualQuery)(LPCVOID,
+        PMEMORY_BASIC_INFORMATION,DWORD) = VirtualQuery;
+
+WINBASEAPI BOOL WINAPI (*_xact_UnmapViewOfFile)(PVOID) = UnmapViewOfFile;
+
+WINBASEAPI BOOL WINAPI (*_xact_VirtualFree)(PVOID,DWORD,DWORD) = VirtualFree;
+
+WINBASEAPI VOID WINAPI (*_xact_GetSystemInfo)(LPSYSTEM_INFO) = GetSystemInfo;
 
 WINBASEAPI DWORD WINAPI (*_xact_GetLastError)() = GetLastError;
 
 void bbuffer(void *buf, size_t sz)
 {
-    HANDLE mapping;
-    void *maddr;
+    void *allocd, *q, *min, *max;
+    SYSTEM_INFO si;
+    MEMORY_BASIC_INFORMATION mbi;
+    size_t agrn, sti;
     off_t ret;
+
+    /* get the allocation granularity */
+    _xact_GetSystemInfo(&si);
+    agrn = si.dwAllocationGranularity;
     
-    /* make sure buf is on the page boundary (assumed to be 4096) */
-    ret = (off_t) buf % 4096;
+    /* make sure buf is on the allocation granularity */
+    ret = (off_t) buf % agrn;
     if (ret) {
         sz += ret;
         buf -= ret;
     }
     
     /* then make sure sz is also aligned */
-    ret = (off_t) sz % 4096;
+    ret = (off_t) sz % agrn;
     if (ret) {
-        sz += (4096 - ret);
+        sz += (agrn - ret);
+    }
+
+    /* the really creepy stuff - copy all the virtual functions onto the
+     * stack */
+    if (_xact_VirtualQuery(_xact_VirtualQuery, &mbi, agrn) >= sizeof(mbi)) {
+        size_t kernel32sz = mbi.RegionSize + (mbi.BaseAddress -
+                mbi.AllocationBase);
+        void *newkernel32 = _xact_malloc(kernel32sz);
+        off_t diff = newkernel32 - mbi.AllocationBase;
+
+        INLINE_MEMCPY(newkernel32, mbi.AllocationBase, kernel32sz);
+
+        _xact_VirtualAlloc += diff;
+        _xact_VirtualQuery += diff;
+        _xact_UnmapViewOfFile += diff;
+        _xact_VirtualFree += diff;
+    }
+
+    /* free everything */
+    for (q = buf; q < buf + sz; q += agrn) {
+        if (_xact_VirtualQuery(q, &mbi, agrn) >= sizeof(mbi)) {
+            if (mbi.State != MEM_FREE) {
+                /* get rid of it */
+                if (mbi.Type && MEM_IMAGE)
+                    _xact_UnmapViewOfFile(mbi.AllocationBase);
+                _xact_VirtualFree(mbi.AllocationBase, 0, MEM_RELEASE);
+            }
+        }
     }
     
-    mapping = _xact_CreateFileMappingA(
-        INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE,
-        0, sz,
-        NULL);
-    if (mapping == NULL) {
-        _xact_fprintf(stderr, "CreateFileMapping failed with error %d\n", _xact_GetLastError());
-        _xact_exit(1);
-    }
-    
-    maddr = _xact_MapViewOfFileEx(
-        mapping, FILE_MAP_READ|FILE_MAP_WRITE /*|FILE_MAP_EXECUTE*/,
-        0, 0, sz,
-        buf);
-    if (maddr == NULL) {
-        _xact_fprintf(stderr, "CreateFileMapping failed with error %d\n", _xact_GetLastError());
+    /* then allocate */
+    allocd = _xact_VirtualAlloc(buf, sz, MEM_RESERVE|MEM_COMMIT,
+            PAGE_EXECUTE_READWRITE);
+    if (allocd == NULL) {
+        _xact_fprintf(stderr, "VirtualAlloc failed with error %d\n",
+                _xact_GetLastError());
         _xact_exit(1);
     }
 }
