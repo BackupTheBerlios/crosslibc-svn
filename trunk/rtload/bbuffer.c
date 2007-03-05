@@ -141,8 +141,8 @@ void bbuffer(void *buf, size_t sz)
 #ifdef INLINE_MMAP
     INLINE_MMAP(ret, buf, sz,
                 PROT_READ|PROT_WRITE|PROT_EXEC,
-                MAP_FIXED|MAP_PRIVATE|MAP_ANONYMOUS,
-                0, 0);
+                MAP_FIXED|MAP_PRIVATE|MAP_ANON,
+                -1, 0);
     if (ret != (off_t) buf) {
         _xact_fprintf(stderr, "Error in mmap: %d\n", -((int) ret));
         _xact_exit(1);
@@ -150,8 +150,8 @@ void bbuffer(void *buf, size_t sz)
 #else
     if (_xact_mmap(buf, sz,
                    PROT_READ|PROT_WRITE|PROT_EXEC,
-                   MAP_FIXED|MAP_PRIVATE|MAP_ANONYMOUS,
-                   0, 0) == MAP_FAILED) {
+                   MAP_FIXED|MAP_PRIVATE|MAP_ANON,
+                   -1, 0) == MAP_FAILED) {
         _xact_perror("mmap");
         _xact_exit(1);
     }
