@@ -75,7 +75,8 @@ void  *(*_xact_mmap)(void *, size_t, int, int, int,
 }
 
 
-#elif __i386__ && ( BSD || __APPLE__ )
+#elif __i386__ && ( __FreeBSD__ || __OpenBSD__ || __NetBSD__ || BSD || \
+                   __APPLE__ )
 
 #define INLINE_MMAP(ret, buf, sz, prot, flags, fd, offset) \
 { \
@@ -123,17 +124,17 @@ void  *(*_xact_mmap)(void *, size_t, int, int, int,
 
 void bbuffer(void *buf, size_t sz)
 {
-    off_t ret;
+    ssize_t ret;
     
     /* make sure buf is on the page boundary (assumed to be 4096) */
-    ret = (off_t) buf % 4096;
+    ret = (ssize_t) buf % 4096;
     if (ret) {
         sz += ret;
         buf -= ret;
     }
     
     /* then make sure sz is also aligned */
-    ret = (off_t) sz % 4096;
+    ret = (ssize_t) sz % 4096;
     if (ret) {
         sz += (4096 - ret);
     }
@@ -143,7 +144,7 @@ void bbuffer(void *buf, size_t sz)
                 PROT_READ|PROT_WRITE|PROT_EXEC,
                 MAP_FIXED|MAP_PRIVATE|MAP_ANON,
                 -1, 0);
-    if (ret != (off_t) buf) {
+    if (ret != (ssize_t) buf) {
         _xact_fprintf(stderr, "Error in mmap: %d\n", -((int) ret));
         _xact_exit(1);
     }

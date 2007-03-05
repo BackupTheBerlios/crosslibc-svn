@@ -23,9 +23,9 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#ifdef __WIN32
+#if __WIN32
 #include <malloc.h>
-#else
+#elsif linux
 #include <alloca.h>
 #endif
 
