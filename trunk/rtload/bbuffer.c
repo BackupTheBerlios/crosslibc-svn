@@ -182,9 +182,23 @@ WINBASEAPI BOOL WINAPI (*_xact_UnmapViewOfFile)(PVOID) = UnmapViewOfFile;
 
 WINBASEAPI BOOL WINAPI (*_xact_VirtualFree)(PVOID,DWORD,DWORD) = VirtualFree;
 
+WINBASEAPI BOOL WINAPI (*_xact_VirtualProtect)(PVOID,DWORD,DWORD,PDWORD) =
+        VirtualProtect;
+
+WINBASEAPI BOOL WINAPI (*_xact_HeapDestroy)(HANDLE) = HeapDestroy;
+
+WINBASEAPI HANDLE WINAPI (*_xact_GetProcessHeap)(VOID) = GetProcessHeap;
+
 WINBASEAPI VOID WINAPI (*_xact_GetSystemInfo)(LPSYSTEM_INFO) = GetSystemInfo;
 
 WINBASEAPI DWORD WINAPI (*_xact_GetLastError)() = GetLastError;
+
+int (*_xact_getchar)() = getchar;
+
+/* allocate a huge buffer to take the low memory area */
+/* #define LOWMEM_RESERVE 0x2EE00000 */
+#define LOWMEM_RESERVE 0x6400000
+char lowmem[LOWMEM_RESERVE];
 
 void bbuffer(void *buf, size_t sz)
 {
@@ -211,20 +225,11 @@ void bbuffer(void *buf, size_t sz)
         sz += (agrn - ret);
     }
 
-    /* the really creepy stuff - copy all the virtual functions onto the
-     * stack */
-    if (_xact_VirtualQuery(_xact_VirtualQuery, &mbi, agrn) >= sizeof(mbi)) {
-        size_t kernel32sz = mbi.RegionSize + (mbi.BaseAddress -
-                mbi.AllocationBase);
-        void *newkernel32 = _xact_malloc(kernel32sz);
-        off_t diff = newkernel32 - mbi.AllocationBase;
-
-        INLINE_MEMCPY(newkernel32, mbi.AllocationBase, kernel32sz);
-
-        _xact_VirtualAlloc += diff;
-        _xact_VirtualQuery += diff;
-        _xact_UnmapViewOfFile += diff;
-        _xact_VirtualFree += diff;
+    /* it's possible we already have this free - check */
+    if (buf >= (void *) lowmem &&
+        buf + sz < (void *) lowmem + LOWMEM_RESERVE) {
+        /* already reserved! :) */
+        return;
     }
 
     /* free everything */
@@ -232,7 +237,7 @@ void bbuffer(void *buf, size_t sz)
         if (_xact_VirtualQuery(q, &mbi, agrn) >= sizeof(mbi)) {
             if (mbi.State != MEM_FREE) {
                 /* get rid of it */
-                if (mbi.Type && MEM_IMAGE)
+                if (mbi.Type & MEM_IMAGE)
                     _xact_UnmapViewOfFile(mbi.AllocationBase);
                 _xact_VirtualFree(mbi.AllocationBase, 0, MEM_RELEASE);
             }

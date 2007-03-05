@@ -76,21 +76,20 @@ void loadStaticELF(void *prog, size_t psz,
     max = NULL;
     
     /* Go through each section */
-    if (ehdr->e_shoff) {
-        cur = prog + ehdr->e_shoff - ehdr->e_shentsize;
-        for (on = ehdr->e_shnum; on > 0; on--) {
+    if (ehdr->e_phoff) {
+        cur = prog + ehdr->e_phoff - ehdr->e_phentsize;
+        for (on = ehdr->e_phnum; on > 0; on--) {
             /* Get to the right entry */
-            cur += ehdr->e_shentsize;
-            curshdr = (Elf32_Shdr *) cur;
+            cur += ehdr->e_phentsize;
+            curphdr = (Elf32_Phdr *) cur;
             
             /* Perhaps load it in */
-            if (curshdr->sh_type == SHT_PROGBITS ||
-                curshdr->sh_type == SHT_NOBITS) {
-                if ((void *) curshdr->sh_addr < min) {
-                    min = (void *) curshdr->sh_addr;
+            if (curphdr->p_type == PT_LOAD) {
+                if ((void *) curphdr->p_vaddr < min) {
+                    min = (void *) curphdr->p_vaddr;
                 }
-                if ((void *) curshdr->sh_addr + curshdr->sh_size > max) {
-                    max = (void *) curshdr->sh_addr + curshdr->sh_size;
+                if ((void *) curphdr->p_vaddr + curphdr->p_memsz > max) {
+                    max = (void *) curphdr->p_vaddr + curphdr->p_memsz;
                 }
             }
         }
@@ -100,18 +99,17 @@ void loadStaticELF(void *prog, size_t psz,
     bbuffer(min, max - min);
     
     /* Go through each section */
-    if (ehdr->e_shoff) {
-        cur = prog + ehdr->e_shoff - ehdr->e_shentsize;
-        for (on = ehdr->e_shnum; on > 0; on--) {
+    if (ehdr->e_phoff) {
+        cur = prog + ehdr->e_phoff - ehdr->e_phentsize;
+        for (on = ehdr->e_phnum; on > 0; on--) {
             /* Get to the right entry */
-            cur += ehdr->e_shentsize;
-            curshdr = (Elf32_Shdr *) cur;
+            cur += ehdr->e_phentsize;
+            curphdr = (Elf32_Phdr *) cur;
             
             /* Perhaps load it in */
-            if (curshdr->sh_type == SHT_PROGBITS) {
-                INLINE_MEMCPY(curshdr->sh_addr, prog + curshdr->sh_offset, curshdr->sh_size);
-            } else if (curshdr->sh_type == SHT_NOBITS) {
-                INLINE_MEMZERO(curshdr->sh_addr, curshdr->sh_size);
+            if (curphdr->p_type == PT_LOAD) {
+                INLINE_MEMZERO(curphdr->p_vaddr, curphdr->p_memsz);
+                INLINE_MEMCPY(curphdr->p_vaddr, prog + curphdr->p_offset, curphdr->p_filesz);
             }
         }
     }

@@ -25,7 +25,7 @@
 
 #if __WIN32
 #include <malloc.h>
-#elsif linux
+#elif linux
 #include <alloca.h>
 #endif
 
