@@ -1,4 +1,8 @@
 CROSS=i686-elf-
+TARGET=i686-elf
+
+PREFIX=/usr/local
+
 CC=$(CROSS)gcc
 CFLAGS=-g
 AR=$(CROSS)ar
@@ -19,6 +23,10 @@ libc.a: $(LIBC_OBJS)
 
 .s.o:
 	$(CC) -c $< -o $@
+
+install:
+	mkdir -p $(PREFIX)/$(TARGET)/lib
+	cp -f crt0.o libc.a $(PREFIX)/$(TARGET)/lib
 
 clean:
 	rm -f crt0.o libc.a $(LIBC_OBJS)

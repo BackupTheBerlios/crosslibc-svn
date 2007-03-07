@@ -23,7 +23,7 @@
 
 int main(int argc, char **argv)
 {
-    char *objdumpcmd;
+    char *objdumpcmd, *unmangled;
     FILE *objdump, *cfile;
 #define LINELEN 1024
     char line[LINELEN + 1];
@@ -71,7 +71,6 @@ int main(int argc, char **argv)
             "#include <windows.h>\n"
             "\n"
             "extern WINBASEAPI HMODULE WINAPI (*_elf_LoadLibraryA)(LPCSTR);\n"
-            "extern WINBASEAPI HMODULE WINAPI (*_elf_GetModuleHandleA)(LPCSTR);\n"
             "extern WINBASEAPI FARPROC WINAPI (*_elf_GetProcAddress)(HMODULE,LPCSTR);\n"
             "\n"
             "HMODULE _dll_%s = NULL;\n"
@@ -108,6 +107,9 @@ int main(int argc, char **argv)
             continue;
         }
         
+        memmove(line, line + 8, llen - 7);
+        llen -= 8;
+        
         /* check for sane names */
         for (i = 8; i < llen; i++) {
             if ((line[i] < 'A' || line[i] > 'Z') &&
@@ -117,25 +119,32 @@ int main(int argc, char **argv)
         }
         if (i < llen) continue;
         
+        /* if it starts with '_', it's probably just C-mangled */
+        if (line[0] == '_') {
+            unmangled = line + 1;
+        } else {
+            unmangled = line;
+        }
+        
         /* check for functions that need to be ignored */
-        if (!strcmp(line + 8, "LoadLibraryA") ||
-            !strcmp(line + 8, "GetModuleHandleA") ||
-            !strcmp(line + 8, "GetProcAddress"))
+        if (!strcmp(line, "LoadLibraryA") ||
+            !strcmp(line, "GetModuleHandleA") ||
+            !strcmp(line, "GetProcAddress"))
             continue;
         
         /* write out the loader */
         fprintf(cfile, "void _elf_%s() asm(\"%s\");\n"
+                "void *_imp__%s = NULL;\n"
                 "void _elf_%s() {\n"
-                "static void *_vptr_%s = NULL;\n"
                 "load_dll_%s();\n"
-                "if (!_vptr_%s) {\n"
-                "_vptr_%s = (void *) _elf_GetProcAddress(_dll_%s, \"%s\");\n"
+                "if (!_imp__%s) {\n"
+                "_imp__%s = (void *) _elf_GetProcAddress(_dll_%s, \"%s\");\n"
                 "}\n"
-                "asm(\"leave\\njmp *%0\" : : \"r\"(_vptr_%s));\n"
+                "asm(\"leave\\njmp *%0\" : : \"r\"(_imp__%s));\n"
                 "}\n"
                 "\n",
-                line + 8, line + 8, line + 8, line + 8, argv[2], line + 8,
-                line + 8, argv[2], line + 8, line + 8);
+                line, unmangled, line, line, argv[2], line,
+                line, argv[2], line, line);
     }
     
     fclose(cfile);
