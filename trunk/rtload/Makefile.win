@@ -1,0 +1,22 @@
+CROSS=
+CC=$(CROSS)gcc
+CFLAGS=-g
+LDFLAGS=-Wl,--image-base,0x300000
+EXEEXT=.exe
+
+FORMATS=-DRTLOAD_STATICELF
+
+RTLOAD_OBJS=rtload.o ldrs.o bbuffer.o
+
+all: rtload$(EXEEXT)
+
+rtload$(EXEEXT): $(RTLOAD_OBJS)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(RTLOAD_OBJS) -o rtload$(EXEEXT)
+
+.SUFFIXES: .c .o
+
+.c.o:
+	$(CC) $(CFLAGS) $(FORMATS) -c $< -o $@
+
+clean:
+	rm -f rtload$(EXEEXT) $(RTLOAD_OBJS)
