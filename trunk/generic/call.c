@@ -70,3 +70,17 @@ void OSCALL_determine()
         OSCALL_which = OSCALL_BSD;
     }
 }
+
+int main(int, char **, char **);
+/* _xlibc_callmain: Arrange arguments appropriately and call main */
+int _xlibc_callmain(int argc)
+{
+    char **argv, **envp;
+    
+    void *pargc = &argc;
+    argv = pargc + sizeof(void *);
+    envp = pargc + sizeof(void *) + (argc+1) * sizeof(char *);
+
+    return main(argc, argv, envp);
+}
+
