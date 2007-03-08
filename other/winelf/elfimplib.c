@@ -27,12 +27,15 @@ int main(int argc, char **argv)
     FILE *objdump, *cfile;
 #define LINELEN 1024
     char line[LINELEN + 1];
+#define FNAMELEN 1024
+    char fname[FNAMELEN + 1];
     int llen, i;
     
     line[LINELEN] = '\0';
+    fname[FNAMELEN] = '\0';
     
-    if (argc != 4) {
-        fprintf(stderr, "Use: elfimplib <.dll file> <short name> <.c file>\n");
+    if (argc != 3) {
+        fprintf(stderr, "Use: elfimplib <.dll file> <short name>\n");
         return 1;
     }
     
@@ -59,10 +62,12 @@ int main(int argc, char **argv)
         }
     }
     
-    /* prepare to write out the symbols */
-    cfile = fopen(argv[3], "w");
+    /* write out the main file */
+    mkdir(argv[2], 0755);
+    snprintf(fname, FNAMELEN, "%s/dll_%s.c", argv[2], argv[2]);
+    cfile = fopen(fname, "w");
     if (!cfile) {
-        perror(argv[3]);
+        perror(fname);
         return 1;
     }
     fprintf(cfile, "#ifndef WIN32_LEAN_AND_MEAN\n"
@@ -82,6 +87,27 @@ int main(int argc, char **argv)
             "}\n"
             "\n",
             argv[2], argv[2], argv[2], argv[2], argv[2]);
+    fclose(cfile);
+    
+    /* write out the header file */
+    snprintf(fname, FNAMELEN, "%s/%s.h", argv[2], argv[2]);
+    cfile = fopen(fname, "w");
+    if (!cfile) {
+        perror(fname);
+        return 1;
+    }
+    fprintf(cfile, "#ifndef WIN32_LEAN_AND_MEAN\n"
+            "#define WIN32_LEAN_AND_MEAN\n"
+            "#endif\n"
+            "#include <windows.h>\n"
+            "\n"
+            "extern WINBASEAPI HMODULE WINAPI (*_elf_LoadLibraryA)(LPCSTR);\n"
+            "extern WINBASEAPI FARPROC WINAPI (*_elf_GetProcAddress)(HMODULE,LPCSTR);\n"
+            "\n"
+            "extern HMODULE _dll_%s;\n"
+            "\n"
+            "void load_dll_%s();\n",
+            argv[2], argv[2]);
     
     /* read in the symbols */
     while (!feof(objdump) && !ferror(objdump)) {
@@ -127,7 +153,14 @@ int main(int argc, char **argv)
         }
         
         /* write out the loader */
-        fprintf(cfile, "void _elfimplib_%s() asm(\"%s\");\n"
+        snprintf(fname, FNAMELEN, "%s/%s.c", argv[2], line);
+        cfile = fopen(fname, "w");
+        if (!cfile) {
+            perror(fname);
+            return 1;
+        }
+        fprintf(cfile, "#include \"%s.h\"\n"
+                "void _elfimplib_%s() asm(\"%s\");\n"
                 "void *_imp__%s = NULL;\n"
                 "__attribute__((constructor)) void _elfimplib_init_%s() {\n"
                 "load_dll_%s();\n"
@@ -137,22 +170,11 @@ int main(int argc, char **argv)
                 "asm(\"leave\\njmp *%0\" : : \"r\"(_imp__%s));\n"
                 "}\n"
                 "\n",
-                line, unmangled, line, line, argv[2], line, argv[2], line,
-                line, line);
-        /* fprintf(cfile, "void _elfimplib_%s() asm(\"%s\");\n"
-                "void *_imp__%s = NULL;\n"
-                "void _elfimplib_%s() {\n"
-                "load_dll_%s();\n"
-                "if (!_imp__%s)\n"
-                "_imp__%s = (void *) _elf_GetProcAddress(_dll_%s, \"%s\");\n"
-                "asm(\"leave\\njmp *%0\" : : \"r\"(_imp__%s));\n"
-                "}\n"
-                "\n",
-                line, unmangled, line, line, argv[2], line, line, argv[2],
-                line, line); */
+                argv[2], line, unmangled, line, line, argv[2], line, argv[2],
+                line, line, line);
+        fclose(cfile);
     }
     
-    fclose(cfile);
     pclose(objdump);
     
     return 0;
