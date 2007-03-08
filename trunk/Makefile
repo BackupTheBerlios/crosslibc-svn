@@ -11,6 +11,7 @@ all: misc-all newlib
 	$(MAKE) -C bsd all
 	$(MAKE) -C linux all
 	$(MAKE) -C solaris all
+	$(MAKE) -C uwin all
 	$(MAKE) -C libc all
 
 misc-all:

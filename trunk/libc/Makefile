@@ -12,7 +12,8 @@ libc.a:
 	$(AR) rc libc.a *.o ../generic/*.o \
 		../bsd/*.o \
 		../linux/*.o \
-		../solaris/*.o
+		../solaris/*.o \
+		../uwin/*.o
 	$(RANLIB) libc.a
 	rm -f *.o
 

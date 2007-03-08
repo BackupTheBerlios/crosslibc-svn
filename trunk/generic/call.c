@@ -57,8 +57,54 @@ int OSCALL_solaris()
     return 0; // needs fixing
 }
 
-void OSCALL_determine()
+/* Functions made available via the ELF loader */
+void *_elf_LoadLibraryA = (void *) 0;
+void *_elf_GetModuleHandleA = (void *) 0;
+void *_elf_GetProcAddress = (void *) 0;
+
+void fromPseudoHex(unsigned char *c, unsigned char h[2])
 {
+    *c = ((h[0] - 'A') << 4) + (h[1] - 'A');
+}
+
+void ptrFromPseudoHex(void **ptr, unsigned char *out)
+{
+    int i;
+    union {
+        void *vptr;
+        unsigned char cbuf[sizeof(void *)];
+    } view;
+    
+    for (i = 0; i < sizeof(void *); i++) {
+        fromPseudoHex(view.cbuf + i, out + (i * 2));
+    }
+    
+    *ptr = view.vptr;
+}
+
+void OSCALL_determine(int argc)
+{
+    char **envp;
+    int i;
+    
+    envp = ((void *) &argc) + sizeof(void *) + (argc+1) * sizeof(char *);
+    
+    /* load in functions from env */
+    for (i = 0; envp[i]; i++) {
+        if (!strncmp(envp[i], "LOADLIBRARY=", 12)) {
+            ptrFromPseudoHex(&_elf_LoadLibraryA, envp[i] + 12);
+        } else if (!strncmp(envp[i], "GETMODULEHANDLE=", 16)) {
+            ptrFromPseudoHex(&_elf_GetModuleHandleA, envp[i] + 16);
+        } else if (!strncmp(envp[i], "GETPROCADDRESS=", 15)) {
+            ptrFromPseudoHex(&_elf_GetProcAddress, envp[i] + 15);
+        }
+    }
+    
+    if (_elf_LoadLibraryA && _elf_GetModuleHandleA && _elf_GetProcAddress) {
+        OSCALL_which = OSCALL_UWIN;
+        return;
+    }
+    
     if (OSCALL_solaris()) {
         OSCALL_which = OSCALL_SOL;
         return;

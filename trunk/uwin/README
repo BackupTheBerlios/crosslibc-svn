@@ -1,0 +1,3 @@
+This Windows port of crosslibc requires posix.dll from UWIN and its dependent
+msvcr71.dll .
+

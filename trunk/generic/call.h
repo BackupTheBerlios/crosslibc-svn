@@ -5,6 +5,7 @@ extern int OSCALL_which;
 #define OSCALL_LINUX 0
 #define OSCALL_BSD 1
 #define OSCALL_SOL 2
+#define OSCALL_UWIN 3
 
 /* CALL_GENERIC:
  * a = function
@@ -18,6 +19,8 @@ switch (OSCALL_which) { \
         return BSD_ ## a(c); \
     case OSCALL_SOL: \
         return SOL_ ## a(c); \
+    case OSCALL_UWIN: \
+        return UWIN_ ## a(c); \
 } \
 errno = ENOSYS; \
 return b;
@@ -30,6 +33,8 @@ switch (OSCALL_which) { \
         BSD_ ## a(b); \
     case OSCALL_SOL: \
         SOL_ ## a(b); \
+    case OSCALL_UWIN: \
+        UWIN_ ## a(b); \
     default: \
         errno = ENOSYS; \
 }
@@ -42,6 +47,7 @@ switch (OSCALL_which) { \
 a LINUX_ ## b(c); \
 a BSD_ ## b(c); \
 a SOL_ ## b(c); \
+a UWIN_ ## b(c); \
 a b(c)  
 
 void OSCALL_determine();
