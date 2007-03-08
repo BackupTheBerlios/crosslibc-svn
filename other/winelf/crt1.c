@@ -52,15 +52,13 @@ int _winelf_strnmatch(char *a, char *b, int n)
     return 1;
 }
 
-/* _winelf_callmain: Arrange arguments appropriately and call main */
-int _winelf_callmain(int argc)
+/* _winelf_init: Get things out of the environment necessary for execution */
+void _winelf_init(int argc)
 {
-    char **argv, **envp;
+    char **envp;
     int i;
     
-    void *pargc = &argc;
-    argv = pargc + sizeof(void *);
-    envp = pargc + sizeof(void *) + (argc+1) * sizeof(char *);
+    envp = ((void *) &argc) + sizeof(void *) + (argc+1) * sizeof(char *);
     
     /* load in functions from env */
     _elf_LoadLibraryA = (void *) 0;
@@ -75,6 +73,17 @@ int _winelf_callmain(int argc)
             ptrFromPseudoHex(&_elf_GetProcAddress, envp[i] + 15);
         }
     }
+    
+}
+
+/* _winelf_callmain: Arrange arguments appropriately and call main */
+int _winelf_callmain(int argc)
+{
+    char **argv, **envp;
+    
+    void *pargc = &argc;
+    argv = pargc + sizeof(void *);
+    envp = pargc + sizeof(void *) + (argc+1) * sizeof(char *);
     
     return main(argc, argv, envp);
 }

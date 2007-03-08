@@ -14,7713 +14,7703 @@ _dll_msvcrt = _elf_LoadLibraryA("msvcrt");
 }
 }
 
-void _elf_$I10_OUTPUT() asm("$I10_OUTPUT");
-void *_imp__$I10_OUTPUT = NULL;
-void _elf_$I10_OUTPUT() {
-load_dll_msvcrt();
-if (!_imp__$I10_OUTPUT) {
-_imp__$I10_OUTPUT = (void *) _elf_GetProcAddress(_dll_msvcrt, "$I10_OUTPUT");
-}
-asm("leave\njmp *%0" : : "r"(_imp__$I10_OUTPUT));
-}
-
-void _elf__CIacos() asm("CIacos");
+void _elfimplib__CIacos() asm("CIacos");
 void *_imp___CIacos = NULL;
-void _elf__CIacos() {
+__attribute__((constructor)) void _elfimplib_init__CIacos() {
 load_dll_msvcrt();
-if (!_imp___CIacos) {
 _imp___CIacos = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIacos");
 }
+void _elfimplib__CIacos() {
 asm("leave\njmp *%0" : : "r"(_imp___CIacos));
 }
 
-void _elf__CIasin() asm("CIasin");
+void _elfimplib__CIasin() asm("CIasin");
 void *_imp___CIasin = NULL;
-void _elf__CIasin() {
+__attribute__((constructor)) void _elfimplib_init__CIasin() {
 load_dll_msvcrt();
-if (!_imp___CIasin) {
 _imp___CIasin = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIasin");
 }
+void _elfimplib__CIasin() {
 asm("leave\njmp *%0" : : "r"(_imp___CIasin));
 }
 
-void _elf__CIatan() asm("CIatan");
+void _elfimplib__CIatan() asm("CIatan");
 void *_imp___CIatan = NULL;
-void _elf__CIatan() {
+__attribute__((constructor)) void _elfimplib_init__CIatan() {
 load_dll_msvcrt();
-if (!_imp___CIatan) {
 _imp___CIatan = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIatan");
 }
+void _elfimplib__CIatan() {
 asm("leave\njmp *%0" : : "r"(_imp___CIatan));
 }
 
-void _elf__CIatan2() asm("CIatan2");
+void _elfimplib__CIatan2() asm("CIatan2");
 void *_imp___CIatan2 = NULL;
-void _elf__CIatan2() {
+__attribute__((constructor)) void _elfimplib_init__CIatan2() {
 load_dll_msvcrt();
-if (!_imp___CIatan2) {
 _imp___CIatan2 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIatan2");
 }
+void _elfimplib__CIatan2() {
 asm("leave\njmp *%0" : : "r"(_imp___CIatan2));
 }
 
-void _elf__CIcos() asm("CIcos");
+void _elfimplib__CIcos() asm("CIcos");
 void *_imp___CIcos = NULL;
-void _elf__CIcos() {
+__attribute__((constructor)) void _elfimplib_init__CIcos() {
 load_dll_msvcrt();
-if (!_imp___CIcos) {
 _imp___CIcos = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIcos");
 }
+void _elfimplib__CIcos() {
 asm("leave\njmp *%0" : : "r"(_imp___CIcos));
 }
 
-void _elf__CIcosh() asm("CIcosh");
+void _elfimplib__CIcosh() asm("CIcosh");
 void *_imp___CIcosh = NULL;
-void _elf__CIcosh() {
+__attribute__((constructor)) void _elfimplib_init__CIcosh() {
 load_dll_msvcrt();
-if (!_imp___CIcosh) {
 _imp___CIcosh = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIcosh");
 }
+void _elfimplib__CIcosh() {
 asm("leave\njmp *%0" : : "r"(_imp___CIcosh));
 }
 
-void _elf__CIexp() asm("CIexp");
+void _elfimplib__CIexp() asm("CIexp");
 void *_imp___CIexp = NULL;
-void _elf__CIexp() {
+__attribute__((constructor)) void _elfimplib_init__CIexp() {
 load_dll_msvcrt();
-if (!_imp___CIexp) {
 _imp___CIexp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIexp");
 }
+void _elfimplib__CIexp() {
 asm("leave\njmp *%0" : : "r"(_imp___CIexp));
 }
 
-void _elf__CIfmod() asm("CIfmod");
+void _elfimplib__CIfmod() asm("CIfmod");
 void *_imp___CIfmod = NULL;
-void _elf__CIfmod() {
+__attribute__((constructor)) void _elfimplib_init__CIfmod() {
 load_dll_msvcrt();
-if (!_imp___CIfmod) {
 _imp___CIfmod = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIfmod");
 }
+void _elfimplib__CIfmod() {
 asm("leave\njmp *%0" : : "r"(_imp___CIfmod));
 }
 
-void _elf__CIlog() asm("CIlog");
+void _elfimplib__CIlog() asm("CIlog");
 void *_imp___CIlog = NULL;
-void _elf__CIlog() {
+__attribute__((constructor)) void _elfimplib_init__CIlog() {
 load_dll_msvcrt();
-if (!_imp___CIlog) {
 _imp___CIlog = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIlog");
 }
+void _elfimplib__CIlog() {
 asm("leave\njmp *%0" : : "r"(_imp___CIlog));
 }
 
-void _elf__CIlog10() asm("CIlog10");
+void _elfimplib__CIlog10() asm("CIlog10");
 void *_imp___CIlog10 = NULL;
-void _elf__CIlog10() {
+__attribute__((constructor)) void _elfimplib_init__CIlog10() {
 load_dll_msvcrt();
-if (!_imp___CIlog10) {
 _imp___CIlog10 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIlog10");
 }
+void _elfimplib__CIlog10() {
 asm("leave\njmp *%0" : : "r"(_imp___CIlog10));
 }
 
-void _elf__CIpow() asm("CIpow");
+void _elfimplib__CIpow() asm("CIpow");
 void *_imp___CIpow = NULL;
-void _elf__CIpow() {
+__attribute__((constructor)) void _elfimplib_init__CIpow() {
 load_dll_msvcrt();
-if (!_imp___CIpow) {
 _imp___CIpow = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIpow");
 }
+void _elfimplib__CIpow() {
 asm("leave\njmp *%0" : : "r"(_imp___CIpow));
 }
 
-void _elf__CIsin() asm("CIsin");
+void _elfimplib__CIsin() asm("CIsin");
 void *_imp___CIsin = NULL;
-void _elf__CIsin() {
+__attribute__((constructor)) void _elfimplib_init__CIsin() {
 load_dll_msvcrt();
-if (!_imp___CIsin) {
 _imp___CIsin = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIsin");
 }
+void _elfimplib__CIsin() {
 asm("leave\njmp *%0" : : "r"(_imp___CIsin));
 }
 
-void _elf__CIsinh() asm("CIsinh");
+void _elfimplib__CIsinh() asm("CIsinh");
 void *_imp___CIsinh = NULL;
-void _elf__CIsinh() {
+__attribute__((constructor)) void _elfimplib_init__CIsinh() {
 load_dll_msvcrt();
-if (!_imp___CIsinh) {
 _imp___CIsinh = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIsinh");
 }
+void _elfimplib__CIsinh() {
 asm("leave\njmp *%0" : : "r"(_imp___CIsinh));
 }
 
-void _elf__CIsqrt() asm("CIsqrt");
+void _elfimplib__CIsqrt() asm("CIsqrt");
 void *_imp___CIsqrt = NULL;
-void _elf__CIsqrt() {
+__attribute__((constructor)) void _elfimplib_init__CIsqrt() {
 load_dll_msvcrt();
-if (!_imp___CIsqrt) {
 _imp___CIsqrt = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CIsqrt");
 }
+void _elfimplib__CIsqrt() {
 asm("leave\njmp *%0" : : "r"(_imp___CIsqrt));
 }
 
-void _elf__CItan() asm("CItan");
+void _elfimplib__CItan() asm("CItan");
 void *_imp___CItan = NULL;
-void _elf__CItan() {
+__attribute__((constructor)) void _elfimplib_init__CItan() {
 load_dll_msvcrt();
-if (!_imp___CItan) {
 _imp___CItan = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CItan");
 }
+void _elfimplib__CItan() {
 asm("leave\njmp *%0" : : "r"(_imp___CItan));
 }
 
-void _elf__CItanh() asm("CItanh");
+void _elfimplib__CItanh() asm("CItanh");
 void *_imp___CItanh = NULL;
-void _elf__CItanh() {
+__attribute__((constructor)) void _elfimplib_init__CItanh() {
 load_dll_msvcrt();
-if (!_imp___CItanh) {
 _imp___CItanh = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CItanh");
 }
+void _elfimplib__CItanh() {
 asm("leave\njmp *%0" : : "r"(_imp___CItanh));
 }
 
-void _elf__CxxThrowException() asm("CxxThrowException");
+void _elfimplib__CxxThrowException() asm("CxxThrowException");
 void *_imp___CxxThrowException = NULL;
-void _elf__CxxThrowException() {
+__attribute__((constructor)) void _elfimplib_init__CxxThrowException() {
 load_dll_msvcrt();
-if (!_imp___CxxThrowException) {
 _imp___CxxThrowException = (void *) _elf_GetProcAddress(_dll_msvcrt, "_CxxThrowException");
 }
+void _elfimplib__CxxThrowException() {
 asm("leave\njmp *%0" : : "r"(_imp___CxxThrowException));
 }
 
-void _elf__EH_prolog() asm("EH_prolog");
+void _elfimplib__EH_prolog() asm("EH_prolog");
 void *_imp___EH_prolog = NULL;
-void _elf__EH_prolog() {
+__attribute__((constructor)) void _elfimplib_init__EH_prolog() {
 load_dll_msvcrt();
-if (!_imp___EH_prolog) {
 _imp___EH_prolog = (void *) _elf_GetProcAddress(_dll_msvcrt, "_EH_prolog");
 }
+void _elfimplib__EH_prolog() {
 asm("leave\njmp *%0" : : "r"(_imp___EH_prolog));
 }
 
-void _elf__Getdays() asm("Getdays");
+void _elfimplib__Getdays() asm("Getdays");
 void *_imp___Getdays = NULL;
-void _elf__Getdays() {
+__attribute__((constructor)) void _elfimplib_init__Getdays() {
 load_dll_msvcrt();
-if (!_imp___Getdays) {
 _imp___Getdays = (void *) _elf_GetProcAddress(_dll_msvcrt, "_Getdays");
 }
+void _elfimplib__Getdays() {
 asm("leave\njmp *%0" : : "r"(_imp___Getdays));
 }
 
-void _elf__Getmonths() asm("Getmonths");
+void _elfimplib__Getmonths() asm("Getmonths");
 void *_imp___Getmonths = NULL;
-void _elf__Getmonths() {
+__attribute__((constructor)) void _elfimplib_init__Getmonths() {
 load_dll_msvcrt();
-if (!_imp___Getmonths) {
 _imp___Getmonths = (void *) _elf_GetProcAddress(_dll_msvcrt, "_Getmonths");
 }
+void _elfimplib__Getmonths() {
 asm("leave\njmp *%0" : : "r"(_imp___Getmonths));
 }
 
-void _elf__Gettnames() asm("Gettnames");
+void _elfimplib__Gettnames() asm("Gettnames");
 void *_imp___Gettnames = NULL;
-void _elf__Gettnames() {
+__attribute__((constructor)) void _elfimplib_init__Gettnames() {
 load_dll_msvcrt();
-if (!_imp___Gettnames) {
 _imp___Gettnames = (void *) _elf_GetProcAddress(_dll_msvcrt, "_Gettnames");
 }
+void _elfimplib__Gettnames() {
 asm("leave\njmp *%0" : : "r"(_imp___Gettnames));
 }
 
-void _elf__HUGE() asm("HUGE");
+void _elfimplib__HUGE() asm("HUGE");
 void *_imp___HUGE = NULL;
-void _elf__HUGE() {
+__attribute__((constructor)) void _elfimplib_init__HUGE() {
 load_dll_msvcrt();
-if (!_imp___HUGE) {
 _imp___HUGE = (void *) _elf_GetProcAddress(_dll_msvcrt, "_HUGE");
 }
+void _elfimplib__HUGE() {
 asm("leave\njmp *%0" : : "r"(_imp___HUGE));
 }
 
-void _elf__Strftime() asm("Strftime");
+void _elfimplib__Strftime() asm("Strftime");
 void *_imp___Strftime = NULL;
-void _elf__Strftime() {
+__attribute__((constructor)) void _elfimplib_init__Strftime() {
 load_dll_msvcrt();
-if (!_imp___Strftime) {
 _imp___Strftime = (void *) _elf_GetProcAddress(_dll_msvcrt, "_Strftime");
 }
+void _elfimplib__Strftime() {
 asm("leave\njmp *%0" : : "r"(_imp___Strftime));
 }
 
-void _elf__XcptFilter() asm("XcptFilter");
+void _elfimplib__XcptFilter() asm("XcptFilter");
 void *_imp___XcptFilter = NULL;
-void _elf__XcptFilter() {
+__attribute__((constructor)) void _elfimplib_init__XcptFilter() {
 load_dll_msvcrt();
-if (!_imp___XcptFilter) {
 _imp___XcptFilter = (void *) _elf_GetProcAddress(_dll_msvcrt, "_XcptFilter");
 }
+void _elfimplib__XcptFilter() {
 asm("leave\njmp *%0" : : "r"(_imp___XcptFilter));
 }
 
-void _elf___CxxCallUnwindDtor() asm("_CxxCallUnwindDtor");
+void _elfimplib___CxxCallUnwindDtor() asm("_CxxCallUnwindDtor");
 void *_imp____CxxCallUnwindDtor = NULL;
-void _elf___CxxCallUnwindDtor() {
+__attribute__((constructor)) void _elfimplib_init___CxxCallUnwindDtor() {
 load_dll_msvcrt();
-if (!_imp____CxxCallUnwindDtor) {
 _imp____CxxCallUnwindDtor = (void *) _elf_GetProcAddress(_dll_msvcrt, "__CxxCallUnwindDtor");
 }
+void _elfimplib___CxxCallUnwindDtor() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxCallUnwindDtor));
 }
 
-void _elf___CxxDetectRethrow() asm("_CxxDetectRethrow");
+void _elfimplib___CxxDetectRethrow() asm("_CxxDetectRethrow");
 void *_imp____CxxDetectRethrow = NULL;
-void _elf___CxxDetectRethrow() {
+__attribute__((constructor)) void _elfimplib_init___CxxDetectRethrow() {
 load_dll_msvcrt();
-if (!_imp____CxxDetectRethrow) {
 _imp____CxxDetectRethrow = (void *) _elf_GetProcAddress(_dll_msvcrt, "__CxxDetectRethrow");
 }
+void _elfimplib___CxxDetectRethrow() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxDetectRethrow));
 }
 
-void _elf___CxxExceptionFilter() asm("_CxxExceptionFilter");
+void _elfimplib___CxxExceptionFilter() asm("_CxxExceptionFilter");
 void *_imp____CxxExceptionFilter = NULL;
-void _elf___CxxExceptionFilter() {
+__attribute__((constructor)) void _elfimplib_init___CxxExceptionFilter() {
 load_dll_msvcrt();
-if (!_imp____CxxExceptionFilter) {
 _imp____CxxExceptionFilter = (void *) _elf_GetProcAddress(_dll_msvcrt, "__CxxExceptionFilter");
 }
+void _elfimplib___CxxExceptionFilter() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxExceptionFilter));
 }
 
-void _elf___CxxFrameHandler() asm("_CxxFrameHandler");
+void _elfimplib___CxxFrameHandler() asm("_CxxFrameHandler");
 void *_imp____CxxFrameHandler = NULL;
-void _elf___CxxFrameHandler() {
+__attribute__((constructor)) void _elfimplib_init___CxxFrameHandler() {
 load_dll_msvcrt();
-if (!_imp____CxxFrameHandler) {
 _imp____CxxFrameHandler = (void *) _elf_GetProcAddress(_dll_msvcrt, "__CxxFrameHandler");
 }
+void _elfimplib___CxxFrameHandler() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxFrameHandler));
 }
 
-void _elf___CxxLongjmpUnwind() asm("_CxxLongjmpUnwind");
+void _elfimplib___CxxLongjmpUnwind() asm("_CxxLongjmpUnwind");
 void *_imp____CxxLongjmpUnwind = NULL;
-void _elf___CxxLongjmpUnwind() {
+__attribute__((constructor)) void _elfimplib_init___CxxLongjmpUnwind() {
 load_dll_msvcrt();
-if (!_imp____CxxLongjmpUnwind) {
 _imp____CxxLongjmpUnwind = (void *) _elf_GetProcAddress(_dll_msvcrt, "__CxxLongjmpUnwind");
 }
+void _elfimplib___CxxLongjmpUnwind() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxLongjmpUnwind));
 }
 
-void _elf___CxxQueryExceptionSize() asm("_CxxQueryExceptionSize");
+void _elfimplib___CxxQueryExceptionSize() asm("_CxxQueryExceptionSize");
 void *_imp____CxxQueryExceptionSize = NULL;
-void _elf___CxxQueryExceptionSize() {
+__attribute__((constructor)) void _elfimplib_init___CxxQueryExceptionSize() {
 load_dll_msvcrt();
-if (!_imp____CxxQueryExceptionSize) {
 _imp____CxxQueryExceptionSize = (void *) _elf_GetProcAddress(_dll_msvcrt, "__CxxQueryExceptionSize");
 }
+void _elfimplib___CxxQueryExceptionSize() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxQueryExceptionSize));
 }
 
-void _elf___CxxRegisterExceptionObject() asm("_CxxRegisterExceptionObject");
+void _elfimplib___CxxRegisterExceptionObject() asm("_CxxRegisterExceptionObject");
 void *_imp____CxxRegisterExceptionObject = NULL;
-void _elf___CxxRegisterExceptionObject() {
+__attribute__((constructor)) void _elfimplib_init___CxxRegisterExceptionObject() {
 load_dll_msvcrt();
-if (!_imp____CxxRegisterExceptionObject) {
 _imp____CxxRegisterExceptionObject = (void *) _elf_GetProcAddress(_dll_msvcrt, "__CxxRegisterExceptionObject");
 }
+void _elfimplib___CxxRegisterExceptionObject() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxRegisterExceptionObject));
 }
 
-void _elf___CxxUnregisterExceptionObject() asm("_CxxUnregisterExceptionObject");
+void _elfimplib___CxxUnregisterExceptionObject() asm("_CxxUnregisterExceptionObject");
 void *_imp____CxxUnregisterExceptionObject = NULL;
-void _elf___CxxUnregisterExceptionObject() {
+__attribute__((constructor)) void _elfimplib_init___CxxUnregisterExceptionObject() {
 load_dll_msvcrt();
-if (!_imp____CxxUnregisterExceptionObject) {
 _imp____CxxUnregisterExceptionObject = (void *) _elf_GetProcAddress(_dll_msvcrt, "__CxxUnregisterExceptionObject");
 }
+void _elfimplib___CxxUnregisterExceptionObject() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxUnregisterExceptionObject));
 }
 
-void _elf___DestructExceptionObject() asm("_DestructExceptionObject");
+void _elfimplib___DestructExceptionObject() asm("_DestructExceptionObject");
 void *_imp____DestructExceptionObject = NULL;
-void _elf___DestructExceptionObject() {
+__attribute__((constructor)) void _elfimplib_init___DestructExceptionObject() {
 load_dll_msvcrt();
-if (!_imp____DestructExceptionObject) {
 _imp____DestructExceptionObject = (void *) _elf_GetProcAddress(_dll_msvcrt, "__DestructExceptionObject");
 }
+void _elfimplib___DestructExceptionObject() {
 asm("leave\njmp *%0" : : "r"(_imp____DestructExceptionObject));
 }
 
-void _elf___RTCastToVoid() asm("_RTCastToVoid");
+void _elfimplib___RTCastToVoid() asm("_RTCastToVoid");
 void *_imp____RTCastToVoid = NULL;
-void _elf___RTCastToVoid() {
+__attribute__((constructor)) void _elfimplib_init___RTCastToVoid() {
 load_dll_msvcrt();
-if (!_imp____RTCastToVoid) {
 _imp____RTCastToVoid = (void *) _elf_GetProcAddress(_dll_msvcrt, "__RTCastToVoid");
 }
+void _elfimplib___RTCastToVoid() {
 asm("leave\njmp *%0" : : "r"(_imp____RTCastToVoid));
 }
 
-void _elf___RTDynamicCast() asm("_RTDynamicCast");
+void _elfimplib___RTDynamicCast() asm("_RTDynamicCast");
 void *_imp____RTDynamicCast = NULL;
-void _elf___RTDynamicCast() {
+__attribute__((constructor)) void _elfimplib_init___RTDynamicCast() {
 load_dll_msvcrt();
-if (!_imp____RTDynamicCast) {
 _imp____RTDynamicCast = (void *) _elf_GetProcAddress(_dll_msvcrt, "__RTDynamicCast");
 }
+void _elfimplib___RTDynamicCast() {
 asm("leave\njmp *%0" : : "r"(_imp____RTDynamicCast));
 }
 
-void _elf___RTtypeid() asm("_RTtypeid");
+void _elfimplib___RTtypeid() asm("_RTtypeid");
 void *_imp____RTtypeid = NULL;
-void _elf___RTtypeid() {
+__attribute__((constructor)) void _elfimplib_init___RTtypeid() {
 load_dll_msvcrt();
-if (!_imp____RTtypeid) {
 _imp____RTtypeid = (void *) _elf_GetProcAddress(_dll_msvcrt, "__RTtypeid");
 }
+void _elfimplib___RTtypeid() {
 asm("leave\njmp *%0" : : "r"(_imp____RTtypeid));
 }
 
-void _elf___STRINGTOLD() asm("_STRINGTOLD");
+void _elfimplib___STRINGTOLD() asm("_STRINGTOLD");
 void *_imp____STRINGTOLD = NULL;
-void _elf___STRINGTOLD() {
+__attribute__((constructor)) void _elfimplib_init___STRINGTOLD() {
 load_dll_msvcrt();
-if (!_imp____STRINGTOLD) {
 _imp____STRINGTOLD = (void *) _elf_GetProcAddress(_dll_msvcrt, "__STRINGTOLD");
 }
+void _elfimplib___STRINGTOLD() {
 asm("leave\njmp *%0" : : "r"(_imp____STRINGTOLD));
 }
 
-void _elf____lc_codepage_func() asm("__lc_codepage_func");
+void _elfimplib____lc_codepage_func() asm("__lc_codepage_func");
 void *_imp_____lc_codepage_func = NULL;
-void _elf____lc_codepage_func() {
+__attribute__((constructor)) void _elfimplib_init____lc_codepage_func() {
 load_dll_msvcrt();
-if (!_imp_____lc_codepage_func) {
 _imp_____lc_codepage_func = (void *) _elf_GetProcAddress(_dll_msvcrt, "___lc_codepage_func");
 }
+void _elfimplib____lc_codepage_func() {
 asm("leave\njmp *%0" : : "r"(_imp_____lc_codepage_func));
 }
 
-void _elf____lc_handle_func() asm("__lc_handle_func");
+void _elfimplib____lc_handle_func() asm("__lc_handle_func");
 void *_imp_____lc_handle_func = NULL;
-void _elf____lc_handle_func() {
+__attribute__((constructor)) void _elfimplib_init____lc_handle_func() {
 load_dll_msvcrt();
-if (!_imp_____lc_handle_func) {
 _imp_____lc_handle_func = (void *) _elf_GetProcAddress(_dll_msvcrt, "___lc_handle_func");
 }
+void _elfimplib____lc_handle_func() {
 asm("leave\njmp *%0" : : "r"(_imp_____lc_handle_func));
 }
 
-void _elf____mb_cur_max_func() asm("__mb_cur_max_func");
+void _elfimplib____mb_cur_max_func() asm("__mb_cur_max_func");
 void *_imp_____mb_cur_max_func = NULL;
-void _elf____mb_cur_max_func() {
+__attribute__((constructor)) void _elfimplib_init____mb_cur_max_func() {
 load_dll_msvcrt();
-if (!_imp_____mb_cur_max_func) {
 _imp_____mb_cur_max_func = (void *) _elf_GetProcAddress(_dll_msvcrt, "___mb_cur_max_func");
 }
+void _elfimplib____mb_cur_max_func() {
 asm("leave\njmp *%0" : : "r"(_imp_____mb_cur_max_func));
 }
 
-void _elf____setlc_active_func() asm("__setlc_active_func");
+void _elfimplib____setlc_active_func() asm("__setlc_active_func");
 void *_imp_____setlc_active_func = NULL;
-void _elf____setlc_active_func() {
+__attribute__((constructor)) void _elfimplib_init____setlc_active_func() {
 load_dll_msvcrt();
-if (!_imp_____setlc_active_func) {
 _imp_____setlc_active_func = (void *) _elf_GetProcAddress(_dll_msvcrt, "___setlc_active_func");
 }
+void _elfimplib____setlc_active_func() {
 asm("leave\njmp *%0" : : "r"(_imp_____setlc_active_func));
 }
 
-void _elf____unguarded_readlc_active_add_func() asm("__unguarded_readlc_active_add_func");
+void _elfimplib____unguarded_readlc_active_add_func() asm("__unguarded_readlc_active_add_func");
 void *_imp_____unguarded_readlc_active_add_func = NULL;
-void _elf____unguarded_readlc_active_add_func() {
+__attribute__((constructor)) void _elfimplib_init____unguarded_readlc_active_add_func() {
 load_dll_msvcrt();
-if (!_imp_____unguarded_readlc_active_add_func) {
 _imp_____unguarded_readlc_active_add_func = (void *) _elf_GetProcAddress(_dll_msvcrt, "___unguarded_readlc_active_add_func");
 }
+void _elfimplib____unguarded_readlc_active_add_func() {
 asm("leave\njmp *%0" : : "r"(_imp_____unguarded_readlc_active_add_func));
 }
 
-void _elf___argc() asm("_argc");
+void _elfimplib___argc() asm("_argc");
 void *_imp____argc = NULL;
-void _elf___argc() {
+__attribute__((constructor)) void _elfimplib_init___argc() {
 load_dll_msvcrt();
-if (!_imp____argc) {
 _imp____argc = (void *) _elf_GetProcAddress(_dll_msvcrt, "__argc");
 }
+void _elfimplib___argc() {
 asm("leave\njmp *%0" : : "r"(_imp____argc));
 }
 
-void _elf___argv() asm("_argv");
+void _elfimplib___argv() asm("_argv");
 void *_imp____argv = NULL;
-void _elf___argv() {
+__attribute__((constructor)) void _elfimplib_init___argv() {
 load_dll_msvcrt();
-if (!_imp____argv) {
 _imp____argv = (void *) _elf_GetProcAddress(_dll_msvcrt, "__argv");
 }
+void _elfimplib___argv() {
 asm("leave\njmp *%0" : : "r"(_imp____argv));
 }
 
-void _elf___badioinfo() asm("_badioinfo");
+void _elfimplib___badioinfo() asm("_badioinfo");
 void *_imp____badioinfo = NULL;
-void _elf___badioinfo() {
+__attribute__((constructor)) void _elfimplib_init___badioinfo() {
 load_dll_msvcrt();
-if (!_imp____badioinfo) {
 _imp____badioinfo = (void *) _elf_GetProcAddress(_dll_msvcrt, "__badioinfo");
 }
+void _elfimplib___badioinfo() {
 asm("leave\njmp *%0" : : "r"(_imp____badioinfo));
 }
 
-void _elf___crtCompareStringA() asm("_crtCompareStringA");
+void _elfimplib___crtCompareStringA() asm("_crtCompareStringA");
 void *_imp____crtCompareStringA = NULL;
-void _elf___crtCompareStringA() {
+__attribute__((constructor)) void _elfimplib_init___crtCompareStringA() {
 load_dll_msvcrt();
-if (!_imp____crtCompareStringA) {
 _imp____crtCompareStringA = (void *) _elf_GetProcAddress(_dll_msvcrt, "__crtCompareStringA");
 }
+void _elfimplib___crtCompareStringA() {
 asm("leave\njmp *%0" : : "r"(_imp____crtCompareStringA));
 }
 
-void _elf___crtCompareStringW() asm("_crtCompareStringW");
+void _elfimplib___crtCompareStringW() asm("_crtCompareStringW");
 void *_imp____crtCompareStringW = NULL;
-void _elf___crtCompareStringW() {
+__attribute__((constructor)) void _elfimplib_init___crtCompareStringW() {
 load_dll_msvcrt();
-if (!_imp____crtCompareStringW) {
 _imp____crtCompareStringW = (void *) _elf_GetProcAddress(_dll_msvcrt, "__crtCompareStringW");
 }
+void _elfimplib___crtCompareStringW() {
 asm("leave\njmp *%0" : : "r"(_imp____crtCompareStringW));
 }
 
-void _elf___crtGetLocaleInfoW() asm("_crtGetLocaleInfoW");
+void _elfimplib___crtGetLocaleInfoW() asm("_crtGetLocaleInfoW");
 void *_imp____crtGetLocaleInfoW = NULL;
-void _elf___crtGetLocaleInfoW() {
+__attribute__((constructor)) void _elfimplib_init___crtGetLocaleInfoW() {
 load_dll_msvcrt();
-if (!_imp____crtGetLocaleInfoW) {
 _imp____crtGetLocaleInfoW = (void *) _elf_GetProcAddress(_dll_msvcrt, "__crtGetLocaleInfoW");
 }
+void _elfimplib___crtGetLocaleInfoW() {
 asm("leave\njmp *%0" : : "r"(_imp____crtGetLocaleInfoW));
 }
 
-void _elf___crtGetStringTypeW() asm("_crtGetStringTypeW");
+void _elfimplib___crtGetStringTypeW() asm("_crtGetStringTypeW");
 void *_imp____crtGetStringTypeW = NULL;
-void _elf___crtGetStringTypeW() {
+__attribute__((constructor)) void _elfimplib_init___crtGetStringTypeW() {
 load_dll_msvcrt();
-if (!_imp____crtGetStringTypeW) {
 _imp____crtGetStringTypeW = (void *) _elf_GetProcAddress(_dll_msvcrt, "__crtGetStringTypeW");
 }
+void _elfimplib___crtGetStringTypeW() {
 asm("leave\njmp *%0" : : "r"(_imp____crtGetStringTypeW));
 }
 
-void _elf___crtLCMapStringA() asm("_crtLCMapStringA");
+void _elfimplib___crtLCMapStringA() asm("_crtLCMapStringA");
 void *_imp____crtLCMapStringA = NULL;
-void _elf___crtLCMapStringA() {
+__attribute__((constructor)) void _elfimplib_init___crtLCMapStringA() {
 load_dll_msvcrt();
-if (!_imp____crtLCMapStringA) {
 _imp____crtLCMapStringA = (void *) _elf_GetProcAddress(_dll_msvcrt, "__crtLCMapStringA");
 }
+void _elfimplib___crtLCMapStringA() {
 asm("leave\njmp *%0" : : "r"(_imp____crtLCMapStringA));
 }
 
-void _elf___crtLCMapStringW() asm("_crtLCMapStringW");
+void _elfimplib___crtLCMapStringW() asm("_crtLCMapStringW");
 void *_imp____crtLCMapStringW = NULL;
-void _elf___crtLCMapStringW() {
+__attribute__((constructor)) void _elfimplib_init___crtLCMapStringW() {
 load_dll_msvcrt();
-if (!_imp____crtLCMapStringW) {
 _imp____crtLCMapStringW = (void *) _elf_GetProcAddress(_dll_msvcrt, "__crtLCMapStringW");
 }
+void _elfimplib___crtLCMapStringW() {
 asm("leave\njmp *%0" : : "r"(_imp____crtLCMapStringW));
 }
 
-void _elf___dllonexit() asm("_dllonexit");
+void _elfimplib___dllonexit() asm("_dllonexit");
 void *_imp____dllonexit = NULL;
-void _elf___dllonexit() {
+__attribute__((constructor)) void _elfimplib_init___dllonexit() {
 load_dll_msvcrt();
-if (!_imp____dllonexit) {
 _imp____dllonexit = (void *) _elf_GetProcAddress(_dll_msvcrt, "__dllonexit");
 }
+void _elfimplib___dllonexit() {
 asm("leave\njmp *%0" : : "r"(_imp____dllonexit));
 }
 
-void _elf___doserrno() asm("_doserrno");
+void _elfimplib___doserrno() asm("_doserrno");
 void *_imp____doserrno = NULL;
-void _elf___doserrno() {
+__attribute__((constructor)) void _elfimplib_init___doserrno() {
 load_dll_msvcrt();
-if (!_imp____doserrno) {
 _imp____doserrno = (void *) _elf_GetProcAddress(_dll_msvcrt, "__doserrno");
 }
+void _elfimplib___doserrno() {
 asm("leave\njmp *%0" : : "r"(_imp____doserrno));
 }
 
-void _elf___fpecode() asm("_fpecode");
+void _elfimplib___fpecode() asm("_fpecode");
 void *_imp____fpecode = NULL;
-void _elf___fpecode() {
+__attribute__((constructor)) void _elfimplib_init___fpecode() {
 load_dll_msvcrt();
-if (!_imp____fpecode) {
 _imp____fpecode = (void *) _elf_GetProcAddress(_dll_msvcrt, "__fpecode");
 }
+void _elfimplib___fpecode() {
 asm("leave\njmp *%0" : : "r"(_imp____fpecode));
 }
 
-void _elf___getmainargs() asm("_getmainargs");
+void _elfimplib___getmainargs() asm("_getmainargs");
 void *_imp____getmainargs = NULL;
-void _elf___getmainargs() {
+__attribute__((constructor)) void _elfimplib_init___getmainargs() {
 load_dll_msvcrt();
-if (!_imp____getmainargs) {
 _imp____getmainargs = (void *) _elf_GetProcAddress(_dll_msvcrt, "__getmainargs");
 }
+void _elfimplib___getmainargs() {
 asm("leave\njmp *%0" : : "r"(_imp____getmainargs));
 }
 
-void _elf___initenv() asm("_initenv");
+void _elfimplib___initenv() asm("_initenv");
 void *_imp____initenv = NULL;
-void _elf___initenv() {
+__attribute__((constructor)) void _elfimplib_init___initenv() {
 load_dll_msvcrt();
-if (!_imp____initenv) {
 _imp____initenv = (void *) _elf_GetProcAddress(_dll_msvcrt, "__initenv");
 }
+void _elfimplib___initenv() {
 asm("leave\njmp *%0" : : "r"(_imp____initenv));
 }
 
-void _elf___iob_func() asm("_iob_func");
+void _elfimplib___iob_func() asm("_iob_func");
 void *_imp____iob_func = NULL;
-void _elf___iob_func() {
+__attribute__((constructor)) void _elfimplib_init___iob_func() {
 load_dll_msvcrt();
-if (!_imp____iob_func) {
 _imp____iob_func = (void *) _elf_GetProcAddress(_dll_msvcrt, "__iob_func");
 }
+void _elfimplib___iob_func() {
 asm("leave\njmp *%0" : : "r"(_imp____iob_func));
 }
 
-void _elf___isascii() asm("_isascii");
+void _elfimplib___isascii() asm("_isascii");
 void *_imp____isascii = NULL;
-void _elf___isascii() {
+__attribute__((constructor)) void _elfimplib_init___isascii() {
 load_dll_msvcrt();
-if (!_imp____isascii) {
 _imp____isascii = (void *) _elf_GetProcAddress(_dll_msvcrt, "__isascii");
 }
+void _elfimplib___isascii() {
 asm("leave\njmp *%0" : : "r"(_imp____isascii));
 }
 
-void _elf___iscsym() asm("_iscsym");
+void _elfimplib___iscsym() asm("_iscsym");
 void *_imp____iscsym = NULL;
-void _elf___iscsym() {
+__attribute__((constructor)) void _elfimplib_init___iscsym() {
 load_dll_msvcrt();
-if (!_imp____iscsym) {
 _imp____iscsym = (void *) _elf_GetProcAddress(_dll_msvcrt, "__iscsym");
 }
+void _elfimplib___iscsym() {
 asm("leave\njmp *%0" : : "r"(_imp____iscsym));
 }
 
-void _elf___iscsymf() asm("_iscsymf");
+void _elfimplib___iscsymf() asm("_iscsymf");
 void *_imp____iscsymf = NULL;
-void _elf___iscsymf() {
+__attribute__((constructor)) void _elfimplib_init___iscsymf() {
 load_dll_msvcrt();
-if (!_imp____iscsymf) {
 _imp____iscsymf = (void *) _elf_GetProcAddress(_dll_msvcrt, "__iscsymf");
 }
+void _elfimplib___iscsymf() {
 asm("leave\njmp *%0" : : "r"(_imp____iscsymf));
 }
 
-void _elf___lc_codepage() asm("_lc_codepage");
+void _elfimplib___lc_codepage() asm("_lc_codepage");
 void *_imp____lc_codepage = NULL;
-void _elf___lc_codepage() {
+__attribute__((constructor)) void _elfimplib_init___lc_codepage() {
 load_dll_msvcrt();
-if (!_imp____lc_codepage) {
 _imp____lc_codepage = (void *) _elf_GetProcAddress(_dll_msvcrt, "__lc_codepage");
 }
+void _elfimplib___lc_codepage() {
 asm("leave\njmp *%0" : : "r"(_imp____lc_codepage));
 }
 
-void _elf___lc_collate_cp() asm("_lc_collate_cp");
+void _elfimplib___lc_collate_cp() asm("_lc_collate_cp");
 void *_imp____lc_collate_cp = NULL;
-void _elf___lc_collate_cp() {
+__attribute__((constructor)) void _elfimplib_init___lc_collate_cp() {
 load_dll_msvcrt();
-if (!_imp____lc_collate_cp) {
 _imp____lc_collate_cp = (void *) _elf_GetProcAddress(_dll_msvcrt, "__lc_collate_cp");
 }
+void _elfimplib___lc_collate_cp() {
 asm("leave\njmp *%0" : : "r"(_imp____lc_collate_cp));
 }
 
-void _elf___lc_handle() asm("_lc_handle");
+void _elfimplib___lc_handle() asm("_lc_handle");
 void *_imp____lc_handle = NULL;
-void _elf___lc_handle() {
+__attribute__((constructor)) void _elfimplib_init___lc_handle() {
 load_dll_msvcrt();
-if (!_imp____lc_handle) {
 _imp____lc_handle = (void *) _elf_GetProcAddress(_dll_msvcrt, "__lc_handle");
 }
+void _elfimplib___lc_handle() {
 asm("leave\njmp *%0" : : "r"(_imp____lc_handle));
 }
 
-void _elf___lconv_init() asm("_lconv_init");
+void _elfimplib___lconv_init() asm("_lconv_init");
 void *_imp____lconv_init = NULL;
-void _elf___lconv_init() {
+__attribute__((constructor)) void _elfimplib_init___lconv_init() {
 load_dll_msvcrt();
-if (!_imp____lconv_init) {
 _imp____lconv_init = (void *) _elf_GetProcAddress(_dll_msvcrt, "__lconv_init");
 }
+void _elfimplib___lconv_init() {
 asm("leave\njmp *%0" : : "r"(_imp____lconv_init));
 }
 
-void _elf___mb_cur_max() asm("_mb_cur_max");
+void _elfimplib___mb_cur_max() asm("_mb_cur_max");
 void *_imp____mb_cur_max = NULL;
-void _elf___mb_cur_max() {
+__attribute__((constructor)) void _elfimplib_init___mb_cur_max() {
 load_dll_msvcrt();
-if (!_imp____mb_cur_max) {
 _imp____mb_cur_max = (void *) _elf_GetProcAddress(_dll_msvcrt, "__mb_cur_max");
 }
+void _elfimplib___mb_cur_max() {
 asm("leave\njmp *%0" : : "r"(_imp____mb_cur_max));
 }
 
-void _elf___p___argc() asm("_p___argc");
+void _elfimplib___p___argc() asm("_p___argc");
 void *_imp____p___argc = NULL;
-void _elf___p___argc() {
+__attribute__((constructor)) void _elfimplib_init___p___argc() {
 load_dll_msvcrt();
-if (!_imp____p___argc) {
 _imp____p___argc = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p___argc");
 }
+void _elfimplib___p___argc() {
 asm("leave\njmp *%0" : : "r"(_imp____p___argc));
 }
 
-void _elf___p___argv() asm("_p___argv");
+void _elfimplib___p___argv() asm("_p___argv");
 void *_imp____p___argv = NULL;
-void _elf___p___argv() {
+__attribute__((constructor)) void _elfimplib_init___p___argv() {
 load_dll_msvcrt();
-if (!_imp____p___argv) {
 _imp____p___argv = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p___argv");
 }
+void _elfimplib___p___argv() {
 asm("leave\njmp *%0" : : "r"(_imp____p___argv));
 }
 
-void _elf___p___initenv() asm("_p___initenv");
+void _elfimplib___p___initenv() asm("_p___initenv");
 void *_imp____p___initenv = NULL;
-void _elf___p___initenv() {
+__attribute__((constructor)) void _elfimplib_init___p___initenv() {
 load_dll_msvcrt();
-if (!_imp____p___initenv) {
 _imp____p___initenv = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p___initenv");
 }
+void _elfimplib___p___initenv() {
 asm("leave\njmp *%0" : : "r"(_imp____p___initenv));
 }
 
-void _elf___p___mb_cur_max() asm("_p___mb_cur_max");
+void _elfimplib___p___mb_cur_max() asm("_p___mb_cur_max");
 void *_imp____p___mb_cur_max = NULL;
-void _elf___p___mb_cur_max() {
+__attribute__((constructor)) void _elfimplib_init___p___mb_cur_max() {
 load_dll_msvcrt();
-if (!_imp____p___mb_cur_max) {
 _imp____p___mb_cur_max = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p___mb_cur_max");
 }
+void _elfimplib___p___mb_cur_max() {
 asm("leave\njmp *%0" : : "r"(_imp____p___mb_cur_max));
 }
 
-void _elf___p___wargv() asm("_p___wargv");
+void _elfimplib___p___wargv() asm("_p___wargv");
 void *_imp____p___wargv = NULL;
-void _elf___p___wargv() {
+__attribute__((constructor)) void _elfimplib_init___p___wargv() {
 load_dll_msvcrt();
-if (!_imp____p___wargv) {
 _imp____p___wargv = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p___wargv");
 }
+void _elfimplib___p___wargv() {
 asm("leave\njmp *%0" : : "r"(_imp____p___wargv));
 }
 
-void _elf___p___winitenv() asm("_p___winitenv");
+void _elfimplib___p___winitenv() asm("_p___winitenv");
 void *_imp____p___winitenv = NULL;
-void _elf___p___winitenv() {
+__attribute__((constructor)) void _elfimplib_init___p___winitenv() {
 load_dll_msvcrt();
-if (!_imp____p___winitenv) {
 _imp____p___winitenv = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p___winitenv");
 }
+void _elfimplib___p___winitenv() {
 asm("leave\njmp *%0" : : "r"(_imp____p___winitenv));
 }
 
-void _elf___p__acmdln() asm("_p__acmdln");
+void _elfimplib___p__acmdln() asm("_p__acmdln");
 void *_imp____p__acmdln = NULL;
-void _elf___p__acmdln() {
+__attribute__((constructor)) void _elfimplib_init___p__acmdln() {
 load_dll_msvcrt();
-if (!_imp____p__acmdln) {
 _imp____p__acmdln = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__acmdln");
 }
+void _elfimplib___p__acmdln() {
 asm("leave\njmp *%0" : : "r"(_imp____p__acmdln));
 }
 
-void _elf___p__amblksiz() asm("_p__amblksiz");
+void _elfimplib___p__amblksiz() asm("_p__amblksiz");
 void *_imp____p__amblksiz = NULL;
-void _elf___p__amblksiz() {
+__attribute__((constructor)) void _elfimplib_init___p__amblksiz() {
 load_dll_msvcrt();
-if (!_imp____p__amblksiz) {
 _imp____p__amblksiz = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__amblksiz");
 }
+void _elfimplib___p__amblksiz() {
 asm("leave\njmp *%0" : : "r"(_imp____p__amblksiz));
 }
 
-void _elf___p__commode() asm("_p__commode");
+void _elfimplib___p__commode() asm("_p__commode");
 void *_imp____p__commode = NULL;
-void _elf___p__commode() {
+__attribute__((constructor)) void _elfimplib_init___p__commode() {
 load_dll_msvcrt();
-if (!_imp____p__commode) {
 _imp____p__commode = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__commode");
 }
+void _elfimplib___p__commode() {
 asm("leave\njmp *%0" : : "r"(_imp____p__commode));
 }
 
-void _elf___p__daylight() asm("_p__daylight");
+void _elfimplib___p__daylight() asm("_p__daylight");
 void *_imp____p__daylight = NULL;
-void _elf___p__daylight() {
+__attribute__((constructor)) void _elfimplib_init___p__daylight() {
 load_dll_msvcrt();
-if (!_imp____p__daylight) {
 _imp____p__daylight = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__daylight");
 }
+void _elfimplib___p__daylight() {
 asm("leave\njmp *%0" : : "r"(_imp____p__daylight));
 }
 
-void _elf___p__dstbias() asm("_p__dstbias");
+void _elfimplib___p__dstbias() asm("_p__dstbias");
 void *_imp____p__dstbias = NULL;
-void _elf___p__dstbias() {
+__attribute__((constructor)) void _elfimplib_init___p__dstbias() {
 load_dll_msvcrt();
-if (!_imp____p__dstbias) {
 _imp____p__dstbias = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__dstbias");
 }
+void _elfimplib___p__dstbias() {
 asm("leave\njmp *%0" : : "r"(_imp____p__dstbias));
 }
 
-void _elf___p__environ() asm("_p__environ");
+void _elfimplib___p__environ() asm("_p__environ");
 void *_imp____p__environ = NULL;
-void _elf___p__environ() {
+__attribute__((constructor)) void _elfimplib_init___p__environ() {
 load_dll_msvcrt();
-if (!_imp____p__environ) {
 _imp____p__environ = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__environ");
 }
+void _elfimplib___p__environ() {
 asm("leave\njmp *%0" : : "r"(_imp____p__environ));
 }
 
-void _elf___p__fileinfo() asm("_p__fileinfo");
+void _elfimplib___p__fileinfo() asm("_p__fileinfo");
 void *_imp____p__fileinfo = NULL;
-void _elf___p__fileinfo() {
+__attribute__((constructor)) void _elfimplib_init___p__fileinfo() {
 load_dll_msvcrt();
-if (!_imp____p__fileinfo) {
 _imp____p__fileinfo = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__fileinfo");
 }
+void _elfimplib___p__fileinfo() {
 asm("leave\njmp *%0" : : "r"(_imp____p__fileinfo));
 }
 
-void _elf___p__fmode() asm("_p__fmode");
+void _elfimplib___p__fmode() asm("_p__fmode");
 void *_imp____p__fmode = NULL;
-void _elf___p__fmode() {
+__attribute__((constructor)) void _elfimplib_init___p__fmode() {
 load_dll_msvcrt();
-if (!_imp____p__fmode) {
 _imp____p__fmode = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__fmode");
 }
+void _elfimplib___p__fmode() {
 asm("leave\njmp *%0" : : "r"(_imp____p__fmode));
 }
 
-void _elf___p__iob() asm("_p__iob");
+void _elfimplib___p__iob() asm("_p__iob");
 void *_imp____p__iob = NULL;
-void _elf___p__iob() {
+__attribute__((constructor)) void _elfimplib_init___p__iob() {
 load_dll_msvcrt();
-if (!_imp____p__iob) {
 _imp____p__iob = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__iob");
 }
+void _elfimplib___p__iob() {
 asm("leave\njmp *%0" : : "r"(_imp____p__iob));
 }
 
-void _elf___p__mbcasemap() asm("_p__mbcasemap");
+void _elfimplib___p__mbcasemap() asm("_p__mbcasemap");
 void *_imp____p__mbcasemap = NULL;
-void _elf___p__mbcasemap() {
+__attribute__((constructor)) void _elfimplib_init___p__mbcasemap() {
 load_dll_msvcrt();
-if (!_imp____p__mbcasemap) {
 _imp____p__mbcasemap = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__mbcasemap");
 }
+void _elfimplib___p__mbcasemap() {
 asm("leave\njmp *%0" : : "r"(_imp____p__mbcasemap));
 }
 
-void _elf___p__mbctype() asm("_p__mbctype");
+void _elfimplib___p__mbctype() asm("_p__mbctype");
 void *_imp____p__mbctype = NULL;
-void _elf___p__mbctype() {
+__attribute__((constructor)) void _elfimplib_init___p__mbctype() {
 load_dll_msvcrt();
-if (!_imp____p__mbctype) {
 _imp____p__mbctype = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__mbctype");
 }
+void _elfimplib___p__mbctype() {
 asm("leave\njmp *%0" : : "r"(_imp____p__mbctype));
 }
 
-void _elf___p__osver() asm("_p__osver");
+void _elfimplib___p__osver() asm("_p__osver");
 void *_imp____p__osver = NULL;
-void _elf___p__osver() {
+__attribute__((constructor)) void _elfimplib_init___p__osver() {
 load_dll_msvcrt();
-if (!_imp____p__osver) {
 _imp____p__osver = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__osver");
 }
+void _elfimplib___p__osver() {
 asm("leave\njmp *%0" : : "r"(_imp____p__osver));
 }
 
-void _elf___p__pctype() asm("_p__pctype");
+void _elfimplib___p__pctype() asm("_p__pctype");
 void *_imp____p__pctype = NULL;
-void _elf___p__pctype() {
+__attribute__((constructor)) void _elfimplib_init___p__pctype() {
 load_dll_msvcrt();
-if (!_imp____p__pctype) {
 _imp____p__pctype = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__pctype");
 }
+void _elfimplib___p__pctype() {
 asm("leave\njmp *%0" : : "r"(_imp____p__pctype));
 }
 
-void _elf___p__pgmptr() asm("_p__pgmptr");
+void _elfimplib___p__pgmptr() asm("_p__pgmptr");
 void *_imp____p__pgmptr = NULL;
-void _elf___p__pgmptr() {
+__attribute__((constructor)) void _elfimplib_init___p__pgmptr() {
 load_dll_msvcrt();
-if (!_imp____p__pgmptr) {
 _imp____p__pgmptr = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__pgmptr");
 }
+void _elfimplib___p__pgmptr() {
 asm("leave\njmp *%0" : : "r"(_imp____p__pgmptr));
 }
 
-void _elf___p__pwctype() asm("_p__pwctype");
+void _elfimplib___p__pwctype() asm("_p__pwctype");
 void *_imp____p__pwctype = NULL;
-void _elf___p__pwctype() {
+__attribute__((constructor)) void _elfimplib_init___p__pwctype() {
 load_dll_msvcrt();
-if (!_imp____p__pwctype) {
 _imp____p__pwctype = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__pwctype");
 }
+void _elfimplib___p__pwctype() {
 asm("leave\njmp *%0" : : "r"(_imp____p__pwctype));
 }
 
-void _elf___p__timezone() asm("_p__timezone");
+void _elfimplib___p__timezone() asm("_p__timezone");
 void *_imp____p__timezone = NULL;
-void _elf___p__timezone() {
+__attribute__((constructor)) void _elfimplib_init___p__timezone() {
 load_dll_msvcrt();
-if (!_imp____p__timezone) {
 _imp____p__timezone = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__timezone");
 }
+void _elfimplib___p__timezone() {
 asm("leave\njmp *%0" : : "r"(_imp____p__timezone));
 }
 
-void _elf___p__tzname() asm("_p__tzname");
+void _elfimplib___p__tzname() asm("_p__tzname");
 void *_imp____p__tzname = NULL;
-void _elf___p__tzname() {
+__attribute__((constructor)) void _elfimplib_init___p__tzname() {
 load_dll_msvcrt();
-if (!_imp____p__tzname) {
 _imp____p__tzname = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__tzname");
 }
+void _elfimplib___p__tzname() {
 asm("leave\njmp *%0" : : "r"(_imp____p__tzname));
 }
 
-void _elf___p__wcmdln() asm("_p__wcmdln");
+void _elfimplib___p__wcmdln() asm("_p__wcmdln");
 void *_imp____p__wcmdln = NULL;
-void _elf___p__wcmdln() {
+__attribute__((constructor)) void _elfimplib_init___p__wcmdln() {
 load_dll_msvcrt();
-if (!_imp____p__wcmdln) {
 _imp____p__wcmdln = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__wcmdln");
 }
+void _elfimplib___p__wcmdln() {
 asm("leave\njmp *%0" : : "r"(_imp____p__wcmdln));
 }
 
-void _elf___p__wenviron() asm("_p__wenviron");
+void _elfimplib___p__wenviron() asm("_p__wenviron");
 void *_imp____p__wenviron = NULL;
-void _elf___p__wenviron() {
+__attribute__((constructor)) void _elfimplib_init___p__wenviron() {
 load_dll_msvcrt();
-if (!_imp____p__wenviron) {
 _imp____p__wenviron = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__wenviron");
 }
+void _elfimplib___p__wenviron() {
 asm("leave\njmp *%0" : : "r"(_imp____p__wenviron));
 }
 
-void _elf___p__winmajor() asm("_p__winmajor");
+void _elfimplib___p__winmajor() asm("_p__winmajor");
 void *_imp____p__winmajor = NULL;
-void _elf___p__winmajor() {
+__attribute__((constructor)) void _elfimplib_init___p__winmajor() {
 load_dll_msvcrt();
-if (!_imp____p__winmajor) {
 _imp____p__winmajor = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__winmajor");
 }
+void _elfimplib___p__winmajor() {
 asm("leave\njmp *%0" : : "r"(_imp____p__winmajor));
 }
 
-void _elf___p__winminor() asm("_p__winminor");
+void _elfimplib___p__winminor() asm("_p__winminor");
 void *_imp____p__winminor = NULL;
-void _elf___p__winminor() {
+__attribute__((constructor)) void _elfimplib_init___p__winminor() {
 load_dll_msvcrt();
-if (!_imp____p__winminor) {
 _imp____p__winminor = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__winminor");
 }
+void _elfimplib___p__winminor() {
 asm("leave\njmp *%0" : : "r"(_imp____p__winminor));
 }
 
-void _elf___p__winver() asm("_p__winver");
+void _elfimplib___p__winver() asm("_p__winver");
 void *_imp____p__winver = NULL;
-void _elf___p__winver() {
+__attribute__((constructor)) void _elfimplib_init___p__winver() {
 load_dll_msvcrt();
-if (!_imp____p__winver) {
 _imp____p__winver = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__winver");
 }
+void _elfimplib___p__winver() {
 asm("leave\njmp *%0" : : "r"(_imp____p__winver));
 }
 
-void _elf___p__wpgmptr() asm("_p__wpgmptr");
+void _elfimplib___p__wpgmptr() asm("_p__wpgmptr");
 void *_imp____p__wpgmptr = NULL;
-void _elf___p__wpgmptr() {
+__attribute__((constructor)) void _elfimplib_init___p__wpgmptr() {
 load_dll_msvcrt();
-if (!_imp____p__wpgmptr) {
 _imp____p__wpgmptr = (void *) _elf_GetProcAddress(_dll_msvcrt, "__p__wpgmptr");
 }
+void _elfimplib___p__wpgmptr() {
 asm("leave\njmp *%0" : : "r"(_imp____p__wpgmptr));
 }
 
-void _elf___pctype_func() asm("_pctype_func");
+void _elfimplib___pctype_func() asm("_pctype_func");
 void *_imp____pctype_func = NULL;
-void _elf___pctype_func() {
+__attribute__((constructor)) void _elfimplib_init___pctype_func() {
 load_dll_msvcrt();
-if (!_imp____pctype_func) {
 _imp____pctype_func = (void *) _elf_GetProcAddress(_dll_msvcrt, "__pctype_func");
 }
+void _elfimplib___pctype_func() {
 asm("leave\njmp *%0" : : "r"(_imp____pctype_func));
 }
 
-void _elf___pioinfo() asm("_pioinfo");
+void _elfimplib___pioinfo() asm("_pioinfo");
 void *_imp____pioinfo = NULL;
-void _elf___pioinfo() {
+__attribute__((constructor)) void _elfimplib_init___pioinfo() {
 load_dll_msvcrt();
-if (!_imp____pioinfo) {
 _imp____pioinfo = (void *) _elf_GetProcAddress(_dll_msvcrt, "__pioinfo");
 }
+void _elfimplib___pioinfo() {
 asm("leave\njmp *%0" : : "r"(_imp____pioinfo));
 }
 
-void _elf___pxcptinfoptrs() asm("_pxcptinfoptrs");
+void _elfimplib___pxcptinfoptrs() asm("_pxcptinfoptrs");
 void *_imp____pxcptinfoptrs = NULL;
-void _elf___pxcptinfoptrs() {
+__attribute__((constructor)) void _elfimplib_init___pxcptinfoptrs() {
 load_dll_msvcrt();
-if (!_imp____pxcptinfoptrs) {
 _imp____pxcptinfoptrs = (void *) _elf_GetProcAddress(_dll_msvcrt, "__pxcptinfoptrs");
 }
+void _elfimplib___pxcptinfoptrs() {
 asm("leave\njmp *%0" : : "r"(_imp____pxcptinfoptrs));
 }
 
-void _elf___set_app_type() asm("_set_app_type");
+void _elfimplib___set_app_type() asm("_set_app_type");
 void *_imp____set_app_type = NULL;
-void _elf___set_app_type() {
+__attribute__((constructor)) void _elfimplib_init___set_app_type() {
 load_dll_msvcrt();
-if (!_imp____set_app_type) {
 _imp____set_app_type = (void *) _elf_GetProcAddress(_dll_msvcrt, "__set_app_type");
 }
+void _elfimplib___set_app_type() {
 asm("leave\njmp *%0" : : "r"(_imp____set_app_type));
 }
 
-void _elf___setlc_active() asm("_setlc_active");
+void _elfimplib___setlc_active() asm("_setlc_active");
 void *_imp____setlc_active = NULL;
-void _elf___setlc_active() {
+__attribute__((constructor)) void _elfimplib_init___setlc_active() {
 load_dll_msvcrt();
-if (!_imp____setlc_active) {
 _imp____setlc_active = (void *) _elf_GetProcAddress(_dll_msvcrt, "__setlc_active");
 }
+void _elfimplib___setlc_active() {
 asm("leave\njmp *%0" : : "r"(_imp____setlc_active));
 }
 
-void _elf___setusermatherr() asm("_setusermatherr");
+void _elfimplib___setusermatherr() asm("_setusermatherr");
 void *_imp____setusermatherr = NULL;
-void _elf___setusermatherr() {
+__attribute__((constructor)) void _elfimplib_init___setusermatherr() {
 load_dll_msvcrt();
-if (!_imp____setusermatherr) {
 _imp____setusermatherr = (void *) _elf_GetProcAddress(_dll_msvcrt, "__setusermatherr");
 }
+void _elfimplib___setusermatherr() {
 asm("leave\njmp *%0" : : "r"(_imp____setusermatherr));
 }
 
-void _elf___threadhandle() asm("_threadhandle");
+void _elfimplib___threadhandle() asm("_threadhandle");
 void *_imp____threadhandle = NULL;
-void _elf___threadhandle() {
+__attribute__((constructor)) void _elfimplib_init___threadhandle() {
 load_dll_msvcrt();
-if (!_imp____threadhandle) {
 _imp____threadhandle = (void *) _elf_GetProcAddress(_dll_msvcrt, "__threadhandle");
 }
+void _elfimplib___threadhandle() {
 asm("leave\njmp *%0" : : "r"(_imp____threadhandle));
 }
 
-void _elf___threadid() asm("_threadid");
+void _elfimplib___threadid() asm("_threadid");
 void *_imp____threadid = NULL;
-void _elf___threadid() {
+__attribute__((constructor)) void _elfimplib_init___threadid() {
 load_dll_msvcrt();
-if (!_imp____threadid) {
 _imp____threadid = (void *) _elf_GetProcAddress(_dll_msvcrt, "__threadid");
 }
+void _elfimplib___threadid() {
 asm("leave\njmp *%0" : : "r"(_imp____threadid));
 }
 
-void _elf___toascii() asm("_toascii");
+void _elfimplib___toascii() asm("_toascii");
 void *_imp____toascii = NULL;
-void _elf___toascii() {
+__attribute__((constructor)) void _elfimplib_init___toascii() {
 load_dll_msvcrt();
-if (!_imp____toascii) {
 _imp____toascii = (void *) _elf_GetProcAddress(_dll_msvcrt, "__toascii");
 }
+void _elfimplib___toascii() {
 asm("leave\njmp *%0" : : "r"(_imp____toascii));
 }
 
-void _elf___unDName() asm("_unDName");
+void _elfimplib___unDName() asm("_unDName");
 void *_imp____unDName = NULL;
-void _elf___unDName() {
+__attribute__((constructor)) void _elfimplib_init___unDName() {
 load_dll_msvcrt();
-if (!_imp____unDName) {
 _imp____unDName = (void *) _elf_GetProcAddress(_dll_msvcrt, "__unDName");
 }
+void _elfimplib___unDName() {
 asm("leave\njmp *%0" : : "r"(_imp____unDName));
 }
 
-void _elf___unDNameEx() asm("_unDNameEx");
+void _elfimplib___unDNameEx() asm("_unDNameEx");
 void *_imp____unDNameEx = NULL;
-void _elf___unDNameEx() {
+__attribute__((constructor)) void _elfimplib_init___unDNameEx() {
 load_dll_msvcrt();
-if (!_imp____unDNameEx) {
 _imp____unDNameEx = (void *) _elf_GetProcAddress(_dll_msvcrt, "__unDNameEx");
 }
+void _elfimplib___unDNameEx() {
 asm("leave\njmp *%0" : : "r"(_imp____unDNameEx));
 }
 
-void _elf___uncaught_exception() asm("_uncaught_exception");
+void _elfimplib___uncaught_exception() asm("_uncaught_exception");
 void *_imp____uncaught_exception = NULL;
-void _elf___uncaught_exception() {
+__attribute__((constructor)) void _elfimplib_init___uncaught_exception() {
 load_dll_msvcrt();
-if (!_imp____uncaught_exception) {
 _imp____uncaught_exception = (void *) _elf_GetProcAddress(_dll_msvcrt, "__uncaught_exception");
 }
+void _elfimplib___uncaught_exception() {
 asm("leave\njmp *%0" : : "r"(_imp____uncaught_exception));
 }
 
-void _elf___unguarded_readlc_active() asm("_unguarded_readlc_active");
+void _elfimplib___unguarded_readlc_active() asm("_unguarded_readlc_active");
 void *_imp____unguarded_readlc_active = NULL;
-void _elf___unguarded_readlc_active() {
+__attribute__((constructor)) void _elfimplib_init___unguarded_readlc_active() {
 load_dll_msvcrt();
-if (!_imp____unguarded_readlc_active) {
 _imp____unguarded_readlc_active = (void *) _elf_GetProcAddress(_dll_msvcrt, "__unguarded_readlc_active");
 }
+void _elfimplib___unguarded_readlc_active() {
 asm("leave\njmp *%0" : : "r"(_imp____unguarded_readlc_active));
 }
 
-void _elf___wargv() asm("_wargv");
+void _elfimplib___wargv() asm("_wargv");
 void *_imp____wargv = NULL;
-void _elf___wargv() {
+__attribute__((constructor)) void _elfimplib_init___wargv() {
 load_dll_msvcrt();
-if (!_imp____wargv) {
 _imp____wargv = (void *) _elf_GetProcAddress(_dll_msvcrt, "__wargv");
 }
+void _elfimplib___wargv() {
 asm("leave\njmp *%0" : : "r"(_imp____wargv));
 }
 
-void _elf___wcserror() asm("_wcserror");
+void _elfimplib___wcserror() asm("_wcserror");
 void *_imp____wcserror = NULL;
-void _elf___wcserror() {
+__attribute__((constructor)) void _elfimplib_init___wcserror() {
 load_dll_msvcrt();
-if (!_imp____wcserror) {
 _imp____wcserror = (void *) _elf_GetProcAddress(_dll_msvcrt, "__wcserror");
 }
+void _elfimplib___wcserror() {
 asm("leave\njmp *%0" : : "r"(_imp____wcserror));
 }
 
-void _elf___wgetmainargs() asm("_wgetmainargs");
+void _elfimplib___wgetmainargs() asm("_wgetmainargs");
 void *_imp____wgetmainargs = NULL;
-void _elf___wgetmainargs() {
+__attribute__((constructor)) void _elfimplib_init___wgetmainargs() {
 load_dll_msvcrt();
-if (!_imp____wgetmainargs) {
 _imp____wgetmainargs = (void *) _elf_GetProcAddress(_dll_msvcrt, "__wgetmainargs");
 }
+void _elfimplib___wgetmainargs() {
 asm("leave\njmp *%0" : : "r"(_imp____wgetmainargs));
 }
 
-void _elf___winitenv() asm("_winitenv");
+void _elfimplib___winitenv() asm("_winitenv");
 void *_imp____winitenv = NULL;
-void _elf___winitenv() {
+__attribute__((constructor)) void _elfimplib_init___winitenv() {
 load_dll_msvcrt();
-if (!_imp____winitenv) {
 _imp____winitenv = (void *) _elf_GetProcAddress(_dll_msvcrt, "__winitenv");
 }
+void _elfimplib___winitenv() {
 asm("leave\njmp *%0" : : "r"(_imp____winitenv));
 }
 
-void _elf__abnormal_termination() asm("abnormal_termination");
+void _elfimplib__abnormal_termination() asm("abnormal_termination");
 void *_imp___abnormal_termination = NULL;
-void _elf__abnormal_termination() {
+__attribute__((constructor)) void _elfimplib_init__abnormal_termination() {
 load_dll_msvcrt();
-if (!_imp___abnormal_termination) {
 _imp___abnormal_termination = (void *) _elf_GetProcAddress(_dll_msvcrt, "_abnormal_termination");
 }
+void _elfimplib__abnormal_termination() {
 asm("leave\njmp *%0" : : "r"(_imp___abnormal_termination));
 }
 
-void _elf__access() asm("access");
+void _elfimplib__access() asm("access");
 void *_imp___access = NULL;
-void _elf__access() {
+__attribute__((constructor)) void _elfimplib_init__access() {
 load_dll_msvcrt();
-if (!_imp___access) {
 _imp___access = (void *) _elf_GetProcAddress(_dll_msvcrt, "_access");
 }
+void _elfimplib__access() {
 asm("leave\njmp *%0" : : "r"(_imp___access));
 }
 
-void _elf__acmdln() asm("acmdln");
+void _elfimplib__acmdln() asm("acmdln");
 void *_imp___acmdln = NULL;
-void _elf__acmdln() {
+__attribute__((constructor)) void _elfimplib_init__acmdln() {
 load_dll_msvcrt();
-if (!_imp___acmdln) {
 _imp___acmdln = (void *) _elf_GetProcAddress(_dll_msvcrt, "_acmdln");
 }
+void _elfimplib__acmdln() {
 asm("leave\njmp *%0" : : "r"(_imp___acmdln));
 }
 
-void _elf__adj_fdiv_m16i() asm("adj_fdiv_m16i");
+void _elfimplib__adj_fdiv_m16i() asm("adj_fdiv_m16i");
 void *_imp___adj_fdiv_m16i = NULL;
-void _elf__adj_fdiv_m16i() {
+__attribute__((constructor)) void _elfimplib_init__adj_fdiv_m16i() {
 load_dll_msvcrt();
-if (!_imp___adj_fdiv_m16i) {
 _imp___adj_fdiv_m16i = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adj_fdiv_m16i");
 }
+void _elfimplib__adj_fdiv_m16i() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fdiv_m16i));
 }
 
-void _elf__adj_fdiv_m32() asm("adj_fdiv_m32");
+void _elfimplib__adj_fdiv_m32() asm("adj_fdiv_m32");
 void *_imp___adj_fdiv_m32 = NULL;
-void _elf__adj_fdiv_m32() {
+__attribute__((constructor)) void _elfimplib_init__adj_fdiv_m32() {
 load_dll_msvcrt();
-if (!_imp___adj_fdiv_m32) {
 _imp___adj_fdiv_m32 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adj_fdiv_m32");
 }
+void _elfimplib__adj_fdiv_m32() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fdiv_m32));
 }
 
-void _elf__adj_fdiv_m32i() asm("adj_fdiv_m32i");
+void _elfimplib__adj_fdiv_m32i() asm("adj_fdiv_m32i");
 void *_imp___adj_fdiv_m32i = NULL;
-void _elf__adj_fdiv_m32i() {
+__attribute__((constructor)) void _elfimplib_init__adj_fdiv_m32i() {
 load_dll_msvcrt();
-if (!_imp___adj_fdiv_m32i) {
 _imp___adj_fdiv_m32i = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adj_fdiv_m32i");
 }
+void _elfimplib__adj_fdiv_m32i() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fdiv_m32i));
 }
 
-void _elf__adj_fdiv_m64() asm("adj_fdiv_m64");
+void _elfimplib__adj_fdiv_m64() asm("adj_fdiv_m64");
 void *_imp___adj_fdiv_m64 = NULL;
-void _elf__adj_fdiv_m64() {
+__attribute__((constructor)) void _elfimplib_init__adj_fdiv_m64() {
 load_dll_msvcrt();
-if (!_imp___adj_fdiv_m64) {
 _imp___adj_fdiv_m64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adj_fdiv_m64");
 }
+void _elfimplib__adj_fdiv_m64() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fdiv_m64));
 }
 
-void _elf__adj_fdiv_r() asm("adj_fdiv_r");
+void _elfimplib__adj_fdiv_r() asm("adj_fdiv_r");
 void *_imp___adj_fdiv_r = NULL;
-void _elf__adj_fdiv_r() {
+__attribute__((constructor)) void _elfimplib_init__adj_fdiv_r() {
 load_dll_msvcrt();
-if (!_imp___adj_fdiv_r) {
 _imp___adj_fdiv_r = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adj_fdiv_r");
 }
+void _elfimplib__adj_fdiv_r() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fdiv_r));
 }
 
-void _elf__adj_fdivr_m16i() asm("adj_fdivr_m16i");
+void _elfimplib__adj_fdivr_m16i() asm("adj_fdivr_m16i");
 void *_imp___adj_fdivr_m16i = NULL;
-void _elf__adj_fdivr_m16i() {
+__attribute__((constructor)) void _elfimplib_init__adj_fdivr_m16i() {
 load_dll_msvcrt();
-if (!_imp___adj_fdivr_m16i) {
 _imp___adj_fdivr_m16i = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adj_fdivr_m16i");
 }
+void _elfimplib__adj_fdivr_m16i() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fdivr_m16i));
 }
 
-void _elf__adj_fdivr_m32() asm("adj_fdivr_m32");
+void _elfimplib__adj_fdivr_m32() asm("adj_fdivr_m32");
 void *_imp___adj_fdivr_m32 = NULL;
-void _elf__adj_fdivr_m32() {
+__attribute__((constructor)) void _elfimplib_init__adj_fdivr_m32() {
 load_dll_msvcrt();
-if (!_imp___adj_fdivr_m32) {
 _imp___adj_fdivr_m32 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adj_fdivr_m32");
 }
+void _elfimplib__adj_fdivr_m32() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fdivr_m32));
 }
 
-void _elf__adj_fdivr_m32i() asm("adj_fdivr_m32i");
+void _elfimplib__adj_fdivr_m32i() asm("adj_fdivr_m32i");
 void *_imp___adj_fdivr_m32i = NULL;
-void _elf__adj_fdivr_m32i() {
+__attribute__((constructor)) void _elfimplib_init__adj_fdivr_m32i() {
 load_dll_msvcrt();
-if (!_imp___adj_fdivr_m32i) {
 _imp___adj_fdivr_m32i = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adj_fdivr_m32i");
 }
+void _elfimplib__adj_fdivr_m32i() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fdivr_m32i));
 }
 
-void _elf__adj_fdivr_m64() asm("adj_fdivr_m64");
+void _elfimplib__adj_fdivr_m64() asm("adj_fdivr_m64");
 void *_imp___adj_fdivr_m64 = NULL;
-void _elf__adj_fdivr_m64() {
+__attribute__((constructor)) void _elfimplib_init__adj_fdivr_m64() {
 load_dll_msvcrt();
-if (!_imp___adj_fdivr_m64) {
 _imp___adj_fdivr_m64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adj_fdivr_m64");
 }
+void _elfimplib__adj_fdivr_m64() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fdivr_m64));
 }
 
-void _elf__adj_fpatan() asm("adj_fpatan");
+void _elfimplib__adj_fpatan() asm("adj_fpatan");
 void *_imp___adj_fpatan = NULL;
-void _elf__adj_fpatan() {
+__attribute__((constructor)) void _elfimplib_init__adj_fpatan() {
 load_dll_msvcrt();
-if (!_imp___adj_fpatan) {
 _imp___adj_fpatan = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adj_fpatan");
 }
+void _elfimplib__adj_fpatan() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fpatan));
 }
 
-void _elf__adj_fprem() asm("adj_fprem");
+void _elfimplib__adj_fprem() asm("adj_fprem");
 void *_imp___adj_fprem = NULL;
-void _elf__adj_fprem() {
+__attribute__((constructor)) void _elfimplib_init__adj_fprem() {
 load_dll_msvcrt();
-if (!_imp___adj_fprem) {
 _imp___adj_fprem = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adj_fprem");
 }
+void _elfimplib__adj_fprem() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fprem));
 }
 
-void _elf__adj_fprem1() asm("adj_fprem1");
+void _elfimplib__adj_fprem1() asm("adj_fprem1");
 void *_imp___adj_fprem1 = NULL;
-void _elf__adj_fprem1() {
+__attribute__((constructor)) void _elfimplib_init__adj_fprem1() {
 load_dll_msvcrt();
-if (!_imp___adj_fprem1) {
 _imp___adj_fprem1 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adj_fprem1");
 }
+void _elfimplib__adj_fprem1() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fprem1));
 }
 
-void _elf__adj_fptan() asm("adj_fptan");
+void _elfimplib__adj_fptan() asm("adj_fptan");
 void *_imp___adj_fptan = NULL;
-void _elf__adj_fptan() {
+__attribute__((constructor)) void _elfimplib_init__adj_fptan() {
 load_dll_msvcrt();
-if (!_imp___adj_fptan) {
 _imp___adj_fptan = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adj_fptan");
 }
+void _elfimplib__adj_fptan() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fptan));
 }
 
-void _elf__adjust_fdiv() asm("adjust_fdiv");
+void _elfimplib__adjust_fdiv() asm("adjust_fdiv");
 void *_imp___adjust_fdiv = NULL;
-void _elf__adjust_fdiv() {
+__attribute__((constructor)) void _elfimplib_init__adjust_fdiv() {
 load_dll_msvcrt();
-if (!_imp___adjust_fdiv) {
 _imp___adjust_fdiv = (void *) _elf_GetProcAddress(_dll_msvcrt, "_adjust_fdiv");
 }
+void _elfimplib__adjust_fdiv() {
 asm("leave\njmp *%0" : : "r"(_imp___adjust_fdiv));
 }
 
-void _elf__aexit_rtn() asm("aexit_rtn");
+void _elfimplib__aexit_rtn() asm("aexit_rtn");
 void *_imp___aexit_rtn = NULL;
-void _elf__aexit_rtn() {
+__attribute__((constructor)) void _elfimplib_init__aexit_rtn() {
 load_dll_msvcrt();
-if (!_imp___aexit_rtn) {
 _imp___aexit_rtn = (void *) _elf_GetProcAddress(_dll_msvcrt, "_aexit_rtn");
 }
+void _elfimplib__aexit_rtn() {
 asm("leave\njmp *%0" : : "r"(_imp___aexit_rtn));
 }
 
-void _elf__aligned_free() asm("aligned_free");
+void _elfimplib__aligned_free() asm("aligned_free");
 void *_imp___aligned_free = NULL;
-void _elf__aligned_free() {
+__attribute__((constructor)) void _elfimplib_init__aligned_free() {
 load_dll_msvcrt();
-if (!_imp___aligned_free) {
 _imp___aligned_free = (void *) _elf_GetProcAddress(_dll_msvcrt, "_aligned_free");
 }
+void _elfimplib__aligned_free() {
 asm("leave\njmp *%0" : : "r"(_imp___aligned_free));
 }
 
-void _elf__aligned_malloc() asm("aligned_malloc");
+void _elfimplib__aligned_malloc() asm("aligned_malloc");
 void *_imp___aligned_malloc = NULL;
-void _elf__aligned_malloc() {
+__attribute__((constructor)) void _elfimplib_init__aligned_malloc() {
 load_dll_msvcrt();
-if (!_imp___aligned_malloc) {
 _imp___aligned_malloc = (void *) _elf_GetProcAddress(_dll_msvcrt, "_aligned_malloc");
 }
+void _elfimplib__aligned_malloc() {
 asm("leave\njmp *%0" : : "r"(_imp___aligned_malloc));
 }
 
-void _elf__aligned_offset_malloc() asm("aligned_offset_malloc");
+void _elfimplib__aligned_offset_malloc() asm("aligned_offset_malloc");
 void *_imp___aligned_offset_malloc = NULL;
-void _elf__aligned_offset_malloc() {
+__attribute__((constructor)) void _elfimplib_init__aligned_offset_malloc() {
 load_dll_msvcrt();
-if (!_imp___aligned_offset_malloc) {
 _imp___aligned_offset_malloc = (void *) _elf_GetProcAddress(_dll_msvcrt, "_aligned_offset_malloc");
 }
+void _elfimplib__aligned_offset_malloc() {
 asm("leave\njmp *%0" : : "r"(_imp___aligned_offset_malloc));
 }
 
-void _elf__aligned_offset_realloc() asm("aligned_offset_realloc");
+void _elfimplib__aligned_offset_realloc() asm("aligned_offset_realloc");
 void *_imp___aligned_offset_realloc = NULL;
-void _elf__aligned_offset_realloc() {
+__attribute__((constructor)) void _elfimplib_init__aligned_offset_realloc() {
 load_dll_msvcrt();
-if (!_imp___aligned_offset_realloc) {
 _imp___aligned_offset_realloc = (void *) _elf_GetProcAddress(_dll_msvcrt, "_aligned_offset_realloc");
 }
+void _elfimplib__aligned_offset_realloc() {
 asm("leave\njmp *%0" : : "r"(_imp___aligned_offset_realloc));
 }
 
-void _elf__aligned_realloc() asm("aligned_realloc");
+void _elfimplib__aligned_realloc() asm("aligned_realloc");
 void *_imp___aligned_realloc = NULL;
-void _elf__aligned_realloc() {
+__attribute__((constructor)) void _elfimplib_init__aligned_realloc() {
 load_dll_msvcrt();
-if (!_imp___aligned_realloc) {
 _imp___aligned_realloc = (void *) _elf_GetProcAddress(_dll_msvcrt, "_aligned_realloc");
 }
+void _elfimplib__aligned_realloc() {
 asm("leave\njmp *%0" : : "r"(_imp___aligned_realloc));
 }
 
-void _elf__amsg_exit() asm("amsg_exit");
+void _elfimplib__amsg_exit() asm("amsg_exit");
 void *_imp___amsg_exit = NULL;
-void _elf__amsg_exit() {
+__attribute__((constructor)) void _elfimplib_init__amsg_exit() {
 load_dll_msvcrt();
-if (!_imp___amsg_exit) {
 _imp___amsg_exit = (void *) _elf_GetProcAddress(_dll_msvcrt, "_amsg_exit");
 }
+void _elfimplib__amsg_exit() {
 asm("leave\njmp *%0" : : "r"(_imp___amsg_exit));
 }
 
-void _elf__assert() asm("assert");
+void _elfimplib__assert() asm("assert");
 void *_imp___assert = NULL;
-void _elf__assert() {
+__attribute__((constructor)) void _elfimplib_init__assert() {
 load_dll_msvcrt();
-if (!_imp___assert) {
 _imp___assert = (void *) _elf_GetProcAddress(_dll_msvcrt, "_assert");
 }
+void _elfimplib__assert() {
 asm("leave\njmp *%0" : : "r"(_imp___assert));
 }
 
-void _elf__atodbl() asm("atodbl");
+void _elfimplib__atodbl() asm("atodbl");
 void *_imp___atodbl = NULL;
-void _elf__atodbl() {
+__attribute__((constructor)) void _elfimplib_init__atodbl() {
 load_dll_msvcrt();
-if (!_imp___atodbl) {
 _imp___atodbl = (void *) _elf_GetProcAddress(_dll_msvcrt, "_atodbl");
 }
+void _elfimplib__atodbl() {
 asm("leave\njmp *%0" : : "r"(_imp___atodbl));
 }
 
-void _elf__atoi64() asm("atoi64");
+void _elfimplib__atoi64() asm("atoi64");
 void *_imp___atoi64 = NULL;
-void _elf__atoi64() {
+__attribute__((constructor)) void _elfimplib_init__atoi64() {
 load_dll_msvcrt();
-if (!_imp___atoi64) {
 _imp___atoi64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_atoi64");
 }
+void _elfimplib__atoi64() {
 asm("leave\njmp *%0" : : "r"(_imp___atoi64));
 }
 
-void _elf__atoldbl() asm("atoldbl");
+void _elfimplib__atoldbl() asm("atoldbl");
 void *_imp___atoldbl = NULL;
-void _elf__atoldbl() {
+__attribute__((constructor)) void _elfimplib_init__atoldbl() {
 load_dll_msvcrt();
-if (!_imp___atoldbl) {
 _imp___atoldbl = (void *) _elf_GetProcAddress(_dll_msvcrt, "_atoldbl");
 }
+void _elfimplib__atoldbl() {
 asm("leave\njmp *%0" : : "r"(_imp___atoldbl));
 }
 
-void _elf__beep() asm("beep");
+void _elfimplib__beep() asm("beep");
 void *_imp___beep = NULL;
-void _elf__beep() {
+__attribute__((constructor)) void _elfimplib_init__beep() {
 load_dll_msvcrt();
-if (!_imp___beep) {
 _imp___beep = (void *) _elf_GetProcAddress(_dll_msvcrt, "_beep");
 }
+void _elfimplib__beep() {
 asm("leave\njmp *%0" : : "r"(_imp___beep));
 }
 
-void _elf__beginthread() asm("beginthread");
+void _elfimplib__beginthread() asm("beginthread");
 void *_imp___beginthread = NULL;
-void _elf__beginthread() {
+__attribute__((constructor)) void _elfimplib_init__beginthread() {
 load_dll_msvcrt();
-if (!_imp___beginthread) {
 _imp___beginthread = (void *) _elf_GetProcAddress(_dll_msvcrt, "_beginthread");
 }
+void _elfimplib__beginthread() {
 asm("leave\njmp *%0" : : "r"(_imp___beginthread));
 }
 
-void _elf__beginthreadex() asm("beginthreadex");
+void _elfimplib__beginthreadex() asm("beginthreadex");
 void *_imp___beginthreadex = NULL;
-void _elf__beginthreadex() {
+__attribute__((constructor)) void _elfimplib_init__beginthreadex() {
 load_dll_msvcrt();
-if (!_imp___beginthreadex) {
 _imp___beginthreadex = (void *) _elf_GetProcAddress(_dll_msvcrt, "_beginthreadex");
 }
+void _elfimplib__beginthreadex() {
 asm("leave\njmp *%0" : : "r"(_imp___beginthreadex));
 }
 
-void _elf__c_exit() asm("c_exit");
+void _elfimplib__c_exit() asm("c_exit");
 void *_imp___c_exit = NULL;
-void _elf__c_exit() {
+__attribute__((constructor)) void _elfimplib_init__c_exit() {
 load_dll_msvcrt();
-if (!_imp___c_exit) {
 _imp___c_exit = (void *) _elf_GetProcAddress(_dll_msvcrt, "_c_exit");
 }
+void _elfimplib__c_exit() {
 asm("leave\njmp *%0" : : "r"(_imp___c_exit));
 }
 
-void _elf__cabs() asm("cabs");
+void _elfimplib__cabs() asm("cabs");
 void *_imp___cabs = NULL;
-void _elf__cabs() {
+__attribute__((constructor)) void _elfimplib_init__cabs() {
 load_dll_msvcrt();
-if (!_imp___cabs) {
 _imp___cabs = (void *) _elf_GetProcAddress(_dll_msvcrt, "_cabs");
 }
+void _elfimplib__cabs() {
 asm("leave\njmp *%0" : : "r"(_imp___cabs));
 }
 
-void _elf__callnewh() asm("callnewh");
+void _elfimplib__callnewh() asm("callnewh");
 void *_imp___callnewh = NULL;
-void _elf__callnewh() {
+__attribute__((constructor)) void _elfimplib_init__callnewh() {
 load_dll_msvcrt();
-if (!_imp___callnewh) {
 _imp___callnewh = (void *) _elf_GetProcAddress(_dll_msvcrt, "_callnewh");
 }
+void _elfimplib__callnewh() {
 asm("leave\njmp *%0" : : "r"(_imp___callnewh));
 }
 
-void _elf__cexit() asm("cexit");
+void _elfimplib__cexit() asm("cexit");
 void *_imp___cexit = NULL;
-void _elf__cexit() {
+__attribute__((constructor)) void _elfimplib_init__cexit() {
 load_dll_msvcrt();
-if (!_imp___cexit) {
 _imp___cexit = (void *) _elf_GetProcAddress(_dll_msvcrt, "_cexit");
 }
+void _elfimplib__cexit() {
 asm("leave\njmp *%0" : : "r"(_imp___cexit));
 }
 
-void _elf__cgets() asm("cgets");
+void _elfimplib__cgets() asm("cgets");
 void *_imp___cgets = NULL;
-void _elf__cgets() {
+__attribute__((constructor)) void _elfimplib_init__cgets() {
 load_dll_msvcrt();
-if (!_imp___cgets) {
 _imp___cgets = (void *) _elf_GetProcAddress(_dll_msvcrt, "_cgets");
 }
+void _elfimplib__cgets() {
 asm("leave\njmp *%0" : : "r"(_imp___cgets));
 }
 
-void _elf__cgetws() asm("cgetws");
+void _elfimplib__cgetws() asm("cgetws");
 void *_imp___cgetws = NULL;
-void _elf__cgetws() {
+__attribute__((constructor)) void _elfimplib_init__cgetws() {
 load_dll_msvcrt();
-if (!_imp___cgetws) {
 _imp___cgetws = (void *) _elf_GetProcAddress(_dll_msvcrt, "_cgetws");
 }
+void _elfimplib__cgetws() {
 asm("leave\njmp *%0" : : "r"(_imp___cgetws));
 }
 
-void _elf__chdir() asm("chdir");
+void _elfimplib__chdir() asm("chdir");
 void *_imp___chdir = NULL;
-void _elf__chdir() {
+__attribute__((constructor)) void _elfimplib_init__chdir() {
 load_dll_msvcrt();
-if (!_imp___chdir) {
 _imp___chdir = (void *) _elf_GetProcAddress(_dll_msvcrt, "_chdir");
 }
+void _elfimplib__chdir() {
 asm("leave\njmp *%0" : : "r"(_imp___chdir));
 }
 
-void _elf__chdrive() asm("chdrive");
+void _elfimplib__chdrive() asm("chdrive");
 void *_imp___chdrive = NULL;
-void _elf__chdrive() {
+__attribute__((constructor)) void _elfimplib_init__chdrive() {
 load_dll_msvcrt();
-if (!_imp___chdrive) {
 _imp___chdrive = (void *) _elf_GetProcAddress(_dll_msvcrt, "_chdrive");
 }
+void _elfimplib__chdrive() {
 asm("leave\njmp *%0" : : "r"(_imp___chdrive));
 }
 
-void _elf__chgsign() asm("chgsign");
+void _elfimplib__chgsign() asm("chgsign");
 void *_imp___chgsign = NULL;
-void _elf__chgsign() {
+__attribute__((constructor)) void _elfimplib_init__chgsign() {
 load_dll_msvcrt();
-if (!_imp___chgsign) {
 _imp___chgsign = (void *) _elf_GetProcAddress(_dll_msvcrt, "_chgsign");
 }
+void _elfimplib__chgsign() {
 asm("leave\njmp *%0" : : "r"(_imp___chgsign));
 }
 
-void _elf__chkesp() asm("chkesp");
+void _elfimplib__chkesp() asm("chkesp");
 void *_imp___chkesp = NULL;
-void _elf__chkesp() {
+__attribute__((constructor)) void _elfimplib_init__chkesp() {
 load_dll_msvcrt();
-if (!_imp___chkesp) {
 _imp___chkesp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_chkesp");
 }
+void _elfimplib__chkesp() {
 asm("leave\njmp *%0" : : "r"(_imp___chkesp));
 }
 
-void _elf__chmod() asm("chmod");
+void _elfimplib__chmod() asm("chmod");
 void *_imp___chmod = NULL;
-void _elf__chmod() {
+__attribute__((constructor)) void _elfimplib_init__chmod() {
 load_dll_msvcrt();
-if (!_imp___chmod) {
 _imp___chmod = (void *) _elf_GetProcAddress(_dll_msvcrt, "_chmod");
 }
+void _elfimplib__chmod() {
 asm("leave\njmp *%0" : : "r"(_imp___chmod));
 }
 
-void _elf__chsize() asm("chsize");
+void _elfimplib__chsize() asm("chsize");
 void *_imp___chsize = NULL;
-void _elf__chsize() {
+__attribute__((constructor)) void _elfimplib_init__chsize() {
 load_dll_msvcrt();
-if (!_imp___chsize) {
 _imp___chsize = (void *) _elf_GetProcAddress(_dll_msvcrt, "_chsize");
 }
+void _elfimplib__chsize() {
 asm("leave\njmp *%0" : : "r"(_imp___chsize));
 }
 
-void _elf__clearfp() asm("clearfp");
+void _elfimplib__clearfp() asm("clearfp");
 void *_imp___clearfp = NULL;
-void _elf__clearfp() {
+__attribute__((constructor)) void _elfimplib_init__clearfp() {
 load_dll_msvcrt();
-if (!_imp___clearfp) {
 _imp___clearfp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_clearfp");
 }
+void _elfimplib__clearfp() {
 asm("leave\njmp *%0" : : "r"(_imp___clearfp));
 }
 
-void _elf__close() asm("close");
+void _elfimplib__close() asm("close");
 void *_imp___close = NULL;
-void _elf__close() {
+__attribute__((constructor)) void _elfimplib_init__close() {
 load_dll_msvcrt();
-if (!_imp___close) {
 _imp___close = (void *) _elf_GetProcAddress(_dll_msvcrt, "_close");
 }
+void _elfimplib__close() {
 asm("leave\njmp *%0" : : "r"(_imp___close));
 }
 
-void _elf__commit() asm("commit");
+void _elfimplib__commit() asm("commit");
 void *_imp___commit = NULL;
-void _elf__commit() {
+__attribute__((constructor)) void _elfimplib_init__commit() {
 load_dll_msvcrt();
-if (!_imp___commit) {
 _imp___commit = (void *) _elf_GetProcAddress(_dll_msvcrt, "_commit");
 }
+void _elfimplib__commit() {
 asm("leave\njmp *%0" : : "r"(_imp___commit));
 }
 
-void _elf__commode() asm("commode");
+void _elfimplib__commode() asm("commode");
 void *_imp___commode = NULL;
-void _elf__commode() {
+__attribute__((constructor)) void _elfimplib_init__commode() {
 load_dll_msvcrt();
-if (!_imp___commode) {
 _imp___commode = (void *) _elf_GetProcAddress(_dll_msvcrt, "_commode");
 }
+void _elfimplib__commode() {
 asm("leave\njmp *%0" : : "r"(_imp___commode));
 }
 
-void _elf__control87() asm("control87");
+void _elfimplib__control87() asm("control87");
 void *_imp___control87 = NULL;
-void _elf__control87() {
+__attribute__((constructor)) void _elfimplib_init__control87() {
 load_dll_msvcrt();
-if (!_imp___control87) {
 _imp___control87 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_control87");
 }
+void _elfimplib__control87() {
 asm("leave\njmp *%0" : : "r"(_imp___control87));
 }
 
-void _elf__controlfp() asm("controlfp");
+void _elfimplib__controlfp() asm("controlfp");
 void *_imp___controlfp = NULL;
-void _elf__controlfp() {
+__attribute__((constructor)) void _elfimplib_init__controlfp() {
 load_dll_msvcrt();
-if (!_imp___controlfp) {
 _imp___controlfp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_controlfp");
 }
+void _elfimplib__controlfp() {
 asm("leave\njmp *%0" : : "r"(_imp___controlfp));
 }
 
-void _elf__copysign() asm("copysign");
+void _elfimplib__copysign() asm("copysign");
 void *_imp___copysign = NULL;
-void _elf__copysign() {
+__attribute__((constructor)) void _elfimplib_init__copysign() {
 load_dll_msvcrt();
-if (!_imp___copysign) {
 _imp___copysign = (void *) _elf_GetProcAddress(_dll_msvcrt, "_copysign");
 }
+void _elfimplib__copysign() {
 asm("leave\njmp *%0" : : "r"(_imp___copysign));
 }
 
-void _elf__cprintf() asm("cprintf");
+void _elfimplib__cprintf() asm("cprintf");
 void *_imp___cprintf = NULL;
-void _elf__cprintf() {
+__attribute__((constructor)) void _elfimplib_init__cprintf() {
 load_dll_msvcrt();
-if (!_imp___cprintf) {
 _imp___cprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_cprintf");
 }
+void _elfimplib__cprintf() {
 asm("leave\njmp *%0" : : "r"(_imp___cprintf));
 }
 
-void _elf__cputs() asm("cputs");
+void _elfimplib__cputs() asm("cputs");
 void *_imp___cputs = NULL;
-void _elf__cputs() {
+__attribute__((constructor)) void _elfimplib_init__cputs() {
 load_dll_msvcrt();
-if (!_imp___cputs) {
 _imp___cputs = (void *) _elf_GetProcAddress(_dll_msvcrt, "_cputs");
 }
+void _elfimplib__cputs() {
 asm("leave\njmp *%0" : : "r"(_imp___cputs));
 }
 
-void _elf__cputws() asm("cputws");
+void _elfimplib__cputws() asm("cputws");
 void *_imp___cputws = NULL;
-void _elf__cputws() {
+__attribute__((constructor)) void _elfimplib_init__cputws() {
 load_dll_msvcrt();
-if (!_imp___cputws) {
 _imp___cputws = (void *) _elf_GetProcAddress(_dll_msvcrt, "_cputws");
 }
+void _elfimplib__cputws() {
 asm("leave\njmp *%0" : : "r"(_imp___cputws));
 }
 
-void _elf__creat() asm("creat");
+void _elfimplib__creat() asm("creat");
 void *_imp___creat = NULL;
-void _elf__creat() {
+__attribute__((constructor)) void _elfimplib_init__creat() {
 load_dll_msvcrt();
-if (!_imp___creat) {
 _imp___creat = (void *) _elf_GetProcAddress(_dll_msvcrt, "_creat");
 }
+void _elfimplib__creat() {
 asm("leave\njmp *%0" : : "r"(_imp___creat));
 }
 
-void _elf__cscanf() asm("cscanf");
+void _elfimplib__cscanf() asm("cscanf");
 void *_imp___cscanf = NULL;
-void _elf__cscanf() {
+__attribute__((constructor)) void _elfimplib_init__cscanf() {
 load_dll_msvcrt();
-if (!_imp___cscanf) {
 _imp___cscanf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_cscanf");
 }
+void _elfimplib__cscanf() {
 asm("leave\njmp *%0" : : "r"(_imp___cscanf));
 }
 
-void _elf__ctime64() asm("ctime64");
+void _elfimplib__ctime64() asm("ctime64");
 void *_imp___ctime64 = NULL;
-void _elf__ctime64() {
+__attribute__((constructor)) void _elfimplib_init__ctime64() {
 load_dll_msvcrt();
-if (!_imp___ctime64) {
 _imp___ctime64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ctime64");
 }
+void _elfimplib__ctime64() {
 asm("leave\njmp *%0" : : "r"(_imp___ctime64));
 }
 
-void _elf__ctype() asm("ctype");
+void _elfimplib__ctype() asm("ctype");
 void *_imp___ctype = NULL;
-void _elf__ctype() {
+__attribute__((constructor)) void _elfimplib_init__ctype() {
 load_dll_msvcrt();
-if (!_imp___ctype) {
 _imp___ctype = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ctype");
 }
+void _elfimplib__ctype() {
 asm("leave\njmp *%0" : : "r"(_imp___ctype));
 }
 
-void _elf__cwait() asm("cwait");
+void _elfimplib__cwait() asm("cwait");
 void *_imp___cwait = NULL;
-void _elf__cwait() {
+__attribute__((constructor)) void _elfimplib_init__cwait() {
 load_dll_msvcrt();
-if (!_imp___cwait) {
 _imp___cwait = (void *) _elf_GetProcAddress(_dll_msvcrt, "_cwait");
 }
+void _elfimplib__cwait() {
 asm("leave\njmp *%0" : : "r"(_imp___cwait));
 }
 
-void _elf__cwprintf() asm("cwprintf");
+void _elfimplib__cwprintf() asm("cwprintf");
 void *_imp___cwprintf = NULL;
-void _elf__cwprintf() {
+__attribute__((constructor)) void _elfimplib_init__cwprintf() {
 load_dll_msvcrt();
-if (!_imp___cwprintf) {
 _imp___cwprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_cwprintf");
 }
+void _elfimplib__cwprintf() {
 asm("leave\njmp *%0" : : "r"(_imp___cwprintf));
 }
 
-void _elf__cwscanf() asm("cwscanf");
+void _elfimplib__cwscanf() asm("cwscanf");
 void *_imp___cwscanf = NULL;
-void _elf__cwscanf() {
+__attribute__((constructor)) void _elfimplib_init__cwscanf() {
 load_dll_msvcrt();
-if (!_imp___cwscanf) {
 _imp___cwscanf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_cwscanf");
 }
+void _elfimplib__cwscanf() {
 asm("leave\njmp *%0" : : "r"(_imp___cwscanf));
 }
 
-void _elf__daylight() asm("daylight");
+void _elfimplib__daylight() asm("daylight");
 void *_imp___daylight = NULL;
-void _elf__daylight() {
+__attribute__((constructor)) void _elfimplib_init__daylight() {
 load_dll_msvcrt();
-if (!_imp___daylight) {
 _imp___daylight = (void *) _elf_GetProcAddress(_dll_msvcrt, "_daylight");
 }
+void _elfimplib__daylight() {
 asm("leave\njmp *%0" : : "r"(_imp___daylight));
 }
 
-void _elf__dstbias() asm("dstbias");
+void _elfimplib__dstbias() asm("dstbias");
 void *_imp___dstbias = NULL;
-void _elf__dstbias() {
+__attribute__((constructor)) void _elfimplib_init__dstbias() {
 load_dll_msvcrt();
-if (!_imp___dstbias) {
 _imp___dstbias = (void *) _elf_GetProcAddress(_dll_msvcrt, "_dstbias");
 }
+void _elfimplib__dstbias() {
 asm("leave\njmp *%0" : : "r"(_imp___dstbias));
 }
 
-void _elf__dup() asm("dup");
+void _elfimplib__dup() asm("dup");
 void *_imp___dup = NULL;
-void _elf__dup() {
+__attribute__((constructor)) void _elfimplib_init__dup() {
 load_dll_msvcrt();
-if (!_imp___dup) {
 _imp___dup = (void *) _elf_GetProcAddress(_dll_msvcrt, "_dup");
 }
+void _elfimplib__dup() {
 asm("leave\njmp *%0" : : "r"(_imp___dup));
 }
 
-void _elf__dup2() asm("dup2");
+void _elfimplib__dup2() asm("dup2");
 void *_imp___dup2 = NULL;
-void _elf__dup2() {
+__attribute__((constructor)) void _elfimplib_init__dup2() {
 load_dll_msvcrt();
-if (!_imp___dup2) {
 _imp___dup2 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_dup2");
 }
+void _elfimplib__dup2() {
 asm("leave\njmp *%0" : : "r"(_imp___dup2));
 }
 
-void _elf__ecvt() asm("ecvt");
+void _elfimplib__ecvt() asm("ecvt");
 void *_imp___ecvt = NULL;
-void _elf__ecvt() {
+__attribute__((constructor)) void _elfimplib_init__ecvt() {
 load_dll_msvcrt();
-if (!_imp___ecvt) {
 _imp___ecvt = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ecvt");
 }
+void _elfimplib__ecvt() {
 asm("leave\njmp *%0" : : "r"(_imp___ecvt));
 }
 
-void _elf__endthread() asm("endthread");
+void _elfimplib__endthread() asm("endthread");
 void *_imp___endthread = NULL;
-void _elf__endthread() {
+__attribute__((constructor)) void _elfimplib_init__endthread() {
 load_dll_msvcrt();
-if (!_imp___endthread) {
 _imp___endthread = (void *) _elf_GetProcAddress(_dll_msvcrt, "_endthread");
 }
+void _elfimplib__endthread() {
 asm("leave\njmp *%0" : : "r"(_imp___endthread));
 }
 
-void _elf__endthreadex() asm("endthreadex");
+void _elfimplib__endthreadex() asm("endthreadex");
 void *_imp___endthreadex = NULL;
-void _elf__endthreadex() {
+__attribute__((constructor)) void _elfimplib_init__endthreadex() {
 load_dll_msvcrt();
-if (!_imp___endthreadex) {
 _imp___endthreadex = (void *) _elf_GetProcAddress(_dll_msvcrt, "_endthreadex");
 }
+void _elfimplib__endthreadex() {
 asm("leave\njmp *%0" : : "r"(_imp___endthreadex));
 }
 
-void _elf__environ() asm("environ");
+void _elfimplib__environ() asm("environ");
 void *_imp___environ = NULL;
-void _elf__environ() {
+__attribute__((constructor)) void _elfimplib_init__environ() {
 load_dll_msvcrt();
-if (!_imp___environ) {
 _imp___environ = (void *) _elf_GetProcAddress(_dll_msvcrt, "_environ");
 }
+void _elfimplib__environ() {
 asm("leave\njmp *%0" : : "r"(_imp___environ));
 }
 
-void _elf__eof() asm("eof");
+void _elfimplib__eof() asm("eof");
 void *_imp___eof = NULL;
-void _elf__eof() {
+__attribute__((constructor)) void _elfimplib_init__eof() {
 load_dll_msvcrt();
-if (!_imp___eof) {
 _imp___eof = (void *) _elf_GetProcAddress(_dll_msvcrt, "_eof");
 }
+void _elfimplib__eof() {
 asm("leave\njmp *%0" : : "r"(_imp___eof));
 }
 
-void _elf__errno() asm("errno");
+void _elfimplib__errno() asm("errno");
 void *_imp___errno = NULL;
-void _elf__errno() {
+__attribute__((constructor)) void _elfimplib_init__errno() {
 load_dll_msvcrt();
-if (!_imp___errno) {
 _imp___errno = (void *) _elf_GetProcAddress(_dll_msvcrt, "_errno");
 }
+void _elfimplib__errno() {
 asm("leave\njmp *%0" : : "r"(_imp___errno));
 }
 
-void _elf__except_handler2() asm("except_handler2");
+void _elfimplib__except_handler2() asm("except_handler2");
 void *_imp___except_handler2 = NULL;
-void _elf__except_handler2() {
+__attribute__((constructor)) void _elfimplib_init__except_handler2() {
 load_dll_msvcrt();
-if (!_imp___except_handler2) {
 _imp___except_handler2 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_except_handler2");
 }
+void _elfimplib__except_handler2() {
 asm("leave\njmp *%0" : : "r"(_imp___except_handler2));
 }
 
-void _elf__except_handler3() asm("except_handler3");
+void _elfimplib__except_handler3() asm("except_handler3");
 void *_imp___except_handler3 = NULL;
-void _elf__except_handler3() {
+__attribute__((constructor)) void _elfimplib_init__except_handler3() {
 load_dll_msvcrt();
-if (!_imp___except_handler3) {
 _imp___except_handler3 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_except_handler3");
 }
+void _elfimplib__except_handler3() {
 asm("leave\njmp *%0" : : "r"(_imp___except_handler3));
 }
 
-void _elf__execl() asm("execl");
+void _elfimplib__execl() asm("execl");
 void *_imp___execl = NULL;
-void _elf__execl() {
+__attribute__((constructor)) void _elfimplib_init__execl() {
 load_dll_msvcrt();
-if (!_imp___execl) {
 _imp___execl = (void *) _elf_GetProcAddress(_dll_msvcrt, "_execl");
 }
+void _elfimplib__execl() {
 asm("leave\njmp *%0" : : "r"(_imp___execl));
 }
 
-void _elf__execle() asm("execle");
+void _elfimplib__execle() asm("execle");
 void *_imp___execle = NULL;
-void _elf__execle() {
+__attribute__((constructor)) void _elfimplib_init__execle() {
 load_dll_msvcrt();
-if (!_imp___execle) {
 _imp___execle = (void *) _elf_GetProcAddress(_dll_msvcrt, "_execle");
 }
+void _elfimplib__execle() {
 asm("leave\njmp *%0" : : "r"(_imp___execle));
 }
 
-void _elf__execlp() asm("execlp");
+void _elfimplib__execlp() asm("execlp");
 void *_imp___execlp = NULL;
-void _elf__execlp() {
+__attribute__((constructor)) void _elfimplib_init__execlp() {
 load_dll_msvcrt();
-if (!_imp___execlp) {
 _imp___execlp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_execlp");
 }
+void _elfimplib__execlp() {
 asm("leave\njmp *%0" : : "r"(_imp___execlp));
 }
 
-void _elf__execlpe() asm("execlpe");
+void _elfimplib__execlpe() asm("execlpe");
 void *_imp___execlpe = NULL;
-void _elf__execlpe() {
+__attribute__((constructor)) void _elfimplib_init__execlpe() {
 load_dll_msvcrt();
-if (!_imp___execlpe) {
 _imp___execlpe = (void *) _elf_GetProcAddress(_dll_msvcrt, "_execlpe");
 }
+void _elfimplib__execlpe() {
 asm("leave\njmp *%0" : : "r"(_imp___execlpe));
 }
 
-void _elf__execv() asm("execv");
+void _elfimplib__execv() asm("execv");
 void *_imp___execv = NULL;
-void _elf__execv() {
+__attribute__((constructor)) void _elfimplib_init__execv() {
 load_dll_msvcrt();
-if (!_imp___execv) {
 _imp___execv = (void *) _elf_GetProcAddress(_dll_msvcrt, "_execv");
 }
+void _elfimplib__execv() {
 asm("leave\njmp *%0" : : "r"(_imp___execv));
 }
 
-void _elf__execve() asm("execve");
+void _elfimplib__execve() asm("execve");
 void *_imp___execve = NULL;
-void _elf__execve() {
+__attribute__((constructor)) void _elfimplib_init__execve() {
 load_dll_msvcrt();
-if (!_imp___execve) {
 _imp___execve = (void *) _elf_GetProcAddress(_dll_msvcrt, "_execve");
 }
+void _elfimplib__execve() {
 asm("leave\njmp *%0" : : "r"(_imp___execve));
 }
 
-void _elf__execvp() asm("execvp");
+void _elfimplib__execvp() asm("execvp");
 void *_imp___execvp = NULL;
-void _elf__execvp() {
+__attribute__((constructor)) void _elfimplib_init__execvp() {
 load_dll_msvcrt();
-if (!_imp___execvp) {
 _imp___execvp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_execvp");
 }
+void _elfimplib__execvp() {
 asm("leave\njmp *%0" : : "r"(_imp___execvp));
 }
 
-void _elf__execvpe() asm("execvpe");
+void _elfimplib__execvpe() asm("execvpe");
 void *_imp___execvpe = NULL;
-void _elf__execvpe() {
+__attribute__((constructor)) void _elfimplib_init__execvpe() {
 load_dll_msvcrt();
-if (!_imp___execvpe) {
 _imp___execvpe = (void *) _elf_GetProcAddress(_dll_msvcrt, "_execvpe");
 }
+void _elfimplib__execvpe() {
 asm("leave\njmp *%0" : : "r"(_imp___execvpe));
 }
 
-void _elf__expand() asm("expand");
+void _elfimplib__expand() asm("expand");
 void *_imp___expand = NULL;
-void _elf__expand() {
+__attribute__((constructor)) void _elfimplib_init__expand() {
 load_dll_msvcrt();
-if (!_imp___expand) {
 _imp___expand = (void *) _elf_GetProcAddress(_dll_msvcrt, "_expand");
 }
+void _elfimplib__expand() {
 asm("leave\njmp *%0" : : "r"(_imp___expand));
 }
 
-void _elf__fcloseall() asm("fcloseall");
+void _elfimplib__fcloseall() asm("fcloseall");
 void *_imp___fcloseall = NULL;
-void _elf__fcloseall() {
+__attribute__((constructor)) void _elfimplib_init__fcloseall() {
 load_dll_msvcrt();
-if (!_imp___fcloseall) {
 _imp___fcloseall = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fcloseall");
 }
+void _elfimplib__fcloseall() {
 asm("leave\njmp *%0" : : "r"(_imp___fcloseall));
 }
 
-void _elf__fcvt() asm("fcvt");
+void _elfimplib__fcvt() asm("fcvt");
 void *_imp___fcvt = NULL;
-void _elf__fcvt() {
+__attribute__((constructor)) void _elfimplib_init__fcvt() {
 load_dll_msvcrt();
-if (!_imp___fcvt) {
 _imp___fcvt = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fcvt");
 }
+void _elfimplib__fcvt() {
 asm("leave\njmp *%0" : : "r"(_imp___fcvt));
 }
 
-void _elf__fdopen() asm("fdopen");
+void _elfimplib__fdopen() asm("fdopen");
 void *_imp___fdopen = NULL;
-void _elf__fdopen() {
+__attribute__((constructor)) void _elfimplib_init__fdopen() {
 load_dll_msvcrt();
-if (!_imp___fdopen) {
 _imp___fdopen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fdopen");
 }
+void _elfimplib__fdopen() {
 asm("leave\njmp *%0" : : "r"(_imp___fdopen));
 }
 
-void _elf__fgetchar() asm("fgetchar");
+void _elfimplib__fgetchar() asm("fgetchar");
 void *_imp___fgetchar = NULL;
-void _elf__fgetchar() {
+__attribute__((constructor)) void _elfimplib_init__fgetchar() {
 load_dll_msvcrt();
-if (!_imp___fgetchar) {
 _imp___fgetchar = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fgetchar");
 }
+void _elfimplib__fgetchar() {
 asm("leave\njmp *%0" : : "r"(_imp___fgetchar));
 }
 
-void _elf__fgetwchar() asm("fgetwchar");
+void _elfimplib__fgetwchar() asm("fgetwchar");
 void *_imp___fgetwchar = NULL;
-void _elf__fgetwchar() {
+__attribute__((constructor)) void _elfimplib_init__fgetwchar() {
 load_dll_msvcrt();
-if (!_imp___fgetwchar) {
 _imp___fgetwchar = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fgetwchar");
 }
+void _elfimplib__fgetwchar() {
 asm("leave\njmp *%0" : : "r"(_imp___fgetwchar));
 }
 
-void _elf__filbuf() asm("filbuf");
+void _elfimplib__filbuf() asm("filbuf");
 void *_imp___filbuf = NULL;
-void _elf__filbuf() {
+__attribute__((constructor)) void _elfimplib_init__filbuf() {
 load_dll_msvcrt();
-if (!_imp___filbuf) {
 _imp___filbuf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_filbuf");
 }
+void _elfimplib__filbuf() {
 asm("leave\njmp *%0" : : "r"(_imp___filbuf));
 }
 
-void _elf__fileinfo() asm("fileinfo");
+void _elfimplib__fileinfo() asm("fileinfo");
 void *_imp___fileinfo = NULL;
-void _elf__fileinfo() {
+__attribute__((constructor)) void _elfimplib_init__fileinfo() {
 load_dll_msvcrt();
-if (!_imp___fileinfo) {
 _imp___fileinfo = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fileinfo");
 }
+void _elfimplib__fileinfo() {
 asm("leave\njmp *%0" : : "r"(_imp___fileinfo));
 }
 
-void _elf__filelength() asm("filelength");
+void _elfimplib__filelength() asm("filelength");
 void *_imp___filelength = NULL;
-void _elf__filelength() {
+__attribute__((constructor)) void _elfimplib_init__filelength() {
 load_dll_msvcrt();
-if (!_imp___filelength) {
 _imp___filelength = (void *) _elf_GetProcAddress(_dll_msvcrt, "_filelength");
 }
+void _elfimplib__filelength() {
 asm("leave\njmp *%0" : : "r"(_imp___filelength));
 }
 
-void _elf__filelengthi64() asm("filelengthi64");
+void _elfimplib__filelengthi64() asm("filelengthi64");
 void *_imp___filelengthi64 = NULL;
-void _elf__filelengthi64() {
+__attribute__((constructor)) void _elfimplib_init__filelengthi64() {
 load_dll_msvcrt();
-if (!_imp___filelengthi64) {
 _imp___filelengthi64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_filelengthi64");
 }
+void _elfimplib__filelengthi64() {
 asm("leave\njmp *%0" : : "r"(_imp___filelengthi64));
 }
 
-void _elf__fileno() asm("fileno");
+void _elfimplib__fileno() asm("fileno");
 void *_imp___fileno = NULL;
-void _elf__fileno() {
+__attribute__((constructor)) void _elfimplib_init__fileno() {
 load_dll_msvcrt();
-if (!_imp___fileno) {
 _imp___fileno = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fileno");
 }
+void _elfimplib__fileno() {
 asm("leave\njmp *%0" : : "r"(_imp___fileno));
 }
 
-void _elf__findclose() asm("findclose");
+void _elfimplib__findclose() asm("findclose");
 void *_imp___findclose = NULL;
-void _elf__findclose() {
+__attribute__((constructor)) void _elfimplib_init__findclose() {
 load_dll_msvcrt();
-if (!_imp___findclose) {
 _imp___findclose = (void *) _elf_GetProcAddress(_dll_msvcrt, "_findclose");
 }
+void _elfimplib__findclose() {
 asm("leave\njmp *%0" : : "r"(_imp___findclose));
 }
 
-void _elf__findfirst() asm("findfirst");
+void _elfimplib__findfirst() asm("findfirst");
 void *_imp___findfirst = NULL;
-void _elf__findfirst() {
+__attribute__((constructor)) void _elfimplib_init__findfirst() {
 load_dll_msvcrt();
-if (!_imp___findfirst) {
 _imp___findfirst = (void *) _elf_GetProcAddress(_dll_msvcrt, "_findfirst");
 }
+void _elfimplib__findfirst() {
 asm("leave\njmp *%0" : : "r"(_imp___findfirst));
 }
 
-void _elf__findfirst64() asm("findfirst64");
+void _elfimplib__findfirst64() asm("findfirst64");
 void *_imp___findfirst64 = NULL;
-void _elf__findfirst64() {
+__attribute__((constructor)) void _elfimplib_init__findfirst64() {
 load_dll_msvcrt();
-if (!_imp___findfirst64) {
 _imp___findfirst64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_findfirst64");
 }
+void _elfimplib__findfirst64() {
 asm("leave\njmp *%0" : : "r"(_imp___findfirst64));
 }
 
-void _elf__findfirsti64() asm("findfirsti64");
+void _elfimplib__findfirsti64() asm("findfirsti64");
 void *_imp___findfirsti64 = NULL;
-void _elf__findfirsti64() {
+__attribute__((constructor)) void _elfimplib_init__findfirsti64() {
 load_dll_msvcrt();
-if (!_imp___findfirsti64) {
 _imp___findfirsti64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_findfirsti64");
 }
+void _elfimplib__findfirsti64() {
 asm("leave\njmp *%0" : : "r"(_imp___findfirsti64));
 }
 
-void _elf__findnext() asm("findnext");
+void _elfimplib__findnext() asm("findnext");
 void *_imp___findnext = NULL;
-void _elf__findnext() {
+__attribute__((constructor)) void _elfimplib_init__findnext() {
 load_dll_msvcrt();
-if (!_imp___findnext) {
 _imp___findnext = (void *) _elf_GetProcAddress(_dll_msvcrt, "_findnext");
 }
+void _elfimplib__findnext() {
 asm("leave\njmp *%0" : : "r"(_imp___findnext));
 }
 
-void _elf__findnext64() asm("findnext64");
+void _elfimplib__findnext64() asm("findnext64");
 void *_imp___findnext64 = NULL;
-void _elf__findnext64() {
+__attribute__((constructor)) void _elfimplib_init__findnext64() {
 load_dll_msvcrt();
-if (!_imp___findnext64) {
 _imp___findnext64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_findnext64");
 }
+void _elfimplib__findnext64() {
 asm("leave\njmp *%0" : : "r"(_imp___findnext64));
 }
 
-void _elf__findnexti64() asm("findnexti64");
+void _elfimplib__findnexti64() asm("findnexti64");
 void *_imp___findnexti64 = NULL;
-void _elf__findnexti64() {
+__attribute__((constructor)) void _elfimplib_init__findnexti64() {
 load_dll_msvcrt();
-if (!_imp___findnexti64) {
 _imp___findnexti64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_findnexti64");
 }
+void _elfimplib__findnexti64() {
 asm("leave\njmp *%0" : : "r"(_imp___findnexti64));
 }
 
-void _elf__finite() asm("finite");
+void _elfimplib__finite() asm("finite");
 void *_imp___finite = NULL;
-void _elf__finite() {
+__attribute__((constructor)) void _elfimplib_init__finite() {
 load_dll_msvcrt();
-if (!_imp___finite) {
 _imp___finite = (void *) _elf_GetProcAddress(_dll_msvcrt, "_finite");
 }
+void _elfimplib__finite() {
 asm("leave\njmp *%0" : : "r"(_imp___finite));
 }
 
-void _elf__flsbuf() asm("flsbuf");
+void _elfimplib__flsbuf() asm("flsbuf");
 void *_imp___flsbuf = NULL;
-void _elf__flsbuf() {
+__attribute__((constructor)) void _elfimplib_init__flsbuf() {
 load_dll_msvcrt();
-if (!_imp___flsbuf) {
 _imp___flsbuf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_flsbuf");
 }
+void _elfimplib__flsbuf() {
 asm("leave\njmp *%0" : : "r"(_imp___flsbuf));
 }
 
-void _elf__flushall() asm("flushall");
+void _elfimplib__flushall() asm("flushall");
 void *_imp___flushall = NULL;
-void _elf__flushall() {
+__attribute__((constructor)) void _elfimplib_init__flushall() {
 load_dll_msvcrt();
-if (!_imp___flushall) {
 _imp___flushall = (void *) _elf_GetProcAddress(_dll_msvcrt, "_flushall");
 }
+void _elfimplib__flushall() {
 asm("leave\njmp *%0" : : "r"(_imp___flushall));
 }
 
-void _elf__fmode() asm("fmode");
+void _elfimplib__fmode() asm("fmode");
 void *_imp___fmode = NULL;
-void _elf__fmode() {
+__attribute__((constructor)) void _elfimplib_init__fmode() {
 load_dll_msvcrt();
-if (!_imp___fmode) {
 _imp___fmode = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fmode");
 }
+void _elfimplib__fmode() {
 asm("leave\njmp *%0" : : "r"(_imp___fmode));
 }
 
-void _elf__fpclass() asm("fpclass");
+void _elfimplib__fpclass() asm("fpclass");
 void *_imp___fpclass = NULL;
-void _elf__fpclass() {
+__attribute__((constructor)) void _elfimplib_init__fpclass() {
 load_dll_msvcrt();
-if (!_imp___fpclass) {
 _imp___fpclass = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fpclass");
 }
+void _elfimplib__fpclass() {
 asm("leave\njmp *%0" : : "r"(_imp___fpclass));
 }
 
-void _elf__fpieee_flt() asm("fpieee_flt");
+void _elfimplib__fpieee_flt() asm("fpieee_flt");
 void *_imp___fpieee_flt = NULL;
-void _elf__fpieee_flt() {
+__attribute__((constructor)) void _elfimplib_init__fpieee_flt() {
 load_dll_msvcrt();
-if (!_imp___fpieee_flt) {
 _imp___fpieee_flt = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fpieee_flt");
 }
+void _elfimplib__fpieee_flt() {
 asm("leave\njmp *%0" : : "r"(_imp___fpieee_flt));
 }
 
-void _elf__fpreset() asm("fpreset");
+void _elfimplib__fpreset() asm("fpreset");
 void *_imp___fpreset = NULL;
-void _elf__fpreset() {
+__attribute__((constructor)) void _elfimplib_init__fpreset() {
 load_dll_msvcrt();
-if (!_imp___fpreset) {
 _imp___fpreset = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fpreset");
 }
+void _elfimplib__fpreset() {
 asm("leave\njmp *%0" : : "r"(_imp___fpreset));
 }
 
-void _elf__fputchar() asm("fputchar");
+void _elfimplib__fputchar() asm("fputchar");
 void *_imp___fputchar = NULL;
-void _elf__fputchar() {
+__attribute__((constructor)) void _elfimplib_init__fputchar() {
 load_dll_msvcrt();
-if (!_imp___fputchar) {
 _imp___fputchar = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fputchar");
 }
+void _elfimplib__fputchar() {
 asm("leave\njmp *%0" : : "r"(_imp___fputchar));
 }
 
-void _elf__fputwchar() asm("fputwchar");
+void _elfimplib__fputwchar() asm("fputwchar");
 void *_imp___fputwchar = NULL;
-void _elf__fputwchar() {
+__attribute__((constructor)) void _elfimplib_init__fputwchar() {
 load_dll_msvcrt();
-if (!_imp___fputwchar) {
 _imp___fputwchar = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fputwchar");
 }
+void _elfimplib__fputwchar() {
 asm("leave\njmp *%0" : : "r"(_imp___fputwchar));
 }
 
-void _elf__fsopen() asm("fsopen");
+void _elfimplib__fsopen() asm("fsopen");
 void *_imp___fsopen = NULL;
-void _elf__fsopen() {
+__attribute__((constructor)) void _elfimplib_init__fsopen() {
 load_dll_msvcrt();
-if (!_imp___fsopen) {
 _imp___fsopen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fsopen");
 }
+void _elfimplib__fsopen() {
 asm("leave\njmp *%0" : : "r"(_imp___fsopen));
 }
 
-void _elf__fstat() asm("fstat");
+void _elfimplib__fstat() asm("fstat");
 void *_imp___fstat = NULL;
-void _elf__fstat() {
+__attribute__((constructor)) void _elfimplib_init__fstat() {
 load_dll_msvcrt();
-if (!_imp___fstat) {
 _imp___fstat = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fstat");
 }
+void _elfimplib__fstat() {
 asm("leave\njmp *%0" : : "r"(_imp___fstat));
 }
 
-void _elf__fstat64() asm("fstat64");
+void _elfimplib__fstat64() asm("fstat64");
 void *_imp___fstat64 = NULL;
-void _elf__fstat64() {
+__attribute__((constructor)) void _elfimplib_init__fstat64() {
 load_dll_msvcrt();
-if (!_imp___fstat64) {
 _imp___fstat64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fstat64");
 }
+void _elfimplib__fstat64() {
 asm("leave\njmp *%0" : : "r"(_imp___fstat64));
 }
 
-void _elf__fstati64() asm("fstati64");
+void _elfimplib__fstati64() asm("fstati64");
 void *_imp___fstati64 = NULL;
-void _elf__fstati64() {
+__attribute__((constructor)) void _elfimplib_init__fstati64() {
 load_dll_msvcrt();
-if (!_imp___fstati64) {
 _imp___fstati64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fstati64");
 }
+void _elfimplib__fstati64() {
 asm("leave\njmp *%0" : : "r"(_imp___fstati64));
 }
 
-void _elf__ftime() asm("ftime");
+void _elfimplib__ftime() asm("ftime");
 void *_imp___ftime = NULL;
-void _elf__ftime() {
+__attribute__((constructor)) void _elfimplib_init__ftime() {
 load_dll_msvcrt();
-if (!_imp___ftime) {
 _imp___ftime = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ftime");
 }
+void _elfimplib__ftime() {
 asm("leave\njmp *%0" : : "r"(_imp___ftime));
 }
 
-void _elf__ftime64() asm("ftime64");
+void _elfimplib__ftime64() asm("ftime64");
 void *_imp___ftime64 = NULL;
-void _elf__ftime64() {
+__attribute__((constructor)) void _elfimplib_init__ftime64() {
 load_dll_msvcrt();
-if (!_imp___ftime64) {
 _imp___ftime64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ftime64");
 }
+void _elfimplib__ftime64() {
 asm("leave\njmp *%0" : : "r"(_imp___ftime64));
 }
 
-void _elf__ftol() asm("ftol");
+void _elfimplib__ftol() asm("ftol");
 void *_imp___ftol = NULL;
-void _elf__ftol() {
+__attribute__((constructor)) void _elfimplib_init__ftol() {
 load_dll_msvcrt();
-if (!_imp___ftol) {
 _imp___ftol = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ftol");
 }
+void _elfimplib__ftol() {
 asm("leave\njmp *%0" : : "r"(_imp___ftol));
 }
 
-void _elf__fullpath() asm("fullpath");
+void _elfimplib__fullpath() asm("fullpath");
 void *_imp___fullpath = NULL;
-void _elf__fullpath() {
+__attribute__((constructor)) void _elfimplib_init__fullpath() {
 load_dll_msvcrt();
-if (!_imp___fullpath) {
 _imp___fullpath = (void *) _elf_GetProcAddress(_dll_msvcrt, "_fullpath");
 }
+void _elfimplib__fullpath() {
 asm("leave\njmp *%0" : : "r"(_imp___fullpath));
 }
 
-void _elf__futime() asm("futime");
+void _elfimplib__futime() asm("futime");
 void *_imp___futime = NULL;
-void _elf__futime() {
+__attribute__((constructor)) void _elfimplib_init__futime() {
 load_dll_msvcrt();
-if (!_imp___futime) {
 _imp___futime = (void *) _elf_GetProcAddress(_dll_msvcrt, "_futime");
 }
+void _elfimplib__futime() {
 asm("leave\njmp *%0" : : "r"(_imp___futime));
 }
 
-void _elf__futime64() asm("futime64");
+void _elfimplib__futime64() asm("futime64");
 void *_imp___futime64 = NULL;
-void _elf__futime64() {
+__attribute__((constructor)) void _elfimplib_init__futime64() {
 load_dll_msvcrt();
-if (!_imp___futime64) {
 _imp___futime64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_futime64");
 }
+void _elfimplib__futime64() {
 asm("leave\njmp *%0" : : "r"(_imp___futime64));
 }
 
-void _elf__gcvt() asm("gcvt");
+void _elfimplib__gcvt() asm("gcvt");
 void *_imp___gcvt = NULL;
-void _elf__gcvt() {
+__attribute__((constructor)) void _elfimplib_init__gcvt() {
 load_dll_msvcrt();
-if (!_imp___gcvt) {
 _imp___gcvt = (void *) _elf_GetProcAddress(_dll_msvcrt, "_gcvt");
 }
+void _elfimplib__gcvt() {
 asm("leave\njmp *%0" : : "r"(_imp___gcvt));
 }
 
-void _elf__get_osfhandle() asm("get_osfhandle");
+void _elfimplib__get_osfhandle() asm("get_osfhandle");
 void *_imp___get_osfhandle = NULL;
-void _elf__get_osfhandle() {
+__attribute__((constructor)) void _elfimplib_init__get_osfhandle() {
 load_dll_msvcrt();
-if (!_imp___get_osfhandle) {
 _imp___get_osfhandle = (void *) _elf_GetProcAddress(_dll_msvcrt, "_get_osfhandle");
 }
+void _elfimplib__get_osfhandle() {
 asm("leave\njmp *%0" : : "r"(_imp___get_osfhandle));
 }
 
-void _elf__get_sbh_threshold() asm("get_sbh_threshold");
+void _elfimplib__get_sbh_threshold() asm("get_sbh_threshold");
 void *_imp___get_sbh_threshold = NULL;
-void _elf__get_sbh_threshold() {
+__attribute__((constructor)) void _elfimplib_init__get_sbh_threshold() {
 load_dll_msvcrt();
-if (!_imp___get_sbh_threshold) {
 _imp___get_sbh_threshold = (void *) _elf_GetProcAddress(_dll_msvcrt, "_get_sbh_threshold");
 }
+void _elfimplib__get_sbh_threshold() {
 asm("leave\njmp *%0" : : "r"(_imp___get_sbh_threshold));
 }
 
-void _elf__getch() asm("getch");
+void _elfimplib__getch() asm("getch");
 void *_imp___getch = NULL;
-void _elf__getch() {
+__attribute__((constructor)) void _elfimplib_init__getch() {
 load_dll_msvcrt();
-if (!_imp___getch) {
 _imp___getch = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getch");
 }
+void _elfimplib__getch() {
 asm("leave\njmp *%0" : : "r"(_imp___getch));
 }
 
-void _elf__getche() asm("getche");
+void _elfimplib__getche() asm("getche");
 void *_imp___getche = NULL;
-void _elf__getche() {
+__attribute__((constructor)) void _elfimplib_init__getche() {
 load_dll_msvcrt();
-if (!_imp___getche) {
 _imp___getche = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getche");
 }
+void _elfimplib__getche() {
 asm("leave\njmp *%0" : : "r"(_imp___getche));
 }
 
-void _elf__getcwd() asm("getcwd");
+void _elfimplib__getcwd() asm("getcwd");
 void *_imp___getcwd = NULL;
-void _elf__getcwd() {
+__attribute__((constructor)) void _elfimplib_init__getcwd() {
 load_dll_msvcrt();
-if (!_imp___getcwd) {
 _imp___getcwd = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getcwd");
 }
+void _elfimplib__getcwd() {
 asm("leave\njmp *%0" : : "r"(_imp___getcwd));
 }
 
-void _elf__getdcwd() asm("getdcwd");
+void _elfimplib__getdcwd() asm("getdcwd");
 void *_imp___getdcwd = NULL;
-void _elf__getdcwd() {
+__attribute__((constructor)) void _elfimplib_init__getdcwd() {
 load_dll_msvcrt();
-if (!_imp___getdcwd) {
 _imp___getdcwd = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getdcwd");
 }
+void _elfimplib__getdcwd() {
 asm("leave\njmp *%0" : : "r"(_imp___getdcwd));
 }
 
-void _elf__getdiskfree() asm("getdiskfree");
+void _elfimplib__getdiskfree() asm("getdiskfree");
 void *_imp___getdiskfree = NULL;
-void _elf__getdiskfree() {
+__attribute__((constructor)) void _elfimplib_init__getdiskfree() {
 load_dll_msvcrt();
-if (!_imp___getdiskfree) {
 _imp___getdiskfree = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getdiskfree");
 }
+void _elfimplib__getdiskfree() {
 asm("leave\njmp *%0" : : "r"(_imp___getdiskfree));
 }
 
-void _elf__getdllprocaddr() asm("getdllprocaddr");
+void _elfimplib__getdllprocaddr() asm("getdllprocaddr");
 void *_imp___getdllprocaddr = NULL;
-void _elf__getdllprocaddr() {
+__attribute__((constructor)) void _elfimplib_init__getdllprocaddr() {
 load_dll_msvcrt();
-if (!_imp___getdllprocaddr) {
 _imp___getdllprocaddr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getdllprocaddr");
 }
+void _elfimplib__getdllprocaddr() {
 asm("leave\njmp *%0" : : "r"(_imp___getdllprocaddr));
 }
 
-void _elf__getdrive() asm("getdrive");
+void _elfimplib__getdrive() asm("getdrive");
 void *_imp___getdrive = NULL;
-void _elf__getdrive() {
+__attribute__((constructor)) void _elfimplib_init__getdrive() {
 load_dll_msvcrt();
-if (!_imp___getdrive) {
 _imp___getdrive = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getdrive");
 }
+void _elfimplib__getdrive() {
 asm("leave\njmp *%0" : : "r"(_imp___getdrive));
 }
 
-void _elf__getdrives() asm("getdrives");
+void _elfimplib__getdrives() asm("getdrives");
 void *_imp___getdrives = NULL;
-void _elf__getdrives() {
+__attribute__((constructor)) void _elfimplib_init__getdrives() {
 load_dll_msvcrt();
-if (!_imp___getdrives) {
 _imp___getdrives = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getdrives");
 }
+void _elfimplib__getdrives() {
 asm("leave\njmp *%0" : : "r"(_imp___getdrives));
 }
 
-void _elf__getmaxstdio() asm("getmaxstdio");
+void _elfimplib__getmaxstdio() asm("getmaxstdio");
 void *_imp___getmaxstdio = NULL;
-void _elf__getmaxstdio() {
+__attribute__((constructor)) void _elfimplib_init__getmaxstdio() {
 load_dll_msvcrt();
-if (!_imp___getmaxstdio) {
 _imp___getmaxstdio = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getmaxstdio");
 }
+void _elfimplib__getmaxstdio() {
 asm("leave\njmp *%0" : : "r"(_imp___getmaxstdio));
 }
 
-void _elf__getmbcp() asm("getmbcp");
+void _elfimplib__getmbcp() asm("getmbcp");
 void *_imp___getmbcp = NULL;
-void _elf__getmbcp() {
+__attribute__((constructor)) void _elfimplib_init__getmbcp() {
 load_dll_msvcrt();
-if (!_imp___getmbcp) {
 _imp___getmbcp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getmbcp");
 }
+void _elfimplib__getmbcp() {
 asm("leave\njmp *%0" : : "r"(_imp___getmbcp));
 }
 
-void _elf__getpid() asm("getpid");
+void _elfimplib__getpid() asm("getpid");
 void *_imp___getpid = NULL;
-void _elf__getpid() {
+__attribute__((constructor)) void _elfimplib_init__getpid() {
 load_dll_msvcrt();
-if (!_imp___getpid) {
 _imp___getpid = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getpid");
 }
+void _elfimplib__getpid() {
 asm("leave\njmp *%0" : : "r"(_imp___getpid));
 }
 
-void _elf__getsystime() asm("getsystime");
+void _elfimplib__getsystime() asm("getsystime");
 void *_imp___getsystime = NULL;
-void _elf__getsystime() {
+__attribute__((constructor)) void _elfimplib_init__getsystime() {
 load_dll_msvcrt();
-if (!_imp___getsystime) {
 _imp___getsystime = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getsystime");
 }
+void _elfimplib__getsystime() {
 asm("leave\njmp *%0" : : "r"(_imp___getsystime));
 }
 
-void _elf__getw() asm("getw");
+void _elfimplib__getw() asm("getw");
 void *_imp___getw = NULL;
-void _elf__getw() {
+__attribute__((constructor)) void _elfimplib_init__getw() {
 load_dll_msvcrt();
-if (!_imp___getw) {
 _imp___getw = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getw");
 }
+void _elfimplib__getw() {
 asm("leave\njmp *%0" : : "r"(_imp___getw));
 }
 
-void _elf__getwch() asm("getwch");
+void _elfimplib__getwch() asm("getwch");
 void *_imp___getwch = NULL;
-void _elf__getwch() {
+__attribute__((constructor)) void _elfimplib_init__getwch() {
 load_dll_msvcrt();
-if (!_imp___getwch) {
 _imp___getwch = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getwch");
 }
+void _elfimplib__getwch() {
 asm("leave\njmp *%0" : : "r"(_imp___getwch));
 }
 
-void _elf__getwche() asm("getwche");
+void _elfimplib__getwche() asm("getwche");
 void *_imp___getwche = NULL;
-void _elf__getwche() {
+__attribute__((constructor)) void _elfimplib_init__getwche() {
 load_dll_msvcrt();
-if (!_imp___getwche) {
 _imp___getwche = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getwche");
 }
+void _elfimplib__getwche() {
 asm("leave\njmp *%0" : : "r"(_imp___getwche));
 }
 
-void _elf__getws() asm("getws");
+void _elfimplib__getws() asm("getws");
 void *_imp___getws = NULL;
-void _elf__getws() {
+__attribute__((constructor)) void _elfimplib_init__getws() {
 load_dll_msvcrt();
-if (!_imp___getws) {
 _imp___getws = (void *) _elf_GetProcAddress(_dll_msvcrt, "_getws");
 }
+void _elfimplib__getws() {
 asm("leave\njmp *%0" : : "r"(_imp___getws));
 }
 
-void _elf__global_unwind2() asm("global_unwind2");
+void _elfimplib__global_unwind2() asm("global_unwind2");
 void *_imp___global_unwind2 = NULL;
-void _elf__global_unwind2() {
+__attribute__((constructor)) void _elfimplib_init__global_unwind2() {
 load_dll_msvcrt();
-if (!_imp___global_unwind2) {
 _imp___global_unwind2 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_global_unwind2");
 }
+void _elfimplib__global_unwind2() {
 asm("leave\njmp *%0" : : "r"(_imp___global_unwind2));
 }
 
-void _elf__gmtime64() asm("gmtime64");
+void _elfimplib__gmtime64() asm("gmtime64");
 void *_imp___gmtime64 = NULL;
-void _elf__gmtime64() {
+__attribute__((constructor)) void _elfimplib_init__gmtime64() {
 load_dll_msvcrt();
-if (!_imp___gmtime64) {
 _imp___gmtime64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_gmtime64");
 }
+void _elfimplib__gmtime64() {
 asm("leave\njmp *%0" : : "r"(_imp___gmtime64));
 }
 
-void _elf__heapadd() asm("heapadd");
+void _elfimplib__heapadd() asm("heapadd");
 void *_imp___heapadd = NULL;
-void _elf__heapadd() {
+__attribute__((constructor)) void _elfimplib_init__heapadd() {
 load_dll_msvcrt();
-if (!_imp___heapadd) {
 _imp___heapadd = (void *) _elf_GetProcAddress(_dll_msvcrt, "_heapadd");
 }
+void _elfimplib__heapadd() {
 asm("leave\njmp *%0" : : "r"(_imp___heapadd));
 }
 
-void _elf__heapchk() asm("heapchk");
+void _elfimplib__heapchk() asm("heapchk");
 void *_imp___heapchk = NULL;
-void _elf__heapchk() {
+__attribute__((constructor)) void _elfimplib_init__heapchk() {
 load_dll_msvcrt();
-if (!_imp___heapchk) {
 _imp___heapchk = (void *) _elf_GetProcAddress(_dll_msvcrt, "_heapchk");
 }
+void _elfimplib__heapchk() {
 asm("leave\njmp *%0" : : "r"(_imp___heapchk));
 }
 
-void _elf__heapmin() asm("heapmin");
+void _elfimplib__heapmin() asm("heapmin");
 void *_imp___heapmin = NULL;
-void _elf__heapmin() {
+__attribute__((constructor)) void _elfimplib_init__heapmin() {
 load_dll_msvcrt();
-if (!_imp___heapmin) {
 _imp___heapmin = (void *) _elf_GetProcAddress(_dll_msvcrt, "_heapmin");
 }
+void _elfimplib__heapmin() {
 asm("leave\njmp *%0" : : "r"(_imp___heapmin));
 }
 
-void _elf__heapset() asm("heapset");
+void _elfimplib__heapset() asm("heapset");
 void *_imp___heapset = NULL;
-void _elf__heapset() {
+__attribute__((constructor)) void _elfimplib_init__heapset() {
 load_dll_msvcrt();
-if (!_imp___heapset) {
 _imp___heapset = (void *) _elf_GetProcAddress(_dll_msvcrt, "_heapset");
 }
+void _elfimplib__heapset() {
 asm("leave\njmp *%0" : : "r"(_imp___heapset));
 }
 
-void _elf__heapused() asm("heapused");
+void _elfimplib__heapused() asm("heapused");
 void *_imp___heapused = NULL;
-void _elf__heapused() {
+__attribute__((constructor)) void _elfimplib_init__heapused() {
 load_dll_msvcrt();
-if (!_imp___heapused) {
 _imp___heapused = (void *) _elf_GetProcAddress(_dll_msvcrt, "_heapused");
 }
+void _elfimplib__heapused() {
 asm("leave\njmp *%0" : : "r"(_imp___heapused));
 }
 
-void _elf__heapwalk() asm("heapwalk");
+void _elfimplib__heapwalk() asm("heapwalk");
 void *_imp___heapwalk = NULL;
-void _elf__heapwalk() {
+__attribute__((constructor)) void _elfimplib_init__heapwalk() {
 load_dll_msvcrt();
-if (!_imp___heapwalk) {
 _imp___heapwalk = (void *) _elf_GetProcAddress(_dll_msvcrt, "_heapwalk");
 }
+void _elfimplib__heapwalk() {
 asm("leave\njmp *%0" : : "r"(_imp___heapwalk));
 }
 
-void _elf__hypot() asm("hypot");
+void _elfimplib__hypot() asm("hypot");
 void *_imp___hypot = NULL;
-void _elf__hypot() {
+__attribute__((constructor)) void _elfimplib_init__hypot() {
 load_dll_msvcrt();
-if (!_imp___hypot) {
 _imp___hypot = (void *) _elf_GetProcAddress(_dll_msvcrt, "_hypot");
 }
+void _elfimplib__hypot() {
 asm("leave\njmp *%0" : : "r"(_imp___hypot));
 }
 
-void _elf__i64toa() asm("i64toa");
+void _elfimplib__i64toa() asm("i64toa");
 void *_imp___i64toa = NULL;
-void _elf__i64toa() {
+__attribute__((constructor)) void _elfimplib_init__i64toa() {
 load_dll_msvcrt();
-if (!_imp___i64toa) {
 _imp___i64toa = (void *) _elf_GetProcAddress(_dll_msvcrt, "_i64toa");
 }
+void _elfimplib__i64toa() {
 asm("leave\njmp *%0" : : "r"(_imp___i64toa));
 }
 
-void _elf__i64tow() asm("i64tow");
+void _elfimplib__i64tow() asm("i64tow");
 void *_imp___i64tow = NULL;
-void _elf__i64tow() {
+__attribute__((constructor)) void _elfimplib_init__i64tow() {
 load_dll_msvcrt();
-if (!_imp___i64tow) {
 _imp___i64tow = (void *) _elf_GetProcAddress(_dll_msvcrt, "_i64tow");
 }
+void _elfimplib__i64tow() {
 asm("leave\njmp *%0" : : "r"(_imp___i64tow));
 }
 
-void _elf__initterm() asm("initterm");
+void _elfimplib__initterm() asm("initterm");
 void *_imp___initterm = NULL;
-void _elf__initterm() {
+__attribute__((constructor)) void _elfimplib_init__initterm() {
 load_dll_msvcrt();
-if (!_imp___initterm) {
 _imp___initterm = (void *) _elf_GetProcAddress(_dll_msvcrt, "_initterm");
 }
+void _elfimplib__initterm() {
 asm("leave\njmp *%0" : : "r"(_imp___initterm));
 }
 
-void _elf__inp() asm("inp");
+void _elfimplib__inp() asm("inp");
 void *_imp___inp = NULL;
-void _elf__inp() {
+__attribute__((constructor)) void _elfimplib_init__inp() {
 load_dll_msvcrt();
-if (!_imp___inp) {
 _imp___inp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_inp");
 }
+void _elfimplib__inp() {
 asm("leave\njmp *%0" : : "r"(_imp___inp));
 }
 
-void _elf__inpd() asm("inpd");
+void _elfimplib__inpd() asm("inpd");
 void *_imp___inpd = NULL;
-void _elf__inpd() {
+__attribute__((constructor)) void _elfimplib_init__inpd() {
 load_dll_msvcrt();
-if (!_imp___inpd) {
 _imp___inpd = (void *) _elf_GetProcAddress(_dll_msvcrt, "_inpd");
 }
+void _elfimplib__inpd() {
 asm("leave\njmp *%0" : : "r"(_imp___inpd));
 }
 
-void _elf__inpw() asm("inpw");
+void _elfimplib__inpw() asm("inpw");
 void *_imp___inpw = NULL;
-void _elf__inpw() {
+__attribute__((constructor)) void _elfimplib_init__inpw() {
 load_dll_msvcrt();
-if (!_imp___inpw) {
 _imp___inpw = (void *) _elf_GetProcAddress(_dll_msvcrt, "_inpw");
 }
+void _elfimplib__inpw() {
 asm("leave\njmp *%0" : : "r"(_imp___inpw));
 }
 
-void _elf__iob() asm("iob");
+void _elfimplib__iob() asm("iob");
 void *_imp___iob = NULL;
-void _elf__iob() {
+__attribute__((constructor)) void _elfimplib_init__iob() {
 load_dll_msvcrt();
-if (!_imp___iob) {
 _imp___iob = (void *) _elf_GetProcAddress(_dll_msvcrt, "_iob");
 }
+void _elfimplib__iob() {
 asm("leave\njmp *%0" : : "r"(_imp___iob));
 }
 
-void _elf__isatty() asm("isatty");
+void _elfimplib__isatty() asm("isatty");
 void *_imp___isatty = NULL;
-void _elf__isatty() {
+__attribute__((constructor)) void _elfimplib_init__isatty() {
 load_dll_msvcrt();
-if (!_imp___isatty) {
 _imp___isatty = (void *) _elf_GetProcAddress(_dll_msvcrt, "_isatty");
 }
+void _elfimplib__isatty() {
 asm("leave\njmp *%0" : : "r"(_imp___isatty));
 }
 
-void _elf__isctype() asm("isctype");
+void _elfimplib__isctype() asm("isctype");
 void *_imp___isctype = NULL;
-void _elf__isctype() {
+__attribute__((constructor)) void _elfimplib_init__isctype() {
 load_dll_msvcrt();
-if (!_imp___isctype) {
 _imp___isctype = (void *) _elf_GetProcAddress(_dll_msvcrt, "_isctype");
 }
+void _elfimplib__isctype() {
 asm("leave\njmp *%0" : : "r"(_imp___isctype));
 }
 
-void _elf__ismbbalnum() asm("ismbbalnum");
+void _elfimplib__ismbbalnum() asm("ismbbalnum");
 void *_imp___ismbbalnum = NULL;
-void _elf__ismbbalnum() {
+__attribute__((constructor)) void _elfimplib_init__ismbbalnum() {
 load_dll_msvcrt();
-if (!_imp___ismbbalnum) {
 _imp___ismbbalnum = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbbalnum");
 }
+void _elfimplib__ismbbalnum() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbalnum));
 }
 
-void _elf__ismbbalpha() asm("ismbbalpha");
+void _elfimplib__ismbbalpha() asm("ismbbalpha");
 void *_imp___ismbbalpha = NULL;
-void _elf__ismbbalpha() {
+__attribute__((constructor)) void _elfimplib_init__ismbbalpha() {
 load_dll_msvcrt();
-if (!_imp___ismbbalpha) {
 _imp___ismbbalpha = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbbalpha");
 }
+void _elfimplib__ismbbalpha() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbalpha));
 }
 
-void _elf__ismbbgraph() asm("ismbbgraph");
+void _elfimplib__ismbbgraph() asm("ismbbgraph");
 void *_imp___ismbbgraph = NULL;
-void _elf__ismbbgraph() {
+__attribute__((constructor)) void _elfimplib_init__ismbbgraph() {
 load_dll_msvcrt();
-if (!_imp___ismbbgraph) {
 _imp___ismbbgraph = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbbgraph");
 }
+void _elfimplib__ismbbgraph() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbgraph));
 }
 
-void _elf__ismbbkalnum() asm("ismbbkalnum");
+void _elfimplib__ismbbkalnum() asm("ismbbkalnum");
 void *_imp___ismbbkalnum = NULL;
-void _elf__ismbbkalnum() {
+__attribute__((constructor)) void _elfimplib_init__ismbbkalnum() {
 load_dll_msvcrt();
-if (!_imp___ismbbkalnum) {
 _imp___ismbbkalnum = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbbkalnum");
 }
+void _elfimplib__ismbbkalnum() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbkalnum));
 }
 
-void _elf__ismbbkana() asm("ismbbkana");
+void _elfimplib__ismbbkana() asm("ismbbkana");
 void *_imp___ismbbkana = NULL;
-void _elf__ismbbkana() {
+__attribute__((constructor)) void _elfimplib_init__ismbbkana() {
 load_dll_msvcrt();
-if (!_imp___ismbbkana) {
 _imp___ismbbkana = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbbkana");
 }
+void _elfimplib__ismbbkana() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbkana));
 }
 
-void _elf__ismbbkprint() asm("ismbbkprint");
+void _elfimplib__ismbbkprint() asm("ismbbkprint");
 void *_imp___ismbbkprint = NULL;
-void _elf__ismbbkprint() {
+__attribute__((constructor)) void _elfimplib_init__ismbbkprint() {
 load_dll_msvcrt();
-if (!_imp___ismbbkprint) {
 _imp___ismbbkprint = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbbkprint");
 }
+void _elfimplib__ismbbkprint() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbkprint));
 }
 
-void _elf__ismbbkpunct() asm("ismbbkpunct");
+void _elfimplib__ismbbkpunct() asm("ismbbkpunct");
 void *_imp___ismbbkpunct = NULL;
-void _elf__ismbbkpunct() {
+__attribute__((constructor)) void _elfimplib_init__ismbbkpunct() {
 load_dll_msvcrt();
-if (!_imp___ismbbkpunct) {
 _imp___ismbbkpunct = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbbkpunct");
 }
+void _elfimplib__ismbbkpunct() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbkpunct));
 }
 
-void _elf__ismbblead() asm("ismbblead");
+void _elfimplib__ismbblead() asm("ismbblead");
 void *_imp___ismbblead = NULL;
-void _elf__ismbblead() {
+__attribute__((constructor)) void _elfimplib_init__ismbblead() {
 load_dll_msvcrt();
-if (!_imp___ismbblead) {
 _imp___ismbblead = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbblead");
 }
+void _elfimplib__ismbblead() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbblead));
 }
 
-void _elf__ismbbprint() asm("ismbbprint");
+void _elfimplib__ismbbprint() asm("ismbbprint");
 void *_imp___ismbbprint = NULL;
-void _elf__ismbbprint() {
+__attribute__((constructor)) void _elfimplib_init__ismbbprint() {
 load_dll_msvcrt();
-if (!_imp___ismbbprint) {
 _imp___ismbbprint = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbbprint");
 }
+void _elfimplib__ismbbprint() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbprint));
 }
 
-void _elf__ismbbpunct() asm("ismbbpunct");
+void _elfimplib__ismbbpunct() asm("ismbbpunct");
 void *_imp___ismbbpunct = NULL;
-void _elf__ismbbpunct() {
+__attribute__((constructor)) void _elfimplib_init__ismbbpunct() {
 load_dll_msvcrt();
-if (!_imp___ismbbpunct) {
 _imp___ismbbpunct = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbbpunct");
 }
+void _elfimplib__ismbbpunct() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbpunct));
 }
 
-void _elf__ismbbtrail() asm("ismbbtrail");
+void _elfimplib__ismbbtrail() asm("ismbbtrail");
 void *_imp___ismbbtrail = NULL;
-void _elf__ismbbtrail() {
+__attribute__((constructor)) void _elfimplib_init__ismbbtrail() {
 load_dll_msvcrt();
-if (!_imp___ismbbtrail) {
 _imp___ismbbtrail = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbbtrail");
 }
+void _elfimplib__ismbbtrail() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbtrail));
 }
 
-void _elf__ismbcalnum() asm("ismbcalnum");
+void _elfimplib__ismbcalnum() asm("ismbcalnum");
 void *_imp___ismbcalnum = NULL;
-void _elf__ismbcalnum() {
+__attribute__((constructor)) void _elfimplib_init__ismbcalnum() {
 load_dll_msvcrt();
-if (!_imp___ismbcalnum) {
 _imp___ismbcalnum = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbcalnum");
 }
+void _elfimplib__ismbcalnum() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcalnum));
 }
 
-void _elf__ismbcalpha() asm("ismbcalpha");
+void _elfimplib__ismbcalpha() asm("ismbcalpha");
 void *_imp___ismbcalpha = NULL;
-void _elf__ismbcalpha() {
+__attribute__((constructor)) void _elfimplib_init__ismbcalpha() {
 load_dll_msvcrt();
-if (!_imp___ismbcalpha) {
 _imp___ismbcalpha = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbcalpha");
 }
+void _elfimplib__ismbcalpha() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcalpha));
 }
 
-void _elf__ismbcdigit() asm("ismbcdigit");
+void _elfimplib__ismbcdigit() asm("ismbcdigit");
 void *_imp___ismbcdigit = NULL;
-void _elf__ismbcdigit() {
+__attribute__((constructor)) void _elfimplib_init__ismbcdigit() {
 load_dll_msvcrt();
-if (!_imp___ismbcdigit) {
 _imp___ismbcdigit = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbcdigit");
 }
+void _elfimplib__ismbcdigit() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcdigit));
 }
 
-void _elf__ismbcgraph() asm("ismbcgraph");
+void _elfimplib__ismbcgraph() asm("ismbcgraph");
 void *_imp___ismbcgraph = NULL;
-void _elf__ismbcgraph() {
+__attribute__((constructor)) void _elfimplib_init__ismbcgraph() {
 load_dll_msvcrt();
-if (!_imp___ismbcgraph) {
 _imp___ismbcgraph = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbcgraph");
 }
+void _elfimplib__ismbcgraph() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcgraph));
 }
 
-void _elf__ismbchira() asm("ismbchira");
+void _elfimplib__ismbchira() asm("ismbchira");
 void *_imp___ismbchira = NULL;
-void _elf__ismbchira() {
+__attribute__((constructor)) void _elfimplib_init__ismbchira() {
 load_dll_msvcrt();
-if (!_imp___ismbchira) {
 _imp___ismbchira = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbchira");
 }
+void _elfimplib__ismbchira() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbchira));
 }
 
-void _elf__ismbckata() asm("ismbckata");
+void _elfimplib__ismbckata() asm("ismbckata");
 void *_imp___ismbckata = NULL;
-void _elf__ismbckata() {
+__attribute__((constructor)) void _elfimplib_init__ismbckata() {
 load_dll_msvcrt();
-if (!_imp___ismbckata) {
 _imp___ismbckata = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbckata");
 }
+void _elfimplib__ismbckata() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbckata));
 }
 
-void _elf__ismbcl0() asm("ismbcl0");
+void _elfimplib__ismbcl0() asm("ismbcl0");
 void *_imp___ismbcl0 = NULL;
-void _elf__ismbcl0() {
+__attribute__((constructor)) void _elfimplib_init__ismbcl0() {
 load_dll_msvcrt();
-if (!_imp___ismbcl0) {
 _imp___ismbcl0 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbcl0");
 }
+void _elfimplib__ismbcl0() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcl0));
 }
 
-void _elf__ismbcl1() asm("ismbcl1");
+void _elfimplib__ismbcl1() asm("ismbcl1");
 void *_imp___ismbcl1 = NULL;
-void _elf__ismbcl1() {
+__attribute__((constructor)) void _elfimplib_init__ismbcl1() {
 load_dll_msvcrt();
-if (!_imp___ismbcl1) {
 _imp___ismbcl1 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbcl1");
 }
+void _elfimplib__ismbcl1() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcl1));
 }
 
-void _elf__ismbcl2() asm("ismbcl2");
+void _elfimplib__ismbcl2() asm("ismbcl2");
 void *_imp___ismbcl2 = NULL;
-void _elf__ismbcl2() {
+__attribute__((constructor)) void _elfimplib_init__ismbcl2() {
 load_dll_msvcrt();
-if (!_imp___ismbcl2) {
 _imp___ismbcl2 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbcl2");
 }
+void _elfimplib__ismbcl2() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcl2));
 }
 
-void _elf__ismbclegal() asm("ismbclegal");
+void _elfimplib__ismbclegal() asm("ismbclegal");
 void *_imp___ismbclegal = NULL;
-void _elf__ismbclegal() {
+__attribute__((constructor)) void _elfimplib_init__ismbclegal() {
 load_dll_msvcrt();
-if (!_imp___ismbclegal) {
 _imp___ismbclegal = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbclegal");
 }
+void _elfimplib__ismbclegal() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbclegal));
 }
 
-void _elf__ismbclower() asm("ismbclower");
+void _elfimplib__ismbclower() asm("ismbclower");
 void *_imp___ismbclower = NULL;
-void _elf__ismbclower() {
+__attribute__((constructor)) void _elfimplib_init__ismbclower() {
 load_dll_msvcrt();
-if (!_imp___ismbclower) {
 _imp___ismbclower = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbclower");
 }
+void _elfimplib__ismbclower() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbclower));
 }
 
-void _elf__ismbcprint() asm("ismbcprint");
+void _elfimplib__ismbcprint() asm("ismbcprint");
 void *_imp___ismbcprint = NULL;
-void _elf__ismbcprint() {
+__attribute__((constructor)) void _elfimplib_init__ismbcprint() {
 load_dll_msvcrt();
-if (!_imp___ismbcprint) {
 _imp___ismbcprint = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbcprint");
 }
+void _elfimplib__ismbcprint() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcprint));
 }
 
-void _elf__ismbcpunct() asm("ismbcpunct");
+void _elfimplib__ismbcpunct() asm("ismbcpunct");
 void *_imp___ismbcpunct = NULL;
-void _elf__ismbcpunct() {
+__attribute__((constructor)) void _elfimplib_init__ismbcpunct() {
 load_dll_msvcrt();
-if (!_imp___ismbcpunct) {
 _imp___ismbcpunct = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbcpunct");
 }
+void _elfimplib__ismbcpunct() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcpunct));
 }
 
-void _elf__ismbcspace() asm("ismbcspace");
+void _elfimplib__ismbcspace() asm("ismbcspace");
 void *_imp___ismbcspace = NULL;
-void _elf__ismbcspace() {
+__attribute__((constructor)) void _elfimplib_init__ismbcspace() {
 load_dll_msvcrt();
-if (!_imp___ismbcspace) {
 _imp___ismbcspace = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbcspace");
 }
+void _elfimplib__ismbcspace() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcspace));
 }
 
-void _elf__ismbcsymbol() asm("ismbcsymbol");
+void _elfimplib__ismbcsymbol() asm("ismbcsymbol");
 void *_imp___ismbcsymbol = NULL;
-void _elf__ismbcsymbol() {
+__attribute__((constructor)) void _elfimplib_init__ismbcsymbol() {
 load_dll_msvcrt();
-if (!_imp___ismbcsymbol) {
 _imp___ismbcsymbol = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbcsymbol");
 }
+void _elfimplib__ismbcsymbol() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcsymbol));
 }
 
-void _elf__ismbcupper() asm("ismbcupper");
+void _elfimplib__ismbcupper() asm("ismbcupper");
 void *_imp___ismbcupper = NULL;
-void _elf__ismbcupper() {
+__attribute__((constructor)) void _elfimplib_init__ismbcupper() {
 load_dll_msvcrt();
-if (!_imp___ismbcupper) {
 _imp___ismbcupper = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbcupper");
 }
+void _elfimplib__ismbcupper() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcupper));
 }
 
-void _elf__ismbslead() asm("ismbslead");
+void _elfimplib__ismbslead() asm("ismbslead");
 void *_imp___ismbslead = NULL;
-void _elf__ismbslead() {
+__attribute__((constructor)) void _elfimplib_init__ismbslead() {
 load_dll_msvcrt();
-if (!_imp___ismbslead) {
 _imp___ismbslead = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbslead");
 }
+void _elfimplib__ismbslead() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbslead));
 }
 
-void _elf__ismbstrail() asm("ismbstrail");
+void _elfimplib__ismbstrail() asm("ismbstrail");
 void *_imp___ismbstrail = NULL;
-void _elf__ismbstrail() {
+__attribute__((constructor)) void _elfimplib_init__ismbstrail() {
 load_dll_msvcrt();
-if (!_imp___ismbstrail) {
 _imp___ismbstrail = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ismbstrail");
 }
+void _elfimplib__ismbstrail() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbstrail));
 }
 
-void _elf__isnan() asm("isnan");
+void _elfimplib__isnan() asm("isnan");
 void *_imp___isnan = NULL;
-void _elf__isnan() {
+__attribute__((constructor)) void _elfimplib_init__isnan() {
 load_dll_msvcrt();
-if (!_imp___isnan) {
 _imp___isnan = (void *) _elf_GetProcAddress(_dll_msvcrt, "_isnan");
 }
+void _elfimplib__isnan() {
 asm("leave\njmp *%0" : : "r"(_imp___isnan));
 }
 
-void _elf__itoa() asm("itoa");
+void _elfimplib__itoa() asm("itoa");
 void *_imp___itoa = NULL;
-void _elf__itoa() {
+__attribute__((constructor)) void _elfimplib_init__itoa() {
 load_dll_msvcrt();
-if (!_imp___itoa) {
 _imp___itoa = (void *) _elf_GetProcAddress(_dll_msvcrt, "_itoa");
 }
+void _elfimplib__itoa() {
 asm("leave\njmp *%0" : : "r"(_imp___itoa));
 }
 
-void _elf__itow() asm("itow");
+void _elfimplib__itow() asm("itow");
 void *_imp___itow = NULL;
-void _elf__itow() {
+__attribute__((constructor)) void _elfimplib_init__itow() {
 load_dll_msvcrt();
-if (!_imp___itow) {
 _imp___itow = (void *) _elf_GetProcAddress(_dll_msvcrt, "_itow");
 }
+void _elfimplib__itow() {
 asm("leave\njmp *%0" : : "r"(_imp___itow));
 }
 
-void _elf__j0() asm("j0");
+void _elfimplib__j0() asm("j0");
 void *_imp___j0 = NULL;
-void _elf__j0() {
+__attribute__((constructor)) void _elfimplib_init__j0() {
 load_dll_msvcrt();
-if (!_imp___j0) {
 _imp___j0 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_j0");
 }
+void _elfimplib__j0() {
 asm("leave\njmp *%0" : : "r"(_imp___j0));
 }
 
-void _elf__j1() asm("j1");
+void _elfimplib__j1() asm("j1");
 void *_imp___j1 = NULL;
-void _elf__j1() {
+__attribute__((constructor)) void _elfimplib_init__j1() {
 load_dll_msvcrt();
-if (!_imp___j1) {
 _imp___j1 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_j1");
 }
+void _elfimplib__j1() {
 asm("leave\njmp *%0" : : "r"(_imp___j1));
 }
 
-void _elf__jn() asm("jn");
+void _elfimplib__jn() asm("jn");
 void *_imp___jn = NULL;
-void _elf__jn() {
+__attribute__((constructor)) void _elfimplib_init__jn() {
 load_dll_msvcrt();
-if (!_imp___jn) {
 _imp___jn = (void *) _elf_GetProcAddress(_dll_msvcrt, "_jn");
 }
+void _elfimplib__jn() {
 asm("leave\njmp *%0" : : "r"(_imp___jn));
 }
 
-void _elf__kbhit() asm("kbhit");
+void _elfimplib__kbhit() asm("kbhit");
 void *_imp___kbhit = NULL;
-void _elf__kbhit() {
+__attribute__((constructor)) void _elfimplib_init__kbhit() {
 load_dll_msvcrt();
-if (!_imp___kbhit) {
 _imp___kbhit = (void *) _elf_GetProcAddress(_dll_msvcrt, "_kbhit");
 }
+void _elfimplib__kbhit() {
 asm("leave\njmp *%0" : : "r"(_imp___kbhit));
 }
 
-void _elf__lfind() asm("lfind");
+void _elfimplib__lfind() asm("lfind");
 void *_imp___lfind = NULL;
-void _elf__lfind() {
+__attribute__((constructor)) void _elfimplib_init__lfind() {
 load_dll_msvcrt();
-if (!_imp___lfind) {
 _imp___lfind = (void *) _elf_GetProcAddress(_dll_msvcrt, "_lfind");
 }
+void _elfimplib__lfind() {
 asm("leave\njmp *%0" : : "r"(_imp___lfind));
 }
 
-void _elf__loaddll() asm("loaddll");
+void _elfimplib__loaddll() asm("loaddll");
 void *_imp___loaddll = NULL;
-void _elf__loaddll() {
+__attribute__((constructor)) void _elfimplib_init__loaddll() {
 load_dll_msvcrt();
-if (!_imp___loaddll) {
 _imp___loaddll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_loaddll");
 }
+void _elfimplib__loaddll() {
 asm("leave\njmp *%0" : : "r"(_imp___loaddll));
 }
 
-void _elf__local_unwind2() asm("local_unwind2");
+void _elfimplib__local_unwind2() asm("local_unwind2");
 void *_imp___local_unwind2 = NULL;
-void _elf__local_unwind2() {
+__attribute__((constructor)) void _elfimplib_init__local_unwind2() {
 load_dll_msvcrt();
-if (!_imp___local_unwind2) {
 _imp___local_unwind2 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_local_unwind2");
 }
+void _elfimplib__local_unwind2() {
 asm("leave\njmp *%0" : : "r"(_imp___local_unwind2));
 }
 
-void _elf__localtime64() asm("localtime64");
+void _elfimplib__localtime64() asm("localtime64");
 void *_imp___localtime64 = NULL;
-void _elf__localtime64() {
+__attribute__((constructor)) void _elfimplib_init__localtime64() {
 load_dll_msvcrt();
-if (!_imp___localtime64) {
 _imp___localtime64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_localtime64");
 }
+void _elfimplib__localtime64() {
 asm("leave\njmp *%0" : : "r"(_imp___localtime64));
 }
 
-void _elf__lock() asm("lock");
+void _elfimplib__lock() asm("lock");
 void *_imp___lock = NULL;
-void _elf__lock() {
+__attribute__((constructor)) void _elfimplib_init__lock() {
 load_dll_msvcrt();
-if (!_imp___lock) {
 _imp___lock = (void *) _elf_GetProcAddress(_dll_msvcrt, "_lock");
 }
+void _elfimplib__lock() {
 asm("leave\njmp *%0" : : "r"(_imp___lock));
 }
 
-void _elf__locking() asm("locking");
+void _elfimplib__locking() asm("locking");
 void *_imp___locking = NULL;
-void _elf__locking() {
+__attribute__((constructor)) void _elfimplib_init__locking() {
 load_dll_msvcrt();
-if (!_imp___locking) {
 _imp___locking = (void *) _elf_GetProcAddress(_dll_msvcrt, "_locking");
 }
+void _elfimplib__locking() {
 asm("leave\njmp *%0" : : "r"(_imp___locking));
 }
 
-void _elf__logb() asm("logb");
+void _elfimplib__logb() asm("logb");
 void *_imp___logb = NULL;
-void _elf__logb() {
+__attribute__((constructor)) void _elfimplib_init__logb() {
 load_dll_msvcrt();
-if (!_imp___logb) {
 _imp___logb = (void *) _elf_GetProcAddress(_dll_msvcrt, "_logb");
 }
+void _elfimplib__logb() {
 asm("leave\njmp *%0" : : "r"(_imp___logb));
 }
 
-void _elf__longjmpex() asm("longjmpex");
+void _elfimplib__longjmpex() asm("longjmpex");
 void *_imp___longjmpex = NULL;
-void _elf__longjmpex() {
+__attribute__((constructor)) void _elfimplib_init__longjmpex() {
 load_dll_msvcrt();
-if (!_imp___longjmpex) {
 _imp___longjmpex = (void *) _elf_GetProcAddress(_dll_msvcrt, "_longjmpex");
 }
+void _elfimplib__longjmpex() {
 asm("leave\njmp *%0" : : "r"(_imp___longjmpex));
 }
 
-void _elf__lrotl() asm("lrotl");
+void _elfimplib__lrotl() asm("lrotl");
 void *_imp___lrotl = NULL;
-void _elf__lrotl() {
+__attribute__((constructor)) void _elfimplib_init__lrotl() {
 load_dll_msvcrt();
-if (!_imp___lrotl) {
 _imp___lrotl = (void *) _elf_GetProcAddress(_dll_msvcrt, "_lrotl");
 }
+void _elfimplib__lrotl() {
 asm("leave\njmp *%0" : : "r"(_imp___lrotl));
 }
 
-void _elf__lrotr() asm("lrotr");
+void _elfimplib__lrotr() asm("lrotr");
 void *_imp___lrotr = NULL;
-void _elf__lrotr() {
+__attribute__((constructor)) void _elfimplib_init__lrotr() {
 load_dll_msvcrt();
-if (!_imp___lrotr) {
 _imp___lrotr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_lrotr");
 }
+void _elfimplib__lrotr() {
 asm("leave\njmp *%0" : : "r"(_imp___lrotr));
 }
 
-void _elf__lsearch() asm("lsearch");
+void _elfimplib__lsearch() asm("lsearch");
 void *_imp___lsearch = NULL;
-void _elf__lsearch() {
+__attribute__((constructor)) void _elfimplib_init__lsearch() {
 load_dll_msvcrt();
-if (!_imp___lsearch) {
 _imp___lsearch = (void *) _elf_GetProcAddress(_dll_msvcrt, "_lsearch");
 }
+void _elfimplib__lsearch() {
 asm("leave\njmp *%0" : : "r"(_imp___lsearch));
 }
 
-void _elf__lseek() asm("lseek");
+void _elfimplib__lseek() asm("lseek");
 void *_imp___lseek = NULL;
-void _elf__lseek() {
+__attribute__((constructor)) void _elfimplib_init__lseek() {
 load_dll_msvcrt();
-if (!_imp___lseek) {
 _imp___lseek = (void *) _elf_GetProcAddress(_dll_msvcrt, "_lseek");
 }
+void _elfimplib__lseek() {
 asm("leave\njmp *%0" : : "r"(_imp___lseek));
 }
 
-void _elf__lseeki64() asm("lseeki64");
+void _elfimplib__lseeki64() asm("lseeki64");
 void *_imp___lseeki64 = NULL;
-void _elf__lseeki64() {
+__attribute__((constructor)) void _elfimplib_init__lseeki64() {
 load_dll_msvcrt();
-if (!_imp___lseeki64) {
 _imp___lseeki64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_lseeki64");
 }
+void _elfimplib__lseeki64() {
 asm("leave\njmp *%0" : : "r"(_imp___lseeki64));
 }
 
-void _elf__ltoa() asm("ltoa");
+void _elfimplib__ltoa() asm("ltoa");
 void *_imp___ltoa = NULL;
-void _elf__ltoa() {
+__attribute__((constructor)) void _elfimplib_init__ltoa() {
 load_dll_msvcrt();
-if (!_imp___ltoa) {
 _imp___ltoa = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ltoa");
 }
+void _elfimplib__ltoa() {
 asm("leave\njmp *%0" : : "r"(_imp___ltoa));
 }
 
-void _elf__ltow() asm("ltow");
+void _elfimplib__ltow() asm("ltow");
 void *_imp___ltow = NULL;
-void _elf__ltow() {
+__attribute__((constructor)) void _elfimplib_init__ltow() {
 load_dll_msvcrt();
-if (!_imp___ltow) {
 _imp___ltow = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ltow");
 }
+void _elfimplib__ltow() {
 asm("leave\njmp *%0" : : "r"(_imp___ltow));
 }
 
-void _elf__makepath() asm("makepath");
+void _elfimplib__makepath() asm("makepath");
 void *_imp___makepath = NULL;
-void _elf__makepath() {
+__attribute__((constructor)) void _elfimplib_init__makepath() {
 load_dll_msvcrt();
-if (!_imp___makepath) {
 _imp___makepath = (void *) _elf_GetProcAddress(_dll_msvcrt, "_makepath");
 }
+void _elfimplib__makepath() {
 asm("leave\njmp *%0" : : "r"(_imp___makepath));
 }
 
-void _elf__mbbtombc() asm("mbbtombc");
+void _elfimplib__mbbtombc() asm("mbbtombc");
 void *_imp___mbbtombc = NULL;
-void _elf__mbbtombc() {
+__attribute__((constructor)) void _elfimplib_init__mbbtombc() {
 load_dll_msvcrt();
-if (!_imp___mbbtombc) {
 _imp___mbbtombc = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbbtombc");
 }
+void _elfimplib__mbbtombc() {
 asm("leave\njmp *%0" : : "r"(_imp___mbbtombc));
 }
 
-void _elf__mbbtype() asm("mbbtype");
+void _elfimplib__mbbtype() asm("mbbtype");
 void *_imp___mbbtype = NULL;
-void _elf__mbbtype() {
+__attribute__((constructor)) void _elfimplib_init__mbbtype() {
 load_dll_msvcrt();
-if (!_imp___mbbtype) {
 _imp___mbbtype = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbbtype");
 }
+void _elfimplib__mbbtype() {
 asm("leave\njmp *%0" : : "r"(_imp___mbbtype));
 }
 
-void _elf__mbcasemap() asm("mbcasemap");
+void _elfimplib__mbcasemap() asm("mbcasemap");
 void *_imp___mbcasemap = NULL;
-void _elf__mbcasemap() {
+__attribute__((constructor)) void _elfimplib_init__mbcasemap() {
 load_dll_msvcrt();
-if (!_imp___mbcasemap) {
 _imp___mbcasemap = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbcasemap");
 }
+void _elfimplib__mbcasemap() {
 asm("leave\njmp *%0" : : "r"(_imp___mbcasemap));
 }
 
-void _elf__mbccpy() asm("mbccpy");
+void _elfimplib__mbccpy() asm("mbccpy");
 void *_imp___mbccpy = NULL;
-void _elf__mbccpy() {
+__attribute__((constructor)) void _elfimplib_init__mbccpy() {
 load_dll_msvcrt();
-if (!_imp___mbccpy) {
 _imp___mbccpy = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbccpy");
 }
+void _elfimplib__mbccpy() {
 asm("leave\njmp *%0" : : "r"(_imp___mbccpy));
 }
 
-void _elf__mbcjistojms() asm("mbcjistojms");
+void _elfimplib__mbcjistojms() asm("mbcjistojms");
 void *_imp___mbcjistojms = NULL;
-void _elf__mbcjistojms() {
+__attribute__((constructor)) void _elfimplib_init__mbcjistojms() {
 load_dll_msvcrt();
-if (!_imp___mbcjistojms) {
 _imp___mbcjistojms = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbcjistojms");
 }
+void _elfimplib__mbcjistojms() {
 asm("leave\njmp *%0" : : "r"(_imp___mbcjistojms));
 }
 
-void _elf__mbcjmstojis() asm("mbcjmstojis");
+void _elfimplib__mbcjmstojis() asm("mbcjmstojis");
 void *_imp___mbcjmstojis = NULL;
-void _elf__mbcjmstojis() {
+__attribute__((constructor)) void _elfimplib_init__mbcjmstojis() {
 load_dll_msvcrt();
-if (!_imp___mbcjmstojis) {
 _imp___mbcjmstojis = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbcjmstojis");
 }
+void _elfimplib__mbcjmstojis() {
 asm("leave\njmp *%0" : : "r"(_imp___mbcjmstojis));
 }
 
-void _elf__mbclen() asm("mbclen");
+void _elfimplib__mbclen() asm("mbclen");
 void *_imp___mbclen = NULL;
-void _elf__mbclen() {
+__attribute__((constructor)) void _elfimplib_init__mbclen() {
 load_dll_msvcrt();
-if (!_imp___mbclen) {
 _imp___mbclen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbclen");
 }
+void _elfimplib__mbclen() {
 asm("leave\njmp *%0" : : "r"(_imp___mbclen));
 }
 
-void _elf__mbctohira() asm("mbctohira");
+void _elfimplib__mbctohira() asm("mbctohira");
 void *_imp___mbctohira = NULL;
-void _elf__mbctohira() {
+__attribute__((constructor)) void _elfimplib_init__mbctohira() {
 load_dll_msvcrt();
-if (!_imp___mbctohira) {
 _imp___mbctohira = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbctohira");
 }
+void _elfimplib__mbctohira() {
 asm("leave\njmp *%0" : : "r"(_imp___mbctohira));
 }
 
-void _elf__mbctokata() asm("mbctokata");
+void _elfimplib__mbctokata() asm("mbctokata");
 void *_imp___mbctokata = NULL;
-void _elf__mbctokata() {
+__attribute__((constructor)) void _elfimplib_init__mbctokata() {
 load_dll_msvcrt();
-if (!_imp___mbctokata) {
 _imp___mbctokata = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbctokata");
 }
+void _elfimplib__mbctokata() {
 asm("leave\njmp *%0" : : "r"(_imp___mbctokata));
 }
 
-void _elf__mbctolower() asm("mbctolower");
+void _elfimplib__mbctolower() asm("mbctolower");
 void *_imp___mbctolower = NULL;
-void _elf__mbctolower() {
+__attribute__((constructor)) void _elfimplib_init__mbctolower() {
 load_dll_msvcrt();
-if (!_imp___mbctolower) {
 _imp___mbctolower = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbctolower");
 }
+void _elfimplib__mbctolower() {
 asm("leave\njmp *%0" : : "r"(_imp___mbctolower));
 }
 
-void _elf__mbctombb() asm("mbctombb");
+void _elfimplib__mbctombb() asm("mbctombb");
 void *_imp___mbctombb = NULL;
-void _elf__mbctombb() {
+__attribute__((constructor)) void _elfimplib_init__mbctombb() {
 load_dll_msvcrt();
-if (!_imp___mbctombb) {
 _imp___mbctombb = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbctombb");
 }
+void _elfimplib__mbctombb() {
 asm("leave\njmp *%0" : : "r"(_imp___mbctombb));
 }
 
-void _elf__mbctoupper() asm("mbctoupper");
+void _elfimplib__mbctoupper() asm("mbctoupper");
 void *_imp___mbctoupper = NULL;
-void _elf__mbctoupper() {
+__attribute__((constructor)) void _elfimplib_init__mbctoupper() {
 load_dll_msvcrt();
-if (!_imp___mbctoupper) {
 _imp___mbctoupper = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbctoupper");
 }
+void _elfimplib__mbctoupper() {
 asm("leave\njmp *%0" : : "r"(_imp___mbctoupper));
 }
 
-void _elf__mbctype() asm("mbctype");
+void _elfimplib__mbctype() asm("mbctype");
 void *_imp___mbctype = NULL;
-void _elf__mbctype() {
+__attribute__((constructor)) void _elfimplib_init__mbctype() {
 load_dll_msvcrt();
-if (!_imp___mbctype) {
 _imp___mbctype = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbctype");
 }
+void _elfimplib__mbctype() {
 asm("leave\njmp *%0" : : "r"(_imp___mbctype));
 }
 
-void _elf__mbsbtype() asm("mbsbtype");
+void _elfimplib__mbsbtype() asm("mbsbtype");
 void *_imp___mbsbtype = NULL;
-void _elf__mbsbtype() {
+__attribute__((constructor)) void _elfimplib_init__mbsbtype() {
 load_dll_msvcrt();
-if (!_imp___mbsbtype) {
 _imp___mbsbtype = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsbtype");
 }
+void _elfimplib__mbsbtype() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsbtype));
 }
 
-void _elf__mbscat() asm("mbscat");
+void _elfimplib__mbscat() asm("mbscat");
 void *_imp___mbscat = NULL;
-void _elf__mbscat() {
+__attribute__((constructor)) void _elfimplib_init__mbscat() {
 load_dll_msvcrt();
-if (!_imp___mbscat) {
 _imp___mbscat = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbscat");
 }
+void _elfimplib__mbscat() {
 asm("leave\njmp *%0" : : "r"(_imp___mbscat));
 }
 
-void _elf__mbschr() asm("mbschr");
+void _elfimplib__mbschr() asm("mbschr");
 void *_imp___mbschr = NULL;
-void _elf__mbschr() {
+__attribute__((constructor)) void _elfimplib_init__mbschr() {
 load_dll_msvcrt();
-if (!_imp___mbschr) {
 _imp___mbschr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbschr");
 }
+void _elfimplib__mbschr() {
 asm("leave\njmp *%0" : : "r"(_imp___mbschr));
 }
 
-void _elf__mbscmp() asm("mbscmp");
+void _elfimplib__mbscmp() asm("mbscmp");
 void *_imp___mbscmp = NULL;
-void _elf__mbscmp() {
+__attribute__((constructor)) void _elfimplib_init__mbscmp() {
 load_dll_msvcrt();
-if (!_imp___mbscmp) {
 _imp___mbscmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbscmp");
 }
+void _elfimplib__mbscmp() {
 asm("leave\njmp *%0" : : "r"(_imp___mbscmp));
 }
 
-void _elf__mbscoll() asm("mbscoll");
+void _elfimplib__mbscoll() asm("mbscoll");
 void *_imp___mbscoll = NULL;
-void _elf__mbscoll() {
+__attribute__((constructor)) void _elfimplib_init__mbscoll() {
 load_dll_msvcrt();
-if (!_imp___mbscoll) {
 _imp___mbscoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbscoll");
 }
+void _elfimplib__mbscoll() {
 asm("leave\njmp *%0" : : "r"(_imp___mbscoll));
 }
 
-void _elf__mbscpy() asm("mbscpy");
+void _elfimplib__mbscpy() asm("mbscpy");
 void *_imp___mbscpy = NULL;
-void _elf__mbscpy() {
+__attribute__((constructor)) void _elfimplib_init__mbscpy() {
 load_dll_msvcrt();
-if (!_imp___mbscpy) {
 _imp___mbscpy = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbscpy");
 }
+void _elfimplib__mbscpy() {
 asm("leave\njmp *%0" : : "r"(_imp___mbscpy));
 }
 
-void _elf__mbscspn() asm("mbscspn");
+void _elfimplib__mbscspn() asm("mbscspn");
 void *_imp___mbscspn = NULL;
-void _elf__mbscspn() {
+__attribute__((constructor)) void _elfimplib_init__mbscspn() {
 load_dll_msvcrt();
-if (!_imp___mbscspn) {
 _imp___mbscspn = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbscspn");
 }
+void _elfimplib__mbscspn() {
 asm("leave\njmp *%0" : : "r"(_imp___mbscspn));
 }
 
-void _elf__mbsdec() asm("mbsdec");
+void _elfimplib__mbsdec() asm("mbsdec");
 void *_imp___mbsdec = NULL;
-void _elf__mbsdec() {
+__attribute__((constructor)) void _elfimplib_init__mbsdec() {
 load_dll_msvcrt();
-if (!_imp___mbsdec) {
 _imp___mbsdec = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsdec");
 }
+void _elfimplib__mbsdec() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsdec));
 }
 
-void _elf__mbsdup() asm("mbsdup");
+void _elfimplib__mbsdup() asm("mbsdup");
 void *_imp___mbsdup = NULL;
-void _elf__mbsdup() {
+__attribute__((constructor)) void _elfimplib_init__mbsdup() {
 load_dll_msvcrt();
-if (!_imp___mbsdup) {
 _imp___mbsdup = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsdup");
 }
+void _elfimplib__mbsdup() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsdup));
 }
 
-void _elf__mbsicmp() asm("mbsicmp");
+void _elfimplib__mbsicmp() asm("mbsicmp");
 void *_imp___mbsicmp = NULL;
-void _elf__mbsicmp() {
+__attribute__((constructor)) void _elfimplib_init__mbsicmp() {
 load_dll_msvcrt();
-if (!_imp___mbsicmp) {
 _imp___mbsicmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsicmp");
 }
+void _elfimplib__mbsicmp() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsicmp));
 }
 
-void _elf__mbsicoll() asm("mbsicoll");
+void _elfimplib__mbsicoll() asm("mbsicoll");
 void *_imp___mbsicoll = NULL;
-void _elf__mbsicoll() {
+__attribute__((constructor)) void _elfimplib_init__mbsicoll() {
 load_dll_msvcrt();
-if (!_imp___mbsicoll) {
 _imp___mbsicoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsicoll");
 }
+void _elfimplib__mbsicoll() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsicoll));
 }
 
-void _elf__mbsinc() asm("mbsinc");
+void _elfimplib__mbsinc() asm("mbsinc");
 void *_imp___mbsinc = NULL;
-void _elf__mbsinc() {
+__attribute__((constructor)) void _elfimplib_init__mbsinc() {
 load_dll_msvcrt();
-if (!_imp___mbsinc) {
 _imp___mbsinc = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsinc");
 }
+void _elfimplib__mbsinc() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsinc));
 }
 
-void _elf__mbslen() asm("mbslen");
+void _elfimplib__mbslen() asm("mbslen");
 void *_imp___mbslen = NULL;
-void _elf__mbslen() {
+__attribute__((constructor)) void _elfimplib_init__mbslen() {
 load_dll_msvcrt();
-if (!_imp___mbslen) {
 _imp___mbslen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbslen");
 }
+void _elfimplib__mbslen() {
 asm("leave\njmp *%0" : : "r"(_imp___mbslen));
 }
 
-void _elf__mbslwr() asm("mbslwr");
+void _elfimplib__mbslwr() asm("mbslwr");
 void *_imp___mbslwr = NULL;
-void _elf__mbslwr() {
+__attribute__((constructor)) void _elfimplib_init__mbslwr() {
 load_dll_msvcrt();
-if (!_imp___mbslwr) {
 _imp___mbslwr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbslwr");
 }
+void _elfimplib__mbslwr() {
 asm("leave\njmp *%0" : : "r"(_imp___mbslwr));
 }
 
-void _elf__mbsnbcat() asm("mbsnbcat");
+void _elfimplib__mbsnbcat() asm("mbsnbcat");
 void *_imp___mbsnbcat = NULL;
-void _elf__mbsnbcat() {
+__attribute__((constructor)) void _elfimplib_init__mbsnbcat() {
 load_dll_msvcrt();
-if (!_imp___mbsnbcat) {
 _imp___mbsnbcat = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsnbcat");
 }
+void _elfimplib__mbsnbcat() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnbcat));
 }
 
-void _elf__mbsnbcmp() asm("mbsnbcmp");
+void _elfimplib__mbsnbcmp() asm("mbsnbcmp");
 void *_imp___mbsnbcmp = NULL;
-void _elf__mbsnbcmp() {
+__attribute__((constructor)) void _elfimplib_init__mbsnbcmp() {
 load_dll_msvcrt();
-if (!_imp___mbsnbcmp) {
 _imp___mbsnbcmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsnbcmp");
 }
+void _elfimplib__mbsnbcmp() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnbcmp));
 }
 
-void _elf__mbsnbcnt() asm("mbsnbcnt");
+void _elfimplib__mbsnbcnt() asm("mbsnbcnt");
 void *_imp___mbsnbcnt = NULL;
-void _elf__mbsnbcnt() {
+__attribute__((constructor)) void _elfimplib_init__mbsnbcnt() {
 load_dll_msvcrt();
-if (!_imp___mbsnbcnt) {
 _imp___mbsnbcnt = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsnbcnt");
 }
+void _elfimplib__mbsnbcnt() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnbcnt));
 }
 
-void _elf__mbsnbcoll() asm("mbsnbcoll");
+void _elfimplib__mbsnbcoll() asm("mbsnbcoll");
 void *_imp___mbsnbcoll = NULL;
-void _elf__mbsnbcoll() {
+__attribute__((constructor)) void _elfimplib_init__mbsnbcoll() {
 load_dll_msvcrt();
-if (!_imp___mbsnbcoll) {
 _imp___mbsnbcoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsnbcoll");
 }
+void _elfimplib__mbsnbcoll() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnbcoll));
 }
 
-void _elf__mbsnbcpy() asm("mbsnbcpy");
+void _elfimplib__mbsnbcpy() asm("mbsnbcpy");
 void *_imp___mbsnbcpy = NULL;
-void _elf__mbsnbcpy() {
+__attribute__((constructor)) void _elfimplib_init__mbsnbcpy() {
 load_dll_msvcrt();
-if (!_imp___mbsnbcpy) {
 _imp___mbsnbcpy = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsnbcpy");
 }
+void _elfimplib__mbsnbcpy() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnbcpy));
 }
 
-void _elf__mbsnbicmp() asm("mbsnbicmp");
+void _elfimplib__mbsnbicmp() asm("mbsnbicmp");
 void *_imp___mbsnbicmp = NULL;
-void _elf__mbsnbicmp() {
+__attribute__((constructor)) void _elfimplib_init__mbsnbicmp() {
 load_dll_msvcrt();
-if (!_imp___mbsnbicmp) {
 _imp___mbsnbicmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsnbicmp");
 }
+void _elfimplib__mbsnbicmp() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnbicmp));
 }
 
-void _elf__mbsnbicoll() asm("mbsnbicoll");
+void _elfimplib__mbsnbicoll() asm("mbsnbicoll");
 void *_imp___mbsnbicoll = NULL;
-void _elf__mbsnbicoll() {
+__attribute__((constructor)) void _elfimplib_init__mbsnbicoll() {
 load_dll_msvcrt();
-if (!_imp___mbsnbicoll) {
 _imp___mbsnbicoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsnbicoll");
 }
+void _elfimplib__mbsnbicoll() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnbicoll));
 }
 
-void _elf__mbsnbset() asm("mbsnbset");
+void _elfimplib__mbsnbset() asm("mbsnbset");
 void *_imp___mbsnbset = NULL;
-void _elf__mbsnbset() {
+__attribute__((constructor)) void _elfimplib_init__mbsnbset() {
 load_dll_msvcrt();
-if (!_imp___mbsnbset) {
 _imp___mbsnbset = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsnbset");
 }
+void _elfimplib__mbsnbset() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnbset));
 }
 
-void _elf__mbsncat() asm("mbsncat");
+void _elfimplib__mbsncat() asm("mbsncat");
 void *_imp___mbsncat = NULL;
-void _elf__mbsncat() {
+__attribute__((constructor)) void _elfimplib_init__mbsncat() {
 load_dll_msvcrt();
-if (!_imp___mbsncat) {
 _imp___mbsncat = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsncat");
 }
+void _elfimplib__mbsncat() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsncat));
 }
 
-void _elf__mbsnccnt() asm("mbsnccnt");
+void _elfimplib__mbsnccnt() asm("mbsnccnt");
 void *_imp___mbsnccnt = NULL;
-void _elf__mbsnccnt() {
+__attribute__((constructor)) void _elfimplib_init__mbsnccnt() {
 load_dll_msvcrt();
-if (!_imp___mbsnccnt) {
 _imp___mbsnccnt = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsnccnt");
 }
+void _elfimplib__mbsnccnt() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnccnt));
 }
 
-void _elf__mbsncmp() asm("mbsncmp");
+void _elfimplib__mbsncmp() asm("mbsncmp");
 void *_imp___mbsncmp = NULL;
-void _elf__mbsncmp() {
+__attribute__((constructor)) void _elfimplib_init__mbsncmp() {
 load_dll_msvcrt();
-if (!_imp___mbsncmp) {
 _imp___mbsncmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsncmp");
 }
+void _elfimplib__mbsncmp() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsncmp));
 }
 
-void _elf__mbsncoll() asm("mbsncoll");
+void _elfimplib__mbsncoll() asm("mbsncoll");
 void *_imp___mbsncoll = NULL;
-void _elf__mbsncoll() {
+__attribute__((constructor)) void _elfimplib_init__mbsncoll() {
 load_dll_msvcrt();
-if (!_imp___mbsncoll) {
 _imp___mbsncoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsncoll");
 }
+void _elfimplib__mbsncoll() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsncoll));
 }
 
-void _elf__mbsncpy() asm("mbsncpy");
+void _elfimplib__mbsncpy() asm("mbsncpy");
 void *_imp___mbsncpy = NULL;
-void _elf__mbsncpy() {
+__attribute__((constructor)) void _elfimplib_init__mbsncpy() {
 load_dll_msvcrt();
-if (!_imp___mbsncpy) {
 _imp___mbsncpy = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsncpy");
 }
+void _elfimplib__mbsncpy() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsncpy));
 }
 
-void _elf__mbsnextc() asm("mbsnextc");
+void _elfimplib__mbsnextc() asm("mbsnextc");
 void *_imp___mbsnextc = NULL;
-void _elf__mbsnextc() {
+__attribute__((constructor)) void _elfimplib_init__mbsnextc() {
 load_dll_msvcrt();
-if (!_imp___mbsnextc) {
 _imp___mbsnextc = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsnextc");
 }
+void _elfimplib__mbsnextc() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnextc));
 }
 
-void _elf__mbsnicmp() asm("mbsnicmp");
+void _elfimplib__mbsnicmp() asm("mbsnicmp");
 void *_imp___mbsnicmp = NULL;
-void _elf__mbsnicmp() {
+__attribute__((constructor)) void _elfimplib_init__mbsnicmp() {
 load_dll_msvcrt();
-if (!_imp___mbsnicmp) {
 _imp___mbsnicmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsnicmp");
 }
+void _elfimplib__mbsnicmp() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnicmp));
 }
 
-void _elf__mbsnicoll() asm("mbsnicoll");
+void _elfimplib__mbsnicoll() asm("mbsnicoll");
 void *_imp___mbsnicoll = NULL;
-void _elf__mbsnicoll() {
+__attribute__((constructor)) void _elfimplib_init__mbsnicoll() {
 load_dll_msvcrt();
-if (!_imp___mbsnicoll) {
 _imp___mbsnicoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsnicoll");
 }
+void _elfimplib__mbsnicoll() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnicoll));
 }
 
-void _elf__mbsninc() asm("mbsninc");
+void _elfimplib__mbsninc() asm("mbsninc");
 void *_imp___mbsninc = NULL;
-void _elf__mbsninc() {
+__attribute__((constructor)) void _elfimplib_init__mbsninc() {
 load_dll_msvcrt();
-if (!_imp___mbsninc) {
 _imp___mbsninc = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsninc");
 }
+void _elfimplib__mbsninc() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsninc));
 }
 
-void _elf__mbsnset() asm("mbsnset");
+void _elfimplib__mbsnset() asm("mbsnset");
 void *_imp___mbsnset = NULL;
-void _elf__mbsnset() {
+__attribute__((constructor)) void _elfimplib_init__mbsnset() {
 load_dll_msvcrt();
-if (!_imp___mbsnset) {
 _imp___mbsnset = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsnset");
 }
+void _elfimplib__mbsnset() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnset));
 }
 
-void _elf__mbspbrk() asm("mbspbrk");
+void _elfimplib__mbspbrk() asm("mbspbrk");
 void *_imp___mbspbrk = NULL;
-void _elf__mbspbrk() {
+__attribute__((constructor)) void _elfimplib_init__mbspbrk() {
 load_dll_msvcrt();
-if (!_imp___mbspbrk) {
 _imp___mbspbrk = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbspbrk");
 }
+void _elfimplib__mbspbrk() {
 asm("leave\njmp *%0" : : "r"(_imp___mbspbrk));
 }
 
-void _elf__mbsrchr() asm("mbsrchr");
+void _elfimplib__mbsrchr() asm("mbsrchr");
 void *_imp___mbsrchr = NULL;
-void _elf__mbsrchr() {
+__attribute__((constructor)) void _elfimplib_init__mbsrchr() {
 load_dll_msvcrt();
-if (!_imp___mbsrchr) {
 _imp___mbsrchr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsrchr");
 }
+void _elfimplib__mbsrchr() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsrchr));
 }
 
-void _elf__mbsrev() asm("mbsrev");
+void _elfimplib__mbsrev() asm("mbsrev");
 void *_imp___mbsrev = NULL;
-void _elf__mbsrev() {
+__attribute__((constructor)) void _elfimplib_init__mbsrev() {
 load_dll_msvcrt();
-if (!_imp___mbsrev) {
 _imp___mbsrev = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsrev");
 }
+void _elfimplib__mbsrev() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsrev));
 }
 
-void _elf__mbsset() asm("mbsset");
+void _elfimplib__mbsset() asm("mbsset");
 void *_imp___mbsset = NULL;
-void _elf__mbsset() {
+__attribute__((constructor)) void _elfimplib_init__mbsset() {
 load_dll_msvcrt();
-if (!_imp___mbsset) {
 _imp___mbsset = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsset");
 }
+void _elfimplib__mbsset() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsset));
 }
 
-void _elf__mbsspn() asm("mbsspn");
+void _elfimplib__mbsspn() asm("mbsspn");
 void *_imp___mbsspn = NULL;
-void _elf__mbsspn() {
+__attribute__((constructor)) void _elfimplib_init__mbsspn() {
 load_dll_msvcrt();
-if (!_imp___mbsspn) {
 _imp___mbsspn = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsspn");
 }
+void _elfimplib__mbsspn() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsspn));
 }
 
-void _elf__mbsspnp() asm("mbsspnp");
+void _elfimplib__mbsspnp() asm("mbsspnp");
 void *_imp___mbsspnp = NULL;
-void _elf__mbsspnp() {
+__attribute__((constructor)) void _elfimplib_init__mbsspnp() {
 load_dll_msvcrt();
-if (!_imp___mbsspnp) {
 _imp___mbsspnp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsspnp");
 }
+void _elfimplib__mbsspnp() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsspnp));
 }
 
-void _elf__mbsstr() asm("mbsstr");
+void _elfimplib__mbsstr() asm("mbsstr");
 void *_imp___mbsstr = NULL;
-void _elf__mbsstr() {
+__attribute__((constructor)) void _elfimplib_init__mbsstr() {
 load_dll_msvcrt();
-if (!_imp___mbsstr) {
 _imp___mbsstr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsstr");
 }
+void _elfimplib__mbsstr() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsstr));
 }
 
-void _elf__mbstok() asm("mbstok");
+void _elfimplib__mbstok() asm("mbstok");
 void *_imp___mbstok = NULL;
-void _elf__mbstok() {
+__attribute__((constructor)) void _elfimplib_init__mbstok() {
 load_dll_msvcrt();
-if (!_imp___mbstok) {
 _imp___mbstok = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbstok");
 }
+void _elfimplib__mbstok() {
 asm("leave\njmp *%0" : : "r"(_imp___mbstok));
 }
 
-void _elf__mbstrlen() asm("mbstrlen");
+void _elfimplib__mbstrlen() asm("mbstrlen");
 void *_imp___mbstrlen = NULL;
-void _elf__mbstrlen() {
+__attribute__((constructor)) void _elfimplib_init__mbstrlen() {
 load_dll_msvcrt();
-if (!_imp___mbstrlen) {
 _imp___mbstrlen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbstrlen");
 }
+void _elfimplib__mbstrlen() {
 asm("leave\njmp *%0" : : "r"(_imp___mbstrlen));
 }
 
-void _elf__mbsupr() asm("mbsupr");
+void _elfimplib__mbsupr() asm("mbsupr");
 void *_imp___mbsupr = NULL;
-void _elf__mbsupr() {
+__attribute__((constructor)) void _elfimplib_init__mbsupr() {
 load_dll_msvcrt();
-if (!_imp___mbsupr) {
 _imp___mbsupr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mbsupr");
 }
+void _elfimplib__mbsupr() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsupr));
 }
 
-void _elf__memccpy() asm("memccpy");
+void _elfimplib__memccpy() asm("memccpy");
 void *_imp___memccpy = NULL;
-void _elf__memccpy() {
+__attribute__((constructor)) void _elfimplib_init__memccpy() {
 load_dll_msvcrt();
-if (!_imp___memccpy) {
 _imp___memccpy = (void *) _elf_GetProcAddress(_dll_msvcrt, "_memccpy");
 }
+void _elfimplib__memccpy() {
 asm("leave\njmp *%0" : : "r"(_imp___memccpy));
 }
 
-void _elf__memicmp() asm("memicmp");
+void _elfimplib__memicmp() asm("memicmp");
 void *_imp___memicmp = NULL;
-void _elf__memicmp() {
+__attribute__((constructor)) void _elfimplib_init__memicmp() {
 load_dll_msvcrt();
-if (!_imp___memicmp) {
 _imp___memicmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_memicmp");
 }
+void _elfimplib__memicmp() {
 asm("leave\njmp *%0" : : "r"(_imp___memicmp));
 }
 
-void _elf__mkdir() asm("mkdir");
+void _elfimplib__mkdir() asm("mkdir");
 void *_imp___mkdir = NULL;
-void _elf__mkdir() {
+__attribute__((constructor)) void _elfimplib_init__mkdir() {
 load_dll_msvcrt();
-if (!_imp___mkdir) {
 _imp___mkdir = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mkdir");
 }
+void _elfimplib__mkdir() {
 asm("leave\njmp *%0" : : "r"(_imp___mkdir));
 }
 
-void _elf__mktemp() asm("mktemp");
+void _elfimplib__mktemp() asm("mktemp");
 void *_imp___mktemp = NULL;
-void _elf__mktemp() {
+__attribute__((constructor)) void _elfimplib_init__mktemp() {
 load_dll_msvcrt();
-if (!_imp___mktemp) {
 _imp___mktemp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mktemp");
 }
+void _elfimplib__mktemp() {
 asm("leave\njmp *%0" : : "r"(_imp___mktemp));
 }
 
-void _elf__mktime64() asm("mktime64");
+void _elfimplib__mktime64() asm("mktime64");
 void *_imp___mktime64 = NULL;
-void _elf__mktime64() {
+__attribute__((constructor)) void _elfimplib_init__mktime64() {
 load_dll_msvcrt();
-if (!_imp___mktime64) {
 _imp___mktime64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_mktime64");
 }
+void _elfimplib__mktime64() {
 asm("leave\njmp *%0" : : "r"(_imp___mktime64));
 }
 
-void _elf__msize() asm("msize");
+void _elfimplib__msize() asm("msize");
 void *_imp___msize = NULL;
-void _elf__msize() {
+__attribute__((constructor)) void _elfimplib_init__msize() {
 load_dll_msvcrt();
-if (!_imp___msize) {
 _imp___msize = (void *) _elf_GetProcAddress(_dll_msvcrt, "_msize");
 }
+void _elfimplib__msize() {
 asm("leave\njmp *%0" : : "r"(_imp___msize));
 }
 
-void _elf__nextafter() asm("nextafter");
+void _elfimplib__nextafter() asm("nextafter");
 void *_imp___nextafter = NULL;
-void _elf__nextafter() {
+__attribute__((constructor)) void _elfimplib_init__nextafter() {
 load_dll_msvcrt();
-if (!_imp___nextafter) {
 _imp___nextafter = (void *) _elf_GetProcAddress(_dll_msvcrt, "_nextafter");
 }
+void _elfimplib__nextafter() {
 asm("leave\njmp *%0" : : "r"(_imp___nextafter));
 }
 
-void _elf__onexit() asm("onexit");
+void _elfimplib__onexit() asm("onexit");
 void *_imp___onexit = NULL;
-void _elf__onexit() {
+__attribute__((constructor)) void _elfimplib_init__onexit() {
 load_dll_msvcrt();
-if (!_imp___onexit) {
 _imp___onexit = (void *) _elf_GetProcAddress(_dll_msvcrt, "_onexit");
 }
+void _elfimplib__onexit() {
 asm("leave\njmp *%0" : : "r"(_imp___onexit));
 }
 
-void _elf__open() asm("open");
+void _elfimplib__open() asm("open");
 void *_imp___open = NULL;
-void _elf__open() {
+__attribute__((constructor)) void _elfimplib_init__open() {
 load_dll_msvcrt();
-if (!_imp___open) {
 _imp___open = (void *) _elf_GetProcAddress(_dll_msvcrt, "_open");
 }
+void _elfimplib__open() {
 asm("leave\njmp *%0" : : "r"(_imp___open));
 }
 
-void _elf__open_osfhandle() asm("open_osfhandle");
+void _elfimplib__open_osfhandle() asm("open_osfhandle");
 void *_imp___open_osfhandle = NULL;
-void _elf__open_osfhandle() {
+__attribute__((constructor)) void _elfimplib_init__open_osfhandle() {
 load_dll_msvcrt();
-if (!_imp___open_osfhandle) {
 _imp___open_osfhandle = (void *) _elf_GetProcAddress(_dll_msvcrt, "_open_osfhandle");
 }
+void _elfimplib__open_osfhandle() {
 asm("leave\njmp *%0" : : "r"(_imp___open_osfhandle));
 }
 
-void _elf__osplatform() asm("osplatform");
+void _elfimplib__osplatform() asm("osplatform");
 void *_imp___osplatform = NULL;
-void _elf__osplatform() {
+__attribute__((constructor)) void _elfimplib_init__osplatform() {
 load_dll_msvcrt();
-if (!_imp___osplatform) {
 _imp___osplatform = (void *) _elf_GetProcAddress(_dll_msvcrt, "_osplatform");
 }
+void _elfimplib__osplatform() {
 asm("leave\njmp *%0" : : "r"(_imp___osplatform));
 }
 
-void _elf__osver() asm("osver");
+void _elfimplib__osver() asm("osver");
 void *_imp___osver = NULL;
-void _elf__osver() {
+__attribute__((constructor)) void _elfimplib_init__osver() {
 load_dll_msvcrt();
-if (!_imp___osver) {
 _imp___osver = (void *) _elf_GetProcAddress(_dll_msvcrt, "_osver");
 }
+void _elfimplib__osver() {
 asm("leave\njmp *%0" : : "r"(_imp___osver));
 }
 
-void _elf__outp() asm("outp");
+void _elfimplib__outp() asm("outp");
 void *_imp___outp = NULL;
-void _elf__outp() {
+__attribute__((constructor)) void _elfimplib_init__outp() {
 load_dll_msvcrt();
-if (!_imp___outp) {
 _imp___outp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_outp");
 }
+void _elfimplib__outp() {
 asm("leave\njmp *%0" : : "r"(_imp___outp));
 }
 
-void _elf__outpd() asm("outpd");
+void _elfimplib__outpd() asm("outpd");
 void *_imp___outpd = NULL;
-void _elf__outpd() {
+__attribute__((constructor)) void _elfimplib_init__outpd() {
 load_dll_msvcrt();
-if (!_imp___outpd) {
 _imp___outpd = (void *) _elf_GetProcAddress(_dll_msvcrt, "_outpd");
 }
+void _elfimplib__outpd() {
 asm("leave\njmp *%0" : : "r"(_imp___outpd));
 }
 
-void _elf__outpw() asm("outpw");
+void _elfimplib__outpw() asm("outpw");
 void *_imp___outpw = NULL;
-void _elf__outpw() {
+__attribute__((constructor)) void _elfimplib_init__outpw() {
 load_dll_msvcrt();
-if (!_imp___outpw) {
 _imp___outpw = (void *) _elf_GetProcAddress(_dll_msvcrt, "_outpw");
 }
+void _elfimplib__outpw() {
 asm("leave\njmp *%0" : : "r"(_imp___outpw));
 }
 
-void _elf__pclose() asm("pclose");
+void _elfimplib__pclose() asm("pclose");
 void *_imp___pclose = NULL;
-void _elf__pclose() {
+__attribute__((constructor)) void _elfimplib_init__pclose() {
 load_dll_msvcrt();
-if (!_imp___pclose) {
 _imp___pclose = (void *) _elf_GetProcAddress(_dll_msvcrt, "_pclose");
 }
+void _elfimplib__pclose() {
 asm("leave\njmp *%0" : : "r"(_imp___pclose));
 }
 
-void _elf__pctype() asm("pctype");
+void _elfimplib__pctype() asm("pctype");
 void *_imp___pctype = NULL;
-void _elf__pctype() {
+__attribute__((constructor)) void _elfimplib_init__pctype() {
 load_dll_msvcrt();
-if (!_imp___pctype) {
 _imp___pctype = (void *) _elf_GetProcAddress(_dll_msvcrt, "_pctype");
 }
+void _elfimplib__pctype() {
 asm("leave\njmp *%0" : : "r"(_imp___pctype));
 }
 
-void _elf__pgmptr() asm("pgmptr");
+void _elfimplib__pgmptr() asm("pgmptr");
 void *_imp___pgmptr = NULL;
-void _elf__pgmptr() {
+__attribute__((constructor)) void _elfimplib_init__pgmptr() {
 load_dll_msvcrt();
-if (!_imp___pgmptr) {
 _imp___pgmptr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_pgmptr");
 }
+void _elfimplib__pgmptr() {
 asm("leave\njmp *%0" : : "r"(_imp___pgmptr));
 }
 
-void _elf__pipe() asm("pipe");
+void _elfimplib__pipe() asm("pipe");
 void *_imp___pipe = NULL;
-void _elf__pipe() {
+__attribute__((constructor)) void _elfimplib_init__pipe() {
 load_dll_msvcrt();
-if (!_imp___pipe) {
 _imp___pipe = (void *) _elf_GetProcAddress(_dll_msvcrt, "_pipe");
 }
+void _elfimplib__pipe() {
 asm("leave\njmp *%0" : : "r"(_imp___pipe));
 }
 
-void _elf__popen() asm("popen");
+void _elfimplib__popen() asm("popen");
 void *_imp___popen = NULL;
-void _elf__popen() {
+__attribute__((constructor)) void _elfimplib_init__popen() {
 load_dll_msvcrt();
-if (!_imp___popen) {
 _imp___popen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_popen");
 }
+void _elfimplib__popen() {
 asm("leave\njmp *%0" : : "r"(_imp___popen));
 }
 
-void _elf__purecall() asm("purecall");
+void _elfimplib__purecall() asm("purecall");
 void *_imp___purecall = NULL;
-void _elf__purecall() {
+__attribute__((constructor)) void _elfimplib_init__purecall() {
 load_dll_msvcrt();
-if (!_imp___purecall) {
 _imp___purecall = (void *) _elf_GetProcAddress(_dll_msvcrt, "_purecall");
 }
+void _elfimplib__purecall() {
 asm("leave\njmp *%0" : : "r"(_imp___purecall));
 }
 
-void _elf__putch() asm("putch");
+void _elfimplib__putch() asm("putch");
 void *_imp___putch = NULL;
-void _elf__putch() {
+__attribute__((constructor)) void _elfimplib_init__putch() {
 load_dll_msvcrt();
-if (!_imp___putch) {
 _imp___putch = (void *) _elf_GetProcAddress(_dll_msvcrt, "_putch");
 }
+void _elfimplib__putch() {
 asm("leave\njmp *%0" : : "r"(_imp___putch));
 }
 
-void _elf__putenv() asm("putenv");
+void _elfimplib__putenv() asm("putenv");
 void *_imp___putenv = NULL;
-void _elf__putenv() {
+__attribute__((constructor)) void _elfimplib_init__putenv() {
 load_dll_msvcrt();
-if (!_imp___putenv) {
 _imp___putenv = (void *) _elf_GetProcAddress(_dll_msvcrt, "_putenv");
 }
+void _elfimplib__putenv() {
 asm("leave\njmp *%0" : : "r"(_imp___putenv));
 }
 
-void _elf__putw() asm("putw");
+void _elfimplib__putw() asm("putw");
 void *_imp___putw = NULL;
-void _elf__putw() {
+__attribute__((constructor)) void _elfimplib_init__putw() {
 load_dll_msvcrt();
-if (!_imp___putw) {
 _imp___putw = (void *) _elf_GetProcAddress(_dll_msvcrt, "_putw");
 }
+void _elfimplib__putw() {
 asm("leave\njmp *%0" : : "r"(_imp___putw));
 }
 
-void _elf__putwch() asm("putwch");
+void _elfimplib__putwch() asm("putwch");
 void *_imp___putwch = NULL;
-void _elf__putwch() {
+__attribute__((constructor)) void _elfimplib_init__putwch() {
 load_dll_msvcrt();
-if (!_imp___putwch) {
 _imp___putwch = (void *) _elf_GetProcAddress(_dll_msvcrt, "_putwch");
 }
+void _elfimplib__putwch() {
 asm("leave\njmp *%0" : : "r"(_imp___putwch));
 }
 
-void _elf__putws() asm("putws");
+void _elfimplib__putws() asm("putws");
 void *_imp___putws = NULL;
-void _elf__putws() {
+__attribute__((constructor)) void _elfimplib_init__putws() {
 load_dll_msvcrt();
-if (!_imp___putws) {
 _imp___putws = (void *) _elf_GetProcAddress(_dll_msvcrt, "_putws");
 }
+void _elfimplib__putws() {
 asm("leave\njmp *%0" : : "r"(_imp___putws));
 }
 
-void _elf__pwctype() asm("pwctype");
+void _elfimplib__pwctype() asm("pwctype");
 void *_imp___pwctype = NULL;
-void _elf__pwctype() {
+__attribute__((constructor)) void _elfimplib_init__pwctype() {
 load_dll_msvcrt();
-if (!_imp___pwctype) {
 _imp___pwctype = (void *) _elf_GetProcAddress(_dll_msvcrt, "_pwctype");
 }
+void _elfimplib__pwctype() {
 asm("leave\njmp *%0" : : "r"(_imp___pwctype));
 }
 
-void _elf__read() asm("read");
+void _elfimplib__read() asm("read");
 void *_imp___read = NULL;
-void _elf__read() {
+__attribute__((constructor)) void _elfimplib_init__read() {
 load_dll_msvcrt();
-if (!_imp___read) {
 _imp___read = (void *) _elf_GetProcAddress(_dll_msvcrt, "_read");
 }
+void _elfimplib__read() {
 asm("leave\njmp *%0" : : "r"(_imp___read));
 }
 
-void _elf__resetstkoflw() asm("resetstkoflw");
+void _elfimplib__resetstkoflw() asm("resetstkoflw");
 void *_imp___resetstkoflw = NULL;
-void _elf__resetstkoflw() {
+__attribute__((constructor)) void _elfimplib_init__resetstkoflw() {
 load_dll_msvcrt();
-if (!_imp___resetstkoflw) {
 _imp___resetstkoflw = (void *) _elf_GetProcAddress(_dll_msvcrt, "_resetstkoflw");
 }
+void _elfimplib__resetstkoflw() {
 asm("leave\njmp *%0" : : "r"(_imp___resetstkoflw));
 }
 
-void _elf__rmdir() asm("rmdir");
+void _elfimplib__rmdir() asm("rmdir");
 void *_imp___rmdir = NULL;
-void _elf__rmdir() {
+__attribute__((constructor)) void _elfimplib_init__rmdir() {
 load_dll_msvcrt();
-if (!_imp___rmdir) {
 _imp___rmdir = (void *) _elf_GetProcAddress(_dll_msvcrt, "_rmdir");
 }
+void _elfimplib__rmdir() {
 asm("leave\njmp *%0" : : "r"(_imp___rmdir));
 }
 
-void _elf__rmtmp() asm("rmtmp");
+void _elfimplib__rmtmp() asm("rmtmp");
 void *_imp___rmtmp = NULL;
-void _elf__rmtmp() {
+__attribute__((constructor)) void _elfimplib_init__rmtmp() {
 load_dll_msvcrt();
-if (!_imp___rmtmp) {
 _imp___rmtmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_rmtmp");
 }
+void _elfimplib__rmtmp() {
 asm("leave\njmp *%0" : : "r"(_imp___rmtmp));
 }
 
-void _elf__rotl() asm("rotl");
+void _elfimplib__rotl() asm("rotl");
 void *_imp___rotl = NULL;
-void _elf__rotl() {
+__attribute__((constructor)) void _elfimplib_init__rotl() {
 load_dll_msvcrt();
-if (!_imp___rotl) {
 _imp___rotl = (void *) _elf_GetProcAddress(_dll_msvcrt, "_rotl");
 }
+void _elfimplib__rotl() {
 asm("leave\njmp *%0" : : "r"(_imp___rotl));
 }
 
-void _elf__rotr() asm("rotr");
+void _elfimplib__rotr() asm("rotr");
 void *_imp___rotr = NULL;
-void _elf__rotr() {
+__attribute__((constructor)) void _elfimplib_init__rotr() {
 load_dll_msvcrt();
-if (!_imp___rotr) {
 _imp___rotr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_rotr");
 }
+void _elfimplib__rotr() {
 asm("leave\njmp *%0" : : "r"(_imp___rotr));
 }
 
-void _elf__safe_fdiv() asm("safe_fdiv");
+void _elfimplib__safe_fdiv() asm("safe_fdiv");
 void *_imp___safe_fdiv = NULL;
-void _elf__safe_fdiv() {
+__attribute__((constructor)) void _elfimplib_init__safe_fdiv() {
 load_dll_msvcrt();
-if (!_imp___safe_fdiv) {
 _imp___safe_fdiv = (void *) _elf_GetProcAddress(_dll_msvcrt, "_safe_fdiv");
 }
+void _elfimplib__safe_fdiv() {
 asm("leave\njmp *%0" : : "r"(_imp___safe_fdiv));
 }
 
-void _elf__safe_fdivr() asm("safe_fdivr");
+void _elfimplib__safe_fdivr() asm("safe_fdivr");
 void *_imp___safe_fdivr = NULL;
-void _elf__safe_fdivr() {
+__attribute__((constructor)) void _elfimplib_init__safe_fdivr() {
 load_dll_msvcrt();
-if (!_imp___safe_fdivr) {
 _imp___safe_fdivr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_safe_fdivr");
 }
+void _elfimplib__safe_fdivr() {
 asm("leave\njmp *%0" : : "r"(_imp___safe_fdivr));
 }
 
-void _elf__safe_fprem() asm("safe_fprem");
+void _elfimplib__safe_fprem() asm("safe_fprem");
 void *_imp___safe_fprem = NULL;
-void _elf__safe_fprem() {
+__attribute__((constructor)) void _elfimplib_init__safe_fprem() {
 load_dll_msvcrt();
-if (!_imp___safe_fprem) {
 _imp___safe_fprem = (void *) _elf_GetProcAddress(_dll_msvcrt, "_safe_fprem");
 }
+void _elfimplib__safe_fprem() {
 asm("leave\njmp *%0" : : "r"(_imp___safe_fprem));
 }
 
-void _elf__safe_fprem1() asm("safe_fprem1");
+void _elfimplib__safe_fprem1() asm("safe_fprem1");
 void *_imp___safe_fprem1 = NULL;
-void _elf__safe_fprem1() {
+__attribute__((constructor)) void _elfimplib_init__safe_fprem1() {
 load_dll_msvcrt();
-if (!_imp___safe_fprem1) {
 _imp___safe_fprem1 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_safe_fprem1");
 }
+void _elfimplib__safe_fprem1() {
 asm("leave\njmp *%0" : : "r"(_imp___safe_fprem1));
 }
 
-void _elf__scalb() asm("scalb");
+void _elfimplib__scalb() asm("scalb");
 void *_imp___scalb = NULL;
-void _elf__scalb() {
+__attribute__((constructor)) void _elfimplib_init__scalb() {
 load_dll_msvcrt();
-if (!_imp___scalb) {
 _imp___scalb = (void *) _elf_GetProcAddress(_dll_msvcrt, "_scalb");
 }
+void _elfimplib__scalb() {
 asm("leave\njmp *%0" : : "r"(_imp___scalb));
 }
 
-void _elf__scprintf() asm("scprintf");
+void _elfimplib__scprintf() asm("scprintf");
 void *_imp___scprintf = NULL;
-void _elf__scprintf() {
+__attribute__((constructor)) void _elfimplib_init__scprintf() {
 load_dll_msvcrt();
-if (!_imp___scprintf) {
 _imp___scprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_scprintf");
 }
+void _elfimplib__scprintf() {
 asm("leave\njmp *%0" : : "r"(_imp___scprintf));
 }
 
-void _elf__scwprintf() asm("scwprintf");
+void _elfimplib__scwprintf() asm("scwprintf");
 void *_imp___scwprintf = NULL;
-void _elf__scwprintf() {
+__attribute__((constructor)) void _elfimplib_init__scwprintf() {
 load_dll_msvcrt();
-if (!_imp___scwprintf) {
 _imp___scwprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_scwprintf");
 }
+void _elfimplib__scwprintf() {
 asm("leave\njmp *%0" : : "r"(_imp___scwprintf));
 }
 
-void _elf__searchenv() asm("searchenv");
+void _elfimplib__searchenv() asm("searchenv");
 void *_imp___searchenv = NULL;
-void _elf__searchenv() {
+__attribute__((constructor)) void _elfimplib_init__searchenv() {
 load_dll_msvcrt();
-if (!_imp___searchenv) {
 _imp___searchenv = (void *) _elf_GetProcAddress(_dll_msvcrt, "_searchenv");
 }
+void _elfimplib__searchenv() {
 asm("leave\njmp *%0" : : "r"(_imp___searchenv));
 }
 
-void _elf__seh_longjmp_unwind() asm("seh_longjmp_unwind");
+void _elfimplib__seh_longjmp_unwind() asm("seh_longjmp_unwind");
 void *_imp___seh_longjmp_unwind = NULL;
-void _elf__seh_longjmp_unwind() {
+__attribute__((constructor)) void _elfimplib_init__seh_longjmp_unwind() {
 load_dll_msvcrt();
-if (!_imp___seh_longjmp_unwind) {
 _imp___seh_longjmp_unwind = (void *) _elf_GetProcAddress(_dll_msvcrt, "_seh_longjmp_unwind");
 }
+void _elfimplib__seh_longjmp_unwind() {
 asm("leave\njmp *%0" : : "r"(_imp___seh_longjmp_unwind));
 }
 
-void _elf__set_SSE2_enable() asm("set_SSE2_enable");
+void _elfimplib__set_SSE2_enable() asm("set_SSE2_enable");
 void *_imp___set_SSE2_enable = NULL;
-void _elf__set_SSE2_enable() {
+__attribute__((constructor)) void _elfimplib_init__set_SSE2_enable() {
 load_dll_msvcrt();
-if (!_imp___set_SSE2_enable) {
 _imp___set_SSE2_enable = (void *) _elf_GetProcAddress(_dll_msvcrt, "_set_SSE2_enable");
 }
+void _elfimplib__set_SSE2_enable() {
 asm("leave\njmp *%0" : : "r"(_imp___set_SSE2_enable));
 }
 
-void _elf__set_error_mode() asm("set_error_mode");
+void _elfimplib__set_error_mode() asm("set_error_mode");
 void *_imp___set_error_mode = NULL;
-void _elf__set_error_mode() {
+__attribute__((constructor)) void _elfimplib_init__set_error_mode() {
 load_dll_msvcrt();
-if (!_imp___set_error_mode) {
 _imp___set_error_mode = (void *) _elf_GetProcAddress(_dll_msvcrt, "_set_error_mode");
 }
+void _elfimplib__set_error_mode() {
 asm("leave\njmp *%0" : : "r"(_imp___set_error_mode));
 }
 
-void _elf__set_sbh_threshold() asm("set_sbh_threshold");
+void _elfimplib__set_sbh_threshold() asm("set_sbh_threshold");
 void *_imp___set_sbh_threshold = NULL;
-void _elf__set_sbh_threshold() {
+__attribute__((constructor)) void _elfimplib_init__set_sbh_threshold() {
 load_dll_msvcrt();
-if (!_imp___set_sbh_threshold) {
 _imp___set_sbh_threshold = (void *) _elf_GetProcAddress(_dll_msvcrt, "_set_sbh_threshold");
 }
+void _elfimplib__set_sbh_threshold() {
 asm("leave\njmp *%0" : : "r"(_imp___set_sbh_threshold));
 }
 
-void _elf__seterrormode() asm("seterrormode");
+void _elfimplib__seterrormode() asm("seterrormode");
 void *_imp___seterrormode = NULL;
-void _elf__seterrormode() {
+__attribute__((constructor)) void _elfimplib_init__seterrormode() {
 load_dll_msvcrt();
-if (!_imp___seterrormode) {
 _imp___seterrormode = (void *) _elf_GetProcAddress(_dll_msvcrt, "_seterrormode");
 }
+void _elfimplib__seterrormode() {
 asm("leave\njmp *%0" : : "r"(_imp___seterrormode));
 }
 
-void _elf__setjmp() asm("setjmp");
+void _elfimplib__setjmp() asm("setjmp");
 void *_imp___setjmp = NULL;
-void _elf__setjmp() {
+__attribute__((constructor)) void _elfimplib_init__setjmp() {
 load_dll_msvcrt();
-if (!_imp___setjmp) {
 _imp___setjmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_setjmp");
 }
+void _elfimplib__setjmp() {
 asm("leave\njmp *%0" : : "r"(_imp___setjmp));
 }
 
-void _elf__setjmp3() asm("setjmp3");
+void _elfimplib__setjmp3() asm("setjmp3");
 void *_imp___setjmp3 = NULL;
-void _elf__setjmp3() {
+__attribute__((constructor)) void _elfimplib_init__setjmp3() {
 load_dll_msvcrt();
-if (!_imp___setjmp3) {
 _imp___setjmp3 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_setjmp3");
 }
+void _elfimplib__setjmp3() {
 asm("leave\njmp *%0" : : "r"(_imp___setjmp3));
 }
 
-void _elf__setmaxstdio() asm("setmaxstdio");
+void _elfimplib__setmaxstdio() asm("setmaxstdio");
 void *_imp___setmaxstdio = NULL;
-void _elf__setmaxstdio() {
+__attribute__((constructor)) void _elfimplib_init__setmaxstdio() {
 load_dll_msvcrt();
-if (!_imp___setmaxstdio) {
 _imp___setmaxstdio = (void *) _elf_GetProcAddress(_dll_msvcrt, "_setmaxstdio");
 }
+void _elfimplib__setmaxstdio() {
 asm("leave\njmp *%0" : : "r"(_imp___setmaxstdio));
 }
 
-void _elf__setmbcp() asm("setmbcp");
+void _elfimplib__setmbcp() asm("setmbcp");
 void *_imp___setmbcp = NULL;
-void _elf__setmbcp() {
+__attribute__((constructor)) void _elfimplib_init__setmbcp() {
 load_dll_msvcrt();
-if (!_imp___setmbcp) {
 _imp___setmbcp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_setmbcp");
 }
+void _elfimplib__setmbcp() {
 asm("leave\njmp *%0" : : "r"(_imp___setmbcp));
 }
 
-void _elf__setmode() asm("setmode");
+void _elfimplib__setmode() asm("setmode");
 void *_imp___setmode = NULL;
-void _elf__setmode() {
+__attribute__((constructor)) void _elfimplib_init__setmode() {
 load_dll_msvcrt();
-if (!_imp___setmode) {
 _imp___setmode = (void *) _elf_GetProcAddress(_dll_msvcrt, "_setmode");
 }
+void _elfimplib__setmode() {
 asm("leave\njmp *%0" : : "r"(_imp___setmode));
 }
 
-void _elf__setsystime() asm("setsystime");
+void _elfimplib__setsystime() asm("setsystime");
 void *_imp___setsystime = NULL;
-void _elf__setsystime() {
+__attribute__((constructor)) void _elfimplib_init__setsystime() {
 load_dll_msvcrt();
-if (!_imp___setsystime) {
 _imp___setsystime = (void *) _elf_GetProcAddress(_dll_msvcrt, "_setsystime");
 }
+void _elfimplib__setsystime() {
 asm("leave\njmp *%0" : : "r"(_imp___setsystime));
 }
 
-void _elf__sleep() asm("sleep");
+void _elfimplib__sleep() asm("sleep");
 void *_imp___sleep = NULL;
-void _elf__sleep() {
+__attribute__((constructor)) void _elfimplib_init__sleep() {
 load_dll_msvcrt();
-if (!_imp___sleep) {
 _imp___sleep = (void *) _elf_GetProcAddress(_dll_msvcrt, "_sleep");
 }
+void _elfimplib__sleep() {
 asm("leave\njmp *%0" : : "r"(_imp___sleep));
 }
 
-void _elf__snprintf() asm("snprintf");
+void _elfimplib__snprintf() asm("snprintf");
 void *_imp___snprintf = NULL;
-void _elf__snprintf() {
+__attribute__((constructor)) void _elfimplib_init__snprintf() {
 load_dll_msvcrt();
-if (!_imp___snprintf) {
 _imp___snprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_snprintf");
 }
+void _elfimplib__snprintf() {
 asm("leave\njmp *%0" : : "r"(_imp___snprintf));
 }
 
-void _elf__snscanf() asm("snscanf");
+void _elfimplib__snscanf() asm("snscanf");
 void *_imp___snscanf = NULL;
-void _elf__snscanf() {
+__attribute__((constructor)) void _elfimplib_init__snscanf() {
 load_dll_msvcrt();
-if (!_imp___snscanf) {
 _imp___snscanf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_snscanf");
 }
+void _elfimplib__snscanf() {
 asm("leave\njmp *%0" : : "r"(_imp___snscanf));
 }
 
-void _elf__snwprintf() asm("snwprintf");
+void _elfimplib__snwprintf() asm("snwprintf");
 void *_imp___snwprintf = NULL;
-void _elf__snwprintf() {
+__attribute__((constructor)) void _elfimplib_init__snwprintf() {
 load_dll_msvcrt();
-if (!_imp___snwprintf) {
 _imp___snwprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_snwprintf");
 }
+void _elfimplib__snwprintf() {
 asm("leave\njmp *%0" : : "r"(_imp___snwprintf));
 }
 
-void _elf__snwscanf() asm("snwscanf");
+void _elfimplib__snwscanf() asm("snwscanf");
 void *_imp___snwscanf = NULL;
-void _elf__snwscanf() {
+__attribute__((constructor)) void _elfimplib_init__snwscanf() {
 load_dll_msvcrt();
-if (!_imp___snwscanf) {
 _imp___snwscanf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_snwscanf");
 }
+void _elfimplib__snwscanf() {
 asm("leave\njmp *%0" : : "r"(_imp___snwscanf));
 }
 
-void _elf__sopen() asm("sopen");
+void _elfimplib__sopen() asm("sopen");
 void *_imp___sopen = NULL;
-void _elf__sopen() {
+__attribute__((constructor)) void _elfimplib_init__sopen() {
 load_dll_msvcrt();
-if (!_imp___sopen) {
 _imp___sopen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_sopen");
 }
+void _elfimplib__sopen() {
 asm("leave\njmp *%0" : : "r"(_imp___sopen));
 }
 
-void _elf__spawnl() asm("spawnl");
+void _elfimplib__spawnl() asm("spawnl");
 void *_imp___spawnl = NULL;
-void _elf__spawnl() {
+__attribute__((constructor)) void _elfimplib_init__spawnl() {
 load_dll_msvcrt();
-if (!_imp___spawnl) {
 _imp___spawnl = (void *) _elf_GetProcAddress(_dll_msvcrt, "_spawnl");
 }
+void _elfimplib__spawnl() {
 asm("leave\njmp *%0" : : "r"(_imp___spawnl));
 }
 
-void _elf__spawnle() asm("spawnle");
+void _elfimplib__spawnle() asm("spawnle");
 void *_imp___spawnle = NULL;
-void _elf__spawnle() {
+__attribute__((constructor)) void _elfimplib_init__spawnle() {
 load_dll_msvcrt();
-if (!_imp___spawnle) {
 _imp___spawnle = (void *) _elf_GetProcAddress(_dll_msvcrt, "_spawnle");
 }
+void _elfimplib__spawnle() {
 asm("leave\njmp *%0" : : "r"(_imp___spawnle));
 }
 
-void _elf__spawnlp() asm("spawnlp");
+void _elfimplib__spawnlp() asm("spawnlp");
 void *_imp___spawnlp = NULL;
-void _elf__spawnlp() {
+__attribute__((constructor)) void _elfimplib_init__spawnlp() {
 load_dll_msvcrt();
-if (!_imp___spawnlp) {
 _imp___spawnlp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_spawnlp");
 }
+void _elfimplib__spawnlp() {
 asm("leave\njmp *%0" : : "r"(_imp___spawnlp));
 }
 
-void _elf__spawnlpe() asm("spawnlpe");
+void _elfimplib__spawnlpe() asm("spawnlpe");
 void *_imp___spawnlpe = NULL;
-void _elf__spawnlpe() {
+__attribute__((constructor)) void _elfimplib_init__spawnlpe() {
 load_dll_msvcrt();
-if (!_imp___spawnlpe) {
 _imp___spawnlpe = (void *) _elf_GetProcAddress(_dll_msvcrt, "_spawnlpe");
 }
+void _elfimplib__spawnlpe() {
 asm("leave\njmp *%0" : : "r"(_imp___spawnlpe));
 }
 
-void _elf__spawnv() asm("spawnv");
+void _elfimplib__spawnv() asm("spawnv");
 void *_imp___spawnv = NULL;
-void _elf__spawnv() {
+__attribute__((constructor)) void _elfimplib_init__spawnv() {
 load_dll_msvcrt();
-if (!_imp___spawnv) {
 _imp___spawnv = (void *) _elf_GetProcAddress(_dll_msvcrt, "_spawnv");
 }
+void _elfimplib__spawnv() {
 asm("leave\njmp *%0" : : "r"(_imp___spawnv));
 }
 
-void _elf__spawnve() asm("spawnve");
+void _elfimplib__spawnve() asm("spawnve");
 void *_imp___spawnve = NULL;
-void _elf__spawnve() {
+__attribute__((constructor)) void _elfimplib_init__spawnve() {
 load_dll_msvcrt();
-if (!_imp___spawnve) {
 _imp___spawnve = (void *) _elf_GetProcAddress(_dll_msvcrt, "_spawnve");
 }
+void _elfimplib__spawnve() {
 asm("leave\njmp *%0" : : "r"(_imp___spawnve));
 }
 
-void _elf__spawnvp() asm("spawnvp");
+void _elfimplib__spawnvp() asm("spawnvp");
 void *_imp___spawnvp = NULL;
-void _elf__spawnvp() {
+__attribute__((constructor)) void _elfimplib_init__spawnvp() {
 load_dll_msvcrt();
-if (!_imp___spawnvp) {
 _imp___spawnvp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_spawnvp");
 }
+void _elfimplib__spawnvp() {
 asm("leave\njmp *%0" : : "r"(_imp___spawnvp));
 }
 
-void _elf__spawnvpe() asm("spawnvpe");
+void _elfimplib__spawnvpe() asm("spawnvpe");
 void *_imp___spawnvpe = NULL;
-void _elf__spawnvpe() {
+__attribute__((constructor)) void _elfimplib_init__spawnvpe() {
 load_dll_msvcrt();
-if (!_imp___spawnvpe) {
 _imp___spawnvpe = (void *) _elf_GetProcAddress(_dll_msvcrt, "_spawnvpe");
 }
+void _elfimplib__spawnvpe() {
 asm("leave\njmp *%0" : : "r"(_imp___spawnvpe));
 }
 
-void _elf__splitpath() asm("splitpath");
+void _elfimplib__splitpath() asm("splitpath");
 void *_imp___splitpath = NULL;
-void _elf__splitpath() {
+__attribute__((constructor)) void _elfimplib_init__splitpath() {
 load_dll_msvcrt();
-if (!_imp___splitpath) {
 _imp___splitpath = (void *) _elf_GetProcAddress(_dll_msvcrt, "_splitpath");
 }
+void _elfimplib__splitpath() {
 asm("leave\njmp *%0" : : "r"(_imp___splitpath));
 }
 
-void _elf__stat() asm("stat");
+void _elfimplib__stat() asm("stat");
 void *_imp___stat = NULL;
-void _elf__stat() {
+__attribute__((constructor)) void _elfimplib_init__stat() {
 load_dll_msvcrt();
-if (!_imp___stat) {
 _imp___stat = (void *) _elf_GetProcAddress(_dll_msvcrt, "_stat");
 }
+void _elfimplib__stat() {
 asm("leave\njmp *%0" : : "r"(_imp___stat));
 }
 
-void _elf__stat64() asm("stat64");
+void _elfimplib__stat64() asm("stat64");
 void *_imp___stat64 = NULL;
-void _elf__stat64() {
+__attribute__((constructor)) void _elfimplib_init__stat64() {
 load_dll_msvcrt();
-if (!_imp___stat64) {
 _imp___stat64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_stat64");
 }
+void _elfimplib__stat64() {
 asm("leave\njmp *%0" : : "r"(_imp___stat64));
 }
 
-void _elf__stati64() asm("stati64");
+void _elfimplib__stati64() asm("stati64");
 void *_imp___stati64 = NULL;
-void _elf__stati64() {
+__attribute__((constructor)) void _elfimplib_init__stati64() {
 load_dll_msvcrt();
-if (!_imp___stati64) {
 _imp___stati64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_stati64");
 }
+void _elfimplib__stati64() {
 asm("leave\njmp *%0" : : "r"(_imp___stati64));
 }
 
-void _elf__statusfp() asm("statusfp");
+void _elfimplib__statusfp() asm("statusfp");
 void *_imp___statusfp = NULL;
-void _elf__statusfp() {
+__attribute__((constructor)) void _elfimplib_init__statusfp() {
 load_dll_msvcrt();
-if (!_imp___statusfp) {
 _imp___statusfp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_statusfp");
 }
+void _elfimplib__statusfp() {
 asm("leave\njmp *%0" : : "r"(_imp___statusfp));
 }
 
-void _elf__strcmpi() asm("strcmpi");
+void _elfimplib__strcmpi() asm("strcmpi");
 void *_imp___strcmpi = NULL;
-void _elf__strcmpi() {
+__attribute__((constructor)) void _elfimplib_init__strcmpi() {
 load_dll_msvcrt();
-if (!_imp___strcmpi) {
 _imp___strcmpi = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strcmpi");
 }
+void _elfimplib__strcmpi() {
 asm("leave\njmp *%0" : : "r"(_imp___strcmpi));
 }
 
-void _elf__strdate() asm("strdate");
+void _elfimplib__strdate() asm("strdate");
 void *_imp___strdate = NULL;
-void _elf__strdate() {
+__attribute__((constructor)) void _elfimplib_init__strdate() {
 load_dll_msvcrt();
-if (!_imp___strdate) {
 _imp___strdate = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strdate");
 }
+void _elfimplib__strdate() {
 asm("leave\njmp *%0" : : "r"(_imp___strdate));
 }
 
-void _elf__strdup() asm("strdup");
+void _elfimplib__strdup() asm("strdup");
 void *_imp___strdup = NULL;
-void _elf__strdup() {
+__attribute__((constructor)) void _elfimplib_init__strdup() {
 load_dll_msvcrt();
-if (!_imp___strdup) {
 _imp___strdup = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strdup");
 }
+void _elfimplib__strdup() {
 asm("leave\njmp *%0" : : "r"(_imp___strdup));
 }
 
-void _elf__stricmp() asm("stricmp");
+void _elfimplib__stricmp() asm("stricmp");
 void *_imp___stricmp = NULL;
-void _elf__stricmp() {
+__attribute__((constructor)) void _elfimplib_init__stricmp() {
 load_dll_msvcrt();
-if (!_imp___stricmp) {
 _imp___stricmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_stricmp");
 }
+void _elfimplib__stricmp() {
 asm("leave\njmp *%0" : : "r"(_imp___stricmp));
 }
 
-void _elf__stricoll() asm("stricoll");
+void _elfimplib__stricoll() asm("stricoll");
 void *_imp___stricoll = NULL;
-void _elf__stricoll() {
+__attribute__((constructor)) void _elfimplib_init__stricoll() {
 load_dll_msvcrt();
-if (!_imp___stricoll) {
 _imp___stricoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_stricoll");
 }
+void _elfimplib__stricoll() {
 asm("leave\njmp *%0" : : "r"(_imp___stricoll));
 }
 
-void _elf__strlwr() asm("strlwr");
+void _elfimplib__strlwr() asm("strlwr");
 void *_imp___strlwr = NULL;
-void _elf__strlwr() {
+__attribute__((constructor)) void _elfimplib_init__strlwr() {
 load_dll_msvcrt();
-if (!_imp___strlwr) {
 _imp___strlwr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strlwr");
 }
+void _elfimplib__strlwr() {
 asm("leave\njmp *%0" : : "r"(_imp___strlwr));
 }
 
-void _elf__strncoll() asm("strncoll");
+void _elfimplib__strncoll() asm("strncoll");
 void *_imp___strncoll = NULL;
-void _elf__strncoll() {
+__attribute__((constructor)) void _elfimplib_init__strncoll() {
 load_dll_msvcrt();
-if (!_imp___strncoll) {
 _imp___strncoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strncoll");
 }
+void _elfimplib__strncoll() {
 asm("leave\njmp *%0" : : "r"(_imp___strncoll));
 }
 
-void _elf__strnicmp() asm("strnicmp");
+void _elfimplib__strnicmp() asm("strnicmp");
 void *_imp___strnicmp = NULL;
-void _elf__strnicmp() {
+__attribute__((constructor)) void _elfimplib_init__strnicmp() {
 load_dll_msvcrt();
-if (!_imp___strnicmp) {
 _imp___strnicmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strnicmp");
 }
+void _elfimplib__strnicmp() {
 asm("leave\njmp *%0" : : "r"(_imp___strnicmp));
 }
 
-void _elf__strnicoll() asm("strnicoll");
+void _elfimplib__strnicoll() asm("strnicoll");
 void *_imp___strnicoll = NULL;
-void _elf__strnicoll() {
+__attribute__((constructor)) void _elfimplib_init__strnicoll() {
 load_dll_msvcrt();
-if (!_imp___strnicoll) {
 _imp___strnicoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strnicoll");
 }
+void _elfimplib__strnicoll() {
 asm("leave\njmp *%0" : : "r"(_imp___strnicoll));
 }
 
-void _elf__strnset() asm("strnset");
+void _elfimplib__strnset() asm("strnset");
 void *_imp___strnset = NULL;
-void _elf__strnset() {
+__attribute__((constructor)) void _elfimplib_init__strnset() {
 load_dll_msvcrt();
-if (!_imp___strnset) {
 _imp___strnset = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strnset");
 }
+void _elfimplib__strnset() {
 asm("leave\njmp *%0" : : "r"(_imp___strnset));
 }
 
-void _elf__strrev() asm("strrev");
+void _elfimplib__strrev() asm("strrev");
 void *_imp___strrev = NULL;
-void _elf__strrev() {
+__attribute__((constructor)) void _elfimplib_init__strrev() {
 load_dll_msvcrt();
-if (!_imp___strrev) {
 _imp___strrev = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strrev");
 }
+void _elfimplib__strrev() {
 asm("leave\njmp *%0" : : "r"(_imp___strrev));
 }
 
-void _elf__strset() asm("strset");
+void _elfimplib__strset() asm("strset");
 void *_imp___strset = NULL;
-void _elf__strset() {
+__attribute__((constructor)) void _elfimplib_init__strset() {
 load_dll_msvcrt();
-if (!_imp___strset) {
 _imp___strset = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strset");
 }
+void _elfimplib__strset() {
 asm("leave\njmp *%0" : : "r"(_imp___strset));
 }
 
-void _elf__strtime() asm("strtime");
+void _elfimplib__strtime() asm("strtime");
 void *_imp___strtime = NULL;
-void _elf__strtime() {
+__attribute__((constructor)) void _elfimplib_init__strtime() {
 load_dll_msvcrt();
-if (!_imp___strtime) {
 _imp___strtime = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strtime");
 }
+void _elfimplib__strtime() {
 asm("leave\njmp *%0" : : "r"(_imp___strtime));
 }
 
-void _elf__strtoi64() asm("strtoi64");
+void _elfimplib__strtoi64() asm("strtoi64");
 void *_imp___strtoi64 = NULL;
-void _elf__strtoi64() {
+__attribute__((constructor)) void _elfimplib_init__strtoi64() {
 load_dll_msvcrt();
-if (!_imp___strtoi64) {
 _imp___strtoi64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strtoi64");
 }
+void _elfimplib__strtoi64() {
 asm("leave\njmp *%0" : : "r"(_imp___strtoi64));
 }
 
-void _elf__strtoui64() asm("strtoui64");
+void _elfimplib__strtoui64() asm("strtoui64");
 void *_imp___strtoui64 = NULL;
-void _elf__strtoui64() {
+__attribute__((constructor)) void _elfimplib_init__strtoui64() {
 load_dll_msvcrt();
-if (!_imp___strtoui64) {
 _imp___strtoui64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strtoui64");
 }
+void _elfimplib__strtoui64() {
 asm("leave\njmp *%0" : : "r"(_imp___strtoui64));
 }
 
-void _elf__strupr() asm("strupr");
+void _elfimplib__strupr() asm("strupr");
 void *_imp___strupr = NULL;
-void _elf__strupr() {
+__attribute__((constructor)) void _elfimplib_init__strupr() {
 load_dll_msvcrt();
-if (!_imp___strupr) {
 _imp___strupr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_strupr");
 }
+void _elfimplib__strupr() {
 asm("leave\njmp *%0" : : "r"(_imp___strupr));
 }
 
-void _elf__swab() asm("swab");
+void _elfimplib__swab() asm("swab");
 void *_imp___swab = NULL;
-void _elf__swab() {
+__attribute__((constructor)) void _elfimplib_init__swab() {
 load_dll_msvcrt();
-if (!_imp___swab) {
 _imp___swab = (void *) _elf_GetProcAddress(_dll_msvcrt, "_swab");
 }
+void _elfimplib__swab() {
 asm("leave\njmp *%0" : : "r"(_imp___swab));
 }
 
-void _elf__sys_errlist() asm("sys_errlist");
+void _elfimplib__sys_errlist() asm("sys_errlist");
 void *_imp___sys_errlist = NULL;
-void _elf__sys_errlist() {
+__attribute__((constructor)) void _elfimplib_init__sys_errlist() {
 load_dll_msvcrt();
-if (!_imp___sys_errlist) {
 _imp___sys_errlist = (void *) _elf_GetProcAddress(_dll_msvcrt, "_sys_errlist");
 }
+void _elfimplib__sys_errlist() {
 asm("leave\njmp *%0" : : "r"(_imp___sys_errlist));
 }
 
-void _elf__sys_nerr() asm("sys_nerr");
+void _elfimplib__sys_nerr() asm("sys_nerr");
 void *_imp___sys_nerr = NULL;
-void _elf__sys_nerr() {
+__attribute__((constructor)) void _elfimplib_init__sys_nerr() {
 load_dll_msvcrt();
-if (!_imp___sys_nerr) {
 _imp___sys_nerr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_sys_nerr");
 }
+void _elfimplib__sys_nerr() {
 asm("leave\njmp *%0" : : "r"(_imp___sys_nerr));
 }
 
-void _elf__tell() asm("tell");
+void _elfimplib__tell() asm("tell");
 void *_imp___tell = NULL;
-void _elf__tell() {
+__attribute__((constructor)) void _elfimplib_init__tell() {
 load_dll_msvcrt();
-if (!_imp___tell) {
 _imp___tell = (void *) _elf_GetProcAddress(_dll_msvcrt, "_tell");
 }
+void _elfimplib__tell() {
 asm("leave\njmp *%0" : : "r"(_imp___tell));
 }
 
-void _elf__telli64() asm("telli64");
+void _elfimplib__telli64() asm("telli64");
 void *_imp___telli64 = NULL;
-void _elf__telli64() {
+__attribute__((constructor)) void _elfimplib_init__telli64() {
 load_dll_msvcrt();
-if (!_imp___telli64) {
 _imp___telli64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_telli64");
 }
+void _elfimplib__telli64() {
 asm("leave\njmp *%0" : : "r"(_imp___telli64));
 }
 
-void _elf__tempnam() asm("tempnam");
+void _elfimplib__tempnam() asm("tempnam");
 void *_imp___tempnam = NULL;
-void _elf__tempnam() {
+__attribute__((constructor)) void _elfimplib_init__tempnam() {
 load_dll_msvcrt();
-if (!_imp___tempnam) {
 _imp___tempnam = (void *) _elf_GetProcAddress(_dll_msvcrt, "_tempnam");
 }
+void _elfimplib__tempnam() {
 asm("leave\njmp *%0" : : "r"(_imp___tempnam));
 }
 
-void _elf__time64() asm("time64");
+void _elfimplib__time64() asm("time64");
 void *_imp___time64 = NULL;
-void _elf__time64() {
+__attribute__((constructor)) void _elfimplib_init__time64() {
 load_dll_msvcrt();
-if (!_imp___time64) {
 _imp___time64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_time64");
 }
+void _elfimplib__time64() {
 asm("leave\njmp *%0" : : "r"(_imp___time64));
 }
 
-void _elf__timezone() asm("timezone");
+void _elfimplib__timezone() asm("timezone");
 void *_imp___timezone = NULL;
-void _elf__timezone() {
+__attribute__((constructor)) void _elfimplib_init__timezone() {
 load_dll_msvcrt();
-if (!_imp___timezone) {
 _imp___timezone = (void *) _elf_GetProcAddress(_dll_msvcrt, "_timezone");
 }
+void _elfimplib__timezone() {
 asm("leave\njmp *%0" : : "r"(_imp___timezone));
 }
 
-void _elf__tzname() asm("tzname");
+void _elfimplib__tzname() asm("tzname");
 void *_imp___tzname = NULL;
-void _elf__tzname() {
+__attribute__((constructor)) void _elfimplib_init__tzname() {
 load_dll_msvcrt();
-if (!_imp___tzname) {
 _imp___tzname = (void *) _elf_GetProcAddress(_dll_msvcrt, "_tzname");
 }
+void _elfimplib__tzname() {
 asm("leave\njmp *%0" : : "r"(_imp___tzname));
 }
 
-void _elf__tzset() asm("tzset");
+void _elfimplib__tzset() asm("tzset");
 void *_imp___tzset = NULL;
-void _elf__tzset() {
+__attribute__((constructor)) void _elfimplib_init__tzset() {
 load_dll_msvcrt();
-if (!_imp___tzset) {
 _imp___tzset = (void *) _elf_GetProcAddress(_dll_msvcrt, "_tzset");
 }
+void _elfimplib__tzset() {
 asm("leave\njmp *%0" : : "r"(_imp___tzset));
 }
 
-void _elf__ui64toa() asm("ui64toa");
+void _elfimplib__ui64toa() asm("ui64toa");
 void *_imp___ui64toa = NULL;
-void _elf__ui64toa() {
+__attribute__((constructor)) void _elfimplib_init__ui64toa() {
 load_dll_msvcrt();
-if (!_imp___ui64toa) {
 _imp___ui64toa = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ui64toa");
 }
+void _elfimplib__ui64toa() {
 asm("leave\njmp *%0" : : "r"(_imp___ui64toa));
 }
 
-void _elf__ui64tow() asm("ui64tow");
+void _elfimplib__ui64tow() asm("ui64tow");
 void *_imp___ui64tow = NULL;
-void _elf__ui64tow() {
+__attribute__((constructor)) void _elfimplib_init__ui64tow() {
 load_dll_msvcrt();
-if (!_imp___ui64tow) {
 _imp___ui64tow = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ui64tow");
 }
+void _elfimplib__ui64tow() {
 asm("leave\njmp *%0" : : "r"(_imp___ui64tow));
 }
 
-void _elf__ultoa() asm("ultoa");
+void _elfimplib__ultoa() asm("ultoa");
 void *_imp___ultoa = NULL;
-void _elf__ultoa() {
+__attribute__((constructor)) void _elfimplib_init__ultoa() {
 load_dll_msvcrt();
-if (!_imp___ultoa) {
 _imp___ultoa = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ultoa");
 }
+void _elfimplib__ultoa() {
 asm("leave\njmp *%0" : : "r"(_imp___ultoa));
 }
 
-void _elf__ultow() asm("ultow");
+void _elfimplib__ultow() asm("ultow");
 void *_imp___ultow = NULL;
-void _elf__ultow() {
+__attribute__((constructor)) void _elfimplib_init__ultow() {
 load_dll_msvcrt();
-if (!_imp___ultow) {
 _imp___ultow = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ultow");
 }
+void _elfimplib__ultow() {
 asm("leave\njmp *%0" : : "r"(_imp___ultow));
 }
 
-void _elf__umask() asm("umask");
+void _elfimplib__umask() asm("umask");
 void *_imp___umask = NULL;
-void _elf__umask() {
+__attribute__((constructor)) void _elfimplib_init__umask() {
 load_dll_msvcrt();
-if (!_imp___umask) {
 _imp___umask = (void *) _elf_GetProcAddress(_dll_msvcrt, "_umask");
 }
+void _elfimplib__umask() {
 asm("leave\njmp *%0" : : "r"(_imp___umask));
 }
 
-void _elf__ungetch() asm("ungetch");
+void _elfimplib__ungetch() asm("ungetch");
 void *_imp___ungetch = NULL;
-void _elf__ungetch() {
+__attribute__((constructor)) void _elfimplib_init__ungetch() {
 load_dll_msvcrt();
-if (!_imp___ungetch) {
 _imp___ungetch = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ungetch");
 }
+void _elfimplib__ungetch() {
 asm("leave\njmp *%0" : : "r"(_imp___ungetch));
 }
 
-void _elf__ungetwch() asm("ungetwch");
+void _elfimplib__ungetwch() asm("ungetwch");
 void *_imp___ungetwch = NULL;
-void _elf__ungetwch() {
+__attribute__((constructor)) void _elfimplib_init__ungetwch() {
 load_dll_msvcrt();
-if (!_imp___ungetwch) {
 _imp___ungetwch = (void *) _elf_GetProcAddress(_dll_msvcrt, "_ungetwch");
 }
+void _elfimplib__ungetwch() {
 asm("leave\njmp *%0" : : "r"(_imp___ungetwch));
 }
 
-void _elf__unlink() asm("unlink");
+void _elfimplib__unlink() asm("unlink");
 void *_imp___unlink = NULL;
-void _elf__unlink() {
+__attribute__((constructor)) void _elfimplib_init__unlink() {
 load_dll_msvcrt();
-if (!_imp___unlink) {
 _imp___unlink = (void *) _elf_GetProcAddress(_dll_msvcrt, "_unlink");
 }
+void _elfimplib__unlink() {
 asm("leave\njmp *%0" : : "r"(_imp___unlink));
 }
 
-void _elf__unloaddll() asm("unloaddll");
+void _elfimplib__unloaddll() asm("unloaddll");
 void *_imp___unloaddll = NULL;
-void _elf__unloaddll() {
+__attribute__((constructor)) void _elfimplib_init__unloaddll() {
 load_dll_msvcrt();
-if (!_imp___unloaddll) {
 _imp___unloaddll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_unloaddll");
 }
+void _elfimplib__unloaddll() {
 asm("leave\njmp *%0" : : "r"(_imp___unloaddll));
 }
 
-void _elf__unlock() asm("unlock");
+void _elfimplib__unlock() asm("unlock");
 void *_imp___unlock = NULL;
-void _elf__unlock() {
+__attribute__((constructor)) void _elfimplib_init__unlock() {
 load_dll_msvcrt();
-if (!_imp___unlock) {
 _imp___unlock = (void *) _elf_GetProcAddress(_dll_msvcrt, "_unlock");
 }
+void _elfimplib__unlock() {
 asm("leave\njmp *%0" : : "r"(_imp___unlock));
 }
 
-void _elf__utime() asm("utime");
+void _elfimplib__utime() asm("utime");
 void *_imp___utime = NULL;
-void _elf__utime() {
+__attribute__((constructor)) void _elfimplib_init__utime() {
 load_dll_msvcrt();
-if (!_imp___utime) {
 _imp___utime = (void *) _elf_GetProcAddress(_dll_msvcrt, "_utime");
 }
+void _elfimplib__utime() {
 asm("leave\njmp *%0" : : "r"(_imp___utime));
 }
 
-void _elf__utime64() asm("utime64");
+void _elfimplib__utime64() asm("utime64");
 void *_imp___utime64 = NULL;
-void _elf__utime64() {
+__attribute__((constructor)) void _elfimplib_init__utime64() {
 load_dll_msvcrt();
-if (!_imp___utime64) {
 _imp___utime64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_utime64");
 }
+void _elfimplib__utime64() {
 asm("leave\njmp *%0" : : "r"(_imp___utime64));
 }
 
-void _elf__vscprintf() asm("vscprintf");
+void _elfimplib__vscprintf() asm("vscprintf");
 void *_imp___vscprintf = NULL;
-void _elf__vscprintf() {
+__attribute__((constructor)) void _elfimplib_init__vscprintf() {
 load_dll_msvcrt();
-if (!_imp___vscprintf) {
 _imp___vscprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_vscprintf");
 }
+void _elfimplib__vscprintf() {
 asm("leave\njmp *%0" : : "r"(_imp___vscprintf));
 }
 
-void _elf__vscwprintf() asm("vscwprintf");
+void _elfimplib__vscwprintf() asm("vscwprintf");
 void *_imp___vscwprintf = NULL;
-void _elf__vscwprintf() {
+__attribute__((constructor)) void _elfimplib_init__vscwprintf() {
 load_dll_msvcrt();
-if (!_imp___vscwprintf) {
 _imp___vscwprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_vscwprintf");
 }
+void _elfimplib__vscwprintf() {
 asm("leave\njmp *%0" : : "r"(_imp___vscwprintf));
 }
 
-void _elf__vsnprintf() asm("vsnprintf");
+void _elfimplib__vsnprintf() asm("vsnprintf");
 void *_imp___vsnprintf = NULL;
-void _elf__vsnprintf() {
+__attribute__((constructor)) void _elfimplib_init__vsnprintf() {
 load_dll_msvcrt();
-if (!_imp___vsnprintf) {
 _imp___vsnprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_vsnprintf");
 }
+void _elfimplib__vsnprintf() {
 asm("leave\njmp *%0" : : "r"(_imp___vsnprintf));
 }
 
-void _elf__vsnwprintf() asm("vsnwprintf");
+void _elfimplib__vsnwprintf() asm("vsnwprintf");
 void *_imp___vsnwprintf = NULL;
-void _elf__vsnwprintf() {
+__attribute__((constructor)) void _elfimplib_init__vsnwprintf() {
 load_dll_msvcrt();
-if (!_imp___vsnwprintf) {
 _imp___vsnwprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "_vsnwprintf");
 }
+void _elfimplib__vsnwprintf() {
 asm("leave\njmp *%0" : : "r"(_imp___vsnwprintf));
 }
 
-void _elf__waccess() asm("waccess");
+void _elfimplib__waccess() asm("waccess");
 void *_imp___waccess = NULL;
-void _elf__waccess() {
+__attribute__((constructor)) void _elfimplib_init__waccess() {
 load_dll_msvcrt();
-if (!_imp___waccess) {
 _imp___waccess = (void *) _elf_GetProcAddress(_dll_msvcrt, "_waccess");
 }
+void _elfimplib__waccess() {
 asm("leave\njmp *%0" : : "r"(_imp___waccess));
 }
 
-void _elf__wasctime() asm("wasctime");
+void _elfimplib__wasctime() asm("wasctime");
 void *_imp___wasctime = NULL;
-void _elf__wasctime() {
+__attribute__((constructor)) void _elfimplib_init__wasctime() {
 load_dll_msvcrt();
-if (!_imp___wasctime) {
 _imp___wasctime = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wasctime");
 }
+void _elfimplib__wasctime() {
 asm("leave\njmp *%0" : : "r"(_imp___wasctime));
 }
 
-void _elf__wchdir() asm("wchdir");
+void _elfimplib__wchdir() asm("wchdir");
 void *_imp___wchdir = NULL;
-void _elf__wchdir() {
+__attribute__((constructor)) void _elfimplib_init__wchdir() {
 load_dll_msvcrt();
-if (!_imp___wchdir) {
 _imp___wchdir = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wchdir");
 }
+void _elfimplib__wchdir() {
 asm("leave\njmp *%0" : : "r"(_imp___wchdir));
 }
 
-void _elf__wchmod() asm("wchmod");
+void _elfimplib__wchmod() asm("wchmod");
 void *_imp___wchmod = NULL;
-void _elf__wchmod() {
+__attribute__((constructor)) void _elfimplib_init__wchmod() {
 load_dll_msvcrt();
-if (!_imp___wchmod) {
 _imp___wchmod = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wchmod");
 }
+void _elfimplib__wchmod() {
 asm("leave\njmp *%0" : : "r"(_imp___wchmod));
 }
 
-void _elf__wcmdln() asm("wcmdln");
+void _elfimplib__wcmdln() asm("wcmdln");
 void *_imp___wcmdln = NULL;
-void _elf__wcmdln() {
+__attribute__((constructor)) void _elfimplib_init__wcmdln() {
 load_dll_msvcrt();
-if (!_imp___wcmdln) {
 _imp___wcmdln = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcmdln");
 }
+void _elfimplib__wcmdln() {
 asm("leave\njmp *%0" : : "r"(_imp___wcmdln));
 }
 
-void _elf__wcreat() asm("wcreat");
+void _elfimplib__wcreat() asm("wcreat");
 void *_imp___wcreat = NULL;
-void _elf__wcreat() {
+__attribute__((constructor)) void _elfimplib_init__wcreat() {
 load_dll_msvcrt();
-if (!_imp___wcreat) {
 _imp___wcreat = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcreat");
 }
+void _elfimplib__wcreat() {
 asm("leave\njmp *%0" : : "r"(_imp___wcreat));
 }
 
-void _elf__wcsdup() asm("wcsdup");
+void _elfimplib__wcsdup() asm("wcsdup");
 void *_imp___wcsdup = NULL;
-void _elf__wcsdup() {
+__attribute__((constructor)) void _elfimplib_init__wcsdup() {
 load_dll_msvcrt();
-if (!_imp___wcsdup) {
 _imp___wcsdup = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcsdup");
 }
+void _elfimplib__wcsdup() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsdup));
 }
 
-void _elf__wcserror() asm("wcserror");
+void _elfimplib__wcserror() asm("wcserror");
 void *_imp___wcserror = NULL;
-void _elf__wcserror() {
+__attribute__((constructor)) void _elfimplib_init__wcserror() {
 load_dll_msvcrt();
-if (!_imp___wcserror) {
 _imp___wcserror = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcserror");
 }
+void _elfimplib__wcserror() {
 asm("leave\njmp *%0" : : "r"(_imp___wcserror));
 }
 
-void _elf__wcsicmp() asm("wcsicmp");
+void _elfimplib__wcsicmp() asm("wcsicmp");
 void *_imp___wcsicmp = NULL;
-void _elf__wcsicmp() {
+__attribute__((constructor)) void _elfimplib_init__wcsicmp() {
 load_dll_msvcrt();
-if (!_imp___wcsicmp) {
 _imp___wcsicmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcsicmp");
 }
+void _elfimplib__wcsicmp() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsicmp));
 }
 
-void _elf__wcsicoll() asm("wcsicoll");
+void _elfimplib__wcsicoll() asm("wcsicoll");
 void *_imp___wcsicoll = NULL;
-void _elf__wcsicoll() {
+__attribute__((constructor)) void _elfimplib_init__wcsicoll() {
 load_dll_msvcrt();
-if (!_imp___wcsicoll) {
 _imp___wcsicoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcsicoll");
 }
+void _elfimplib__wcsicoll() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsicoll));
 }
 
-void _elf__wcslwr() asm("wcslwr");
+void _elfimplib__wcslwr() asm("wcslwr");
 void *_imp___wcslwr = NULL;
-void _elf__wcslwr() {
+__attribute__((constructor)) void _elfimplib_init__wcslwr() {
 load_dll_msvcrt();
-if (!_imp___wcslwr) {
 _imp___wcslwr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcslwr");
 }
+void _elfimplib__wcslwr() {
 asm("leave\njmp *%0" : : "r"(_imp___wcslwr));
 }
 
-void _elf__wcsncoll() asm("wcsncoll");
+void _elfimplib__wcsncoll() asm("wcsncoll");
 void *_imp___wcsncoll = NULL;
-void _elf__wcsncoll() {
+__attribute__((constructor)) void _elfimplib_init__wcsncoll() {
 load_dll_msvcrt();
-if (!_imp___wcsncoll) {
 _imp___wcsncoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcsncoll");
 }
+void _elfimplib__wcsncoll() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsncoll));
 }
 
-void _elf__wcsnicmp() asm("wcsnicmp");
+void _elfimplib__wcsnicmp() asm("wcsnicmp");
 void *_imp___wcsnicmp = NULL;
-void _elf__wcsnicmp() {
+__attribute__((constructor)) void _elfimplib_init__wcsnicmp() {
 load_dll_msvcrt();
-if (!_imp___wcsnicmp) {
 _imp___wcsnicmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcsnicmp");
 }
+void _elfimplib__wcsnicmp() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsnicmp));
 }
 
-void _elf__wcsnicoll() asm("wcsnicoll");
+void _elfimplib__wcsnicoll() asm("wcsnicoll");
 void *_imp___wcsnicoll = NULL;
-void _elf__wcsnicoll() {
+__attribute__((constructor)) void _elfimplib_init__wcsnicoll() {
 load_dll_msvcrt();
-if (!_imp___wcsnicoll) {
 _imp___wcsnicoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcsnicoll");
 }
+void _elfimplib__wcsnicoll() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsnicoll));
 }
 
-void _elf__wcsnset() asm("wcsnset");
+void _elfimplib__wcsnset() asm("wcsnset");
 void *_imp___wcsnset = NULL;
-void _elf__wcsnset() {
+__attribute__((constructor)) void _elfimplib_init__wcsnset() {
 load_dll_msvcrt();
-if (!_imp___wcsnset) {
 _imp___wcsnset = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcsnset");
 }
+void _elfimplib__wcsnset() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsnset));
 }
 
-void _elf__wcsrev() asm("wcsrev");
+void _elfimplib__wcsrev() asm("wcsrev");
 void *_imp___wcsrev = NULL;
-void _elf__wcsrev() {
+__attribute__((constructor)) void _elfimplib_init__wcsrev() {
 load_dll_msvcrt();
-if (!_imp___wcsrev) {
 _imp___wcsrev = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcsrev");
 }
+void _elfimplib__wcsrev() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsrev));
 }
 
-void _elf__wcsset() asm("wcsset");
+void _elfimplib__wcsset() asm("wcsset");
 void *_imp___wcsset = NULL;
-void _elf__wcsset() {
+__attribute__((constructor)) void _elfimplib_init__wcsset() {
 load_dll_msvcrt();
-if (!_imp___wcsset) {
 _imp___wcsset = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcsset");
 }
+void _elfimplib__wcsset() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsset));
 }
 
-void _elf__wcstoi64() asm("wcstoi64");
+void _elfimplib__wcstoi64() asm("wcstoi64");
 void *_imp___wcstoi64 = NULL;
-void _elf__wcstoi64() {
+__attribute__((constructor)) void _elfimplib_init__wcstoi64() {
 load_dll_msvcrt();
-if (!_imp___wcstoi64) {
 _imp___wcstoi64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcstoi64");
 }
+void _elfimplib__wcstoi64() {
 asm("leave\njmp *%0" : : "r"(_imp___wcstoi64));
 }
 
-void _elf__wcstoui64() asm("wcstoui64");
+void _elfimplib__wcstoui64() asm("wcstoui64");
 void *_imp___wcstoui64 = NULL;
-void _elf__wcstoui64() {
+__attribute__((constructor)) void _elfimplib_init__wcstoui64() {
 load_dll_msvcrt();
-if (!_imp___wcstoui64) {
 _imp___wcstoui64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcstoui64");
 }
+void _elfimplib__wcstoui64() {
 asm("leave\njmp *%0" : : "r"(_imp___wcstoui64));
 }
 
-void _elf__wcsupr() asm("wcsupr");
+void _elfimplib__wcsupr() asm("wcsupr");
 void *_imp___wcsupr = NULL;
-void _elf__wcsupr() {
+__attribute__((constructor)) void _elfimplib_init__wcsupr() {
 load_dll_msvcrt();
-if (!_imp___wcsupr) {
 _imp___wcsupr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wcsupr");
 }
+void _elfimplib__wcsupr() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsupr));
 }
 
-void _elf__wctime() asm("wctime");
+void _elfimplib__wctime() asm("wctime");
 void *_imp___wctime = NULL;
-void _elf__wctime() {
+__attribute__((constructor)) void _elfimplib_init__wctime() {
 load_dll_msvcrt();
-if (!_imp___wctime) {
 _imp___wctime = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wctime");
 }
+void _elfimplib__wctime() {
 asm("leave\njmp *%0" : : "r"(_imp___wctime));
 }
 
-void _elf__wctime64() asm("wctime64");
+void _elfimplib__wctime64() asm("wctime64");
 void *_imp___wctime64 = NULL;
-void _elf__wctime64() {
+__attribute__((constructor)) void _elfimplib_init__wctime64() {
 load_dll_msvcrt();
-if (!_imp___wctime64) {
 _imp___wctime64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wctime64");
 }
+void _elfimplib__wctime64() {
 asm("leave\njmp *%0" : : "r"(_imp___wctime64));
 }
 
-void _elf__wenviron() asm("wenviron");
+void _elfimplib__wenviron() asm("wenviron");
 void *_imp___wenviron = NULL;
-void _elf__wenviron() {
+__attribute__((constructor)) void _elfimplib_init__wenviron() {
 load_dll_msvcrt();
-if (!_imp___wenviron) {
 _imp___wenviron = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wenviron");
 }
+void _elfimplib__wenviron() {
 asm("leave\njmp *%0" : : "r"(_imp___wenviron));
 }
 
-void _elf__wexecl() asm("wexecl");
+void _elfimplib__wexecl() asm("wexecl");
 void *_imp___wexecl = NULL;
-void _elf__wexecl() {
+__attribute__((constructor)) void _elfimplib_init__wexecl() {
 load_dll_msvcrt();
-if (!_imp___wexecl) {
 _imp___wexecl = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wexecl");
 }
+void _elfimplib__wexecl() {
 asm("leave\njmp *%0" : : "r"(_imp___wexecl));
 }
 
-void _elf__wexecle() asm("wexecle");
+void _elfimplib__wexecle() asm("wexecle");
 void *_imp___wexecle = NULL;
-void _elf__wexecle() {
+__attribute__((constructor)) void _elfimplib_init__wexecle() {
 load_dll_msvcrt();
-if (!_imp___wexecle) {
 _imp___wexecle = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wexecle");
 }
+void _elfimplib__wexecle() {
 asm("leave\njmp *%0" : : "r"(_imp___wexecle));
 }
 
-void _elf__wexeclp() asm("wexeclp");
+void _elfimplib__wexeclp() asm("wexeclp");
 void *_imp___wexeclp = NULL;
-void _elf__wexeclp() {
+__attribute__((constructor)) void _elfimplib_init__wexeclp() {
 load_dll_msvcrt();
-if (!_imp___wexeclp) {
 _imp___wexeclp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wexeclp");
 }
+void _elfimplib__wexeclp() {
 asm("leave\njmp *%0" : : "r"(_imp___wexeclp));
 }
 
-void _elf__wexeclpe() asm("wexeclpe");
+void _elfimplib__wexeclpe() asm("wexeclpe");
 void *_imp___wexeclpe = NULL;
-void _elf__wexeclpe() {
+__attribute__((constructor)) void _elfimplib_init__wexeclpe() {
 load_dll_msvcrt();
-if (!_imp___wexeclpe) {
 _imp___wexeclpe = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wexeclpe");
 }
+void _elfimplib__wexeclpe() {
 asm("leave\njmp *%0" : : "r"(_imp___wexeclpe));
 }
 
-void _elf__wexecv() asm("wexecv");
+void _elfimplib__wexecv() asm("wexecv");
 void *_imp___wexecv = NULL;
-void _elf__wexecv() {
+__attribute__((constructor)) void _elfimplib_init__wexecv() {
 load_dll_msvcrt();
-if (!_imp___wexecv) {
 _imp___wexecv = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wexecv");
 }
+void _elfimplib__wexecv() {
 asm("leave\njmp *%0" : : "r"(_imp___wexecv));
 }
 
-void _elf__wexecve() asm("wexecve");
+void _elfimplib__wexecve() asm("wexecve");
 void *_imp___wexecve = NULL;
-void _elf__wexecve() {
+__attribute__((constructor)) void _elfimplib_init__wexecve() {
 load_dll_msvcrt();
-if (!_imp___wexecve) {
 _imp___wexecve = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wexecve");
 }
+void _elfimplib__wexecve() {
 asm("leave\njmp *%0" : : "r"(_imp___wexecve));
 }
 
-void _elf__wexecvp() asm("wexecvp");
+void _elfimplib__wexecvp() asm("wexecvp");
 void *_imp___wexecvp = NULL;
-void _elf__wexecvp() {
+__attribute__((constructor)) void _elfimplib_init__wexecvp() {
 load_dll_msvcrt();
-if (!_imp___wexecvp) {
 _imp___wexecvp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wexecvp");
 }
+void _elfimplib__wexecvp() {
 asm("leave\njmp *%0" : : "r"(_imp___wexecvp));
 }
 
-void _elf__wexecvpe() asm("wexecvpe");
+void _elfimplib__wexecvpe() asm("wexecvpe");
 void *_imp___wexecvpe = NULL;
-void _elf__wexecvpe() {
+__attribute__((constructor)) void _elfimplib_init__wexecvpe() {
 load_dll_msvcrt();
-if (!_imp___wexecvpe) {
 _imp___wexecvpe = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wexecvpe");
 }
+void _elfimplib__wexecvpe() {
 asm("leave\njmp *%0" : : "r"(_imp___wexecvpe));
 }
 
-void _elf__wfdopen() asm("wfdopen");
+void _elfimplib__wfdopen() asm("wfdopen");
 void *_imp___wfdopen = NULL;
-void _elf__wfdopen() {
+__attribute__((constructor)) void _elfimplib_init__wfdopen() {
 load_dll_msvcrt();
-if (!_imp___wfdopen) {
 _imp___wfdopen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wfdopen");
 }
+void _elfimplib__wfdopen() {
 asm("leave\njmp *%0" : : "r"(_imp___wfdopen));
 }
 
-void _elf__wfindfirst() asm("wfindfirst");
+void _elfimplib__wfindfirst() asm("wfindfirst");
 void *_imp___wfindfirst = NULL;
-void _elf__wfindfirst() {
+__attribute__((constructor)) void _elfimplib_init__wfindfirst() {
 load_dll_msvcrt();
-if (!_imp___wfindfirst) {
 _imp___wfindfirst = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wfindfirst");
 }
+void _elfimplib__wfindfirst() {
 asm("leave\njmp *%0" : : "r"(_imp___wfindfirst));
 }
 
-void _elf__wfindfirst64() asm("wfindfirst64");
+void _elfimplib__wfindfirst64() asm("wfindfirst64");
 void *_imp___wfindfirst64 = NULL;
-void _elf__wfindfirst64() {
+__attribute__((constructor)) void _elfimplib_init__wfindfirst64() {
 load_dll_msvcrt();
-if (!_imp___wfindfirst64) {
 _imp___wfindfirst64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wfindfirst64");
 }
+void _elfimplib__wfindfirst64() {
 asm("leave\njmp *%0" : : "r"(_imp___wfindfirst64));
 }
 
-void _elf__wfindfirsti64() asm("wfindfirsti64");
+void _elfimplib__wfindfirsti64() asm("wfindfirsti64");
 void *_imp___wfindfirsti64 = NULL;
-void _elf__wfindfirsti64() {
+__attribute__((constructor)) void _elfimplib_init__wfindfirsti64() {
 load_dll_msvcrt();
-if (!_imp___wfindfirsti64) {
 _imp___wfindfirsti64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wfindfirsti64");
 }
+void _elfimplib__wfindfirsti64() {
 asm("leave\njmp *%0" : : "r"(_imp___wfindfirsti64));
 }
 
-void _elf__wfindnext() asm("wfindnext");
+void _elfimplib__wfindnext() asm("wfindnext");
 void *_imp___wfindnext = NULL;
-void _elf__wfindnext() {
+__attribute__((constructor)) void _elfimplib_init__wfindnext() {
 load_dll_msvcrt();
-if (!_imp___wfindnext) {
 _imp___wfindnext = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wfindnext");
 }
+void _elfimplib__wfindnext() {
 asm("leave\njmp *%0" : : "r"(_imp___wfindnext));
 }
 
-void _elf__wfindnext64() asm("wfindnext64");
+void _elfimplib__wfindnext64() asm("wfindnext64");
 void *_imp___wfindnext64 = NULL;
-void _elf__wfindnext64() {
+__attribute__((constructor)) void _elfimplib_init__wfindnext64() {
 load_dll_msvcrt();
-if (!_imp___wfindnext64) {
 _imp___wfindnext64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wfindnext64");
 }
+void _elfimplib__wfindnext64() {
 asm("leave\njmp *%0" : : "r"(_imp___wfindnext64));
 }
 
-void _elf__wfindnexti64() asm("wfindnexti64");
+void _elfimplib__wfindnexti64() asm("wfindnexti64");
 void *_imp___wfindnexti64 = NULL;
-void _elf__wfindnexti64() {
+__attribute__((constructor)) void _elfimplib_init__wfindnexti64() {
 load_dll_msvcrt();
-if (!_imp___wfindnexti64) {
 _imp___wfindnexti64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wfindnexti64");
 }
+void _elfimplib__wfindnexti64() {
 asm("leave\njmp *%0" : : "r"(_imp___wfindnexti64));
 }
 
-void _elf__wfopen() asm("wfopen");
+void _elfimplib__wfopen() asm("wfopen");
 void *_imp___wfopen = NULL;
-void _elf__wfopen() {
+__attribute__((constructor)) void _elfimplib_init__wfopen() {
 load_dll_msvcrt();
-if (!_imp___wfopen) {
 _imp___wfopen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wfopen");
 }
+void _elfimplib__wfopen() {
 asm("leave\njmp *%0" : : "r"(_imp___wfopen));
 }
 
-void _elf__wfreopen() asm("wfreopen");
+void _elfimplib__wfreopen() asm("wfreopen");
 void *_imp___wfreopen = NULL;
-void _elf__wfreopen() {
+__attribute__((constructor)) void _elfimplib_init__wfreopen() {
 load_dll_msvcrt();
-if (!_imp___wfreopen) {
 _imp___wfreopen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wfreopen");
 }
+void _elfimplib__wfreopen() {
 asm("leave\njmp *%0" : : "r"(_imp___wfreopen));
 }
 
-void _elf__wfsopen() asm("wfsopen");
+void _elfimplib__wfsopen() asm("wfsopen");
 void *_imp___wfsopen = NULL;
-void _elf__wfsopen() {
+__attribute__((constructor)) void _elfimplib_init__wfsopen() {
 load_dll_msvcrt();
-if (!_imp___wfsopen) {
 _imp___wfsopen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wfsopen");
 }
+void _elfimplib__wfsopen() {
 asm("leave\njmp *%0" : : "r"(_imp___wfsopen));
 }
 
-void _elf__wfullpath() asm("wfullpath");
+void _elfimplib__wfullpath() asm("wfullpath");
 void *_imp___wfullpath = NULL;
-void _elf__wfullpath() {
+__attribute__((constructor)) void _elfimplib_init__wfullpath() {
 load_dll_msvcrt();
-if (!_imp___wfullpath) {
 _imp___wfullpath = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wfullpath");
 }
+void _elfimplib__wfullpath() {
 asm("leave\njmp *%0" : : "r"(_imp___wfullpath));
 }
 
-void _elf__wgetcwd() asm("wgetcwd");
+void _elfimplib__wgetcwd() asm("wgetcwd");
 void *_imp___wgetcwd = NULL;
-void _elf__wgetcwd() {
+__attribute__((constructor)) void _elfimplib_init__wgetcwd() {
 load_dll_msvcrt();
-if (!_imp___wgetcwd) {
 _imp___wgetcwd = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wgetcwd");
 }
+void _elfimplib__wgetcwd() {
 asm("leave\njmp *%0" : : "r"(_imp___wgetcwd));
 }
 
-void _elf__wgetdcwd() asm("wgetdcwd");
+void _elfimplib__wgetdcwd() asm("wgetdcwd");
 void *_imp___wgetdcwd = NULL;
-void _elf__wgetdcwd() {
+__attribute__((constructor)) void _elfimplib_init__wgetdcwd() {
 load_dll_msvcrt();
-if (!_imp___wgetdcwd) {
 _imp___wgetdcwd = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wgetdcwd");
 }
+void _elfimplib__wgetdcwd() {
 asm("leave\njmp *%0" : : "r"(_imp___wgetdcwd));
 }
 
-void _elf__wgetenv() asm("wgetenv");
+void _elfimplib__wgetenv() asm("wgetenv");
 void *_imp___wgetenv = NULL;
-void _elf__wgetenv() {
+__attribute__((constructor)) void _elfimplib_init__wgetenv() {
 load_dll_msvcrt();
-if (!_imp___wgetenv) {
 _imp___wgetenv = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wgetenv");
 }
+void _elfimplib__wgetenv() {
 asm("leave\njmp *%0" : : "r"(_imp___wgetenv));
 }
 
-void _elf__winmajor() asm("winmajor");
+void _elfimplib__winmajor() asm("winmajor");
 void *_imp___winmajor = NULL;
-void _elf__winmajor() {
+__attribute__((constructor)) void _elfimplib_init__winmajor() {
 load_dll_msvcrt();
-if (!_imp___winmajor) {
 _imp___winmajor = (void *) _elf_GetProcAddress(_dll_msvcrt, "_winmajor");
 }
+void _elfimplib__winmajor() {
 asm("leave\njmp *%0" : : "r"(_imp___winmajor));
 }
 
-void _elf__winminor() asm("winminor");
+void _elfimplib__winminor() asm("winminor");
 void *_imp___winminor = NULL;
-void _elf__winminor() {
+__attribute__((constructor)) void _elfimplib_init__winminor() {
 load_dll_msvcrt();
-if (!_imp___winminor) {
 _imp___winminor = (void *) _elf_GetProcAddress(_dll_msvcrt, "_winminor");
 }
+void _elfimplib__winminor() {
 asm("leave\njmp *%0" : : "r"(_imp___winminor));
 }
 
-void _elf__winver() asm("winver");
+void _elfimplib__winver() asm("winver");
 void *_imp___winver = NULL;
-void _elf__winver() {
+__attribute__((constructor)) void _elfimplib_init__winver() {
 load_dll_msvcrt();
-if (!_imp___winver) {
 _imp___winver = (void *) _elf_GetProcAddress(_dll_msvcrt, "_winver");
 }
+void _elfimplib__winver() {
 asm("leave\njmp *%0" : : "r"(_imp___winver));
 }
 
-void _elf__wmakepath() asm("wmakepath");
+void _elfimplib__wmakepath() asm("wmakepath");
 void *_imp___wmakepath = NULL;
-void _elf__wmakepath() {
+__attribute__((constructor)) void _elfimplib_init__wmakepath() {
 load_dll_msvcrt();
-if (!_imp___wmakepath) {
 _imp___wmakepath = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wmakepath");
 }
+void _elfimplib__wmakepath() {
 asm("leave\njmp *%0" : : "r"(_imp___wmakepath));
 }
 
-void _elf__wmkdir() asm("wmkdir");
+void _elfimplib__wmkdir() asm("wmkdir");
 void *_imp___wmkdir = NULL;
-void _elf__wmkdir() {
+__attribute__((constructor)) void _elfimplib_init__wmkdir() {
 load_dll_msvcrt();
-if (!_imp___wmkdir) {
 _imp___wmkdir = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wmkdir");
 }
+void _elfimplib__wmkdir() {
 asm("leave\njmp *%0" : : "r"(_imp___wmkdir));
 }
 
-void _elf__wmktemp() asm("wmktemp");
+void _elfimplib__wmktemp() asm("wmktemp");
 void *_imp___wmktemp = NULL;
-void _elf__wmktemp() {
+__attribute__((constructor)) void _elfimplib_init__wmktemp() {
 load_dll_msvcrt();
-if (!_imp___wmktemp) {
 _imp___wmktemp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wmktemp");
 }
+void _elfimplib__wmktemp() {
 asm("leave\njmp *%0" : : "r"(_imp___wmktemp));
 }
 
-void _elf__wopen() asm("wopen");
+void _elfimplib__wopen() asm("wopen");
 void *_imp___wopen = NULL;
-void _elf__wopen() {
+__attribute__((constructor)) void _elfimplib_init__wopen() {
 load_dll_msvcrt();
-if (!_imp___wopen) {
 _imp___wopen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wopen");
 }
+void _elfimplib__wopen() {
 asm("leave\njmp *%0" : : "r"(_imp___wopen));
 }
 
-void _elf__wperror() asm("wperror");
+void _elfimplib__wperror() asm("wperror");
 void *_imp___wperror = NULL;
-void _elf__wperror() {
+__attribute__((constructor)) void _elfimplib_init__wperror() {
 load_dll_msvcrt();
-if (!_imp___wperror) {
 _imp___wperror = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wperror");
 }
+void _elfimplib__wperror() {
 asm("leave\njmp *%0" : : "r"(_imp___wperror));
 }
 
-void _elf__wpgmptr() asm("wpgmptr");
+void _elfimplib__wpgmptr() asm("wpgmptr");
 void *_imp___wpgmptr = NULL;
-void _elf__wpgmptr() {
+__attribute__((constructor)) void _elfimplib_init__wpgmptr() {
 load_dll_msvcrt();
-if (!_imp___wpgmptr) {
 _imp___wpgmptr = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wpgmptr");
 }
+void _elfimplib__wpgmptr() {
 asm("leave\njmp *%0" : : "r"(_imp___wpgmptr));
 }
 
-void _elf__wpopen() asm("wpopen");
+void _elfimplib__wpopen() asm("wpopen");
 void *_imp___wpopen = NULL;
-void _elf__wpopen() {
+__attribute__((constructor)) void _elfimplib_init__wpopen() {
 load_dll_msvcrt();
-if (!_imp___wpopen) {
 _imp___wpopen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wpopen");
 }
+void _elfimplib__wpopen() {
 asm("leave\njmp *%0" : : "r"(_imp___wpopen));
 }
 
-void _elf__wputenv() asm("wputenv");
+void _elfimplib__wputenv() asm("wputenv");
 void *_imp___wputenv = NULL;
-void _elf__wputenv() {
+__attribute__((constructor)) void _elfimplib_init__wputenv() {
 load_dll_msvcrt();
-if (!_imp___wputenv) {
 _imp___wputenv = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wputenv");
 }
+void _elfimplib__wputenv() {
 asm("leave\njmp *%0" : : "r"(_imp___wputenv));
 }
 
-void _elf__wremove() asm("wremove");
+void _elfimplib__wremove() asm("wremove");
 void *_imp___wremove = NULL;
-void _elf__wremove() {
+__attribute__((constructor)) void _elfimplib_init__wremove() {
 load_dll_msvcrt();
-if (!_imp___wremove) {
 _imp___wremove = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wremove");
 }
+void _elfimplib__wremove() {
 asm("leave\njmp *%0" : : "r"(_imp___wremove));
 }
 
-void _elf__wrename() asm("wrename");
+void _elfimplib__wrename() asm("wrename");
 void *_imp___wrename = NULL;
-void _elf__wrename() {
+__attribute__((constructor)) void _elfimplib_init__wrename() {
 load_dll_msvcrt();
-if (!_imp___wrename) {
 _imp___wrename = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wrename");
 }
+void _elfimplib__wrename() {
 asm("leave\njmp *%0" : : "r"(_imp___wrename));
 }
 
-void _elf__write() asm("write");
+void _elfimplib__write() asm("write");
 void *_imp___write = NULL;
-void _elf__write() {
+__attribute__((constructor)) void _elfimplib_init__write() {
 load_dll_msvcrt();
-if (!_imp___write) {
 _imp___write = (void *) _elf_GetProcAddress(_dll_msvcrt, "_write");
 }
+void _elfimplib__write() {
 asm("leave\njmp *%0" : : "r"(_imp___write));
 }
 
-void _elf__wrmdir() asm("wrmdir");
+void _elfimplib__wrmdir() asm("wrmdir");
 void *_imp___wrmdir = NULL;
-void _elf__wrmdir() {
+__attribute__((constructor)) void _elfimplib_init__wrmdir() {
 load_dll_msvcrt();
-if (!_imp___wrmdir) {
 _imp___wrmdir = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wrmdir");
 }
+void _elfimplib__wrmdir() {
 asm("leave\njmp *%0" : : "r"(_imp___wrmdir));
 }
 
-void _elf__wsearchenv() asm("wsearchenv");
+void _elfimplib__wsearchenv() asm("wsearchenv");
 void *_imp___wsearchenv = NULL;
-void _elf__wsearchenv() {
+__attribute__((constructor)) void _elfimplib_init__wsearchenv() {
 load_dll_msvcrt();
-if (!_imp___wsearchenv) {
 _imp___wsearchenv = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wsearchenv");
 }
+void _elfimplib__wsearchenv() {
 asm("leave\njmp *%0" : : "r"(_imp___wsearchenv));
 }
 
-void _elf__wsetlocale() asm("wsetlocale");
+void _elfimplib__wsetlocale() asm("wsetlocale");
 void *_imp___wsetlocale = NULL;
-void _elf__wsetlocale() {
+__attribute__((constructor)) void _elfimplib_init__wsetlocale() {
 load_dll_msvcrt();
-if (!_imp___wsetlocale) {
 _imp___wsetlocale = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wsetlocale");
 }
+void _elfimplib__wsetlocale() {
 asm("leave\njmp *%0" : : "r"(_imp___wsetlocale));
 }
 
-void _elf__wsopen() asm("wsopen");
+void _elfimplib__wsopen() asm("wsopen");
 void *_imp___wsopen = NULL;
-void _elf__wsopen() {
+__attribute__((constructor)) void _elfimplib_init__wsopen() {
 load_dll_msvcrt();
-if (!_imp___wsopen) {
 _imp___wsopen = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wsopen");
 }
+void _elfimplib__wsopen() {
 asm("leave\njmp *%0" : : "r"(_imp___wsopen));
 }
 
-void _elf__wspawnl() asm("wspawnl");
+void _elfimplib__wspawnl() asm("wspawnl");
 void *_imp___wspawnl = NULL;
-void _elf__wspawnl() {
+__attribute__((constructor)) void _elfimplib_init__wspawnl() {
 load_dll_msvcrt();
-if (!_imp___wspawnl) {
 _imp___wspawnl = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wspawnl");
 }
+void _elfimplib__wspawnl() {
 asm("leave\njmp *%0" : : "r"(_imp___wspawnl));
 }
 
-void _elf__wspawnle() asm("wspawnle");
+void _elfimplib__wspawnle() asm("wspawnle");
 void *_imp___wspawnle = NULL;
-void _elf__wspawnle() {
+__attribute__((constructor)) void _elfimplib_init__wspawnle() {
 load_dll_msvcrt();
-if (!_imp___wspawnle) {
 _imp___wspawnle = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wspawnle");
 }
+void _elfimplib__wspawnle() {
 asm("leave\njmp *%0" : : "r"(_imp___wspawnle));
 }
 
-void _elf__wspawnlp() asm("wspawnlp");
+void _elfimplib__wspawnlp() asm("wspawnlp");
 void *_imp___wspawnlp = NULL;
-void _elf__wspawnlp() {
+__attribute__((constructor)) void _elfimplib_init__wspawnlp() {
 load_dll_msvcrt();
-if (!_imp___wspawnlp) {
 _imp___wspawnlp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wspawnlp");
 }
+void _elfimplib__wspawnlp() {
 asm("leave\njmp *%0" : : "r"(_imp___wspawnlp));
 }
 
-void _elf__wspawnlpe() asm("wspawnlpe");
+void _elfimplib__wspawnlpe() asm("wspawnlpe");
 void *_imp___wspawnlpe = NULL;
-void _elf__wspawnlpe() {
+__attribute__((constructor)) void _elfimplib_init__wspawnlpe() {
 load_dll_msvcrt();
-if (!_imp___wspawnlpe) {
 _imp___wspawnlpe = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wspawnlpe");
 }
+void _elfimplib__wspawnlpe() {
 asm("leave\njmp *%0" : : "r"(_imp___wspawnlpe));
 }
 
-void _elf__wspawnv() asm("wspawnv");
+void _elfimplib__wspawnv() asm("wspawnv");
 void *_imp___wspawnv = NULL;
-void _elf__wspawnv() {
+__attribute__((constructor)) void _elfimplib_init__wspawnv() {
 load_dll_msvcrt();
-if (!_imp___wspawnv) {
 _imp___wspawnv = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wspawnv");
 }
+void _elfimplib__wspawnv() {
 asm("leave\njmp *%0" : : "r"(_imp___wspawnv));
 }
 
-void _elf__wspawnve() asm("wspawnve");
+void _elfimplib__wspawnve() asm("wspawnve");
 void *_imp___wspawnve = NULL;
-void _elf__wspawnve() {
+__attribute__((constructor)) void _elfimplib_init__wspawnve() {
 load_dll_msvcrt();
-if (!_imp___wspawnve) {
 _imp___wspawnve = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wspawnve");
 }
+void _elfimplib__wspawnve() {
 asm("leave\njmp *%0" : : "r"(_imp___wspawnve));
 }
 
-void _elf__wspawnvp() asm("wspawnvp");
+void _elfimplib__wspawnvp() asm("wspawnvp");
 void *_imp___wspawnvp = NULL;
-void _elf__wspawnvp() {
+__attribute__((constructor)) void _elfimplib_init__wspawnvp() {
 load_dll_msvcrt();
-if (!_imp___wspawnvp) {
 _imp___wspawnvp = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wspawnvp");
 }
+void _elfimplib__wspawnvp() {
 asm("leave\njmp *%0" : : "r"(_imp___wspawnvp));
 }
 
-void _elf__wspawnvpe() asm("wspawnvpe");
+void _elfimplib__wspawnvpe() asm("wspawnvpe");
 void *_imp___wspawnvpe = NULL;
-void _elf__wspawnvpe() {
+__attribute__((constructor)) void _elfimplib_init__wspawnvpe() {
 load_dll_msvcrt();
-if (!_imp___wspawnvpe) {
 _imp___wspawnvpe = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wspawnvpe");
 }
+void _elfimplib__wspawnvpe() {
 asm("leave\njmp *%0" : : "r"(_imp___wspawnvpe));
 }
 
-void _elf__wsplitpath() asm("wsplitpath");
+void _elfimplib__wsplitpath() asm("wsplitpath");
 void *_imp___wsplitpath = NULL;
-void _elf__wsplitpath() {
+__attribute__((constructor)) void _elfimplib_init__wsplitpath() {
 load_dll_msvcrt();
-if (!_imp___wsplitpath) {
 _imp___wsplitpath = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wsplitpath");
 }
+void _elfimplib__wsplitpath() {
 asm("leave\njmp *%0" : : "r"(_imp___wsplitpath));
 }
 
-void _elf__wstat() asm("wstat");
+void _elfimplib__wstat() asm("wstat");
 void *_imp___wstat = NULL;
-void _elf__wstat() {
+__attribute__((constructor)) void _elfimplib_init__wstat() {
 load_dll_msvcrt();
-if (!_imp___wstat) {
 _imp___wstat = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wstat");
 }
+void _elfimplib__wstat() {
 asm("leave\njmp *%0" : : "r"(_imp___wstat));
 }
 
-void _elf__wstat64() asm("wstat64");
+void _elfimplib__wstat64() asm("wstat64");
 void *_imp___wstat64 = NULL;
-void _elf__wstat64() {
+__attribute__((constructor)) void _elfimplib_init__wstat64() {
 load_dll_msvcrt();
-if (!_imp___wstat64) {
 _imp___wstat64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wstat64");
 }
+void _elfimplib__wstat64() {
 asm("leave\njmp *%0" : : "r"(_imp___wstat64));
 }
 
-void _elf__wstati64() asm("wstati64");
+void _elfimplib__wstati64() asm("wstati64");
 void *_imp___wstati64 = NULL;
-void _elf__wstati64() {
+__attribute__((constructor)) void _elfimplib_init__wstati64() {
 load_dll_msvcrt();
-if (!_imp___wstati64) {
 _imp___wstati64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wstati64");
 }
+void _elfimplib__wstati64() {
 asm("leave\njmp *%0" : : "r"(_imp___wstati64));
 }
 
-void _elf__wstrdate() asm("wstrdate");
+void _elfimplib__wstrdate() asm("wstrdate");
 void *_imp___wstrdate = NULL;
-void _elf__wstrdate() {
+__attribute__((constructor)) void _elfimplib_init__wstrdate() {
 load_dll_msvcrt();
-if (!_imp___wstrdate) {
 _imp___wstrdate = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wstrdate");
 }
+void _elfimplib__wstrdate() {
 asm("leave\njmp *%0" : : "r"(_imp___wstrdate));
 }
 
-void _elf__wstrtime() asm("wstrtime");
+void _elfimplib__wstrtime() asm("wstrtime");
 void *_imp___wstrtime = NULL;
-void _elf__wstrtime() {
+__attribute__((constructor)) void _elfimplib_init__wstrtime() {
 load_dll_msvcrt();
-if (!_imp___wstrtime) {
 _imp___wstrtime = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wstrtime");
 }
+void _elfimplib__wstrtime() {
 asm("leave\njmp *%0" : : "r"(_imp___wstrtime));
 }
 
-void _elf__wsystem() asm("wsystem");
+void _elfimplib__wsystem() asm("wsystem");
 void *_imp___wsystem = NULL;
-void _elf__wsystem() {
+__attribute__((constructor)) void _elfimplib_init__wsystem() {
 load_dll_msvcrt();
-if (!_imp___wsystem) {
 _imp___wsystem = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wsystem");
 }
+void _elfimplib__wsystem() {
 asm("leave\njmp *%0" : : "r"(_imp___wsystem));
 }
 
-void _elf__wtempnam() asm("wtempnam");
+void _elfimplib__wtempnam() asm("wtempnam");
 void *_imp___wtempnam = NULL;
-void _elf__wtempnam() {
+__attribute__((constructor)) void _elfimplib_init__wtempnam() {
 load_dll_msvcrt();
-if (!_imp___wtempnam) {
 _imp___wtempnam = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wtempnam");
 }
+void _elfimplib__wtempnam() {
 asm("leave\njmp *%0" : : "r"(_imp___wtempnam));
 }
 
-void _elf__wtmpnam() asm("wtmpnam");
+void _elfimplib__wtmpnam() asm("wtmpnam");
 void *_imp___wtmpnam = NULL;
-void _elf__wtmpnam() {
+__attribute__((constructor)) void _elfimplib_init__wtmpnam() {
 load_dll_msvcrt();
-if (!_imp___wtmpnam) {
 _imp___wtmpnam = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wtmpnam");
 }
+void _elfimplib__wtmpnam() {
 asm("leave\njmp *%0" : : "r"(_imp___wtmpnam));
 }
 
-void _elf__wtof() asm("wtof");
+void _elfimplib__wtof() asm("wtof");
 void *_imp___wtof = NULL;
-void _elf__wtof() {
+__attribute__((constructor)) void _elfimplib_init__wtof() {
 load_dll_msvcrt();
-if (!_imp___wtof) {
 _imp___wtof = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wtof");
 }
+void _elfimplib__wtof() {
 asm("leave\njmp *%0" : : "r"(_imp___wtof));
 }
 
-void _elf__wtoi() asm("wtoi");
+void _elfimplib__wtoi() asm("wtoi");
 void *_imp___wtoi = NULL;
-void _elf__wtoi() {
+__attribute__((constructor)) void _elfimplib_init__wtoi() {
 load_dll_msvcrt();
-if (!_imp___wtoi) {
 _imp___wtoi = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wtoi");
 }
+void _elfimplib__wtoi() {
 asm("leave\njmp *%0" : : "r"(_imp___wtoi));
 }
 
-void _elf__wtoi64() asm("wtoi64");
+void _elfimplib__wtoi64() asm("wtoi64");
 void *_imp___wtoi64 = NULL;
-void _elf__wtoi64() {
+__attribute__((constructor)) void _elfimplib_init__wtoi64() {
 load_dll_msvcrt();
-if (!_imp___wtoi64) {
 _imp___wtoi64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wtoi64");
 }
+void _elfimplib__wtoi64() {
 asm("leave\njmp *%0" : : "r"(_imp___wtoi64));
 }
 
-void _elf__wtol() asm("wtol");
+void _elfimplib__wtol() asm("wtol");
 void *_imp___wtol = NULL;
-void _elf__wtol() {
+__attribute__((constructor)) void _elfimplib_init__wtol() {
 load_dll_msvcrt();
-if (!_imp___wtol) {
 _imp___wtol = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wtol");
 }
+void _elfimplib__wtol() {
 asm("leave\njmp *%0" : : "r"(_imp___wtol));
 }
 
-void _elf__wunlink() asm("wunlink");
+void _elfimplib__wunlink() asm("wunlink");
 void *_imp___wunlink = NULL;
-void _elf__wunlink() {
+__attribute__((constructor)) void _elfimplib_init__wunlink() {
 load_dll_msvcrt();
-if (!_imp___wunlink) {
 _imp___wunlink = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wunlink");
 }
+void _elfimplib__wunlink() {
 asm("leave\njmp *%0" : : "r"(_imp___wunlink));
 }
 
-void _elf__wutime() asm("wutime");
+void _elfimplib__wutime() asm("wutime");
 void *_imp___wutime = NULL;
-void _elf__wutime() {
+__attribute__((constructor)) void _elfimplib_init__wutime() {
 load_dll_msvcrt();
-if (!_imp___wutime) {
 _imp___wutime = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wutime");
 }
+void _elfimplib__wutime() {
 asm("leave\njmp *%0" : : "r"(_imp___wutime));
 }
 
-void _elf__wutime64() asm("wutime64");
+void _elfimplib__wutime64() asm("wutime64");
 void *_imp___wutime64 = NULL;
-void _elf__wutime64() {
+__attribute__((constructor)) void _elfimplib_init__wutime64() {
 load_dll_msvcrt();
-if (!_imp___wutime64) {
 _imp___wutime64 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_wutime64");
 }
+void _elfimplib__wutime64() {
 asm("leave\njmp *%0" : : "r"(_imp___wutime64));
 }
 
-void _elf__y0() asm("y0");
+void _elfimplib__y0() asm("y0");
 void *_imp___y0 = NULL;
-void _elf__y0() {
+__attribute__((constructor)) void _elfimplib_init__y0() {
 load_dll_msvcrt();
-if (!_imp___y0) {
 _imp___y0 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_y0");
 }
+void _elfimplib__y0() {
 asm("leave\njmp *%0" : : "r"(_imp___y0));
 }
 
-void _elf__y1() asm("y1");
+void _elfimplib__y1() asm("y1");
 void *_imp___y1 = NULL;
-void _elf__y1() {
+__attribute__((constructor)) void _elfimplib_init__y1() {
 load_dll_msvcrt();
-if (!_imp___y1) {
 _imp___y1 = (void *) _elf_GetProcAddress(_dll_msvcrt, "_y1");
 }
+void _elfimplib__y1() {
 asm("leave\njmp *%0" : : "r"(_imp___y1));
 }
 
-void _elf__yn() asm("yn");
+void _elfimplib__yn() asm("yn");
 void *_imp___yn = NULL;
-void _elf__yn() {
+__attribute__((constructor)) void _elfimplib_init__yn() {
 load_dll_msvcrt();
-if (!_imp___yn) {
 _imp___yn = (void *) _elf_GetProcAddress(_dll_msvcrt, "_yn");
 }
+void _elfimplib__yn() {
 asm("leave\njmp *%0" : : "r"(_imp___yn));
 }
 
-void _elf_abort() asm("abort");
+void _elfimplib_abort() asm("abort");
 void *_imp__abort = NULL;
-void _elf_abort() {
+__attribute__((constructor)) void _elfimplib_init_abort() {
 load_dll_msvcrt();
-if (!_imp__abort) {
 _imp__abort = (void *) _elf_GetProcAddress(_dll_msvcrt, "abort");
 }
+void _elfimplib_abort() {
 asm("leave\njmp *%0" : : "r"(_imp__abort));
 }
 
-void _elf_abs() asm("abs");
+void _elfimplib_abs() asm("abs");
 void *_imp__abs = NULL;
-void _elf_abs() {
+__attribute__((constructor)) void _elfimplib_init_abs() {
 load_dll_msvcrt();
-if (!_imp__abs) {
 _imp__abs = (void *) _elf_GetProcAddress(_dll_msvcrt, "abs");
 }
+void _elfimplib_abs() {
 asm("leave\njmp *%0" : : "r"(_imp__abs));
 }
 
-void _elf_acos() asm("acos");
+void _elfimplib_acos() asm("acos");
 void *_imp__acos = NULL;
-void _elf_acos() {
+__attribute__((constructor)) void _elfimplib_init_acos() {
 load_dll_msvcrt();
-if (!_imp__acos) {
 _imp__acos = (void *) _elf_GetProcAddress(_dll_msvcrt, "acos");
 }
+void _elfimplib_acos() {
 asm("leave\njmp *%0" : : "r"(_imp__acos));
 }
 
-void _elf_asctime() asm("asctime");
+void _elfimplib_asctime() asm("asctime");
 void *_imp__asctime = NULL;
-void _elf_asctime() {
+__attribute__((constructor)) void _elfimplib_init_asctime() {
 load_dll_msvcrt();
-if (!_imp__asctime) {
 _imp__asctime = (void *) _elf_GetProcAddress(_dll_msvcrt, "asctime");
 }
+void _elfimplib_asctime() {
 asm("leave\njmp *%0" : : "r"(_imp__asctime));
 }
 
-void _elf_asin() asm("asin");
+void _elfimplib_asin() asm("asin");
 void *_imp__asin = NULL;
-void _elf_asin() {
+__attribute__((constructor)) void _elfimplib_init_asin() {
 load_dll_msvcrt();
-if (!_imp__asin) {
 _imp__asin = (void *) _elf_GetProcAddress(_dll_msvcrt, "asin");
 }
+void _elfimplib_asin() {
 asm("leave\njmp *%0" : : "r"(_imp__asin));
 }
 
-void _elf_atan() asm("atan");
+void _elfimplib_atan() asm("atan");
 void *_imp__atan = NULL;
-void _elf_atan() {
+__attribute__((constructor)) void _elfimplib_init_atan() {
 load_dll_msvcrt();
-if (!_imp__atan) {
 _imp__atan = (void *) _elf_GetProcAddress(_dll_msvcrt, "atan");
 }
+void _elfimplib_atan() {
 asm("leave\njmp *%0" : : "r"(_imp__atan));
 }
 
-void _elf_atan2() asm("atan2");
+void _elfimplib_atan2() asm("atan2");
 void *_imp__atan2 = NULL;
-void _elf_atan2() {
+__attribute__((constructor)) void _elfimplib_init_atan2() {
 load_dll_msvcrt();
-if (!_imp__atan2) {
 _imp__atan2 = (void *) _elf_GetProcAddress(_dll_msvcrt, "atan2");
 }
+void _elfimplib_atan2() {
 asm("leave\njmp *%0" : : "r"(_imp__atan2));
 }
 
-void _elf_atexit() asm("atexit");
+void _elfimplib_atexit() asm("atexit");
 void *_imp__atexit = NULL;
-void _elf_atexit() {
+__attribute__((constructor)) void _elfimplib_init_atexit() {
 load_dll_msvcrt();
-if (!_imp__atexit) {
 _imp__atexit = (void *) _elf_GetProcAddress(_dll_msvcrt, "atexit");
 }
+void _elfimplib_atexit() {
 asm("leave\njmp *%0" : : "r"(_imp__atexit));
 }
 
-void _elf_atof() asm("atof");
+void _elfimplib_atof() asm("atof");
 void *_imp__atof = NULL;
-void _elf_atof() {
+__attribute__((constructor)) void _elfimplib_init_atof() {
 load_dll_msvcrt();
-if (!_imp__atof) {
 _imp__atof = (void *) _elf_GetProcAddress(_dll_msvcrt, "atof");
 }
+void _elfimplib_atof() {
 asm("leave\njmp *%0" : : "r"(_imp__atof));
 }
 
-void _elf_atoi() asm("atoi");
+void _elfimplib_atoi() asm("atoi");
 void *_imp__atoi = NULL;
-void _elf_atoi() {
+__attribute__((constructor)) void _elfimplib_init_atoi() {
 load_dll_msvcrt();
-if (!_imp__atoi) {
 _imp__atoi = (void *) _elf_GetProcAddress(_dll_msvcrt, "atoi");
 }
+void _elfimplib_atoi() {
 asm("leave\njmp *%0" : : "r"(_imp__atoi));
 }
 
-void _elf_atol() asm("atol");
+void _elfimplib_atol() asm("atol");
 void *_imp__atol = NULL;
-void _elf_atol() {
+__attribute__((constructor)) void _elfimplib_init_atol() {
 load_dll_msvcrt();
-if (!_imp__atol) {
 _imp__atol = (void *) _elf_GetProcAddress(_dll_msvcrt, "atol");
 }
+void _elfimplib_atol() {
 asm("leave\njmp *%0" : : "r"(_imp__atol));
 }
 
-void _elf_bsearch() asm("bsearch");
+void _elfimplib_bsearch() asm("bsearch");
 void *_imp__bsearch = NULL;
-void _elf_bsearch() {
+__attribute__((constructor)) void _elfimplib_init_bsearch() {
 load_dll_msvcrt();
-if (!_imp__bsearch) {
 _imp__bsearch = (void *) _elf_GetProcAddress(_dll_msvcrt, "bsearch");
 }
+void _elfimplib_bsearch() {
 asm("leave\njmp *%0" : : "r"(_imp__bsearch));
 }
 
-void _elf_calloc() asm("calloc");
+void _elfimplib_calloc() asm("calloc");
 void *_imp__calloc = NULL;
-void _elf_calloc() {
+__attribute__((constructor)) void _elfimplib_init_calloc() {
 load_dll_msvcrt();
-if (!_imp__calloc) {
 _imp__calloc = (void *) _elf_GetProcAddress(_dll_msvcrt, "calloc");
 }
+void _elfimplib_calloc() {
 asm("leave\njmp *%0" : : "r"(_imp__calloc));
 }
 
-void _elf_ceil() asm("ceil");
+void _elfimplib_ceil() asm("ceil");
 void *_imp__ceil = NULL;
-void _elf_ceil() {
+__attribute__((constructor)) void _elfimplib_init_ceil() {
 load_dll_msvcrt();
-if (!_imp__ceil) {
 _imp__ceil = (void *) _elf_GetProcAddress(_dll_msvcrt, "ceil");
 }
+void _elfimplib_ceil() {
 asm("leave\njmp *%0" : : "r"(_imp__ceil));
 }
 
-void _elf_clearerr() asm("clearerr");
+void _elfimplib_clearerr() asm("clearerr");
 void *_imp__clearerr = NULL;
-void _elf_clearerr() {
+__attribute__((constructor)) void _elfimplib_init_clearerr() {
 load_dll_msvcrt();
-if (!_imp__clearerr) {
 _imp__clearerr = (void *) _elf_GetProcAddress(_dll_msvcrt, "clearerr");
 }
+void _elfimplib_clearerr() {
 asm("leave\njmp *%0" : : "r"(_imp__clearerr));
 }
 
-void _elf_clock() asm("clock");
+void _elfimplib_clock() asm("clock");
 void *_imp__clock = NULL;
-void _elf_clock() {
+__attribute__((constructor)) void _elfimplib_init_clock() {
 load_dll_msvcrt();
-if (!_imp__clock) {
 _imp__clock = (void *) _elf_GetProcAddress(_dll_msvcrt, "clock");
 }
+void _elfimplib_clock() {
 asm("leave\njmp *%0" : : "r"(_imp__clock));
 }
 
-void _elf_cos() asm("cos");
+void _elfimplib_cos() asm("cos");
 void *_imp__cos = NULL;
-void _elf_cos() {
+__attribute__((constructor)) void _elfimplib_init_cos() {
 load_dll_msvcrt();
-if (!_imp__cos) {
 _imp__cos = (void *) _elf_GetProcAddress(_dll_msvcrt, "cos");
 }
+void _elfimplib_cos() {
 asm("leave\njmp *%0" : : "r"(_imp__cos));
 }
 
-void _elf_cosh() asm("cosh");
+void _elfimplib_cosh() asm("cosh");
 void *_imp__cosh = NULL;
-void _elf_cosh() {
+__attribute__((constructor)) void _elfimplib_init_cosh() {
 load_dll_msvcrt();
-if (!_imp__cosh) {
 _imp__cosh = (void *) _elf_GetProcAddress(_dll_msvcrt, "cosh");
 }
+void _elfimplib_cosh() {
 asm("leave\njmp *%0" : : "r"(_imp__cosh));
 }
 
-void _elf_ctime() asm("ctime");
+void _elfimplib_ctime() asm("ctime");
 void *_imp__ctime = NULL;
-void _elf_ctime() {
+__attribute__((constructor)) void _elfimplib_init_ctime() {
 load_dll_msvcrt();
-if (!_imp__ctime) {
 _imp__ctime = (void *) _elf_GetProcAddress(_dll_msvcrt, "ctime");
 }
+void _elfimplib_ctime() {
 asm("leave\njmp *%0" : : "r"(_imp__ctime));
 }
 
-void _elf_difftime() asm("difftime");
+void _elfimplib_difftime() asm("difftime");
 void *_imp__difftime = NULL;
-void _elf_difftime() {
+__attribute__((constructor)) void _elfimplib_init_difftime() {
 load_dll_msvcrt();
-if (!_imp__difftime) {
 _imp__difftime = (void *) _elf_GetProcAddress(_dll_msvcrt, "difftime");
 }
+void _elfimplib_difftime() {
 asm("leave\njmp *%0" : : "r"(_imp__difftime));
 }
 
-void _elf_div() asm("div");
+void _elfimplib_div() asm("div");
 void *_imp__div = NULL;
-void _elf_div() {
+__attribute__((constructor)) void _elfimplib_init_div() {
 load_dll_msvcrt();
-if (!_imp__div) {
 _imp__div = (void *) _elf_GetProcAddress(_dll_msvcrt, "div");
 }
+void _elfimplib_div() {
 asm("leave\njmp *%0" : : "r"(_imp__div));
 }
 
-void _elf_exit() asm("exit");
+void _elfimplib_exit() asm("exit");
 void *_imp__exit = NULL;
-void _elf_exit() {
+__attribute__((constructor)) void _elfimplib_init_exit() {
 load_dll_msvcrt();
-if (!_imp__exit) {
 _imp__exit = (void *) _elf_GetProcAddress(_dll_msvcrt, "exit");
 }
+void _elfimplib_exit() {
 asm("leave\njmp *%0" : : "r"(_imp__exit));
 }
 
-void _elf_exp() asm("exp");
+void _elfimplib_exp() asm("exp");
 void *_imp__exp = NULL;
-void _elf_exp() {
+__attribute__((constructor)) void _elfimplib_init_exp() {
 load_dll_msvcrt();
-if (!_imp__exp) {
 _imp__exp = (void *) _elf_GetProcAddress(_dll_msvcrt, "exp");
 }
+void _elfimplib_exp() {
 asm("leave\njmp *%0" : : "r"(_imp__exp));
 }
 
-void _elf_fabs() asm("fabs");
+void _elfimplib_fabs() asm("fabs");
 void *_imp__fabs = NULL;
-void _elf_fabs() {
+__attribute__((constructor)) void _elfimplib_init_fabs() {
 load_dll_msvcrt();
-if (!_imp__fabs) {
 _imp__fabs = (void *) _elf_GetProcAddress(_dll_msvcrt, "fabs");
 }
+void _elfimplib_fabs() {
 asm("leave\njmp *%0" : : "r"(_imp__fabs));
 }
 
-void _elf_fclose() asm("fclose");
+void _elfimplib_fclose() asm("fclose");
 void *_imp__fclose = NULL;
-void _elf_fclose() {
+__attribute__((constructor)) void _elfimplib_init_fclose() {
 load_dll_msvcrt();
-if (!_imp__fclose) {
 _imp__fclose = (void *) _elf_GetProcAddress(_dll_msvcrt, "fclose");
 }
+void _elfimplib_fclose() {
 asm("leave\njmp *%0" : : "r"(_imp__fclose));
 }
 
-void _elf_feof() asm("feof");
+void _elfimplib_feof() asm("feof");
 void *_imp__feof = NULL;
-void _elf_feof() {
+__attribute__((constructor)) void _elfimplib_init_feof() {
 load_dll_msvcrt();
-if (!_imp__feof) {
 _imp__feof = (void *) _elf_GetProcAddress(_dll_msvcrt, "feof");
 }
+void _elfimplib_feof() {
 asm("leave\njmp *%0" : : "r"(_imp__feof));
 }
 
-void _elf_ferror() asm("ferror");
+void _elfimplib_ferror() asm("ferror");
 void *_imp__ferror = NULL;
-void _elf_ferror() {
+__attribute__((constructor)) void _elfimplib_init_ferror() {
 load_dll_msvcrt();
-if (!_imp__ferror) {
 _imp__ferror = (void *) _elf_GetProcAddress(_dll_msvcrt, "ferror");
 }
+void _elfimplib_ferror() {
 asm("leave\njmp *%0" : : "r"(_imp__ferror));
 }
 
-void _elf_fflush() asm("fflush");
+void _elfimplib_fflush() asm("fflush");
 void *_imp__fflush = NULL;
-void _elf_fflush() {
+__attribute__((constructor)) void _elfimplib_init_fflush() {
 load_dll_msvcrt();
-if (!_imp__fflush) {
 _imp__fflush = (void *) _elf_GetProcAddress(_dll_msvcrt, "fflush");
 }
+void _elfimplib_fflush() {
 asm("leave\njmp *%0" : : "r"(_imp__fflush));
 }
 
-void _elf_fgetc() asm("fgetc");
+void _elfimplib_fgetc() asm("fgetc");
 void *_imp__fgetc = NULL;
-void _elf_fgetc() {
+__attribute__((constructor)) void _elfimplib_init_fgetc() {
 load_dll_msvcrt();
-if (!_imp__fgetc) {
 _imp__fgetc = (void *) _elf_GetProcAddress(_dll_msvcrt, "fgetc");
 }
+void _elfimplib_fgetc() {
 asm("leave\njmp *%0" : : "r"(_imp__fgetc));
 }
 
-void _elf_fgetpos() asm("fgetpos");
+void _elfimplib_fgetpos() asm("fgetpos");
 void *_imp__fgetpos = NULL;
-void _elf_fgetpos() {
+__attribute__((constructor)) void _elfimplib_init_fgetpos() {
 load_dll_msvcrt();
-if (!_imp__fgetpos) {
 _imp__fgetpos = (void *) _elf_GetProcAddress(_dll_msvcrt, "fgetpos");
 }
+void _elfimplib_fgetpos() {
 asm("leave\njmp *%0" : : "r"(_imp__fgetpos));
 }
 
-void _elf_fgets() asm("fgets");
+void _elfimplib_fgets() asm("fgets");
 void *_imp__fgets = NULL;
-void _elf_fgets() {
+__attribute__((constructor)) void _elfimplib_init_fgets() {
 load_dll_msvcrt();
-if (!_imp__fgets) {
 _imp__fgets = (void *) _elf_GetProcAddress(_dll_msvcrt, "fgets");
 }
+void _elfimplib_fgets() {
 asm("leave\njmp *%0" : : "r"(_imp__fgets));
 }
 
-void _elf_fgetwc() asm("fgetwc");
+void _elfimplib_fgetwc() asm("fgetwc");
 void *_imp__fgetwc = NULL;
-void _elf_fgetwc() {
+__attribute__((constructor)) void _elfimplib_init_fgetwc() {
 load_dll_msvcrt();
-if (!_imp__fgetwc) {
 _imp__fgetwc = (void *) _elf_GetProcAddress(_dll_msvcrt, "fgetwc");
 }
+void _elfimplib_fgetwc() {
 asm("leave\njmp *%0" : : "r"(_imp__fgetwc));
 }
 
-void _elf_fgetws() asm("fgetws");
+void _elfimplib_fgetws() asm("fgetws");
 void *_imp__fgetws = NULL;
-void _elf_fgetws() {
+__attribute__((constructor)) void _elfimplib_init_fgetws() {
 load_dll_msvcrt();
-if (!_imp__fgetws) {
 _imp__fgetws = (void *) _elf_GetProcAddress(_dll_msvcrt, "fgetws");
 }
+void _elfimplib_fgetws() {
 asm("leave\njmp *%0" : : "r"(_imp__fgetws));
 }
 
-void _elf_floor() asm("floor");
+void _elfimplib_floor() asm("floor");
 void *_imp__floor = NULL;
-void _elf_floor() {
+__attribute__((constructor)) void _elfimplib_init_floor() {
 load_dll_msvcrt();
-if (!_imp__floor) {
 _imp__floor = (void *) _elf_GetProcAddress(_dll_msvcrt, "floor");
 }
+void _elfimplib_floor() {
 asm("leave\njmp *%0" : : "r"(_imp__floor));
 }
 
-void _elf_fmod() asm("fmod");
+void _elfimplib_fmod() asm("fmod");
 void *_imp__fmod = NULL;
-void _elf_fmod() {
+__attribute__((constructor)) void _elfimplib_init_fmod() {
 load_dll_msvcrt();
-if (!_imp__fmod) {
 _imp__fmod = (void *) _elf_GetProcAddress(_dll_msvcrt, "fmod");
 }
+void _elfimplib_fmod() {
 asm("leave\njmp *%0" : : "r"(_imp__fmod));
 }
 
-void _elf_fopen() asm("fopen");
+void _elfimplib_fopen() asm("fopen");
 void *_imp__fopen = NULL;
-void _elf_fopen() {
+__attribute__((constructor)) void _elfimplib_init_fopen() {
 load_dll_msvcrt();
-if (!_imp__fopen) {
 _imp__fopen = (void *) _elf_GetProcAddress(_dll_msvcrt, "fopen");
 }
+void _elfimplib_fopen() {
 asm("leave\njmp *%0" : : "r"(_imp__fopen));
 }
 
-void _elf_fprintf() asm("fprintf");
+void _elfimplib_fprintf() asm("fprintf");
 void *_imp__fprintf = NULL;
-void _elf_fprintf() {
+__attribute__((constructor)) void _elfimplib_init_fprintf() {
 load_dll_msvcrt();
-if (!_imp__fprintf) {
 _imp__fprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "fprintf");
 }
+void _elfimplib_fprintf() {
 asm("leave\njmp *%0" : : "r"(_imp__fprintf));
 }
 
-void _elf_fputc() asm("fputc");
+void _elfimplib_fputc() asm("fputc");
 void *_imp__fputc = NULL;
-void _elf_fputc() {
+__attribute__((constructor)) void _elfimplib_init_fputc() {
 load_dll_msvcrt();
-if (!_imp__fputc) {
 _imp__fputc = (void *) _elf_GetProcAddress(_dll_msvcrt, "fputc");
 }
+void _elfimplib_fputc() {
 asm("leave\njmp *%0" : : "r"(_imp__fputc));
 }
 
-void _elf_fputs() asm("fputs");
+void _elfimplib_fputs() asm("fputs");
 void *_imp__fputs = NULL;
-void _elf_fputs() {
+__attribute__((constructor)) void _elfimplib_init_fputs() {
 load_dll_msvcrt();
-if (!_imp__fputs) {
 _imp__fputs = (void *) _elf_GetProcAddress(_dll_msvcrt, "fputs");
 }
+void _elfimplib_fputs() {
 asm("leave\njmp *%0" : : "r"(_imp__fputs));
 }
 
-void _elf_fputwc() asm("fputwc");
+void _elfimplib_fputwc() asm("fputwc");
 void *_imp__fputwc = NULL;
-void _elf_fputwc() {
+__attribute__((constructor)) void _elfimplib_init_fputwc() {
 load_dll_msvcrt();
-if (!_imp__fputwc) {
 _imp__fputwc = (void *) _elf_GetProcAddress(_dll_msvcrt, "fputwc");
 }
+void _elfimplib_fputwc() {
 asm("leave\njmp *%0" : : "r"(_imp__fputwc));
 }
 
-void _elf_fputws() asm("fputws");
+void _elfimplib_fputws() asm("fputws");
 void *_imp__fputws = NULL;
-void _elf_fputws() {
+__attribute__((constructor)) void _elfimplib_init_fputws() {
 load_dll_msvcrt();
-if (!_imp__fputws) {
 _imp__fputws = (void *) _elf_GetProcAddress(_dll_msvcrt, "fputws");
 }
+void _elfimplib_fputws() {
 asm("leave\njmp *%0" : : "r"(_imp__fputws));
 }
 
-void _elf_fread() asm("fread");
+void _elfimplib_fread() asm("fread");
 void *_imp__fread = NULL;
-void _elf_fread() {
+__attribute__((constructor)) void _elfimplib_init_fread() {
 load_dll_msvcrt();
-if (!_imp__fread) {
 _imp__fread = (void *) _elf_GetProcAddress(_dll_msvcrt, "fread");
 }
+void _elfimplib_fread() {
 asm("leave\njmp *%0" : : "r"(_imp__fread));
 }
 
-void _elf_free() asm("free");
+void _elfimplib_free() asm("free");
 void *_imp__free = NULL;
-void _elf_free() {
+__attribute__((constructor)) void _elfimplib_init_free() {
 load_dll_msvcrt();
-if (!_imp__free) {
 _imp__free = (void *) _elf_GetProcAddress(_dll_msvcrt, "free");
 }
+void _elfimplib_free() {
 asm("leave\njmp *%0" : : "r"(_imp__free));
 }
 
-void _elf_freopen() asm("freopen");
+void _elfimplib_freopen() asm("freopen");
 void *_imp__freopen = NULL;
-void _elf_freopen() {
+__attribute__((constructor)) void _elfimplib_init_freopen() {
 load_dll_msvcrt();
-if (!_imp__freopen) {
 _imp__freopen = (void *) _elf_GetProcAddress(_dll_msvcrt, "freopen");
 }
+void _elfimplib_freopen() {
 asm("leave\njmp *%0" : : "r"(_imp__freopen));
 }
 
-void _elf_frexp() asm("frexp");
+void _elfimplib_frexp() asm("frexp");
 void *_imp__frexp = NULL;
-void _elf_frexp() {
+__attribute__((constructor)) void _elfimplib_init_frexp() {
 load_dll_msvcrt();
-if (!_imp__frexp) {
 _imp__frexp = (void *) _elf_GetProcAddress(_dll_msvcrt, "frexp");
 }
+void _elfimplib_frexp() {
 asm("leave\njmp *%0" : : "r"(_imp__frexp));
 }
 
-void _elf_fscanf() asm("fscanf");
+void _elfimplib_fscanf() asm("fscanf");
 void *_imp__fscanf = NULL;
-void _elf_fscanf() {
+__attribute__((constructor)) void _elfimplib_init_fscanf() {
 load_dll_msvcrt();
-if (!_imp__fscanf) {
 _imp__fscanf = (void *) _elf_GetProcAddress(_dll_msvcrt, "fscanf");
 }
+void _elfimplib_fscanf() {
 asm("leave\njmp *%0" : : "r"(_imp__fscanf));
 }
 
-void _elf_fseek() asm("fseek");
+void _elfimplib_fseek() asm("fseek");
 void *_imp__fseek = NULL;
-void _elf_fseek() {
+__attribute__((constructor)) void _elfimplib_init_fseek() {
 load_dll_msvcrt();
-if (!_imp__fseek) {
 _imp__fseek = (void *) _elf_GetProcAddress(_dll_msvcrt, "fseek");
 }
+void _elfimplib_fseek() {
 asm("leave\njmp *%0" : : "r"(_imp__fseek));
 }
 
-void _elf_fsetpos() asm("fsetpos");
+void _elfimplib_fsetpos() asm("fsetpos");
 void *_imp__fsetpos = NULL;
-void _elf_fsetpos() {
+__attribute__((constructor)) void _elfimplib_init_fsetpos() {
 load_dll_msvcrt();
-if (!_imp__fsetpos) {
 _imp__fsetpos = (void *) _elf_GetProcAddress(_dll_msvcrt, "fsetpos");
 }
+void _elfimplib_fsetpos() {
 asm("leave\njmp *%0" : : "r"(_imp__fsetpos));
 }
 
-void _elf_ftell() asm("ftell");
+void _elfimplib_ftell() asm("ftell");
 void *_imp__ftell = NULL;
-void _elf_ftell() {
+__attribute__((constructor)) void _elfimplib_init_ftell() {
 load_dll_msvcrt();
-if (!_imp__ftell) {
 _imp__ftell = (void *) _elf_GetProcAddress(_dll_msvcrt, "ftell");
 }
+void _elfimplib_ftell() {
 asm("leave\njmp *%0" : : "r"(_imp__ftell));
 }
 
-void _elf_fwprintf() asm("fwprintf");
+void _elfimplib_fwprintf() asm("fwprintf");
 void *_imp__fwprintf = NULL;
-void _elf_fwprintf() {
+__attribute__((constructor)) void _elfimplib_init_fwprintf() {
 load_dll_msvcrt();
-if (!_imp__fwprintf) {
 _imp__fwprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "fwprintf");
 }
+void _elfimplib_fwprintf() {
 asm("leave\njmp *%0" : : "r"(_imp__fwprintf));
 }
 
-void _elf_fwrite() asm("fwrite");
+void _elfimplib_fwrite() asm("fwrite");
 void *_imp__fwrite = NULL;
-void _elf_fwrite() {
+__attribute__((constructor)) void _elfimplib_init_fwrite() {
 load_dll_msvcrt();
-if (!_imp__fwrite) {
 _imp__fwrite = (void *) _elf_GetProcAddress(_dll_msvcrt, "fwrite");
 }
+void _elfimplib_fwrite() {
 asm("leave\njmp *%0" : : "r"(_imp__fwrite));
 }
 
-void _elf_fwscanf() asm("fwscanf");
+void _elfimplib_fwscanf() asm("fwscanf");
 void *_imp__fwscanf = NULL;
-void _elf_fwscanf() {
+__attribute__((constructor)) void _elfimplib_init_fwscanf() {
 load_dll_msvcrt();
-if (!_imp__fwscanf) {
 _imp__fwscanf = (void *) _elf_GetProcAddress(_dll_msvcrt, "fwscanf");
 }
+void _elfimplib_fwscanf() {
 asm("leave\njmp *%0" : : "r"(_imp__fwscanf));
 }
 
-void _elf_getc() asm("getc");
+void _elfimplib_getc() asm("getc");
 void *_imp__getc = NULL;
-void _elf_getc() {
+__attribute__((constructor)) void _elfimplib_init_getc() {
 load_dll_msvcrt();
-if (!_imp__getc) {
 _imp__getc = (void *) _elf_GetProcAddress(_dll_msvcrt, "getc");
 }
+void _elfimplib_getc() {
 asm("leave\njmp *%0" : : "r"(_imp__getc));
 }
 
-void _elf_getchar() asm("getchar");
+void _elfimplib_getchar() asm("getchar");
 void *_imp__getchar = NULL;
-void _elf_getchar() {
+__attribute__((constructor)) void _elfimplib_init_getchar() {
 load_dll_msvcrt();
-if (!_imp__getchar) {
 _imp__getchar = (void *) _elf_GetProcAddress(_dll_msvcrt, "getchar");
 }
+void _elfimplib_getchar() {
 asm("leave\njmp *%0" : : "r"(_imp__getchar));
 }
 
-void _elf_getenv() asm("getenv");
+void _elfimplib_getenv() asm("getenv");
 void *_imp__getenv = NULL;
-void _elf_getenv() {
+__attribute__((constructor)) void _elfimplib_init_getenv() {
 load_dll_msvcrt();
-if (!_imp__getenv) {
 _imp__getenv = (void *) _elf_GetProcAddress(_dll_msvcrt, "getenv");
 }
+void _elfimplib_getenv() {
 asm("leave\njmp *%0" : : "r"(_imp__getenv));
 }
 
-void _elf_gets() asm("gets");
+void _elfimplib_gets() asm("gets");
 void *_imp__gets = NULL;
-void _elf_gets() {
+__attribute__((constructor)) void _elfimplib_init_gets() {
 load_dll_msvcrt();
-if (!_imp__gets) {
 _imp__gets = (void *) _elf_GetProcAddress(_dll_msvcrt, "gets");
 }
+void _elfimplib_gets() {
 asm("leave\njmp *%0" : : "r"(_imp__gets));
 }
 
-void _elf_getwc() asm("getwc");
+void _elfimplib_getwc() asm("getwc");
 void *_imp__getwc = NULL;
-void _elf_getwc() {
+__attribute__((constructor)) void _elfimplib_init_getwc() {
 load_dll_msvcrt();
-if (!_imp__getwc) {
 _imp__getwc = (void *) _elf_GetProcAddress(_dll_msvcrt, "getwc");
 }
+void _elfimplib_getwc() {
 asm("leave\njmp *%0" : : "r"(_imp__getwc));
 }
 
-void _elf_getwchar() asm("getwchar");
+void _elfimplib_getwchar() asm("getwchar");
 void *_imp__getwchar = NULL;
-void _elf_getwchar() {
+__attribute__((constructor)) void _elfimplib_init_getwchar() {
 load_dll_msvcrt();
-if (!_imp__getwchar) {
 _imp__getwchar = (void *) _elf_GetProcAddress(_dll_msvcrt, "getwchar");
 }
+void _elfimplib_getwchar() {
 asm("leave\njmp *%0" : : "r"(_imp__getwchar));
 }
 
-void _elf_gmtime() asm("gmtime");
+void _elfimplib_gmtime() asm("gmtime");
 void *_imp__gmtime = NULL;
-void _elf_gmtime() {
+__attribute__((constructor)) void _elfimplib_init_gmtime() {
 load_dll_msvcrt();
-if (!_imp__gmtime) {
 _imp__gmtime = (void *) _elf_GetProcAddress(_dll_msvcrt, "gmtime");
 }
+void _elfimplib_gmtime() {
 asm("leave\njmp *%0" : : "r"(_imp__gmtime));
 }
 
-void _elf_is_wctype() asm("is_wctype");
+void _elfimplib_is_wctype() asm("is_wctype");
 void *_imp__is_wctype = NULL;
-void _elf_is_wctype() {
+__attribute__((constructor)) void _elfimplib_init_is_wctype() {
 load_dll_msvcrt();
-if (!_imp__is_wctype) {
 _imp__is_wctype = (void *) _elf_GetProcAddress(_dll_msvcrt, "is_wctype");
 }
+void _elfimplib_is_wctype() {
 asm("leave\njmp *%0" : : "r"(_imp__is_wctype));
 }
 
-void _elf_isalnum() asm("isalnum");
+void _elfimplib_isalnum() asm("isalnum");
 void *_imp__isalnum = NULL;
-void _elf_isalnum() {
+__attribute__((constructor)) void _elfimplib_init_isalnum() {
 load_dll_msvcrt();
-if (!_imp__isalnum) {
 _imp__isalnum = (void *) _elf_GetProcAddress(_dll_msvcrt, "isalnum");
 }
+void _elfimplib_isalnum() {
 asm("leave\njmp *%0" : : "r"(_imp__isalnum));
 }
 
-void _elf_isalpha() asm("isalpha");
+void _elfimplib_isalpha() asm("isalpha");
 void *_imp__isalpha = NULL;
-void _elf_isalpha() {
+__attribute__((constructor)) void _elfimplib_init_isalpha() {
 load_dll_msvcrt();
-if (!_imp__isalpha) {
 _imp__isalpha = (void *) _elf_GetProcAddress(_dll_msvcrt, "isalpha");
 }
+void _elfimplib_isalpha() {
 asm("leave\njmp *%0" : : "r"(_imp__isalpha));
 }
 
-void _elf_iscntrl() asm("iscntrl");
+void _elfimplib_iscntrl() asm("iscntrl");
 void *_imp__iscntrl = NULL;
-void _elf_iscntrl() {
+__attribute__((constructor)) void _elfimplib_init_iscntrl() {
 load_dll_msvcrt();
-if (!_imp__iscntrl) {
 _imp__iscntrl = (void *) _elf_GetProcAddress(_dll_msvcrt, "iscntrl");
 }
+void _elfimplib_iscntrl() {
 asm("leave\njmp *%0" : : "r"(_imp__iscntrl));
 }
 
-void _elf_isdigit() asm("isdigit");
+void _elfimplib_isdigit() asm("isdigit");
 void *_imp__isdigit = NULL;
-void _elf_isdigit() {
+__attribute__((constructor)) void _elfimplib_init_isdigit() {
 load_dll_msvcrt();
-if (!_imp__isdigit) {
 _imp__isdigit = (void *) _elf_GetProcAddress(_dll_msvcrt, "isdigit");
 }
+void _elfimplib_isdigit() {
 asm("leave\njmp *%0" : : "r"(_imp__isdigit));
 }
 
-void _elf_isgraph() asm("isgraph");
+void _elfimplib_isgraph() asm("isgraph");
 void *_imp__isgraph = NULL;
-void _elf_isgraph() {
+__attribute__((constructor)) void _elfimplib_init_isgraph() {
 load_dll_msvcrt();
-if (!_imp__isgraph) {
 _imp__isgraph = (void *) _elf_GetProcAddress(_dll_msvcrt, "isgraph");
 }
+void _elfimplib_isgraph() {
 asm("leave\njmp *%0" : : "r"(_imp__isgraph));
 }
 
-void _elf_isleadbyte() asm("isleadbyte");
+void _elfimplib_isleadbyte() asm("isleadbyte");
 void *_imp__isleadbyte = NULL;
-void _elf_isleadbyte() {
+__attribute__((constructor)) void _elfimplib_init_isleadbyte() {
 load_dll_msvcrt();
-if (!_imp__isleadbyte) {
 _imp__isleadbyte = (void *) _elf_GetProcAddress(_dll_msvcrt, "isleadbyte");
 }
+void _elfimplib_isleadbyte() {
 asm("leave\njmp *%0" : : "r"(_imp__isleadbyte));
 }
 
-void _elf_islower() asm("islower");
+void _elfimplib_islower() asm("islower");
 void *_imp__islower = NULL;
-void _elf_islower() {
+__attribute__((constructor)) void _elfimplib_init_islower() {
 load_dll_msvcrt();
-if (!_imp__islower) {
 _imp__islower = (void *) _elf_GetProcAddress(_dll_msvcrt, "islower");
 }
+void _elfimplib_islower() {
 asm("leave\njmp *%0" : : "r"(_imp__islower));
 }
 
-void _elf_isprint() asm("isprint");
+void _elfimplib_isprint() asm("isprint");
 void *_imp__isprint = NULL;
-void _elf_isprint() {
+__attribute__((constructor)) void _elfimplib_init_isprint() {
 load_dll_msvcrt();
-if (!_imp__isprint) {
 _imp__isprint = (void *) _elf_GetProcAddress(_dll_msvcrt, "isprint");
 }
+void _elfimplib_isprint() {
 asm("leave\njmp *%0" : : "r"(_imp__isprint));
 }
 
-void _elf_ispunct() asm("ispunct");
+void _elfimplib_ispunct() asm("ispunct");
 void *_imp__ispunct = NULL;
-void _elf_ispunct() {
+__attribute__((constructor)) void _elfimplib_init_ispunct() {
 load_dll_msvcrt();
-if (!_imp__ispunct) {
 _imp__ispunct = (void *) _elf_GetProcAddress(_dll_msvcrt, "ispunct");
 }
+void _elfimplib_ispunct() {
 asm("leave\njmp *%0" : : "r"(_imp__ispunct));
 }
 
-void _elf_isspace() asm("isspace");
+void _elfimplib_isspace() asm("isspace");
 void *_imp__isspace = NULL;
-void _elf_isspace() {
+__attribute__((constructor)) void _elfimplib_init_isspace() {
 load_dll_msvcrt();
-if (!_imp__isspace) {
 _imp__isspace = (void *) _elf_GetProcAddress(_dll_msvcrt, "isspace");
 }
+void _elfimplib_isspace() {
 asm("leave\njmp *%0" : : "r"(_imp__isspace));
 }
 
-void _elf_isupper() asm("isupper");
+void _elfimplib_isupper() asm("isupper");
 void *_imp__isupper = NULL;
-void _elf_isupper() {
+__attribute__((constructor)) void _elfimplib_init_isupper() {
 load_dll_msvcrt();
-if (!_imp__isupper) {
 _imp__isupper = (void *) _elf_GetProcAddress(_dll_msvcrt, "isupper");
 }
+void _elfimplib_isupper() {
 asm("leave\njmp *%0" : : "r"(_imp__isupper));
 }
 
-void _elf_iswalnum() asm("iswalnum");
+void _elfimplib_iswalnum() asm("iswalnum");
 void *_imp__iswalnum = NULL;
-void _elf_iswalnum() {
+__attribute__((constructor)) void _elfimplib_init_iswalnum() {
 load_dll_msvcrt();
-if (!_imp__iswalnum) {
 _imp__iswalnum = (void *) _elf_GetProcAddress(_dll_msvcrt, "iswalnum");
 }
+void _elfimplib_iswalnum() {
 asm("leave\njmp *%0" : : "r"(_imp__iswalnum));
 }
 
-void _elf_iswalpha() asm("iswalpha");
+void _elfimplib_iswalpha() asm("iswalpha");
 void *_imp__iswalpha = NULL;
-void _elf_iswalpha() {
+__attribute__((constructor)) void _elfimplib_init_iswalpha() {
 load_dll_msvcrt();
-if (!_imp__iswalpha) {
 _imp__iswalpha = (void *) _elf_GetProcAddress(_dll_msvcrt, "iswalpha");
 }
+void _elfimplib_iswalpha() {
 asm("leave\njmp *%0" : : "r"(_imp__iswalpha));
 }
 
-void _elf_iswascii() asm("iswascii");
+void _elfimplib_iswascii() asm("iswascii");
 void *_imp__iswascii = NULL;
-void _elf_iswascii() {
+__attribute__((constructor)) void _elfimplib_init_iswascii() {
 load_dll_msvcrt();
-if (!_imp__iswascii) {
 _imp__iswascii = (void *) _elf_GetProcAddress(_dll_msvcrt, "iswascii");
 }
+void _elfimplib_iswascii() {
 asm("leave\njmp *%0" : : "r"(_imp__iswascii));
 }
 
-void _elf_iswcntrl() asm("iswcntrl");
+void _elfimplib_iswcntrl() asm("iswcntrl");
 void *_imp__iswcntrl = NULL;
-void _elf_iswcntrl() {
+__attribute__((constructor)) void _elfimplib_init_iswcntrl() {
 load_dll_msvcrt();
-if (!_imp__iswcntrl) {
 _imp__iswcntrl = (void *) _elf_GetProcAddress(_dll_msvcrt, "iswcntrl");
 }
+void _elfimplib_iswcntrl() {
 asm("leave\njmp *%0" : : "r"(_imp__iswcntrl));
 }
 
-void _elf_iswctype() asm("iswctype");
+void _elfimplib_iswctype() asm("iswctype");
 void *_imp__iswctype = NULL;
-void _elf_iswctype() {
+__attribute__((constructor)) void _elfimplib_init_iswctype() {
 load_dll_msvcrt();
-if (!_imp__iswctype) {
 _imp__iswctype = (void *) _elf_GetProcAddress(_dll_msvcrt, "iswctype");
 }
+void _elfimplib_iswctype() {
 asm("leave\njmp *%0" : : "r"(_imp__iswctype));
 }
 
-void _elf_iswdigit() asm("iswdigit");
+void _elfimplib_iswdigit() asm("iswdigit");
 void *_imp__iswdigit = NULL;
-void _elf_iswdigit() {
+__attribute__((constructor)) void _elfimplib_init_iswdigit() {
 load_dll_msvcrt();
-if (!_imp__iswdigit) {
 _imp__iswdigit = (void *) _elf_GetProcAddress(_dll_msvcrt, "iswdigit");
 }
+void _elfimplib_iswdigit() {
 asm("leave\njmp *%0" : : "r"(_imp__iswdigit));
 }
 
-void _elf_iswgraph() asm("iswgraph");
+void _elfimplib_iswgraph() asm("iswgraph");
 void *_imp__iswgraph = NULL;
-void _elf_iswgraph() {
+__attribute__((constructor)) void _elfimplib_init_iswgraph() {
 load_dll_msvcrt();
-if (!_imp__iswgraph) {
 _imp__iswgraph = (void *) _elf_GetProcAddress(_dll_msvcrt, "iswgraph");
 }
+void _elfimplib_iswgraph() {
 asm("leave\njmp *%0" : : "r"(_imp__iswgraph));
 }
 
-void _elf_iswlower() asm("iswlower");
+void _elfimplib_iswlower() asm("iswlower");
 void *_imp__iswlower = NULL;
-void _elf_iswlower() {
+__attribute__((constructor)) void _elfimplib_init_iswlower() {
 load_dll_msvcrt();
-if (!_imp__iswlower) {
 _imp__iswlower = (void *) _elf_GetProcAddress(_dll_msvcrt, "iswlower");
 }
+void _elfimplib_iswlower() {
 asm("leave\njmp *%0" : : "r"(_imp__iswlower));
 }
 
-void _elf_iswprint() asm("iswprint");
+void _elfimplib_iswprint() asm("iswprint");
 void *_imp__iswprint = NULL;
-void _elf_iswprint() {
+__attribute__((constructor)) void _elfimplib_init_iswprint() {
 load_dll_msvcrt();
-if (!_imp__iswprint) {
 _imp__iswprint = (void *) _elf_GetProcAddress(_dll_msvcrt, "iswprint");
 }
+void _elfimplib_iswprint() {
 asm("leave\njmp *%0" : : "r"(_imp__iswprint));
 }
 
-void _elf_iswpunct() asm("iswpunct");
+void _elfimplib_iswpunct() asm("iswpunct");
 void *_imp__iswpunct = NULL;
-void _elf_iswpunct() {
+__attribute__((constructor)) void _elfimplib_init_iswpunct() {
 load_dll_msvcrt();
-if (!_imp__iswpunct) {
 _imp__iswpunct = (void *) _elf_GetProcAddress(_dll_msvcrt, "iswpunct");
 }
+void _elfimplib_iswpunct() {
 asm("leave\njmp *%0" : : "r"(_imp__iswpunct));
 }
 
-void _elf_iswspace() asm("iswspace");
+void _elfimplib_iswspace() asm("iswspace");
 void *_imp__iswspace = NULL;
-void _elf_iswspace() {
+__attribute__((constructor)) void _elfimplib_init_iswspace() {
 load_dll_msvcrt();
-if (!_imp__iswspace) {
 _imp__iswspace = (void *) _elf_GetProcAddress(_dll_msvcrt, "iswspace");
 }
+void _elfimplib_iswspace() {
 asm("leave\njmp *%0" : : "r"(_imp__iswspace));
 }
 
-void _elf_iswupper() asm("iswupper");
+void _elfimplib_iswupper() asm("iswupper");
 void *_imp__iswupper = NULL;
-void _elf_iswupper() {
+__attribute__((constructor)) void _elfimplib_init_iswupper() {
 load_dll_msvcrt();
-if (!_imp__iswupper) {
 _imp__iswupper = (void *) _elf_GetProcAddress(_dll_msvcrt, "iswupper");
 }
+void _elfimplib_iswupper() {
 asm("leave\njmp *%0" : : "r"(_imp__iswupper));
 }
 
-void _elf_iswxdigit() asm("iswxdigit");
+void _elfimplib_iswxdigit() asm("iswxdigit");
 void *_imp__iswxdigit = NULL;
-void _elf_iswxdigit() {
+__attribute__((constructor)) void _elfimplib_init_iswxdigit() {
 load_dll_msvcrt();
-if (!_imp__iswxdigit) {
 _imp__iswxdigit = (void *) _elf_GetProcAddress(_dll_msvcrt, "iswxdigit");
 }
+void _elfimplib_iswxdigit() {
 asm("leave\njmp *%0" : : "r"(_imp__iswxdigit));
 }
 
-void _elf_isxdigit() asm("isxdigit");
+void _elfimplib_isxdigit() asm("isxdigit");
 void *_imp__isxdigit = NULL;
-void _elf_isxdigit() {
+__attribute__((constructor)) void _elfimplib_init_isxdigit() {
 load_dll_msvcrt();
-if (!_imp__isxdigit) {
 _imp__isxdigit = (void *) _elf_GetProcAddress(_dll_msvcrt, "isxdigit");
 }
+void _elfimplib_isxdigit() {
 asm("leave\njmp *%0" : : "r"(_imp__isxdigit));
 }
 
-void _elf_labs() asm("labs");
+void _elfimplib_labs() asm("labs");
 void *_imp__labs = NULL;
-void _elf_labs() {
+__attribute__((constructor)) void _elfimplib_init_labs() {
 load_dll_msvcrt();
-if (!_imp__labs) {
 _imp__labs = (void *) _elf_GetProcAddress(_dll_msvcrt, "labs");
 }
+void _elfimplib_labs() {
 asm("leave\njmp *%0" : : "r"(_imp__labs));
 }
 
-void _elf_ldexp() asm("ldexp");
+void _elfimplib_ldexp() asm("ldexp");
 void *_imp__ldexp = NULL;
-void _elf_ldexp() {
+__attribute__((constructor)) void _elfimplib_init_ldexp() {
 load_dll_msvcrt();
-if (!_imp__ldexp) {
 _imp__ldexp = (void *) _elf_GetProcAddress(_dll_msvcrt, "ldexp");
 }
+void _elfimplib_ldexp() {
 asm("leave\njmp *%0" : : "r"(_imp__ldexp));
 }
 
-void _elf_ldiv() asm("ldiv");
+void _elfimplib_ldiv() asm("ldiv");
 void *_imp__ldiv = NULL;
-void _elf_ldiv() {
+__attribute__((constructor)) void _elfimplib_init_ldiv() {
 load_dll_msvcrt();
-if (!_imp__ldiv) {
 _imp__ldiv = (void *) _elf_GetProcAddress(_dll_msvcrt, "ldiv");
 }
+void _elfimplib_ldiv() {
 asm("leave\njmp *%0" : : "r"(_imp__ldiv));
 }
 
-void _elf_localeconv() asm("localeconv");
+void _elfimplib_localeconv() asm("localeconv");
 void *_imp__localeconv = NULL;
-void _elf_localeconv() {
+__attribute__((constructor)) void _elfimplib_init_localeconv() {
 load_dll_msvcrt();
-if (!_imp__localeconv) {
 _imp__localeconv = (void *) _elf_GetProcAddress(_dll_msvcrt, "localeconv");
 }
+void _elfimplib_localeconv() {
 asm("leave\njmp *%0" : : "r"(_imp__localeconv));
 }
 
-void _elf_localtime() asm("localtime");
+void _elfimplib_localtime() asm("localtime");
 void *_imp__localtime = NULL;
-void _elf_localtime() {
+__attribute__((constructor)) void _elfimplib_init_localtime() {
 load_dll_msvcrt();
-if (!_imp__localtime) {
 _imp__localtime = (void *) _elf_GetProcAddress(_dll_msvcrt, "localtime");
 }
+void _elfimplib_localtime() {
 asm("leave\njmp *%0" : : "r"(_imp__localtime));
 }
 
-void _elf_log() asm("log");
+void _elfimplib_log() asm("log");
 void *_imp__log = NULL;
-void _elf_log() {
+__attribute__((constructor)) void _elfimplib_init_log() {
 load_dll_msvcrt();
-if (!_imp__log) {
 _imp__log = (void *) _elf_GetProcAddress(_dll_msvcrt, "log");
 }
+void _elfimplib_log() {
 asm("leave\njmp *%0" : : "r"(_imp__log));
 }
 
-void _elf_log10() asm("log10");
+void _elfimplib_log10() asm("log10");
 void *_imp__log10 = NULL;
-void _elf_log10() {
+__attribute__((constructor)) void _elfimplib_init_log10() {
 load_dll_msvcrt();
-if (!_imp__log10) {
 _imp__log10 = (void *) _elf_GetProcAddress(_dll_msvcrt, "log10");
 }
+void _elfimplib_log10() {
 asm("leave\njmp *%0" : : "r"(_imp__log10));
 }
 
-void _elf_longjmp() asm("longjmp");
+void _elfimplib_longjmp() asm("longjmp");
 void *_imp__longjmp = NULL;
-void _elf_longjmp() {
+__attribute__((constructor)) void _elfimplib_init_longjmp() {
 load_dll_msvcrt();
-if (!_imp__longjmp) {
 _imp__longjmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "longjmp");
 }
+void _elfimplib_longjmp() {
 asm("leave\njmp *%0" : : "r"(_imp__longjmp));
 }
 
-void _elf_malloc() asm("malloc");
+void _elfimplib_malloc() asm("malloc");
 void *_imp__malloc = NULL;
-void _elf_malloc() {
+__attribute__((constructor)) void _elfimplib_init_malloc() {
 load_dll_msvcrt();
-if (!_imp__malloc) {
 _imp__malloc = (void *) _elf_GetProcAddress(_dll_msvcrt, "malloc");
 }
+void _elfimplib_malloc() {
 asm("leave\njmp *%0" : : "r"(_imp__malloc));
 }
 
-void _elf_mblen() asm("mblen");
+void _elfimplib_mblen() asm("mblen");
 void *_imp__mblen = NULL;
-void _elf_mblen() {
+__attribute__((constructor)) void _elfimplib_init_mblen() {
 load_dll_msvcrt();
-if (!_imp__mblen) {
 _imp__mblen = (void *) _elf_GetProcAddress(_dll_msvcrt, "mblen");
 }
+void _elfimplib_mblen() {
 asm("leave\njmp *%0" : : "r"(_imp__mblen));
 }
 
-void _elf_mbstowcs() asm("mbstowcs");
+void _elfimplib_mbstowcs() asm("mbstowcs");
 void *_imp__mbstowcs = NULL;
-void _elf_mbstowcs() {
+__attribute__((constructor)) void _elfimplib_init_mbstowcs() {
 load_dll_msvcrt();
-if (!_imp__mbstowcs) {
 _imp__mbstowcs = (void *) _elf_GetProcAddress(_dll_msvcrt, "mbstowcs");
 }
+void _elfimplib_mbstowcs() {
 asm("leave\njmp *%0" : : "r"(_imp__mbstowcs));
 }
 
-void _elf_mbtowc() asm("mbtowc");
+void _elfimplib_mbtowc() asm("mbtowc");
 void *_imp__mbtowc = NULL;
-void _elf_mbtowc() {
+__attribute__((constructor)) void _elfimplib_init_mbtowc() {
 load_dll_msvcrt();
-if (!_imp__mbtowc) {
 _imp__mbtowc = (void *) _elf_GetProcAddress(_dll_msvcrt, "mbtowc");
 }
+void _elfimplib_mbtowc() {
 asm("leave\njmp *%0" : : "r"(_imp__mbtowc));
 }
 
-void _elf_memchr() asm("memchr");
+void _elfimplib_memchr() asm("memchr");
 void *_imp__memchr = NULL;
-void _elf_memchr() {
+__attribute__((constructor)) void _elfimplib_init_memchr() {
 load_dll_msvcrt();
-if (!_imp__memchr) {
 _imp__memchr = (void *) _elf_GetProcAddress(_dll_msvcrt, "memchr");
 }
+void _elfimplib_memchr() {
 asm("leave\njmp *%0" : : "r"(_imp__memchr));
 }
 
-void _elf_memcmp() asm("memcmp");
+void _elfimplib_memcmp() asm("memcmp");
 void *_imp__memcmp = NULL;
-void _elf_memcmp() {
+__attribute__((constructor)) void _elfimplib_init_memcmp() {
 load_dll_msvcrt();
-if (!_imp__memcmp) {
 _imp__memcmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "memcmp");
 }
+void _elfimplib_memcmp() {
 asm("leave\njmp *%0" : : "r"(_imp__memcmp));
 }
 
-void _elf_memcpy() asm("memcpy");
+void _elfimplib_memcpy() asm("memcpy");
 void *_imp__memcpy = NULL;
-void _elf_memcpy() {
+__attribute__((constructor)) void _elfimplib_init_memcpy() {
 load_dll_msvcrt();
-if (!_imp__memcpy) {
 _imp__memcpy = (void *) _elf_GetProcAddress(_dll_msvcrt, "memcpy");
 }
+void _elfimplib_memcpy() {
 asm("leave\njmp *%0" : : "r"(_imp__memcpy));
 }
 
-void _elf_memmove() asm("memmove");
+void _elfimplib_memmove() asm("memmove");
 void *_imp__memmove = NULL;
-void _elf_memmove() {
+__attribute__((constructor)) void _elfimplib_init_memmove() {
 load_dll_msvcrt();
-if (!_imp__memmove) {
 _imp__memmove = (void *) _elf_GetProcAddress(_dll_msvcrt, "memmove");
 }
+void _elfimplib_memmove() {
 asm("leave\njmp *%0" : : "r"(_imp__memmove));
 }
 
-void _elf_memset() asm("memset");
+void _elfimplib_memset() asm("memset");
 void *_imp__memset = NULL;
-void _elf_memset() {
+__attribute__((constructor)) void _elfimplib_init_memset() {
 load_dll_msvcrt();
-if (!_imp__memset) {
 _imp__memset = (void *) _elf_GetProcAddress(_dll_msvcrt, "memset");
 }
+void _elfimplib_memset() {
 asm("leave\njmp *%0" : : "r"(_imp__memset));
 }
 
-void _elf_mktime() asm("mktime");
+void _elfimplib_mktime() asm("mktime");
 void *_imp__mktime = NULL;
-void _elf_mktime() {
+__attribute__((constructor)) void _elfimplib_init_mktime() {
 load_dll_msvcrt();
-if (!_imp__mktime) {
 _imp__mktime = (void *) _elf_GetProcAddress(_dll_msvcrt, "mktime");
 }
+void _elfimplib_mktime() {
 asm("leave\njmp *%0" : : "r"(_imp__mktime));
 }
 
-void _elf_modf() asm("modf");
+void _elfimplib_modf() asm("modf");
 void *_imp__modf = NULL;
-void _elf_modf() {
+__attribute__((constructor)) void _elfimplib_init_modf() {
 load_dll_msvcrt();
-if (!_imp__modf) {
 _imp__modf = (void *) _elf_GetProcAddress(_dll_msvcrt, "modf");
 }
+void _elfimplib_modf() {
 asm("leave\njmp *%0" : : "r"(_imp__modf));
 }
 
-void _elf_perror() asm("perror");
+void _elfimplib_perror() asm("perror");
 void *_imp__perror = NULL;
-void _elf_perror() {
+__attribute__((constructor)) void _elfimplib_init_perror() {
 load_dll_msvcrt();
-if (!_imp__perror) {
 _imp__perror = (void *) _elf_GetProcAddress(_dll_msvcrt, "perror");
 }
+void _elfimplib_perror() {
 asm("leave\njmp *%0" : : "r"(_imp__perror));
 }
 
-void _elf_pow() asm("pow");
+void _elfimplib_pow() asm("pow");
 void *_imp__pow = NULL;
-void _elf_pow() {
+__attribute__((constructor)) void _elfimplib_init_pow() {
 load_dll_msvcrt();
-if (!_imp__pow) {
 _imp__pow = (void *) _elf_GetProcAddress(_dll_msvcrt, "pow");
 }
+void _elfimplib_pow() {
 asm("leave\njmp *%0" : : "r"(_imp__pow));
 }
 
-void _elf_printf() asm("printf");
+void _elfimplib_printf() asm("printf");
 void *_imp__printf = NULL;
-void _elf_printf() {
+__attribute__((constructor)) void _elfimplib_init_printf() {
 load_dll_msvcrt();
-if (!_imp__printf) {
 _imp__printf = (void *) _elf_GetProcAddress(_dll_msvcrt, "printf");
 }
+void _elfimplib_printf() {
 asm("leave\njmp *%0" : : "r"(_imp__printf));
 }
 
-void _elf_putc() asm("putc");
+void _elfimplib_putc() asm("putc");
 void *_imp__putc = NULL;
-void _elf_putc() {
+__attribute__((constructor)) void _elfimplib_init_putc() {
 load_dll_msvcrt();
-if (!_imp__putc) {
 _imp__putc = (void *) _elf_GetProcAddress(_dll_msvcrt, "putc");
 }
+void _elfimplib_putc() {
 asm("leave\njmp *%0" : : "r"(_imp__putc));
 }
 
-void _elf_putchar() asm("putchar");
+void _elfimplib_putchar() asm("putchar");
 void *_imp__putchar = NULL;
-void _elf_putchar() {
+__attribute__((constructor)) void _elfimplib_init_putchar() {
 load_dll_msvcrt();
-if (!_imp__putchar) {
 _imp__putchar = (void *) _elf_GetProcAddress(_dll_msvcrt, "putchar");
 }
+void _elfimplib_putchar() {
 asm("leave\njmp *%0" : : "r"(_imp__putchar));
 }
 
-void _elf_puts() asm("puts");
+void _elfimplib_puts() asm("puts");
 void *_imp__puts = NULL;
-void _elf_puts() {
+__attribute__((constructor)) void _elfimplib_init_puts() {
 load_dll_msvcrt();
-if (!_imp__puts) {
 _imp__puts = (void *) _elf_GetProcAddress(_dll_msvcrt, "puts");
 }
+void _elfimplib_puts() {
 asm("leave\njmp *%0" : : "r"(_imp__puts));
 }
 
-void _elf_putwc() asm("putwc");
+void _elfimplib_putwc() asm("putwc");
 void *_imp__putwc = NULL;
-void _elf_putwc() {
+__attribute__((constructor)) void _elfimplib_init_putwc() {
 load_dll_msvcrt();
-if (!_imp__putwc) {
 _imp__putwc = (void *) _elf_GetProcAddress(_dll_msvcrt, "putwc");
 }
+void _elfimplib_putwc() {
 asm("leave\njmp *%0" : : "r"(_imp__putwc));
 }
 
-void _elf_putwchar() asm("putwchar");
+void _elfimplib_putwchar() asm("putwchar");
 void *_imp__putwchar = NULL;
-void _elf_putwchar() {
+__attribute__((constructor)) void _elfimplib_init_putwchar() {
 load_dll_msvcrt();
-if (!_imp__putwchar) {
 _imp__putwchar = (void *) _elf_GetProcAddress(_dll_msvcrt, "putwchar");
 }
+void _elfimplib_putwchar() {
 asm("leave\njmp *%0" : : "r"(_imp__putwchar));
 }
 
-void _elf_qsort() asm("qsort");
+void _elfimplib_qsort() asm("qsort");
 void *_imp__qsort = NULL;
-void _elf_qsort() {
+__attribute__((constructor)) void _elfimplib_init_qsort() {
 load_dll_msvcrt();
-if (!_imp__qsort) {
 _imp__qsort = (void *) _elf_GetProcAddress(_dll_msvcrt, "qsort");
 }
+void _elfimplib_qsort() {
 asm("leave\njmp *%0" : : "r"(_imp__qsort));
 }
 
-void _elf_raise() asm("raise");
+void _elfimplib_raise() asm("raise");
 void *_imp__raise = NULL;
-void _elf_raise() {
+__attribute__((constructor)) void _elfimplib_init_raise() {
 load_dll_msvcrt();
-if (!_imp__raise) {
 _imp__raise = (void *) _elf_GetProcAddress(_dll_msvcrt, "raise");
 }
+void _elfimplib_raise() {
 asm("leave\njmp *%0" : : "r"(_imp__raise));
 }
 
-void _elf_rand() asm("rand");
+void _elfimplib_rand() asm("rand");
 void *_imp__rand = NULL;
-void _elf_rand() {
+__attribute__((constructor)) void _elfimplib_init_rand() {
 load_dll_msvcrt();
-if (!_imp__rand) {
 _imp__rand = (void *) _elf_GetProcAddress(_dll_msvcrt, "rand");
 }
+void _elfimplib_rand() {
 asm("leave\njmp *%0" : : "r"(_imp__rand));
 }
 
-void _elf_realloc() asm("realloc");
+void _elfimplib_realloc() asm("realloc");
 void *_imp__realloc = NULL;
-void _elf_realloc() {
+__attribute__((constructor)) void _elfimplib_init_realloc() {
 load_dll_msvcrt();
-if (!_imp__realloc) {
 _imp__realloc = (void *) _elf_GetProcAddress(_dll_msvcrt, "realloc");
 }
+void _elfimplib_realloc() {
 asm("leave\njmp *%0" : : "r"(_imp__realloc));
 }
 
-void _elf_remove() asm("remove");
+void _elfimplib_remove() asm("remove");
 void *_imp__remove = NULL;
-void _elf_remove() {
+__attribute__((constructor)) void _elfimplib_init_remove() {
 load_dll_msvcrt();
-if (!_imp__remove) {
 _imp__remove = (void *) _elf_GetProcAddress(_dll_msvcrt, "remove");
 }
+void _elfimplib_remove() {
 asm("leave\njmp *%0" : : "r"(_imp__remove));
 }
 
-void _elf_rename() asm("rename");
+void _elfimplib_rename() asm("rename");
 void *_imp__rename = NULL;
-void _elf_rename() {
+__attribute__((constructor)) void _elfimplib_init_rename() {
 load_dll_msvcrt();
-if (!_imp__rename) {
 _imp__rename = (void *) _elf_GetProcAddress(_dll_msvcrt, "rename");
 }
+void _elfimplib_rename() {
 asm("leave\njmp *%0" : : "r"(_imp__rename));
 }
 
-void _elf_rewind() asm("rewind");
+void _elfimplib_rewind() asm("rewind");
 void *_imp__rewind = NULL;
-void _elf_rewind() {
+__attribute__((constructor)) void _elfimplib_init_rewind() {
 load_dll_msvcrt();
-if (!_imp__rewind) {
 _imp__rewind = (void *) _elf_GetProcAddress(_dll_msvcrt, "rewind");
 }
+void _elfimplib_rewind() {
 asm("leave\njmp *%0" : : "r"(_imp__rewind));
 }
 
-void _elf_scanf() asm("scanf");
+void _elfimplib_scanf() asm("scanf");
 void *_imp__scanf = NULL;
-void _elf_scanf() {
+__attribute__((constructor)) void _elfimplib_init_scanf() {
 load_dll_msvcrt();
-if (!_imp__scanf) {
 _imp__scanf = (void *) _elf_GetProcAddress(_dll_msvcrt, "scanf");
 }
+void _elfimplib_scanf() {
 asm("leave\njmp *%0" : : "r"(_imp__scanf));
 }
 
-void _elf_setbuf() asm("setbuf");
+void _elfimplib_setbuf() asm("setbuf");
 void *_imp__setbuf = NULL;
-void _elf_setbuf() {
+__attribute__((constructor)) void _elfimplib_init_setbuf() {
 load_dll_msvcrt();
-if (!_imp__setbuf) {
 _imp__setbuf = (void *) _elf_GetProcAddress(_dll_msvcrt, "setbuf");
 }
+void _elfimplib_setbuf() {
 asm("leave\njmp *%0" : : "r"(_imp__setbuf));
 }
 
-void _elf_setlocale() asm("setlocale");
+void _elfimplib_setlocale() asm("setlocale");
 void *_imp__setlocale = NULL;
-void _elf_setlocale() {
+__attribute__((constructor)) void _elfimplib_init_setlocale() {
 load_dll_msvcrt();
-if (!_imp__setlocale) {
 _imp__setlocale = (void *) _elf_GetProcAddress(_dll_msvcrt, "setlocale");
 }
+void _elfimplib_setlocale() {
 asm("leave\njmp *%0" : : "r"(_imp__setlocale));
 }
 
-void _elf_setvbuf() asm("setvbuf");
+void _elfimplib_setvbuf() asm("setvbuf");
 void *_imp__setvbuf = NULL;
-void _elf_setvbuf() {
+__attribute__((constructor)) void _elfimplib_init_setvbuf() {
 load_dll_msvcrt();
-if (!_imp__setvbuf) {
 _imp__setvbuf = (void *) _elf_GetProcAddress(_dll_msvcrt, "setvbuf");
 }
+void _elfimplib_setvbuf() {
 asm("leave\njmp *%0" : : "r"(_imp__setvbuf));
 }
 
-void _elf_signal() asm("signal");
+void _elfimplib_signal() asm("signal");
 void *_imp__signal = NULL;
-void _elf_signal() {
+__attribute__((constructor)) void _elfimplib_init_signal() {
 load_dll_msvcrt();
-if (!_imp__signal) {
 _imp__signal = (void *) _elf_GetProcAddress(_dll_msvcrt, "signal");
 }
+void _elfimplib_signal() {
 asm("leave\njmp *%0" : : "r"(_imp__signal));
 }
 
-void _elf_sin() asm("sin");
+void _elfimplib_sin() asm("sin");
 void *_imp__sin = NULL;
-void _elf_sin() {
+__attribute__((constructor)) void _elfimplib_init_sin() {
 load_dll_msvcrt();
-if (!_imp__sin) {
 _imp__sin = (void *) _elf_GetProcAddress(_dll_msvcrt, "sin");
 }
+void _elfimplib_sin() {
 asm("leave\njmp *%0" : : "r"(_imp__sin));
 }
 
-void _elf_sinh() asm("sinh");
+void _elfimplib_sinh() asm("sinh");
 void *_imp__sinh = NULL;
-void _elf_sinh() {
+__attribute__((constructor)) void _elfimplib_init_sinh() {
 load_dll_msvcrt();
-if (!_imp__sinh) {
 _imp__sinh = (void *) _elf_GetProcAddress(_dll_msvcrt, "sinh");
 }
+void _elfimplib_sinh() {
 asm("leave\njmp *%0" : : "r"(_imp__sinh));
 }
 
-void _elf_sprintf() asm("sprintf");
+void _elfimplib_sprintf() asm("sprintf");
 void *_imp__sprintf = NULL;
-void _elf_sprintf() {
+__attribute__((constructor)) void _elfimplib_init_sprintf() {
 load_dll_msvcrt();
-if (!_imp__sprintf) {
 _imp__sprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "sprintf");
 }
+void _elfimplib_sprintf() {
 asm("leave\njmp *%0" : : "r"(_imp__sprintf));
 }
 
-void _elf_sqrt() asm("sqrt");
+void _elfimplib_sqrt() asm("sqrt");
 void *_imp__sqrt = NULL;
-void _elf_sqrt() {
+__attribute__((constructor)) void _elfimplib_init_sqrt() {
 load_dll_msvcrt();
-if (!_imp__sqrt) {
 _imp__sqrt = (void *) _elf_GetProcAddress(_dll_msvcrt, "sqrt");
 }
+void _elfimplib_sqrt() {
 asm("leave\njmp *%0" : : "r"(_imp__sqrt));
 }
 
-void _elf_srand() asm("srand");
+void _elfimplib_srand() asm("srand");
 void *_imp__srand = NULL;
-void _elf_srand() {
+__attribute__((constructor)) void _elfimplib_init_srand() {
 load_dll_msvcrt();
-if (!_imp__srand) {
 _imp__srand = (void *) _elf_GetProcAddress(_dll_msvcrt, "srand");
 }
+void _elfimplib_srand() {
 asm("leave\njmp *%0" : : "r"(_imp__srand));
 }
 
-void _elf_sscanf() asm("sscanf");
+void _elfimplib_sscanf() asm("sscanf");
 void *_imp__sscanf = NULL;
-void _elf_sscanf() {
+__attribute__((constructor)) void _elfimplib_init_sscanf() {
 load_dll_msvcrt();
-if (!_imp__sscanf) {
 _imp__sscanf = (void *) _elf_GetProcAddress(_dll_msvcrt, "sscanf");
 }
+void _elfimplib_sscanf() {
 asm("leave\njmp *%0" : : "r"(_imp__sscanf));
 }
 
-void _elf_strcat() asm("strcat");
+void _elfimplib_strcat() asm("strcat");
 void *_imp__strcat = NULL;
-void _elf_strcat() {
+__attribute__((constructor)) void _elfimplib_init_strcat() {
 load_dll_msvcrt();
-if (!_imp__strcat) {
 _imp__strcat = (void *) _elf_GetProcAddress(_dll_msvcrt, "strcat");
 }
+void _elfimplib_strcat() {
 asm("leave\njmp *%0" : : "r"(_imp__strcat));
 }
 
-void _elf_strchr() asm("strchr");
+void _elfimplib_strchr() asm("strchr");
 void *_imp__strchr = NULL;
-void _elf_strchr() {
+__attribute__((constructor)) void _elfimplib_init_strchr() {
 load_dll_msvcrt();
-if (!_imp__strchr) {
 _imp__strchr = (void *) _elf_GetProcAddress(_dll_msvcrt, "strchr");
 }
+void _elfimplib_strchr() {
 asm("leave\njmp *%0" : : "r"(_imp__strchr));
 }
 
-void _elf_strcmp() asm("strcmp");
+void _elfimplib_strcmp() asm("strcmp");
 void *_imp__strcmp = NULL;
-void _elf_strcmp() {
+__attribute__((constructor)) void _elfimplib_init_strcmp() {
 load_dll_msvcrt();
-if (!_imp__strcmp) {
 _imp__strcmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "strcmp");
 }
+void _elfimplib_strcmp() {
 asm("leave\njmp *%0" : : "r"(_imp__strcmp));
 }
 
-void _elf_strcoll() asm("strcoll");
+void _elfimplib_strcoll() asm("strcoll");
 void *_imp__strcoll = NULL;
-void _elf_strcoll() {
+__attribute__((constructor)) void _elfimplib_init_strcoll() {
 load_dll_msvcrt();
-if (!_imp__strcoll) {
 _imp__strcoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "strcoll");
 }
+void _elfimplib_strcoll() {
 asm("leave\njmp *%0" : : "r"(_imp__strcoll));
 }
 
-void _elf_strcpy() asm("strcpy");
+void _elfimplib_strcpy() asm("strcpy");
 void *_imp__strcpy = NULL;
-void _elf_strcpy() {
+__attribute__((constructor)) void _elfimplib_init_strcpy() {
 load_dll_msvcrt();
-if (!_imp__strcpy) {
 _imp__strcpy = (void *) _elf_GetProcAddress(_dll_msvcrt, "strcpy");
 }
+void _elfimplib_strcpy() {
 asm("leave\njmp *%0" : : "r"(_imp__strcpy));
 }
 
-void _elf_strcspn() asm("strcspn");
+void _elfimplib_strcspn() asm("strcspn");
 void *_imp__strcspn = NULL;
-void _elf_strcspn() {
+__attribute__((constructor)) void _elfimplib_init_strcspn() {
 load_dll_msvcrt();
-if (!_imp__strcspn) {
 _imp__strcspn = (void *) _elf_GetProcAddress(_dll_msvcrt, "strcspn");
 }
+void _elfimplib_strcspn() {
 asm("leave\njmp *%0" : : "r"(_imp__strcspn));
 }
 
-void _elf_strerror() asm("strerror");
+void _elfimplib_strerror() asm("strerror");
 void *_imp__strerror = NULL;
-void _elf_strerror() {
+__attribute__((constructor)) void _elfimplib_init_strerror() {
 load_dll_msvcrt();
-if (!_imp__strerror) {
 _imp__strerror = (void *) _elf_GetProcAddress(_dll_msvcrt, "strerror");
 }
+void _elfimplib_strerror() {
 asm("leave\njmp *%0" : : "r"(_imp__strerror));
 }
 
-void _elf_strftime() asm("strftime");
+void _elfimplib_strftime() asm("strftime");
 void *_imp__strftime = NULL;
-void _elf_strftime() {
+__attribute__((constructor)) void _elfimplib_init_strftime() {
 load_dll_msvcrt();
-if (!_imp__strftime) {
 _imp__strftime = (void *) _elf_GetProcAddress(_dll_msvcrt, "strftime");
 }
+void _elfimplib_strftime() {
 asm("leave\njmp *%0" : : "r"(_imp__strftime));
 }
 
-void _elf_strlen() asm("strlen");
+void _elfimplib_strlen() asm("strlen");
 void *_imp__strlen = NULL;
-void _elf_strlen() {
+__attribute__((constructor)) void _elfimplib_init_strlen() {
 load_dll_msvcrt();
-if (!_imp__strlen) {
 _imp__strlen = (void *) _elf_GetProcAddress(_dll_msvcrt, "strlen");
 }
+void _elfimplib_strlen() {
 asm("leave\njmp *%0" : : "r"(_imp__strlen));
 }
 
-void _elf_strncat() asm("strncat");
+void _elfimplib_strncat() asm("strncat");
 void *_imp__strncat = NULL;
-void _elf_strncat() {
+__attribute__((constructor)) void _elfimplib_init_strncat() {
 load_dll_msvcrt();
-if (!_imp__strncat) {
 _imp__strncat = (void *) _elf_GetProcAddress(_dll_msvcrt, "strncat");
 }
+void _elfimplib_strncat() {
 asm("leave\njmp *%0" : : "r"(_imp__strncat));
 }
 
-void _elf_strncmp() asm("strncmp");
+void _elfimplib_strncmp() asm("strncmp");
 void *_imp__strncmp = NULL;
-void _elf_strncmp() {
+__attribute__((constructor)) void _elfimplib_init_strncmp() {
 load_dll_msvcrt();
-if (!_imp__strncmp) {
 _imp__strncmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "strncmp");
 }
+void _elfimplib_strncmp() {
 asm("leave\njmp *%0" : : "r"(_imp__strncmp));
 }
 
-void _elf_strncpy() asm("strncpy");
+void _elfimplib_strncpy() asm("strncpy");
 void *_imp__strncpy = NULL;
-void _elf_strncpy() {
+__attribute__((constructor)) void _elfimplib_init_strncpy() {
 load_dll_msvcrt();
-if (!_imp__strncpy) {
 _imp__strncpy = (void *) _elf_GetProcAddress(_dll_msvcrt, "strncpy");
 }
+void _elfimplib_strncpy() {
 asm("leave\njmp *%0" : : "r"(_imp__strncpy));
 }
 
-void _elf_strpbrk() asm("strpbrk");
+void _elfimplib_strpbrk() asm("strpbrk");
 void *_imp__strpbrk = NULL;
-void _elf_strpbrk() {
+__attribute__((constructor)) void _elfimplib_init_strpbrk() {
 load_dll_msvcrt();
-if (!_imp__strpbrk) {
 _imp__strpbrk = (void *) _elf_GetProcAddress(_dll_msvcrt, "strpbrk");
 }
+void _elfimplib_strpbrk() {
 asm("leave\njmp *%0" : : "r"(_imp__strpbrk));
 }
 
-void _elf_strrchr() asm("strrchr");
+void _elfimplib_strrchr() asm("strrchr");
 void *_imp__strrchr = NULL;
-void _elf_strrchr() {
+__attribute__((constructor)) void _elfimplib_init_strrchr() {
 load_dll_msvcrt();
-if (!_imp__strrchr) {
 _imp__strrchr = (void *) _elf_GetProcAddress(_dll_msvcrt, "strrchr");
 }
+void _elfimplib_strrchr() {
 asm("leave\njmp *%0" : : "r"(_imp__strrchr));
 }
 
-void _elf_strspn() asm("strspn");
+void _elfimplib_strspn() asm("strspn");
 void *_imp__strspn = NULL;
-void _elf_strspn() {
+__attribute__((constructor)) void _elfimplib_init_strspn() {
 load_dll_msvcrt();
-if (!_imp__strspn) {
 _imp__strspn = (void *) _elf_GetProcAddress(_dll_msvcrt, "strspn");
 }
+void _elfimplib_strspn() {
 asm("leave\njmp *%0" : : "r"(_imp__strspn));
 }
 
-void _elf_strstr() asm("strstr");
+void _elfimplib_strstr() asm("strstr");
 void *_imp__strstr = NULL;
-void _elf_strstr() {
+__attribute__((constructor)) void _elfimplib_init_strstr() {
 load_dll_msvcrt();
-if (!_imp__strstr) {
 _imp__strstr = (void *) _elf_GetProcAddress(_dll_msvcrt, "strstr");
 }
+void _elfimplib_strstr() {
 asm("leave\njmp *%0" : : "r"(_imp__strstr));
 }
 
-void _elf_strtod() asm("strtod");
+void _elfimplib_strtod() asm("strtod");
 void *_imp__strtod = NULL;
-void _elf_strtod() {
+__attribute__((constructor)) void _elfimplib_init_strtod() {
 load_dll_msvcrt();
-if (!_imp__strtod) {
 _imp__strtod = (void *) _elf_GetProcAddress(_dll_msvcrt, "strtod");
 }
+void _elfimplib_strtod() {
 asm("leave\njmp *%0" : : "r"(_imp__strtod));
 }
 
-void _elf_strtok() asm("strtok");
+void _elfimplib_strtok() asm("strtok");
 void *_imp__strtok = NULL;
-void _elf_strtok() {
+__attribute__((constructor)) void _elfimplib_init_strtok() {
 load_dll_msvcrt();
-if (!_imp__strtok) {
 _imp__strtok = (void *) _elf_GetProcAddress(_dll_msvcrt, "strtok");
 }
+void _elfimplib_strtok() {
 asm("leave\njmp *%0" : : "r"(_imp__strtok));
 }
 
-void _elf_strtol() asm("strtol");
+void _elfimplib_strtol() asm("strtol");
 void *_imp__strtol = NULL;
-void _elf_strtol() {
+__attribute__((constructor)) void _elfimplib_init_strtol() {
 load_dll_msvcrt();
-if (!_imp__strtol) {
 _imp__strtol = (void *) _elf_GetProcAddress(_dll_msvcrt, "strtol");
 }
+void _elfimplib_strtol() {
 asm("leave\njmp *%0" : : "r"(_imp__strtol));
 }
 
-void _elf_strtoul() asm("strtoul");
+void _elfimplib_strtoul() asm("strtoul");
 void *_imp__strtoul = NULL;
-void _elf_strtoul() {
+__attribute__((constructor)) void _elfimplib_init_strtoul() {
 load_dll_msvcrt();
-if (!_imp__strtoul) {
 _imp__strtoul = (void *) _elf_GetProcAddress(_dll_msvcrt, "strtoul");
 }
+void _elfimplib_strtoul() {
 asm("leave\njmp *%0" : : "r"(_imp__strtoul));
 }
 
-void _elf_strxfrm() asm("strxfrm");
+void _elfimplib_strxfrm() asm("strxfrm");
 void *_imp__strxfrm = NULL;
-void _elf_strxfrm() {
+__attribute__((constructor)) void _elfimplib_init_strxfrm() {
 load_dll_msvcrt();
-if (!_imp__strxfrm) {
 _imp__strxfrm = (void *) _elf_GetProcAddress(_dll_msvcrt, "strxfrm");
 }
+void _elfimplib_strxfrm() {
 asm("leave\njmp *%0" : : "r"(_imp__strxfrm));
 }
 
-void _elf_swprintf() asm("swprintf");
+void _elfimplib_swprintf() asm("swprintf");
 void *_imp__swprintf = NULL;
-void _elf_swprintf() {
+__attribute__((constructor)) void _elfimplib_init_swprintf() {
 load_dll_msvcrt();
-if (!_imp__swprintf) {
 _imp__swprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "swprintf");
 }
+void _elfimplib_swprintf() {
 asm("leave\njmp *%0" : : "r"(_imp__swprintf));
 }
 
-void _elf_swscanf() asm("swscanf");
+void _elfimplib_swscanf() asm("swscanf");
 void *_imp__swscanf = NULL;
-void _elf_swscanf() {
+__attribute__((constructor)) void _elfimplib_init_swscanf() {
 load_dll_msvcrt();
-if (!_imp__swscanf) {
 _imp__swscanf = (void *) _elf_GetProcAddress(_dll_msvcrt, "swscanf");
 }
+void _elfimplib_swscanf() {
 asm("leave\njmp *%0" : : "r"(_imp__swscanf));
 }
 
-void _elf_system() asm("system");
+void _elfimplib_system() asm("system");
 void *_imp__system = NULL;
-void _elf_system() {
+__attribute__((constructor)) void _elfimplib_init_system() {
 load_dll_msvcrt();
-if (!_imp__system) {
 _imp__system = (void *) _elf_GetProcAddress(_dll_msvcrt, "system");
 }
+void _elfimplib_system() {
 asm("leave\njmp *%0" : : "r"(_imp__system));
 }
 
-void _elf_tan() asm("tan");
+void _elfimplib_tan() asm("tan");
 void *_imp__tan = NULL;
-void _elf_tan() {
+__attribute__((constructor)) void _elfimplib_init_tan() {
 load_dll_msvcrt();
-if (!_imp__tan) {
 _imp__tan = (void *) _elf_GetProcAddress(_dll_msvcrt, "tan");
 }
+void _elfimplib_tan() {
 asm("leave\njmp *%0" : : "r"(_imp__tan));
 }
 
-void _elf_tanh() asm("tanh");
+void _elfimplib_tanh() asm("tanh");
 void *_imp__tanh = NULL;
-void _elf_tanh() {
+__attribute__((constructor)) void _elfimplib_init_tanh() {
 load_dll_msvcrt();
-if (!_imp__tanh) {
 _imp__tanh = (void *) _elf_GetProcAddress(_dll_msvcrt, "tanh");
 }
+void _elfimplib_tanh() {
 asm("leave\njmp *%0" : : "r"(_imp__tanh));
 }
 
-void _elf_time() asm("time");
+void _elfimplib_time() asm("time");
 void *_imp__time = NULL;
-void _elf_time() {
+__attribute__((constructor)) void _elfimplib_init_time() {
 load_dll_msvcrt();
-if (!_imp__time) {
 _imp__time = (void *) _elf_GetProcAddress(_dll_msvcrt, "time");
 }
+void _elfimplib_time() {
 asm("leave\njmp *%0" : : "r"(_imp__time));
 }
 
-void _elf_tmpfile() asm("tmpfile");
+void _elfimplib_tmpfile() asm("tmpfile");
 void *_imp__tmpfile = NULL;
-void _elf_tmpfile() {
+__attribute__((constructor)) void _elfimplib_init_tmpfile() {
 load_dll_msvcrt();
-if (!_imp__tmpfile) {
 _imp__tmpfile = (void *) _elf_GetProcAddress(_dll_msvcrt, "tmpfile");
 }
+void _elfimplib_tmpfile() {
 asm("leave\njmp *%0" : : "r"(_imp__tmpfile));
 }
 
-void _elf_tmpnam() asm("tmpnam");
+void _elfimplib_tmpnam() asm("tmpnam");
 void *_imp__tmpnam = NULL;
-void _elf_tmpnam() {
+__attribute__((constructor)) void _elfimplib_init_tmpnam() {
 load_dll_msvcrt();
-if (!_imp__tmpnam) {
 _imp__tmpnam = (void *) _elf_GetProcAddress(_dll_msvcrt, "tmpnam");
 }
+void _elfimplib_tmpnam() {
 asm("leave\njmp *%0" : : "r"(_imp__tmpnam));
 }
 
-void _elf_tolower() asm("tolower");
+void _elfimplib_tolower() asm("tolower");
 void *_imp__tolower = NULL;
-void _elf_tolower() {
+__attribute__((constructor)) void _elfimplib_init_tolower() {
 load_dll_msvcrt();
-if (!_imp__tolower) {
 _imp__tolower = (void *) _elf_GetProcAddress(_dll_msvcrt, "tolower");
 }
+void _elfimplib_tolower() {
 asm("leave\njmp *%0" : : "r"(_imp__tolower));
 }
 
-void _elf_toupper() asm("toupper");
+void _elfimplib_toupper() asm("toupper");
 void *_imp__toupper = NULL;
-void _elf_toupper() {
+__attribute__((constructor)) void _elfimplib_init_toupper() {
 load_dll_msvcrt();
-if (!_imp__toupper) {
 _imp__toupper = (void *) _elf_GetProcAddress(_dll_msvcrt, "toupper");
 }
+void _elfimplib_toupper() {
 asm("leave\njmp *%0" : : "r"(_imp__toupper));
 }
 
-void _elf_towlower() asm("towlower");
+void _elfimplib_towlower() asm("towlower");
 void *_imp__towlower = NULL;
-void _elf_towlower() {
+__attribute__((constructor)) void _elfimplib_init_towlower() {
 load_dll_msvcrt();
-if (!_imp__towlower) {
 _imp__towlower = (void *) _elf_GetProcAddress(_dll_msvcrt, "towlower");
 }
+void _elfimplib_towlower() {
 asm("leave\njmp *%0" : : "r"(_imp__towlower));
 }
 
-void _elf_towupper() asm("towupper");
+void _elfimplib_towupper() asm("towupper");
 void *_imp__towupper = NULL;
-void _elf_towupper() {
+__attribute__((constructor)) void _elfimplib_init_towupper() {
 load_dll_msvcrt();
-if (!_imp__towupper) {
 _imp__towupper = (void *) _elf_GetProcAddress(_dll_msvcrt, "towupper");
 }
+void _elfimplib_towupper() {
 asm("leave\njmp *%0" : : "r"(_imp__towupper));
 }
 
-void _elf_ungetc() asm("ungetc");
+void _elfimplib_ungetc() asm("ungetc");
 void *_imp__ungetc = NULL;
-void _elf_ungetc() {
+__attribute__((constructor)) void _elfimplib_init_ungetc() {
 load_dll_msvcrt();
-if (!_imp__ungetc) {
 _imp__ungetc = (void *) _elf_GetProcAddress(_dll_msvcrt, "ungetc");
 }
+void _elfimplib_ungetc() {
 asm("leave\njmp *%0" : : "r"(_imp__ungetc));
 }
 
-void _elf_ungetwc() asm("ungetwc");
+void _elfimplib_ungetwc() asm("ungetwc");
 void *_imp__ungetwc = NULL;
-void _elf_ungetwc() {
+__attribute__((constructor)) void _elfimplib_init_ungetwc() {
 load_dll_msvcrt();
-if (!_imp__ungetwc) {
 _imp__ungetwc = (void *) _elf_GetProcAddress(_dll_msvcrt, "ungetwc");
 }
+void _elfimplib_ungetwc() {
 asm("leave\njmp *%0" : : "r"(_imp__ungetwc));
 }
 
-void _elf_vfprintf() asm("vfprintf");
+void _elfimplib_vfprintf() asm("vfprintf");
 void *_imp__vfprintf = NULL;
-void _elf_vfprintf() {
+__attribute__((constructor)) void _elfimplib_init_vfprintf() {
 load_dll_msvcrt();
-if (!_imp__vfprintf) {
 _imp__vfprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "vfprintf");
 }
+void _elfimplib_vfprintf() {
 asm("leave\njmp *%0" : : "r"(_imp__vfprintf));
 }
 
-void _elf_vfwprintf() asm("vfwprintf");
+void _elfimplib_vfwprintf() asm("vfwprintf");
 void *_imp__vfwprintf = NULL;
-void _elf_vfwprintf() {
+__attribute__((constructor)) void _elfimplib_init_vfwprintf() {
 load_dll_msvcrt();
-if (!_imp__vfwprintf) {
 _imp__vfwprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "vfwprintf");
 }
+void _elfimplib_vfwprintf() {
 asm("leave\njmp *%0" : : "r"(_imp__vfwprintf));
 }
 
-void _elf_vprintf() asm("vprintf");
+void _elfimplib_vprintf() asm("vprintf");
 void *_imp__vprintf = NULL;
-void _elf_vprintf() {
+__attribute__((constructor)) void _elfimplib_init_vprintf() {
 load_dll_msvcrt();
-if (!_imp__vprintf) {
 _imp__vprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "vprintf");
 }
+void _elfimplib_vprintf() {
 asm("leave\njmp *%0" : : "r"(_imp__vprintf));
 }
 
-void _elf_vsprintf() asm("vsprintf");
+void _elfimplib_vsprintf() asm("vsprintf");
 void *_imp__vsprintf = NULL;
-void _elf_vsprintf() {
+__attribute__((constructor)) void _elfimplib_init_vsprintf() {
 load_dll_msvcrt();
-if (!_imp__vsprintf) {
 _imp__vsprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "vsprintf");
 }
+void _elfimplib_vsprintf() {
 asm("leave\njmp *%0" : : "r"(_imp__vsprintf));
 }
 
-void _elf_vswprintf() asm("vswprintf");
+void _elfimplib_vswprintf() asm("vswprintf");
 void *_imp__vswprintf = NULL;
-void _elf_vswprintf() {
+__attribute__((constructor)) void _elfimplib_init_vswprintf() {
 load_dll_msvcrt();
-if (!_imp__vswprintf) {
 _imp__vswprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "vswprintf");
 }
+void _elfimplib_vswprintf() {
 asm("leave\njmp *%0" : : "r"(_imp__vswprintf));
 }
 
-void _elf_vwprintf() asm("vwprintf");
+void _elfimplib_vwprintf() asm("vwprintf");
 void *_imp__vwprintf = NULL;
-void _elf_vwprintf() {
+__attribute__((constructor)) void _elfimplib_init_vwprintf() {
 load_dll_msvcrt();
-if (!_imp__vwprintf) {
 _imp__vwprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "vwprintf");
 }
+void _elfimplib_vwprintf() {
 asm("leave\njmp *%0" : : "r"(_imp__vwprintf));
 }
 
-void _elf_wcscat() asm("wcscat");
+void _elfimplib_wcscat() asm("wcscat");
 void *_imp__wcscat = NULL;
-void _elf_wcscat() {
+__attribute__((constructor)) void _elfimplib_init_wcscat() {
 load_dll_msvcrt();
-if (!_imp__wcscat) {
 _imp__wcscat = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcscat");
 }
+void _elfimplib_wcscat() {
 asm("leave\njmp *%0" : : "r"(_imp__wcscat));
 }
 
-void _elf_wcschr() asm("wcschr");
+void _elfimplib_wcschr() asm("wcschr");
 void *_imp__wcschr = NULL;
-void _elf_wcschr() {
+__attribute__((constructor)) void _elfimplib_init_wcschr() {
 load_dll_msvcrt();
-if (!_imp__wcschr) {
 _imp__wcschr = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcschr");
 }
+void _elfimplib_wcschr() {
 asm("leave\njmp *%0" : : "r"(_imp__wcschr));
 }
 
-void _elf_wcscmp() asm("wcscmp");
+void _elfimplib_wcscmp() asm("wcscmp");
 void *_imp__wcscmp = NULL;
-void _elf_wcscmp() {
+__attribute__((constructor)) void _elfimplib_init_wcscmp() {
 load_dll_msvcrt();
-if (!_imp__wcscmp) {
 _imp__wcscmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcscmp");
 }
+void _elfimplib_wcscmp() {
 asm("leave\njmp *%0" : : "r"(_imp__wcscmp));
 }
 
-void _elf_wcscoll() asm("wcscoll");
+void _elfimplib_wcscoll() asm("wcscoll");
 void *_imp__wcscoll = NULL;
-void _elf_wcscoll() {
+__attribute__((constructor)) void _elfimplib_init_wcscoll() {
 load_dll_msvcrt();
-if (!_imp__wcscoll) {
 _imp__wcscoll = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcscoll");
 }
+void _elfimplib_wcscoll() {
 asm("leave\njmp *%0" : : "r"(_imp__wcscoll));
 }
 
-void _elf_wcscpy() asm("wcscpy");
+void _elfimplib_wcscpy() asm("wcscpy");
 void *_imp__wcscpy = NULL;
-void _elf_wcscpy() {
+__attribute__((constructor)) void _elfimplib_init_wcscpy() {
 load_dll_msvcrt();
-if (!_imp__wcscpy) {
 _imp__wcscpy = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcscpy");
 }
+void _elfimplib_wcscpy() {
 asm("leave\njmp *%0" : : "r"(_imp__wcscpy));
 }
 
-void _elf_wcscspn() asm("wcscspn");
+void _elfimplib_wcscspn() asm("wcscspn");
 void *_imp__wcscspn = NULL;
-void _elf_wcscspn() {
+__attribute__((constructor)) void _elfimplib_init_wcscspn() {
 load_dll_msvcrt();
-if (!_imp__wcscspn) {
 _imp__wcscspn = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcscspn");
 }
+void _elfimplib_wcscspn() {
 asm("leave\njmp *%0" : : "r"(_imp__wcscspn));
 }
 
-void _elf_wcsftime() asm("wcsftime");
+void _elfimplib_wcsftime() asm("wcsftime");
 void *_imp__wcsftime = NULL;
-void _elf_wcsftime() {
+__attribute__((constructor)) void _elfimplib_init_wcsftime() {
 load_dll_msvcrt();
-if (!_imp__wcsftime) {
 _imp__wcsftime = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcsftime");
 }
+void _elfimplib_wcsftime() {
 asm("leave\njmp *%0" : : "r"(_imp__wcsftime));
 }
 
-void _elf_wcslen() asm("wcslen");
+void _elfimplib_wcslen() asm("wcslen");
 void *_imp__wcslen = NULL;
-void _elf_wcslen() {
+__attribute__((constructor)) void _elfimplib_init_wcslen() {
 load_dll_msvcrt();
-if (!_imp__wcslen) {
 _imp__wcslen = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcslen");
 }
+void _elfimplib_wcslen() {
 asm("leave\njmp *%0" : : "r"(_imp__wcslen));
 }
 
-void _elf_wcsncat() asm("wcsncat");
+void _elfimplib_wcsncat() asm("wcsncat");
 void *_imp__wcsncat = NULL;
-void _elf_wcsncat() {
+__attribute__((constructor)) void _elfimplib_init_wcsncat() {
 load_dll_msvcrt();
-if (!_imp__wcsncat) {
 _imp__wcsncat = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcsncat");
 }
+void _elfimplib_wcsncat() {
 asm("leave\njmp *%0" : : "r"(_imp__wcsncat));
 }
 
-void _elf_wcsncmp() asm("wcsncmp");
+void _elfimplib_wcsncmp() asm("wcsncmp");
 void *_imp__wcsncmp = NULL;
-void _elf_wcsncmp() {
+__attribute__((constructor)) void _elfimplib_init_wcsncmp() {
 load_dll_msvcrt();
-if (!_imp__wcsncmp) {
 _imp__wcsncmp = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcsncmp");
 }
+void _elfimplib_wcsncmp() {
 asm("leave\njmp *%0" : : "r"(_imp__wcsncmp));
 }
 
-void _elf_wcsncpy() asm("wcsncpy");
+void _elfimplib_wcsncpy() asm("wcsncpy");
 void *_imp__wcsncpy = NULL;
-void _elf_wcsncpy() {
+__attribute__((constructor)) void _elfimplib_init_wcsncpy() {
 load_dll_msvcrt();
-if (!_imp__wcsncpy) {
 _imp__wcsncpy = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcsncpy");
 }
+void _elfimplib_wcsncpy() {
 asm("leave\njmp *%0" : : "r"(_imp__wcsncpy));
 }
 
-void _elf_wcspbrk() asm("wcspbrk");
+void _elfimplib_wcspbrk() asm("wcspbrk");
 void *_imp__wcspbrk = NULL;
-void _elf_wcspbrk() {
+__attribute__((constructor)) void _elfimplib_init_wcspbrk() {
 load_dll_msvcrt();
-if (!_imp__wcspbrk) {
 _imp__wcspbrk = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcspbrk");
 }
+void _elfimplib_wcspbrk() {
 asm("leave\njmp *%0" : : "r"(_imp__wcspbrk));
 }
 
-void _elf_wcsrchr() asm("wcsrchr");
+void _elfimplib_wcsrchr() asm("wcsrchr");
 void *_imp__wcsrchr = NULL;
-void _elf_wcsrchr() {
+__attribute__((constructor)) void _elfimplib_init_wcsrchr() {
 load_dll_msvcrt();
-if (!_imp__wcsrchr) {
 _imp__wcsrchr = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcsrchr");
 }
+void _elfimplib_wcsrchr() {
 asm("leave\njmp *%0" : : "r"(_imp__wcsrchr));
 }
 
-void _elf_wcsspn() asm("wcsspn");
+void _elfimplib_wcsspn() asm("wcsspn");
 void *_imp__wcsspn = NULL;
-void _elf_wcsspn() {
+__attribute__((constructor)) void _elfimplib_init_wcsspn() {
 load_dll_msvcrt();
-if (!_imp__wcsspn) {
 _imp__wcsspn = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcsspn");
 }
+void _elfimplib_wcsspn() {
 asm("leave\njmp *%0" : : "r"(_imp__wcsspn));
 }
 
-void _elf_wcsstr() asm("wcsstr");
+void _elfimplib_wcsstr() asm("wcsstr");
 void *_imp__wcsstr = NULL;
-void _elf_wcsstr() {
+__attribute__((constructor)) void _elfimplib_init_wcsstr() {
 load_dll_msvcrt();
-if (!_imp__wcsstr) {
 _imp__wcsstr = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcsstr");
 }
+void _elfimplib_wcsstr() {
 asm("leave\njmp *%0" : : "r"(_imp__wcsstr));
 }
 
-void _elf_wcstod() asm("wcstod");
+void _elfimplib_wcstod() asm("wcstod");
 void *_imp__wcstod = NULL;
-void _elf_wcstod() {
+__attribute__((constructor)) void _elfimplib_init_wcstod() {
 load_dll_msvcrt();
-if (!_imp__wcstod) {
 _imp__wcstod = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcstod");
 }
+void _elfimplib_wcstod() {
 asm("leave\njmp *%0" : : "r"(_imp__wcstod));
 }
 
-void _elf_wcstok() asm("wcstok");
+void _elfimplib_wcstok() asm("wcstok");
 void *_imp__wcstok = NULL;
-void _elf_wcstok() {
+__attribute__((constructor)) void _elfimplib_init_wcstok() {
 load_dll_msvcrt();
-if (!_imp__wcstok) {
 _imp__wcstok = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcstok");
 }
+void _elfimplib_wcstok() {
 asm("leave\njmp *%0" : : "r"(_imp__wcstok));
 }
 
-void _elf_wcstol() asm("wcstol");
+void _elfimplib_wcstol() asm("wcstol");
 void *_imp__wcstol = NULL;
-void _elf_wcstol() {
+__attribute__((constructor)) void _elfimplib_init_wcstol() {
 load_dll_msvcrt();
-if (!_imp__wcstol) {
 _imp__wcstol = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcstol");
 }
+void _elfimplib_wcstol() {
 asm("leave\njmp *%0" : : "r"(_imp__wcstol));
 }
 
-void _elf_wcstombs() asm("wcstombs");
+void _elfimplib_wcstombs() asm("wcstombs");
 void *_imp__wcstombs = NULL;
-void _elf_wcstombs() {
+__attribute__((constructor)) void _elfimplib_init_wcstombs() {
 load_dll_msvcrt();
-if (!_imp__wcstombs) {
 _imp__wcstombs = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcstombs");
 }
+void _elfimplib_wcstombs() {
 asm("leave\njmp *%0" : : "r"(_imp__wcstombs));
 }
 
-void _elf_wcstoul() asm("wcstoul");
+void _elfimplib_wcstoul() asm("wcstoul");
 void *_imp__wcstoul = NULL;
-void _elf_wcstoul() {
+__attribute__((constructor)) void _elfimplib_init_wcstoul() {
 load_dll_msvcrt();
-if (!_imp__wcstoul) {
 _imp__wcstoul = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcstoul");
 }
+void _elfimplib_wcstoul() {
 asm("leave\njmp *%0" : : "r"(_imp__wcstoul));
 }
 
-void _elf_wcsxfrm() asm("wcsxfrm");
+void _elfimplib_wcsxfrm() asm("wcsxfrm");
 void *_imp__wcsxfrm = NULL;
-void _elf_wcsxfrm() {
+__attribute__((constructor)) void _elfimplib_init_wcsxfrm() {
 load_dll_msvcrt();
-if (!_imp__wcsxfrm) {
 _imp__wcsxfrm = (void *) _elf_GetProcAddress(_dll_msvcrt, "wcsxfrm");
 }
+void _elfimplib_wcsxfrm() {
 asm("leave\njmp *%0" : : "r"(_imp__wcsxfrm));
 }
 
-void _elf_wctomb() asm("wctomb");
+void _elfimplib_wctomb() asm("wctomb");
 void *_imp__wctomb = NULL;
-void _elf_wctomb() {
+__attribute__((constructor)) void _elfimplib_init_wctomb() {
 load_dll_msvcrt();
-if (!_imp__wctomb) {
 _imp__wctomb = (void *) _elf_GetProcAddress(_dll_msvcrt, "wctomb");
 }
+void _elfimplib_wctomb() {
 asm("leave\njmp *%0" : : "r"(_imp__wctomb));
 }
 
-void _elf_wprintf() asm("wprintf");
+void _elfimplib_wprintf() asm("wprintf");
 void *_imp__wprintf = NULL;
-void _elf_wprintf() {
+__attribute__((constructor)) void _elfimplib_init_wprintf() {
 load_dll_msvcrt();
-if (!_imp__wprintf) {
 _imp__wprintf = (void *) _elf_GetProcAddress(_dll_msvcrt, "wprintf");
 }
+void _elfimplib_wprintf() {
 asm("leave\njmp *%0" : : "r"(_imp__wprintf));
 }
 
-void _elf_wscanf() asm("wscanf");
+void _elfimplib_wscanf() asm("wscanf");
 void *_imp__wscanf = NULL;
-void _elf_wscanf() {
+__attribute__((constructor)) void _elfimplib_init_wscanf() {
 load_dll_msvcrt();
-if (!_imp__wscanf) {
 _imp__wscanf = (void *) _elf_GetProcAddress(_dll_msvcrt, "wscanf");
 }
+void _elfimplib_wscanf() {
 asm("leave\njmp *%0" : : "r"(_imp__wscanf));
 }
 

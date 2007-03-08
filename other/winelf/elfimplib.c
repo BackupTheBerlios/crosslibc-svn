@@ -111,7 +111,7 @@ int main(int argc, char **argv)
         llen -= 8;
         
         /* check for sane names */
-        for (i = 8; i < llen; i++) {
+        for (i = 0; i < llen; i++) {
             if ((line[i] < 'A' || line[i] > 'Z') &&
                 (line[i] < 'a' || line[i] > 'z') &&
                 (line[i] < '0' || line[i] > '9') &&
@@ -126,25 +126,30 @@ int main(int argc, char **argv)
             unmangled = line;
         }
         
-        /* check for functions that need to be ignored */
-        if (!strcmp(line, "LoadLibraryA") ||
-            !strcmp(line, "GetModuleHandleA") ||
-            !strcmp(line, "GetProcAddress"))
-            continue;
-        
         /* write out the loader */
-        fprintf(cfile, "void _elf_%s() asm(\"%s\");\n"
+        fprintf(cfile, "void _elfimplib_%s() asm(\"%s\");\n"
                 "void *_imp__%s = NULL;\n"
-                "void _elf_%s() {\n"
+                "__attribute__((constructor)) void _elfimplib_init_%s() {\n"
                 "load_dll_%s();\n"
-                "if (!_imp__%s) {\n"
                 "_imp__%s = (void *) _elf_GetProcAddress(_dll_%s, \"%s\");\n"
                 "}\n"
+                "void _elfimplib_%s() {\n"
                 "asm(\"leave\\njmp *%0\" : : \"r\"(_imp__%s));\n"
                 "}\n"
                 "\n",
-                line, unmangled, line, line, argv[2], line,
-                line, argv[2], line, line);
+                line, unmangled, line, line, argv[2], line, argv[2], line,
+                line, line);
+        /* fprintf(cfile, "void _elfimplib_%s() asm(\"%s\");\n"
+                "void *_imp__%s = NULL;\n"
+                "void _elfimplib_%s() {\n"
+                "load_dll_%s();\n"
+                "if (!_imp__%s)\n"
+                "_imp__%s = (void *) _elf_GetProcAddress(_dll_%s, \"%s\");\n"
+                "asm(\"leave\\njmp *%0\" : : \"r\"(_imp__%s));\n"
+                "}\n"
+                "\n",
+                line, unmangled, line, line, argv[2], line, line, argv[2],
+                line, line); */
     }
     
     fclose(cfile);

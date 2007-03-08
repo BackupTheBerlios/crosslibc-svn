@@ -10,7 +10,7 @@ RANLIB=$(CROSS)ranlib
 
 LIBC_OBJS=crt1.o kernel32.o msvcrt.o
 
-all: crt0.o libc.a
+all: crt0.o crtn.o libc.a
 
 libc.a: $(LIBC_OBJS)
 	$(AR) rc libc.a $(LIBC_OBJS)
@@ -26,7 +26,7 @@ libc.a: $(LIBC_OBJS)
 
 install:
 	mkdir -p $(PREFIX)/$(TARGET)/lib
-	cp -f crt0.o libc.a $(PREFIX)/$(TARGET)/lib
+	cp -f crt0.o crtn.o libc.a $(PREFIX)/$(TARGET)/lib
 
 clean:
-	rm -f crt0.o libc.a $(LIBC_OBJS)
+	rm -f crt0.o crtn.o libc.a $(LIBC_OBJS)
