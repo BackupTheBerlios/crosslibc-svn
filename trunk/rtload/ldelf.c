@@ -39,6 +39,32 @@ struct ElfFile {
 #define NEEDED_SZ 255
     Elf32_Word needed[NEEDED_SZ];
     int neededC;
+    
+    /* assorted dynamic sections */
+    void *pltgot, *hash;
+    
+    char *strtab;
+    Elf32_Word strsz;
+    
+    Elf32_Sym *symtab;
+    Elf32_Word symsz, syment;
+    
+    Elf32_Rel *reltab;
+    Elf32_Word relsz, relent;
+    
+    Elf32_Rela *relatab;
+    Elf32_Word relasz, relaent;
+    
+    void *init, *fini;
+    
+    Elf32_Word rpath;
+    
+    char symbolic; /* bool */
+    
+    void *pltrel;
+    Elf32_Word pltrelsz;
+    
+    void *jmprel;
 };
 
 void loadELF(void *prog, size_t psz,

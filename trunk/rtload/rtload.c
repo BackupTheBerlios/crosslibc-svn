@@ -54,15 +54,66 @@ void (*_xact_free)(void *) = free;
 
 int rtload(int argc, char **argv, char **envp);
 
+#ifdef __WIN32
+
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+
+void toPseudoHex(unsigned char c, unsigned char h[2])
+{
+    h[0] = ((c & 0xF0) >> 4) + 'A';
+    h[1] = (c & 0x0F) + 'A';
+}
+
+void ptrToPseudoHex(void *ptr, unsigned char *out)
+{
+    int i;
+    union {
+        void *vptr;
+        unsigned char cbuf[sizeof(void *)];
+    } view;
+    view.vptr = ptr;
+    
+    for (i = 0; i < sizeof(void *); i++) {
+        toPseudoHex(view.cbuf[i], out + (i * 2));
+    }
+}
+#endif
+
 int main(int argc, char **argv, char **envp)
 {
     /* just put argv on the stack, then call the real loader */
     int i;
     char *cptr;
     void **passargs;
+#ifdef __WIN32
+    char *envLoadLibrary, *envGetModuleHandle, *envGetProcAddress;
+#endif
     
     argc--;
     argv++;
+    
+#ifdef __WIN32
+    /* add addresses of useful functions as environment variables */
+    envLoadLibrary = (char *) alloca(sizeof(void *) * 2 + 13);
+    if (!envLoadLibrary) { perror("alloca"); return 1; }
+    envGetModuleHandle = (char *) alloca(sizeof(void *) * 2 + 17);
+    if (!envGetModuleHandle) { perror("alloca"); return 1; }
+    envGetProcAddress = (char *) alloca(sizeof(void *) * 2 + 16);
+    if (!envGetProcAddress) { perror("alloca"); return 1; }
+    
+    strcpy(envLoadLibrary, "LOADLIBRARY=");
+    envLoadLibrary[sizeof(void *) * 2 + 12] = '\0';
+    ptrToPseudoHex((void *) LoadLibraryA, (unsigned char *) envLoadLibrary + 12);
+    
+    strcpy(envGetModuleHandle, "GETMODULEHANDLE=");
+    envGetModuleHandle[sizeof(void *) * 2 + 16] = '\0';
+    ptrToPseudoHex((void *) GetModuleHandleA, (unsigned char *) envGetModuleHandle + 16);
+    
+    strcpy(envGetProcAddress, "GETPROCADDRESS=");
+    envGetProcAddress[sizeof(void *) * 2 + 15] = '\0';
+    ptrToPseudoHex((void *) GetProcAddress, (unsigned char *) envGetProcAddress + 15);
+#endif
     
     for (i = 0; envp[i]; i++) {
         cptr = (char *) alloca(strlen(envp[i]) + 1);
@@ -86,6 +137,9 @@ int main(int argc, char **argv, char **envp)
     
     /* push it all on in the expected way */
     for (i = 0; envp[i]; i++);
+#ifdef __WIN32
+    i += 3;
+#endif
     passargs = (void **) alloca((i + argc + 2) * sizeof(void *));
     
     passargs[0] = (void *) argc;
@@ -95,7 +149,14 @@ int main(int argc, char **argv, char **envp)
     for (i = 0; envp[i]; i++) {
         passargs[i + argc + 2] = envp[i];
     }
+#ifdef __WIN32
+    passargs[i + argc + 2] = envLoadLibrary;
+    passargs[i + argc + 3] = envGetModuleHandle;
+    passargs[i + argc + 4] = envGetProcAddress;
+    passargs[i + argc + 5] = '\0';
+#else
     passargs[i + argc + 2] = NULL;
+#endif
     
     return rtload(argc, argv, envp);
 }
