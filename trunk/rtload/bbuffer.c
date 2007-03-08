@@ -38,6 +38,7 @@ void  *(*_xact_mmap)(void *, size_t, int, int, int,
 { \
     asm( \
          "push %%ebp;\n" \
+         "push %%ebx;\n" \
          "subl $24, %%esp;\n" /* get space for the call */ \
          \
          "movl %1, %%eax;\n" \
@@ -66,12 +67,13 @@ void  *(*_xact_mmap)(void *, size_t, int, int, int,
          \
          "movl %%ebp, %%esp;\n" \
          "addl $24, %%esp;\n" \
+         "pop %%ebx;\n" \
          "pop %%ebp;\n" /* get things back to normal */ \
          \
          "movl %%eax, %0;\n" /* save result */ \
          : "=g"(ret) \
          : "g"(buf), "g"(sz), "g"(prot), "g"(flags), "g"(fd), "g"(offset) \
-         : "eax", "ebx"); \
+         : "eax"); \
 }
 
 
@@ -115,7 +117,7 @@ void  *(*_xact_mmap)(void *, size_t, int, int, int,
          "movl %%eax, %0;\n" /* save result */ \
          : "=g"(ret) \
          : "g"(buf), "g"(sz), "g"(prot), "g"(flags), "g"(fd), "g"(offset) \
-         : "eax", "ebx"); \
+         : "eax"); \
 }
 
 
