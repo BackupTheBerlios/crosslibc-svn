@@ -4,6 +4,7 @@ PREFIX=/usr/local
 
 CC=$(TARGET)-gcc
 HOSTCC=gcc
+EXEEXT=
 CFLAGS=
 AR=$(TARGET)-ar
 RANLIB=$(TARGET)-ranlib
@@ -1736,14 +1737,14 @@ CRTDLL_OBJS= \
 
 LIBC_OBJS=$(MSVCRT_OBJS) $(KERNEL32_OBJS) $(CRTDLL_OBJS)
 
-all: crt0.o crt1.o crtn.o libc.a elfimplib
+all: crt0.o crt1.o crtn.o libc.a elfimplib$(EXEEXT)
 
 libc.a: $(LIBC_OBJS)
 	$(AR) rc libc.a $(LIBC_OBJS)
 	$(RANLIB) libc.a
 
-elfimplib: elfimplib.c
-	$(HOSTCC) elfimplib.c -o elfimplib
+elfimplib$(EXEEXT): elfimplib.c
+	$(HOSTCC) elfimplib.c -o elfimplib$(EXEEXT)
 
 .SUFFIXES: .c .s .o
 
@@ -1757,10 +1758,10 @@ install:
 	mkdir -p $(PREFIX)/$(TARGET)/lib
 	mkdir -p $(PREFIX)/bin
 	cp -f crt0.o crt1.o crtn.o libc.a $(PREFIX)/$(TARGET)/lib
-	cp -f elfimplib $(PREFIX)/bin
+	cp -f elfimplib$(EXEEXT) $(PREFIX)/bin
 	$(AR) rc $(PREFIX)/$(TARGET)/lib/libg.a
 	$(RANLIB) $(PREFIX)/$(TARGET)/lib/libg.a
 
 clean:
 	rm -f crt0.o crt1.o crtn.o libc.a $(LIBC_OBJS)
-	rm -f elfimplib
+	rm -f elfimplib$(EXEEXT)
