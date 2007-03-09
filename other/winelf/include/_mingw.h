@@ -23,6 +23,11 @@
 #ifndef __MINGW_H
 #define __MINGW_H
 
+/* Bug in the MingW headers */
+#ifdef __ELF__
+#define _imp____mbcur_max _imp____mb_cur_max
+#endif
+
 /* These are defined by the user (or the compiler)
    to specify how identifiers are imported from a DLL.
 

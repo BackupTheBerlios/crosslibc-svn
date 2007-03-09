@@ -1,5 +1,5 @@
 #include "msvcrt.h"
-void _elfimplib__isctype() asm("isctype");
+void _elfimplib__isctype() asm("_isctype");
 void *_imp___isctype = NULL;
 __attribute__((constructor)) void _elfimplib_init__isctype() {
 load_dll_msvcrt();

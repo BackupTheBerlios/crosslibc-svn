@@ -136,9 +136,18 @@ extern _CRTIMP int* __cdecl	__p__daylight (void);
 extern _CRTIMP long* __cdecl	__p__timezone (void);
 extern _CRTIMP char** __cdecl	__p__tzname (void);
 
+#ifndef __DECLSPEC_SUPPORTED
+extern int *_imp___daylight;
+extern long *_imp___timezone;
+extern char **_imp___tzname;
+#define _daylight (*_imp___daylight)
+#define _timezone (*_imp___timezone)
+#define _tzname (*_imp___tzname)
+#else
 __MINGW_IMPORT int	_daylight;
 __MINGW_IMPORT long	_timezone;
 __MINGW_IMPORT char 	*_tzname[2];
+#endif
 
 #else /* not __MSVCRT (ie. crtdll) */
 
@@ -170,9 +179,18 @@ __MINGW_IMPORT char*	_tzname[2];
 #ifdef __MSVCRT__
 
 /* These go in the oldnames import library for MSVCRT. */
+#ifndef __DECLSPEC_SUPPORTED
+extern int *_imp__daylight;
+extern long *_imp__timezone;
+extern char **_imp__tzname;
+#define daylight (*_imp__daylight)
+#define timezone (*_imp__timezone)
+#define tzname (*_imp__tzname)
+#else
 __MINGW_IMPORT int	daylight;
 __MINGW_IMPORT long	timezone;
 __MINGW_IMPORT char 	*tzname[2];
+#endif
 
 #else /* not __MSVCRT__ */
 

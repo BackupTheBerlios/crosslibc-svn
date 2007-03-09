@@ -1,5 +1,5 @@
 #include "msvcrt.h"
-void _elfimplib__exit() asm("exit");
+void _elfimplib__exit() asm("_exit");
 void *_imp___exit = NULL;
 __attribute__((constructor)) void _elfimplib_init__exit() {
 load_dll_msvcrt();

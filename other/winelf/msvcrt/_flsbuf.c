@@ -1,5 +1,5 @@
 #include "msvcrt.h"
-void _elfimplib__flsbuf() asm("flsbuf");
+void _elfimplib__flsbuf() asm("_flsbuf");
 void *_imp___flsbuf = NULL;
 __attribute__((constructor)) void _elfimplib_init__flsbuf() {
 load_dll_msvcrt();

@@ -1,5 +1,5 @@
 #include "msvcrt.h"
-void _elfimplib__errno() asm("errno");
+void _elfimplib__errno() asm("_errno");
 void *_imp___errno = NULL;
 __attribute__((constructor)) void _elfimplib_init__errno() {
 load_dll_msvcrt();
