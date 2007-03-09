@@ -1731,11 +1731,7 @@ KERNEL32_OBJS= \
   kernel32/WTSGetActiveConsoleSessionId.o \
   kernel32/ZombifyActCtx.o
 
-CRTDLL_OBJS= \
-  crtdll/dll_crtdll.o \
-  crtdll/__mb_cur_max_dll.o
-
-LIBC_OBJS=$(MSVCRT_OBJS) $(KERNEL32_OBJS) $(CRTDLL_OBJS)
+LIBC_OBJS=$(MSVCRT_OBJS) $(KERNEL32_OBJS)
 
 all: crt0.o crt1.o crtn.o libc.a elfimplib$(EXEEXT)
 
