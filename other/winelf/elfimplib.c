@@ -177,5 +177,25 @@ int main(int argc, char **argv)
     
     pclose(objdump);
     
+    /* generate a useful Makefile */
+    snprintf(fname, FNAMELEN, "%s/Makefile", argv[2]);
+    cfile = fopen(fname, "w");
+    if (!cfile) {
+        perror(fname);
+        return 1;
+    }
+    fprintf(cfile, "CC=i686-win32elf-gcc\n"
+            "CFLAGS=\n"
+            "AR=i686-win32elf-ar\n"
+            "RANLIB=i686-win32elf-ranlib\n"
+            "all: lib%s.a\n"
+            "\n"
+            "lib%s.a:\n"
+            "\t$CC $CFLAGS -c *.c\n"
+            "\t$AR rc lib%s.a *.o\n"
+            "\t$RANLIB lib%s.a\n",
+            argv[2], argv[2], argv[2], argv[2]);
+    fclose(cfile);
+    
     return 0;
 }

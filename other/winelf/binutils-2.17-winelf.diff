@@ -1,0 +1,47 @@
+diff -ruN binutils-2.17/bfd/config.bfd binutils-2.17-winelf/bfd/config.bfd
+--- binutils-2.17/bfd/config.bfd	2006-04-05 05:41:57.000000000 -0700
++++ binutils-2.17-winelf/bfd/config.bfd	2007-03-09 10:59:13.000000000 -0800
+@@ -448,7 +448,8 @@
+     ;;
+   i[3-7]86-*-sysv4* | i[3-7]86-*-unixware* | \
+   i[3-7]86-*-elf | i[3-7]86-*-sco3.2v5* | \
+-  i[3-7]86-*-dgux* | i[3-7]86-*-sysv5*)
++  i[3-7]86-*-dgux* | i[3-7]86-*-sysv5* | \
++  i[3-7]86-*-win32elf*)
+     targ_defvec=bfd_elf32_i386_vec
+     targ_selvecs=i386coff_vec
+     ;;
+diff -ruN binutils-2.17/config.sub binutils-2.17-winelf/config.sub
+--- binutils-2.17/config.sub	2006-01-16 09:34:37.000000000 -0800
++++ binutils-2.17-winelf/config.sub	2007-03-09 11:04:45.000000000 -0800
+@@ -1206,7 +1206,7 @@
+ 	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
+ 	      | -udi* | -eabi* | -lites* | -ieee* | -go32* | -aux* \
+ 	      | -chorusos* | -chorusrdb* \
+-	      | -cygwin* | -pe* | -psos* | -moss* | -proelf* | -rtems* \
++	      | -cygwin* | -pe* | -psos* | -moss* | -proelf* | -rtems* | -win32elf* \
+ 	      | -mingw32* | -linux-gnu* | -linux-newlib* | -linux-uclibc* \
+ 	      | -uxpv* | -beos* | -mpeix* | -udk* \
+ 	      | -interix* | -uwin* | -mks* | -rhapsody* | -darwin* | -opened* \
+diff -ruN binutils-2.17/gas/configure.tgt binutils-2.17-winelf/gas/configure.tgt
+--- binutils-2.17/gas/configure.tgt	2006-04-05 05:41:57.000000000 -0700
++++ binutils-2.17-winelf/gas/configure.tgt	2007-03-09 11:00:48.000000000 -0800
+@@ -210,6 +210,7 @@
+   i386-*-cygwin*)			fmt=coff em=pe ;;
+   i386-*-interix*)			fmt=coff em=interix ;;
+   i386-*-mingw32*)			fmt=coff em=pe ;;
++  i386-*-win32elf*)			fmt=elf ;;
+   i386-*-nto-qnx*)			fmt=elf ;;
+   i386-*-*nt*)				fmt=coff em=pe ;;
+   i386-*-chaos)				fmt=elf ;;
+diff -ruN binutils-2.17/ld/configure.tgt binutils-2.17-winelf/ld/configure.tgt
+--- binutils-2.17/ld/configure.tgt	2006-04-05 05:41:57.000000000 -0700
++++ binutils-2.17-winelf/ld/configure.tgt	2007-03-09 11:16:10.000000000 -0800
+@@ -219,6 +219,7 @@
+ 			targ_extra_ofiles="deffilep.o pe-dll.o" ;;
+ i[3-7]86-*-interix*)	targ_emul=i386pe_posix;
+  			targ_extra_ofiles="deffilep.o pe-dll.o" ;;
++i[3-7]86-*-win32elf*)   targ_emul=elf_i386 ;;
+ i[3-7]86-*-beospe*)	targ_emul=i386beos ;;
+ i[3-7]86-*-beos*)	targ_emul=elf_i386_be ;;
+ i[3-7]86-*-vxworks*)	targ_emul=elf_i386_vxworks ;;

@@ -1,13 +1,12 @@
-CROSS=i686-elf-
-TARGET=i686-elf
+TARGET=i686-win32elf
 
 PREFIX=/usr/local
 
-CC=$(CROSS)gcc
-NATIVECC=gcc
+CC=$(TARGET)-gcc
+HOSTCC=gcc
 CFLAGS=
-AR=$(CROSS)ar
-RANLIB=$(CROSS)ranlib
+AR=$(TARGET)-ar
+RANLIB=$(TARGET)-ranlib
 
 MSVCRT_OBJS= \
   msvcrt/_abnormal_termination.o \
@@ -1731,19 +1730,20 @@ KERNEL32_OBJS= \
   kernel32/WTSGetActiveConsoleSessionId.o \
   kernel32/ZombifyActCtx.o
 
-LIBC_OBJS=crt1.o $(MSVCRT_OBJS) $(KERNEL32_OBJS)
+CRTDLL_OBJS= \
+  crtdll/dll_crtdll.o \
+  crtdll/__mb_cur_max_dll.o
 
-all: crt0.o crtn.o libc.a specs
+LIBC_OBJS=$(MSVCRT_OBJS) $(KERNEL32_OBJS) $(CRTDLL_OBJS)
+
+all: crt0.o crt1.o crtn.o libc.a elfimplib
 
 libc.a: $(LIBC_OBJS)
 	$(AR) rc libc.a $(LIBC_OBJS)
 	$(RANLIB) libc.a
 
-specs: fixspecs
-	./fixspecs
-
-fixspecs: fixspecs.c
-	$(NATIVECC) $(CFLAGS) $(LDFLAGS) fixspecs.c -o fixspecs
+elfimplib: elfimplib.c
+	$(HOSTCC) elfimplib.c -o elfimplib
 
 .SUFFIXES: .c .s .o
 
@@ -1755,8 +1755,12 @@ fixspecs: fixspecs.c
 
 install:
 	mkdir -p $(PREFIX)/$(TARGET)/lib
-	cp -f specs $(PREFIX)/lib/gcc/$(TARGET)/`$(CC) -dumpversion`/specs
-	cp -f crt0.o crtn.o libc.a $(PREFIX)/$(TARGET)/lib
+	mkdir -p $(PREFIX)/bin
+	cp -f crt0.o crt1.o crtn.o libc.a $(PREFIX)/$(TARGET)/lib
+	cp -f elfimplib $(PREFIX)/bin
+	$(AR) rc $(PREFIX)/$(TARGET)/lib/libg.a
+	$(RANLIB) $(PREFIX)/$(TARGET)/lib/libg.a
 
 clean:
-	rm -f crt0.o crtn.o libc.a specs fixspecs $(LIBC_OBJS)
+	rm -f crt0.o crt1.o crtn.o libc.a $(LIBC_OBJS)
+	rm -f elfimplib

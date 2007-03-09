@@ -1,0 +1,40 @@
+This is an environment for producing valid ELF binaries for Windows.
+
+[This document uses /opt/crossc/i686-winelf as an example prefix]
+
+First you need binutils and gcc compiled for i686-win32elf, like so:
+
+binutils (with binutils-<version>-winelf.diff applied):
+../configure --prefix=/opt/crossc/i686-winelf --target=i686-win32elf
+make all install
+
+gcc (with gcc-<version>-winelf.diff applied):
+../configure --prefix=/opt/crossc/i686-winelf --target=i686-win32elf \
+ --without-headers --with-newlib --disable-threads \
+ --disable-shared --enable-static --enable-languages=c \
+ --disable-libssp
+make all install
+
+
+Then compile and install libc here:
+make all install PREFIX=/opt/crossc/i686-winelf
+
+And remove a broken header from the installation:
+rm -f /opt/crossc/i686-winelf/lib/gcc/i686-mingw32/<version>/include/limits.h
+
+
+The ELF binaries can be run with rtload.exe, provided in crosslibc.
+
+
+For reference, the GCC configure flags:
+
+These allow the compiler to build without a C library:
+--without-headers
+--with-newlib
+--disable-threads
+--disable-shared
+--disable-static
+--enable-languages=c
+--disable-libssp
+
+--with-stabs is to fix the broken default debugging selection.
