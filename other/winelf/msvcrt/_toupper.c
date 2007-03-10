@@ -9,3 +9,8 @@ void _elfimplib__toupper() {
 asm("leave\njmp *%0" : : "r"(_imp___toupper));
 }
 
+void _elfimplibmang__toupper() asm("_toupper");
+void _elfimplibmang__toupper() {
+asm("leave\njmp *%0" : : "r"(_imp___toupper));
+}
+

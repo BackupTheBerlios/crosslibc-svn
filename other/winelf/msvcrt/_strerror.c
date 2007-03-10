@@ -9,3 +9,8 @@ void _elfimplib__strerror() {
 asm("leave\njmp *%0" : : "r"(_imp___strerror));
 }
 
+void _elfimplibmang__strerror() asm("_strerror");
+void _elfimplibmang__strerror() {
+asm("leave\njmp *%0" : : "r"(_imp___strerror));
+}
+

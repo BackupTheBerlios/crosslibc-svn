@@ -9,3 +9,8 @@ void _elfimplib__chsize() {
 asm("leave\njmp *%0" : : "r"(_imp___chsize));
 }
 
+void _elfimplibmang__chsize() asm("_chsize");
+void _elfimplibmang__chsize() {
+asm("leave\njmp *%0" : : "r"(_imp___chsize));
+}
+

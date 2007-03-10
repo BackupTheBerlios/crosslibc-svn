@@ -9,3 +9,8 @@ void _elfimplib__wmktemp() {
 asm("leave\njmp *%0" : : "r"(_imp___wmktemp));
 }
 
+void _elfimplibmang__wmktemp() asm("_wmktemp");
+void _elfimplibmang__wmktemp() {
+asm("leave\njmp *%0" : : "r"(_imp___wmktemp));
+}
+

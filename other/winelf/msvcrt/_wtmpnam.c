@@ -9,3 +9,8 @@ void _elfimplib__wtmpnam() {
 asm("leave\njmp *%0" : : "r"(_imp___wtmpnam));
 }
 
+void _elfimplibmang__wtmpnam() asm("_wtmpnam");
+void _elfimplibmang__wtmpnam() {
+asm("leave\njmp *%0" : : "r"(_imp___wtmpnam));
+}
+

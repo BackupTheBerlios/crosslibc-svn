@@ -9,3 +9,8 @@ void _elfimplib__popen() {
 asm("leave\njmp *%0" : : "r"(_imp___popen));
 }
 
+void _elfimplibmang__popen() asm("_popen");
+void _elfimplibmang__popen() {
+asm("leave\njmp *%0" : : "r"(_imp___popen));
+}
+

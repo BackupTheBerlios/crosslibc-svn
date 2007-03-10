@@ -9,3 +9,8 @@ void _elfimplib___p__fmode() {
 asm("leave\njmp *%0" : : "r"(_imp____p__fmode));
 }
 
+void _elfimplibmang___p__fmode() asm("__p__fmode");
+void _elfimplibmang___p__fmode() {
+asm("leave\njmp *%0" : : "r"(_imp____p__fmode));
+}
+

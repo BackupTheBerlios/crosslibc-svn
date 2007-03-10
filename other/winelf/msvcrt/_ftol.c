@@ -9,3 +9,8 @@ void _elfimplib__ftol() {
 asm("leave\njmp *%0" : : "r"(_imp___ftol));
 }
 
+void _elfimplibmang__ftol() asm("_ftol");
+void _elfimplibmang__ftol() {
+asm("leave\njmp *%0" : : "r"(_imp___ftol));
+}
+

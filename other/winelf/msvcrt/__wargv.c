@@ -9,3 +9,8 @@ void _elfimplib___wargv() {
 asm("leave\njmp *%0" : : "r"(_imp____wargv));
 }
 
+void _elfimplibmang___wargv() asm("__wargv");
+void _elfimplibmang___wargv() {
+asm("leave\njmp *%0" : : "r"(_imp____wargv));
+}
+

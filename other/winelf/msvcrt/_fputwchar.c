@@ -9,3 +9,8 @@ void _elfimplib__fputwchar() {
 asm("leave\njmp *%0" : : "r"(_imp___fputwchar));
 }
 
+void _elfimplibmang__fputwchar() asm("_fputwchar");
+void _elfimplibmang__fputwchar() {
+asm("leave\njmp *%0" : : "r"(_imp___fputwchar));
+}
+

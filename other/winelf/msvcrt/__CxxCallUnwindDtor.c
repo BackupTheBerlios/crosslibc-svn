@@ -9,3 +9,8 @@ void _elfimplib___CxxCallUnwindDtor() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxCallUnwindDtor));
 }
 
+void _elfimplibmang___CxxCallUnwindDtor() asm("__CxxCallUnwindDtor");
+void _elfimplibmang___CxxCallUnwindDtor() {
+asm("leave\njmp *%0" : : "r"(_imp____CxxCallUnwindDtor));
+}
+

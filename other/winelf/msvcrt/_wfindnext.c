@@ -9,3 +9,8 @@ void _elfimplib__wfindnext() {
 asm("leave\njmp *%0" : : "r"(_imp___wfindnext));
 }
 
+void _elfimplibmang__wfindnext() asm("_wfindnext");
+void _elfimplibmang__wfindnext() {
+asm("leave\njmp *%0" : : "r"(_imp___wfindnext));
+}
+

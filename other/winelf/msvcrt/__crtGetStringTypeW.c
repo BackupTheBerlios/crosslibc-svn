@@ -9,3 +9,8 @@ void _elfimplib___crtGetStringTypeW() {
 asm("leave\njmp *%0" : : "r"(_imp____crtGetStringTypeW));
 }
 
+void _elfimplibmang___crtGetStringTypeW() asm("__crtGetStringTypeW");
+void _elfimplibmang___crtGetStringTypeW() {
+asm("leave\njmp *%0" : : "r"(_imp____crtGetStringTypeW));
+}
+

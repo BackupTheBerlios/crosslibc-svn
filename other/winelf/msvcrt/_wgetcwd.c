@@ -9,3 +9,8 @@ void _elfimplib__wgetcwd() {
 asm("leave\njmp *%0" : : "r"(_imp___wgetcwd));
 }
 
+void _elfimplibmang__wgetcwd() asm("_wgetcwd");
+void _elfimplibmang__wgetcwd() {
+asm("leave\njmp *%0" : : "r"(_imp___wgetcwd));
+}
+

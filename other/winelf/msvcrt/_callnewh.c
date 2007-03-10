@@ -9,3 +9,8 @@ void _elfimplib__callnewh() {
 asm("leave\njmp *%0" : : "r"(_imp___callnewh));
 }
 
+void _elfimplibmang__callnewh() asm("_callnewh");
+void _elfimplibmang__callnewh() {
+asm("leave\njmp *%0" : : "r"(_imp___callnewh));
+}
+

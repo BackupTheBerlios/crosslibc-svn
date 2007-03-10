@@ -9,3 +9,8 @@ void _elfimplib___threadid() {
 asm("leave\njmp *%0" : : "r"(_imp____threadid));
 }
 
+void _elfimplibmang___threadid() asm("__threadid");
+void _elfimplibmang___threadid() {
+asm("leave\njmp *%0" : : "r"(_imp____threadid));
+}
+

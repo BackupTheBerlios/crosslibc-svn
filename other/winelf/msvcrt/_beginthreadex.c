@@ -9,3 +9,8 @@ void _elfimplib__beginthreadex() {
 asm("leave\njmp *%0" : : "r"(_imp___beginthreadex));
 }
 
+void _elfimplibmang__beginthreadex() asm("_beginthreadex");
+void _elfimplibmang__beginthreadex() {
+asm("leave\njmp *%0" : : "r"(_imp___beginthreadex));
+}
+

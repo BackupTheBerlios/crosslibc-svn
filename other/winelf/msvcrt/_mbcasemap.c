@@ -9,3 +9,8 @@ void _elfimplib__mbcasemap() {
 asm("leave\njmp *%0" : : "r"(_imp___mbcasemap));
 }
 
+void _elfimplibmang__mbcasemap() asm("_mbcasemap");
+void _elfimplibmang__mbcasemap() {
+asm("leave\njmp *%0" : : "r"(_imp___mbcasemap));
+}
+

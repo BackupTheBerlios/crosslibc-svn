@@ -9,3 +9,8 @@ void _elfimplib__chgsign() {
 asm("leave\njmp *%0" : : "r"(_imp___chgsign));
 }
 
+void _elfimplibmang__chgsign() asm("_chgsign");
+void _elfimplibmang__chgsign() {
+asm("leave\njmp *%0" : : "r"(_imp___chgsign));
+}
+

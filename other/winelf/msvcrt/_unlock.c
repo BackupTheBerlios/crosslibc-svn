@@ -9,3 +9,8 @@ void _elfimplib__unlock() {
 asm("leave\njmp *%0" : : "r"(_imp___unlock));
 }
 
+void _elfimplibmang__unlock() asm("_unlock");
+void _elfimplibmang__unlock() {
+asm("leave\njmp *%0" : : "r"(_imp___unlock));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib___RTtypeid() {
 asm("leave\njmp *%0" : : "r"(_imp____RTtypeid));
 }
 
+void _elfimplibmang___RTtypeid() asm("__RTtypeid");
+void _elfimplibmang___RTtypeid() {
+asm("leave\njmp *%0" : : "r"(_imp____RTtypeid));
+}
+

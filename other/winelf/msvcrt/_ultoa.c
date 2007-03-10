@@ -9,3 +9,8 @@ void _elfimplib__ultoa() {
 asm("leave\njmp *%0" : : "r"(_imp___ultoa));
 }
 
+void _elfimplibmang__ultoa() asm("_ultoa");
+void _elfimplibmang__ultoa() {
+asm("leave\njmp *%0" : : "r"(_imp___ultoa));
+}
+

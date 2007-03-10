@@ -9,3 +9,8 @@ void _elfimplib__ismbcsymbol() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcsymbol));
 }
 
+void _elfimplibmang__ismbcsymbol() asm("_ismbcsymbol");
+void _elfimplibmang__ismbcsymbol() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbcsymbol));
+}
+

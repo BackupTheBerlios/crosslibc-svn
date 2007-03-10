@@ -9,3 +9,8 @@ void _elfimplib___p___argc() {
 asm("leave\njmp *%0" : : "r"(_imp____p___argc));
 }
 
+void _elfimplibmang___p___argc() asm("__p___argc");
+void _elfimplibmang___p___argc() {
+asm("leave\njmp *%0" : : "r"(_imp____p___argc));
+}
+

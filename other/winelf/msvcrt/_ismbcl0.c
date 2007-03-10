@@ -9,3 +9,8 @@ void _elfimplib__ismbcl0() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcl0));
 }
 
+void _elfimplibmang__ismbcl0() asm("_ismbcl0");
+void _elfimplibmang__ismbcl0() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbcl0));
+}
+

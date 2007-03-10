@@ -9,3 +9,8 @@ void _elfimplib__wmakepath() {
 asm("leave\njmp *%0" : : "r"(_imp___wmakepath));
 }
 
+void _elfimplibmang__wmakepath() asm("_wmakepath");
+void _elfimplibmang__wmakepath() {
+asm("leave\njmp *%0" : : "r"(_imp___wmakepath));
+}
+

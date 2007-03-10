@@ -9,3 +9,8 @@ void _elfimplib__strrev() {
 asm("leave\njmp *%0" : : "r"(_imp___strrev));
 }
 
+void _elfimplibmang__strrev() asm("_strrev");
+void _elfimplibmang__strrev() {
+asm("leave\njmp *%0" : : "r"(_imp___strrev));
+}
+

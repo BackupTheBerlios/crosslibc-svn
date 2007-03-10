@@ -9,3 +9,8 @@ void _elfimplib__onexit() {
 asm("leave\njmp *%0" : : "r"(_imp___onexit));
 }
 
+void _elfimplibmang__onexit() asm("_onexit");
+void _elfimplibmang__onexit() {
+asm("leave\njmp *%0" : : "r"(_imp___onexit));
+}
+

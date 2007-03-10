@@ -9,3 +9,8 @@ void _elfimplib__finite() {
 asm("leave\njmp *%0" : : "r"(_imp___finite));
 }
 
+void _elfimplibmang__finite() asm("_finite");
+void _elfimplibmang__finite() {
+asm("leave\njmp *%0" : : "r"(_imp___finite));
+}
+

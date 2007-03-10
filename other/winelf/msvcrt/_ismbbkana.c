@@ -9,3 +9,8 @@ void _elfimplib__ismbbkana() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbkana));
 }
 
+void _elfimplibmang__ismbbkana() asm("_ismbbkana");
+void _elfimplibmang__ismbbkana() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbbkana));
+}
+

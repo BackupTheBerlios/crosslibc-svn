@@ -9,3 +9,8 @@ void _elfimplib__strdup() {
 asm("leave\njmp *%0" : : "r"(_imp___strdup));
 }
 
+void _elfimplibmang__strdup() asm("_strdup");
+void _elfimplibmang__strdup() {
+asm("leave\njmp *%0" : : "r"(_imp___strdup));
+}
+

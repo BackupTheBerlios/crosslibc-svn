@@ -9,3 +9,8 @@ void _elfimplib__CIfmod() {
 asm("leave\njmp *%0" : : "r"(_imp___CIfmod));
 }
 
+void _elfimplibmang__CIfmod() asm("_CIfmod");
+void _elfimplibmang__CIfmod() {
+asm("leave\njmp *%0" : : "r"(_imp___CIfmod));
+}
+

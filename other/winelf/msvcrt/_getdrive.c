@@ -9,3 +9,8 @@ void _elfimplib__getdrive() {
 asm("leave\njmp *%0" : : "r"(_imp___getdrive));
 }
 
+void _elfimplibmang__getdrive() asm("_getdrive");
+void _elfimplibmang__getdrive() {
+asm("leave\njmp *%0" : : "r"(_imp___getdrive));
+}
+

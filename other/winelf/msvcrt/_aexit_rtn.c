@@ -9,3 +9,8 @@ void _elfimplib__aexit_rtn() {
 asm("leave\njmp *%0" : : "r"(_imp___aexit_rtn));
 }
 
+void _elfimplibmang__aexit_rtn() asm("_aexit_rtn");
+void _elfimplibmang__aexit_rtn() {
+asm("leave\njmp *%0" : : "r"(_imp___aexit_rtn));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__heapmin() {
 asm("leave\njmp *%0" : : "r"(_imp___heapmin));
 }
 
+void _elfimplibmang__heapmin() asm("_heapmin");
+void _elfimplibmang__heapmin() {
+asm("leave\njmp *%0" : : "r"(_imp___heapmin));
+}
+

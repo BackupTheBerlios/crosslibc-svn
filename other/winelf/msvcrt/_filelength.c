@@ -9,3 +9,8 @@ void _elfimplib__filelength() {
 asm("leave\njmp *%0" : : "r"(_imp___filelength));
 }
 
+void _elfimplibmang__filelength() asm("_filelength");
+void _elfimplibmang__filelength() {
+asm("leave\njmp *%0" : : "r"(_imp___filelength));
+}
+

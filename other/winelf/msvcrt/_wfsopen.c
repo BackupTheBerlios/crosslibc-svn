@@ -9,3 +9,8 @@ void _elfimplib__wfsopen() {
 asm("leave\njmp *%0" : : "r"(_imp___wfsopen));
 }
 
+void _elfimplibmang__wfsopen() asm("_wfsopen");
+void _elfimplibmang__wfsopen() {
+asm("leave\njmp *%0" : : "r"(_imp___wfsopen));
+}
+

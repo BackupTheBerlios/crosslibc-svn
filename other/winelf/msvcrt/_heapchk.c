@@ -9,3 +9,8 @@ void _elfimplib__heapchk() {
 asm("leave\njmp *%0" : : "r"(_imp___heapchk));
 }
 
+void _elfimplibmang__heapchk() asm("_heapchk");
+void _elfimplibmang__heapchk() {
+asm("leave\njmp *%0" : : "r"(_imp___heapchk));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib___badioinfo() {
 asm("leave\njmp *%0" : : "r"(_imp____badioinfo));
 }
 
+void _elfimplibmang___badioinfo() asm("__badioinfo");
+void _elfimplibmang___badioinfo() {
+asm("leave\njmp *%0" : : "r"(_imp____badioinfo));
+}
+

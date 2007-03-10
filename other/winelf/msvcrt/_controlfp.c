@@ -9,3 +9,8 @@ void _elfimplib__controlfp() {
 asm("leave\njmp *%0" : : "r"(_imp___controlfp));
 }
 
+void _elfimplibmang__controlfp() asm("_controlfp");
+void _elfimplibmang__controlfp() {
+asm("leave\njmp *%0" : : "r"(_imp___controlfp));
+}
+

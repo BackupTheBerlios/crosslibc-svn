@@ -9,3 +9,8 @@ void _elfimplib___crtCompareStringW() {
 asm("leave\njmp *%0" : : "r"(_imp____crtCompareStringW));
 }
 
+void _elfimplibmang___crtCompareStringW() asm("__crtCompareStringW");
+void _elfimplibmang___crtCompareStringW() {
+asm("leave\njmp *%0" : : "r"(_imp____crtCompareStringW));
+}
+

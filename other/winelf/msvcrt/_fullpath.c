@@ -9,3 +9,8 @@ void _elfimplib__fullpath() {
 asm("leave\njmp *%0" : : "r"(_imp___fullpath));
 }
 
+void _elfimplibmang__fullpath() asm("_fullpath");
+void _elfimplibmang__fullpath() {
+asm("leave\njmp *%0" : : "r"(_imp___fullpath));
+}
+

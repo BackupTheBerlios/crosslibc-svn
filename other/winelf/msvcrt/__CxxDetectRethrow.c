@@ -9,3 +9,8 @@ void _elfimplib___CxxDetectRethrow() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxDetectRethrow));
 }
 
+void _elfimplibmang___CxxDetectRethrow() asm("__CxxDetectRethrow");
+void _elfimplibmang___CxxDetectRethrow() {
+asm("leave\njmp *%0" : : "r"(_imp____CxxDetectRethrow));
+}
+

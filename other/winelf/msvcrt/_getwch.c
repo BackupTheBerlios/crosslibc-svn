@@ -9,3 +9,8 @@ void _elfimplib__getwch() {
 asm("leave\njmp *%0" : : "r"(_imp___getwch));
 }
 
+void _elfimplibmang__getwch() asm("_getwch");
+void _elfimplibmang__getwch() {
+asm("leave\njmp *%0" : : "r"(_imp___getwch));
+}
+

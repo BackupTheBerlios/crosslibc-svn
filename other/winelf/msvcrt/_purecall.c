@@ -9,3 +9,8 @@ void _elfimplib__purecall() {
 asm("leave\njmp *%0" : : "r"(_imp___purecall));
 }
 
+void _elfimplibmang__purecall() asm("_purecall");
+void _elfimplibmang__purecall() {
+asm("leave\njmp *%0" : : "r"(_imp___purecall));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__initterm() {
 asm("leave\njmp *%0" : : "r"(_imp___initterm));
 }
 
+void _elfimplibmang__initterm() asm("_initterm");
+void _elfimplibmang__initterm() {
+asm("leave\njmp *%0" : : "r"(_imp___initterm));
+}
+

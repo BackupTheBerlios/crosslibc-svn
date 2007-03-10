@@ -9,3 +9,8 @@ void _elfimplib__mbbtombc() {
 asm("leave\njmp *%0" : : "r"(_imp___mbbtombc));
 }
 
+void _elfimplibmang__mbbtombc() asm("_mbbtombc");
+void _elfimplibmang__mbbtombc() {
+asm("leave\njmp *%0" : : "r"(_imp___mbbtombc));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib___set_app_type() {
 asm("leave\njmp *%0" : : "r"(_imp____set_app_type));
 }
 
+void _elfimplibmang___set_app_type() asm("__set_app_type");
+void _elfimplibmang___set_app_type() {
+asm("leave\njmp *%0" : : "r"(_imp____set_app_type));
+}
+

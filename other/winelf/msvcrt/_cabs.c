@@ -9,3 +9,8 @@ void _elfimplib__cabs() {
 asm("leave\njmp *%0" : : "r"(_imp___cabs));
 }
 
+void _elfimplibmang__cabs() asm("_cabs");
+void _elfimplibmang__cabs() {
+asm("leave\njmp *%0" : : "r"(_imp___cabs));
+}
+

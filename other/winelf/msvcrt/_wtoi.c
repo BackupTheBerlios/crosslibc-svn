@@ -9,3 +9,8 @@ void _elfimplib__wtoi() {
 asm("leave\njmp *%0" : : "r"(_imp___wtoi));
 }
 
+void _elfimplibmang__wtoi() asm("_wtoi");
+void _elfimplibmang__wtoi() {
+asm("leave\njmp *%0" : : "r"(_imp___wtoi));
+}
+

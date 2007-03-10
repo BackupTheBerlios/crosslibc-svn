@@ -9,3 +9,8 @@ void _elfimplib__wchmod() {
 asm("leave\njmp *%0" : : "r"(_imp___wchmod));
 }
 
+void _elfimplibmang__wchmod() asm("_wchmod");
+void _elfimplibmang__wchmod() {
+asm("leave\njmp *%0" : : "r"(_imp___wchmod));
+}
+

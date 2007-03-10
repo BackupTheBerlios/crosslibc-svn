@@ -9,3 +9,8 @@ void _elfimplib___fpecode() {
 asm("leave\njmp *%0" : : "r"(_imp____fpecode));
 }
 
+void _elfimplibmang___fpecode() asm("__fpecode");
+void _elfimplibmang___fpecode() {
+asm("leave\njmp *%0" : : "r"(_imp____fpecode));
+}
+

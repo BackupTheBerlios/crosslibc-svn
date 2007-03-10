@@ -9,3 +9,8 @@ void _elfimplib__getdcwd() {
 asm("leave\njmp *%0" : : "r"(_imp___getdcwd));
 }
 
+void _elfimplibmang__getdcwd() asm("_getdcwd");
+void _elfimplibmang__getdcwd() {
+asm("leave\njmp *%0" : : "r"(_imp___getdcwd));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__fpreset() {
 asm("leave\njmp *%0" : : "r"(_imp___fpreset));
 }
 
+void _elfimplibmang__fpreset() asm("_fpreset");
+void _elfimplibmang__fpreset() {
+asm("leave\njmp *%0" : : "r"(_imp___fpreset));
+}
+

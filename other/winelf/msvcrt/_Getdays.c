@@ -9,3 +9,8 @@ void _elfimplib__Getdays() {
 asm("leave\njmp *%0" : : "r"(_imp___Getdays));
 }
 
+void _elfimplibmang__Getdays() asm("_Getdays");
+void _elfimplibmang__Getdays() {
+asm("leave\njmp *%0" : : "r"(_imp___Getdays));
+}
+

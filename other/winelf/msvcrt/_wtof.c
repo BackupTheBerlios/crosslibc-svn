@@ -9,3 +9,8 @@ void _elfimplib__wtof() {
 asm("leave\njmp *%0" : : "r"(_imp___wtof));
 }
 
+void _elfimplibmang__wtof() asm("_wtof");
+void _elfimplibmang__wtof() {
+asm("leave\njmp *%0" : : "r"(_imp___wtof));
+}
+

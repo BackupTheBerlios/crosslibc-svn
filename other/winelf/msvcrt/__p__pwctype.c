@@ -9,3 +9,8 @@ void _elfimplib___p__pwctype() {
 asm("leave\njmp *%0" : : "r"(_imp____p__pwctype));
 }
 
+void _elfimplibmang___p__pwctype() asm("__p__pwctype");
+void _elfimplibmang___p__pwctype() {
+asm("leave\njmp *%0" : : "r"(_imp____p__pwctype));
+}
+

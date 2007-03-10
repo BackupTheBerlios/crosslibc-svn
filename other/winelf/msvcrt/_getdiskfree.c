@@ -9,3 +9,8 @@ void _elfimplib__getdiskfree() {
 asm("leave\njmp *%0" : : "r"(_imp___getdiskfree));
 }
 
+void _elfimplibmang__getdiskfree() asm("_getdiskfree");
+void _elfimplibmang__getdiskfree() {
+asm("leave\njmp *%0" : : "r"(_imp___getdiskfree));
+}
+

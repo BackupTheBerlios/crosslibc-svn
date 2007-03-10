@@ -9,3 +9,8 @@ void _elfimplib___iob_func() {
 asm("leave\njmp *%0" : : "r"(_imp____iob_func));
 }
 
+void _elfimplibmang___iob_func() asm("__iob_func");
+void _elfimplibmang___iob_func() {
+asm("leave\njmp *%0" : : "r"(_imp____iob_func));
+}
+

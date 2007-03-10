@@ -9,3 +9,8 @@ void _elfimplib____setlc_active_func() {
 asm("leave\njmp *%0" : : "r"(_imp_____setlc_active_func));
 }
 
+void _elfimplibmang____setlc_active_func() asm("___setlc_active_func");
+void _elfimplibmang____setlc_active_func() {
+asm("leave\njmp *%0" : : "r"(_imp_____setlc_active_func));
+}
+

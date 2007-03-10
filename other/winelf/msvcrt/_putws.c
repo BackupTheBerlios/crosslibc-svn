@@ -9,3 +9,8 @@ void _elfimplib__putws() {
 asm("leave\njmp *%0" : : "r"(_imp___putws));
 }
 
+void _elfimplibmang__putws() asm("_putws");
+void _elfimplibmang__putws() {
+asm("leave\njmp *%0" : : "r"(_imp___putws));
+}
+

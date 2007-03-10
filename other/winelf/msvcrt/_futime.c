@@ -9,3 +9,8 @@ void _elfimplib__futime() {
 asm("leave\njmp *%0" : : "r"(_imp___futime));
 }
 
+void _elfimplibmang__futime() asm("_futime");
+void _elfimplibmang__futime() {
+asm("leave\njmp *%0" : : "r"(_imp___futime));
+}
+

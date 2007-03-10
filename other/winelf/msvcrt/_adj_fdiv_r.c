@@ -9,3 +9,8 @@ void _elfimplib__adj_fdiv_r() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fdiv_r));
 }
 
+void _elfimplibmang__adj_fdiv_r() asm("_adj_fdiv_r");
+void _elfimplibmang__adj_fdiv_r() {
+asm("leave\njmp *%0" : : "r"(_imp___adj_fdiv_r));
+}
+

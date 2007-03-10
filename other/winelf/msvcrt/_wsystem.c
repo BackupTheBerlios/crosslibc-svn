@@ -9,3 +9,8 @@ void _elfimplib__wsystem() {
 asm("leave\njmp *%0" : : "r"(_imp___wsystem));
 }
 
+void _elfimplibmang__wsystem() asm("_wsystem");
+void _elfimplibmang__wsystem() {
+asm("leave\njmp *%0" : : "r"(_imp___wsystem));
+}
+

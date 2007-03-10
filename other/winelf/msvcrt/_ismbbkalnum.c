@@ -9,3 +9,8 @@ void _elfimplib__ismbbkalnum() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbkalnum));
 }
 
+void _elfimplibmang__ismbbkalnum() asm("_ismbbkalnum");
+void _elfimplibmang__ismbbkalnum() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbbkalnum));
+}
+

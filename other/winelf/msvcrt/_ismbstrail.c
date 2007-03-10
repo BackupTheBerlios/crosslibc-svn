@@ -9,3 +9,8 @@ void _elfimplib__ismbstrail() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbstrail));
 }
 
+void _elfimplibmang__ismbstrail() asm("_ismbstrail");
+void _elfimplibmang__ismbstrail() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbstrail));
+}
+

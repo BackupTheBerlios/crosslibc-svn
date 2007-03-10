@@ -9,3 +9,8 @@ void _elfimplib__commit() {
 asm("leave\njmp *%0" : : "r"(_imp___commit));
 }
 
+void _elfimplibmang__commit() asm("_commit");
+void _elfimplibmang__commit() {
+asm("leave\njmp *%0" : : "r"(_imp___commit));
+}
+

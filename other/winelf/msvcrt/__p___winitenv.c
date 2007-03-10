@@ -9,3 +9,8 @@ void _elfimplib___p___winitenv() {
 asm("leave\njmp *%0" : : "r"(_imp____p___winitenv));
 }
 
+void _elfimplibmang___p___winitenv() asm("__p___winitenv");
+void _elfimplibmang___p___winitenv() {
+asm("leave\njmp *%0" : : "r"(_imp____p___winitenv));
+}
+

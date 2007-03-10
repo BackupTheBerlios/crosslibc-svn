@@ -9,3 +9,8 @@ void _elfimplib__control87() {
 asm("leave\njmp *%0" : : "r"(_imp___control87));
 }
 
+void _elfimplibmang__control87() asm("_control87");
+void _elfimplibmang__control87() {
+asm("leave\njmp *%0" : : "r"(_imp___control87));
+}
+

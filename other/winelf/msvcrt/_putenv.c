@@ -9,3 +9,8 @@ void _elfimplib__putenv() {
 asm("leave\njmp *%0" : : "r"(_imp___putenv));
 }
 
+void _elfimplibmang__putenv() asm("_putenv");
+void _elfimplibmang__putenv() {
+asm("leave\njmp *%0" : : "r"(_imp___putenv));
+}
+

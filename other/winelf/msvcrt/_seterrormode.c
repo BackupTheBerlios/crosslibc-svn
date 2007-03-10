@@ -9,3 +9,8 @@ void _elfimplib__seterrormode() {
 asm("leave\njmp *%0" : : "r"(_imp___seterrormode));
 }
 
+void _elfimplibmang__seterrormode() asm("_seterrormode");
+void _elfimplibmang__seterrormode() {
+asm("leave\njmp *%0" : : "r"(_imp___seterrormode));
+}
+

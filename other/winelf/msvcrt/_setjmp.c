@@ -9,3 +9,8 @@ void _elfimplib__setjmp() {
 asm("leave\njmp *%0" : : "r"(_imp___setjmp));
 }
 
+void _elfimplibmang__setjmp() asm("_setjmp");
+void _elfimplibmang__setjmp() {
+asm("leave\njmp *%0" : : "r"(_imp___setjmp));
+}
+

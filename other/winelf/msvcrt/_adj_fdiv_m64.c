@@ -9,3 +9,8 @@ void _elfimplib__adj_fdiv_m64() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fdiv_m64));
 }
 
+void _elfimplibmang__adj_fdiv_m64() asm("_adj_fdiv_m64");
+void _elfimplibmang__adj_fdiv_m64() {
+asm("leave\njmp *%0" : : "r"(_imp___adj_fdiv_m64));
+}
+

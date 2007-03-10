@@ -9,3 +9,8 @@ void _elfimplib___pioinfo() {
 asm("leave\njmp *%0" : : "r"(_imp____pioinfo));
 }
 
+void _elfimplibmang___pioinfo() asm("__pioinfo");
+void _elfimplibmang___pioinfo() {
+asm("leave\njmp *%0" : : "r"(_imp____pioinfo));
+}
+

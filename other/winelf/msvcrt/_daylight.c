@@ -9,3 +9,8 @@ void _elfimplib__daylight() {
 asm("leave\njmp *%0" : : "r"(_imp___daylight));
 }
 
+void _elfimplibmang__daylight() asm("_daylight");
+void _elfimplibmang__daylight() {
+asm("leave\njmp *%0" : : "r"(_imp___daylight));
+}
+

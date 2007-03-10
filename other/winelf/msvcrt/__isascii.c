@@ -9,3 +9,8 @@ void _elfimplib___isascii() {
 asm("leave\njmp *%0" : : "r"(_imp____isascii));
 }
 
+void _elfimplibmang___isascii() asm("__isascii");
+void _elfimplibmang___isascii() {
+asm("leave\njmp *%0" : : "r"(_imp____isascii));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__chmod() {
 asm("leave\njmp *%0" : : "r"(_imp___chmod));
 }
 
+void _elfimplibmang__chmod() asm("_chmod");
+void _elfimplibmang__chmod() {
+asm("leave\njmp *%0" : : "r"(_imp___chmod));
+}
+

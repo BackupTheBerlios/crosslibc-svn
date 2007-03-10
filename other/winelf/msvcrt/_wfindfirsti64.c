@@ -9,3 +9,8 @@ void _elfimplib__wfindfirsti64() {
 asm("leave\njmp *%0" : : "r"(_imp___wfindfirsti64));
 }
 
+void _elfimplibmang__wfindfirsti64() asm("_wfindfirsti64");
+void _elfimplibmang__wfindfirsti64() {
+asm("leave\njmp *%0" : : "r"(_imp___wfindfirsti64));
+}
+

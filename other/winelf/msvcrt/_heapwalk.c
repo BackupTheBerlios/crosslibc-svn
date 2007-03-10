@@ -9,3 +9,8 @@ void _elfimplib__heapwalk() {
 asm("leave\njmp *%0" : : "r"(_imp___heapwalk));
 }
 
+void _elfimplibmang__heapwalk() asm("_heapwalk");
+void _elfimplibmang__heapwalk() {
+asm("leave\njmp *%0" : : "r"(_imp___heapwalk));
+}
+

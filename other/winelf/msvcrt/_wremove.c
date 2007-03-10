@@ -9,3 +9,8 @@ void _elfimplib__wremove() {
 asm("leave\njmp *%0" : : "r"(_imp___wremove));
 }
 
+void _elfimplibmang__wremove() asm("_wremove");
+void _elfimplibmang__wremove() {
+asm("leave\njmp *%0" : : "r"(_imp___wremove));
+}
+

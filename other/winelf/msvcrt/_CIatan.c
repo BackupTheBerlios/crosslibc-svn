@@ -9,3 +9,8 @@ void _elfimplib__CIatan() {
 asm("leave\njmp *%0" : : "r"(_imp___CIatan));
 }
 
+void _elfimplibmang__CIatan() asm("_CIatan");
+void _elfimplibmang__CIatan() {
+asm("leave\njmp *%0" : : "r"(_imp___CIatan));
+}
+

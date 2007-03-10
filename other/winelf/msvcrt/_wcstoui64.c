@@ -9,3 +9,8 @@ void _elfimplib__wcstoui64() {
 asm("leave\njmp *%0" : : "r"(_imp___wcstoui64));
 }
 
+void _elfimplibmang__wcstoui64() asm("_wcstoui64");
+void _elfimplibmang__wcstoui64() {
+asm("leave\njmp *%0" : : "r"(_imp___wcstoui64));
+}
+

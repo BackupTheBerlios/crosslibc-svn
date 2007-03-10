@@ -9,3 +9,8 @@ void _elfimplib__amsg_exit() {
 asm("leave\njmp *%0" : : "r"(_imp___amsg_exit));
 }
 
+void _elfimplibmang__amsg_exit() asm("_amsg_exit");
+void _elfimplibmang__amsg_exit() {
+asm("leave\njmp *%0" : : "r"(_imp___amsg_exit));
+}
+

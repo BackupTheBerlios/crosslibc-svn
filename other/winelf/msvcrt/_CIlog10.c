@@ -9,3 +9,8 @@ void _elfimplib__CIlog10() {
 asm("leave\njmp *%0" : : "r"(_imp___CIlog10));
 }
 
+void _elfimplibmang__CIlog10() asm("_CIlog10");
+void _elfimplibmang__CIlog10() {
+asm("leave\njmp *%0" : : "r"(_imp___CIlog10));
+}
+

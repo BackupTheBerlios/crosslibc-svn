@@ -9,3 +9,8 @@ void _elfimplib__locking() {
 asm("leave\njmp *%0" : : "r"(_imp___locking));
 }
 
+void _elfimplibmang__locking() asm("_locking");
+void _elfimplibmang__locking() {
+asm("leave\njmp *%0" : : "r"(_imp___locking));
+}
+

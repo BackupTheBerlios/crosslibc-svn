@@ -9,3 +9,8 @@ void _elfimplib__wrename() {
 asm("leave\njmp *%0" : : "r"(_imp___wrename));
 }
 
+void _elfimplibmang__wrename() asm("_wrename");
+void _elfimplibmang__wrename() {
+asm("leave\njmp *%0" : : "r"(_imp___wrename));
+}
+

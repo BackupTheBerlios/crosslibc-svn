@@ -9,3 +9,8 @@ void _elfimplib__sys_errlist() {
 asm("leave\njmp *%0" : : "r"(_imp___sys_errlist));
 }
 
+void _elfimplibmang__sys_errlist() asm("_sys_errlist");
+void _elfimplibmang__sys_errlist() {
+asm("leave\njmp *%0" : : "r"(_imp___sys_errlist));
+}
+

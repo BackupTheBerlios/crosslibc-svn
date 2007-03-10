@@ -9,3 +9,8 @@ void _elfimplib___p__wpgmptr() {
 asm("leave\njmp *%0" : : "r"(_imp____p__wpgmptr));
 }
 
+void _elfimplibmang___p__wpgmptr() asm("__p__wpgmptr");
+void _elfimplibmang___p__wpgmptr() {
+asm("leave\njmp *%0" : : "r"(_imp____p__wpgmptr));
+}
+

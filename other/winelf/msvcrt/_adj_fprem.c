@@ -9,3 +9,8 @@ void _elfimplib__adj_fprem() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fprem));
 }
 
+void _elfimplibmang__adj_fprem() asm("_adj_fprem");
+void _elfimplibmang__adj_fprem() {
+asm("leave\njmp *%0" : : "r"(_imp___adj_fprem));
+}
+

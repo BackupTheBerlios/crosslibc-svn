@@ -9,3 +9,8 @@ void _elfimplib__mbsset() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsset));
 }
 
+void _elfimplibmang__mbsset() asm("_mbsset");
+void _elfimplibmang__mbsset() {
+asm("leave\njmp *%0" : : "r"(_imp___mbsset));
+}
+

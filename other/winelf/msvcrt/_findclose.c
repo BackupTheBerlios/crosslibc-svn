@@ -9,3 +9,8 @@ void _elfimplib__findclose() {
 asm("leave\njmp *%0" : : "r"(_imp___findclose));
 }
 
+void _elfimplibmang__findclose() asm("_findclose");
+void _elfimplibmang__findclose() {
+asm("leave\njmp *%0" : : "r"(_imp___findclose));
+}
+

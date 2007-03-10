@@ -9,3 +9,8 @@ void _elfimplib__ismbslead() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbslead));
 }
 
+void _elfimplibmang__ismbslead() asm("_ismbslead");
+void _elfimplibmang__ismbslead() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbslead));
+}
+

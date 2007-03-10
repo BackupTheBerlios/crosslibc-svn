@@ -9,3 +9,8 @@ void _elfimplib___p__timezone() {
 asm("leave\njmp *%0" : : "r"(_imp____p__timezone));
 }
 
+void _elfimplibmang___p__timezone() asm("__p__timezone");
+void _elfimplibmang___p__timezone() {
+asm("leave\njmp *%0" : : "r"(_imp____p__timezone));
+}
+

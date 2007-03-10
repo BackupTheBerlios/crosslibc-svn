@@ -9,3 +9,8 @@ void _elfimplib___crtGetLocaleInfoW() {
 asm("leave\njmp *%0" : : "r"(_imp____crtGetLocaleInfoW));
 }
 
+void _elfimplibmang___crtGetLocaleInfoW() asm("__crtGetLocaleInfoW");
+void _elfimplibmang___crtGetLocaleInfoW() {
+asm("leave\njmp *%0" : : "r"(_imp____crtGetLocaleInfoW));
+}
+

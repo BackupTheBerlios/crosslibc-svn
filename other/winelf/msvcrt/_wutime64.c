@@ -9,3 +9,8 @@ void _elfimplib__wutime64() {
 asm("leave\njmp *%0" : : "r"(_imp___wutime64));
 }
 
+void _elfimplibmang__wutime64() asm("_wutime64");
+void _elfimplibmang__wutime64() {
+asm("leave\njmp *%0" : : "r"(_imp___wutime64));
+}
+

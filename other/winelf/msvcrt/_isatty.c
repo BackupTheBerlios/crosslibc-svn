@@ -9,3 +9,8 @@ void _elfimplib__isatty() {
 asm("leave\njmp *%0" : : "r"(_imp___isatty));
 }
 
+void _elfimplibmang__isatty() asm("_isatty");
+void _elfimplibmang__isatty() {
+asm("leave\njmp *%0" : : "r"(_imp___isatty));
+}
+

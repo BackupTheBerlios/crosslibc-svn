@@ -9,3 +9,8 @@ void _elfimplib___CxxLongjmpUnwind() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxLongjmpUnwind));
 }
 
+void _elfimplibmang___CxxLongjmpUnwind() asm("__CxxLongjmpUnwind");
+void _elfimplibmang___CxxLongjmpUnwind() {
+asm("leave\njmp *%0" : : "r"(_imp____CxxLongjmpUnwind));
+}
+

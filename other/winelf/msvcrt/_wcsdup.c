@@ -9,3 +9,8 @@ void _elfimplib__wcsdup() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsdup));
 }
 
+void _elfimplibmang__wcsdup() asm("_wcsdup");
+void _elfimplibmang__wcsdup() {
+asm("leave\njmp *%0" : : "r"(_imp___wcsdup));
+}
+

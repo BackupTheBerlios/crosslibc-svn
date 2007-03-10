@@ -9,3 +9,8 @@ void _elfimplib__wstrdate() {
 asm("leave\njmp *%0" : : "r"(_imp___wstrdate));
 }
 
+void _elfimplibmang__wstrdate() asm("_wstrdate");
+void _elfimplibmang__wstrdate() {
+asm("leave\njmp *%0" : : "r"(_imp___wstrdate));
+}
+

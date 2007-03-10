@@ -9,3 +9,8 @@ void _elfimplib__lrotl() {
 asm("leave\njmp *%0" : : "r"(_imp___lrotl));
 }
 
+void _elfimplibmang__lrotl() asm("_lrotl");
+void _elfimplibmang__lrotl() {
+asm("leave\njmp *%0" : : "r"(_imp___lrotl));
+}
+

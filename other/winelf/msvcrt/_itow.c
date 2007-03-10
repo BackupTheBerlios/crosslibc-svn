@@ -9,3 +9,8 @@ void _elfimplib__itow() {
 asm("leave\njmp *%0" : : "r"(_imp___itow));
 }
 
+void _elfimplibmang__itow() asm("_itow");
+void _elfimplibmang__itow() {
+asm("leave\njmp *%0" : : "r"(_imp___itow));
+}
+

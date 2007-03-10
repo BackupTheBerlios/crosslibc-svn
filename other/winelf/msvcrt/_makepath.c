@@ -9,3 +9,8 @@ void _elfimplib__makepath() {
 asm("leave\njmp *%0" : : "r"(_imp___makepath));
 }
 
+void _elfimplibmang__makepath() asm("_makepath");
+void _elfimplibmang__makepath() {
+asm("leave\njmp *%0" : : "r"(_imp___makepath));
+}
+

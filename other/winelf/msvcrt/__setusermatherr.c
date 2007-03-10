@@ -9,3 +9,8 @@ void _elfimplib___setusermatherr() {
 asm("leave\njmp *%0" : : "r"(_imp____setusermatherr));
 }
 
+void _elfimplibmang___setusermatherr() asm("__setusermatherr");
+void _elfimplibmang___setusermatherr() {
+asm("leave\njmp *%0" : : "r"(_imp____setusermatherr));
+}
+

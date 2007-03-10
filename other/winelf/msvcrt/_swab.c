@@ -9,3 +9,8 @@ void _elfimplib__swab() {
 asm("leave\njmp *%0" : : "r"(_imp___swab));
 }
 
+void _elfimplibmang__swab() asm("_swab");
+void _elfimplibmang__swab() {
+asm("leave\njmp *%0" : : "r"(_imp___swab));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__wmkdir() {
 asm("leave\njmp *%0" : : "r"(_imp___wmkdir));
 }
 
+void _elfimplibmang__wmkdir() asm("_wmkdir");
+void _elfimplibmang__wmkdir() {
+asm("leave\njmp *%0" : : "r"(_imp___wmkdir));
+}
+

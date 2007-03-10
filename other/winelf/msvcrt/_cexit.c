@@ -9,3 +9,8 @@ void _elfimplib__cexit() {
 asm("leave\njmp *%0" : : "r"(_imp___cexit));
 }
 
+void _elfimplibmang__cexit() asm("_cexit");
+void _elfimplibmang__cexit() {
+asm("leave\njmp *%0" : : "r"(_imp___cexit));
+}
+

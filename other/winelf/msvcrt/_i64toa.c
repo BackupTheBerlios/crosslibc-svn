@@ -9,3 +9,8 @@ void _elfimplib__i64toa() {
 asm("leave\njmp *%0" : : "r"(_imp___i64toa));
 }
 
+void _elfimplibmang__i64toa() asm("_i64toa");
+void _elfimplibmang__i64toa() {
+asm("leave\njmp *%0" : : "r"(_imp___i64toa));
+}
+

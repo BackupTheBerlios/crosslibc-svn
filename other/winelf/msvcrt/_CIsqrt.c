@@ -9,3 +9,8 @@ void _elfimplib__CIsqrt() {
 asm("leave\njmp *%0" : : "r"(_imp___CIsqrt));
 }
 
+void _elfimplibmang__CIsqrt() asm("_CIsqrt");
+void _elfimplibmang__CIsqrt() {
+asm("leave\njmp *%0" : : "r"(_imp___CIsqrt));
+}
+

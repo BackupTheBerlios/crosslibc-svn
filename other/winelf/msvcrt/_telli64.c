@@ -9,3 +9,8 @@ void _elfimplib__telli64() {
 asm("leave\njmp *%0" : : "r"(_imp___telli64));
 }
 
+void _elfimplibmang__telli64() asm("_telli64");
+void _elfimplibmang__telli64() {
+asm("leave\njmp *%0" : : "r"(_imp___telli64));
+}
+

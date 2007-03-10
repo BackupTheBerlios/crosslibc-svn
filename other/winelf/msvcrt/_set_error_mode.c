@@ -9,3 +9,8 @@ void _elfimplib__set_error_mode() {
 asm("leave\njmp *%0" : : "r"(_imp___set_error_mode));
 }
 
+void _elfimplibmang__set_error_mode() asm("_set_error_mode");
+void _elfimplibmang__set_error_mode() {
+asm("leave\njmp *%0" : : "r"(_imp___set_error_mode));
+}
+

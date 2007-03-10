@@ -9,3 +9,8 @@ void _elfimplib___CxxQueryExceptionSize() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxQueryExceptionSize));
 }
 
+void _elfimplibmang___CxxQueryExceptionSize() asm("__CxxQueryExceptionSize");
+void _elfimplibmang___CxxQueryExceptionSize() {
+asm("leave\njmp *%0" : : "r"(_imp____CxxQueryExceptionSize));
+}
+

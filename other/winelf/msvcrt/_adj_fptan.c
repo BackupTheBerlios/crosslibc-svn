@@ -9,3 +9,8 @@ void _elfimplib__adj_fptan() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fptan));
 }
 
+void _elfimplibmang__adj_fptan() asm("_adj_fptan");
+void _elfimplibmang__adj_fptan() {
+asm("leave\njmp *%0" : : "r"(_imp___adj_fptan));
+}
+

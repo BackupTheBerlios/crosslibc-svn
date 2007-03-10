@@ -9,3 +9,8 @@ void _elfimplib__CIsinh() {
 asm("leave\njmp *%0" : : "r"(_imp___CIsinh));
 }
 
+void _elfimplibmang__CIsinh() asm("_CIsinh");
+void _elfimplibmang__CIsinh() {
+asm("leave\njmp *%0" : : "r"(_imp___CIsinh));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib___lc_collate_cp() {
 asm("leave\njmp *%0" : : "r"(_imp____lc_collate_cp));
 }
 
+void _elfimplibmang___lc_collate_cp() asm("__lc_collate_cp");
+void _elfimplibmang___lc_collate_cp() {
+asm("leave\njmp *%0" : : "r"(_imp____lc_collate_cp));
+}
+

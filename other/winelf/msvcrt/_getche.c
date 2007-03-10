@@ -9,3 +9,8 @@ void _elfimplib__getche() {
 asm("leave\njmp *%0" : : "r"(_imp___getche));
 }
 
+void _elfimplibmang__getche() asm("_getche");
+void _elfimplibmang__getche() {
+asm("leave\njmp *%0" : : "r"(_imp___getche));
+}
+

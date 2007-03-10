@@ -9,3 +9,8 @@ void _elfimplib__wperror() {
 asm("leave\njmp *%0" : : "r"(_imp___wperror));
 }
 
+void _elfimplibmang__wperror() asm("_wperror");
+void _elfimplibmang__wperror() {
+asm("leave\njmp *%0" : : "r"(_imp___wperror));
+}
+

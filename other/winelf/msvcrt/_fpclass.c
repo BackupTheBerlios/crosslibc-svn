@@ -9,3 +9,8 @@ void _elfimplib__fpclass() {
 asm("leave\njmp *%0" : : "r"(_imp___fpclass));
 }
 
+void _elfimplibmang__fpclass() asm("_fpclass");
+void _elfimplibmang__fpclass() {
+asm("leave\njmp *%0" : : "r"(_imp___fpclass));
+}
+

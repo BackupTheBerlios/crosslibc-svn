@@ -38,3 +38,6 @@ These allow the compiler to build without a C library:
 --disable-libssp
 
 --with-stabs is to fix the broken default debugging selection.
+
+
+This uses parts of the MingW runtime, version 3.9.

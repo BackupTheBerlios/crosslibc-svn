@@ -9,3 +9,8 @@ void _elfimplib___p__dstbias() {
 asm("leave\njmp *%0" : : "r"(_imp____p__dstbias));
 }
 
+void _elfimplibmang___p__dstbias() asm("__p__dstbias");
+void _elfimplibmang___p__dstbias() {
+asm("leave\njmp *%0" : : "r"(_imp____p__dstbias));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__unloaddll() {
 asm("leave\njmp *%0" : : "r"(_imp___unloaddll));
 }
 
+void _elfimplibmang__unloaddll() asm("_unloaddll");
+void _elfimplibmang__unloaddll() {
+asm("leave\njmp *%0" : : "r"(_imp___unloaddll));
+}
+

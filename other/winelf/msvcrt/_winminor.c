@@ -9,3 +9,8 @@ void _elfimplib__winminor() {
 asm("leave\njmp *%0" : : "r"(_imp___winminor));
 }
 
+void _elfimplibmang__winminor() asm("_winminor");
+void _elfimplibmang__winminor() {
+asm("leave\njmp *%0" : : "r"(_imp___winminor));
+}
+

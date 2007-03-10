@@ -9,3 +9,8 @@ void _elfimplib__mbctohira() {
 asm("leave\njmp *%0" : : "r"(_imp___mbctohira));
 }
 
+void _elfimplibmang__mbctohira() asm("_mbctohira");
+void _elfimplibmang__mbctohira() {
+asm("leave\njmp *%0" : : "r"(_imp___mbctohira));
+}
+

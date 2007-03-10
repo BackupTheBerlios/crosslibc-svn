@@ -45,3 +45,63 @@ diff -ruN binutils-2.17/ld/configure.tgt binutils-2.17-winelf/ld/configure.tgt
  i[3-7]86-*-beospe*)	targ_emul=i386beos ;;
  i[3-7]86-*-beos*)	targ_emul=elf_i386_be ;;
  i[3-7]86-*-vxworks*)	targ_emul=elf_i386_vxworks ;;
+diff -ruN binutils-2.17/libiberty/configure binutils-2.17-winelf/libiberty/configure
+--- binutils-2.17/libiberty/configure	2006-04-06 17:01:25.000000000 -0700
++++ binutils-2.17-winelf/libiberty/configure	2007-03-09 15:13:28.000000000 -0800
+@@ -5713,7 +5713,7 @@
+ 
+ 
+ case "${host}" in
+-  *-*-cygwin* | *-*-mingw*)
++  *-*-cygwin* | *-*-mingw* | *-*-win32elf*)
+     cat >>confdefs.h <<\_ACEOF
+ #define HAVE_SYS_ERRLIST 1
+ _ACEOF
+@@ -5877,7 +5877,7 @@
+     fi
+     ;;
+ 
+-  *-*-mingw32*)
++  *-*-mingw32* | *-*-win32elf*)
+     # Under mingw32, sys_nerr and sys_errlist exist, but they are
+     # macros, so the test below won't find them.
+     libiberty_cv_var_sys_nerr=yes
+@@ -8198,7 +8198,7 @@
+ 
+ # Figure out which version of pexecute to use.
+ case "${host}" in
+-     *-*-mingw* | *-*-winnt*)	pexecute=./pex-win32.o  ;;
++     *-*-mingw* | *-*-winnt* | *-*-win32elf*)	pexecute=./pex-win32.o  ;;
+      *-*-msdosdjgpp*)		pexecute=./pex-djgpp.o  ;;
+      *-*-msdos*)		pexecute=./pex-msdos.o  ;;
+      *)				pexecute=./pex-unix.o   ;;
+diff -ruN binutils-2.17/libiberty/configure.ac binutils-2.17-winelf/libiberty/configure.ac
+--- binutils-2.17/libiberty/configure.ac	2006-04-06 17:01:25.000000000 -0700
++++ binutils-2.17-winelf/libiberty/configure.ac	2007-03-09 15:12:44.000000000 -0800
+@@ -451,7 +451,7 @@
+ AC_SUBST(target_header_dir)
+ 
+ case "${host}" in
+-  *-*-cygwin* | *-*-mingw*)
++  *-*-cygwin* | *-*-mingw* | *-*-win32elf*)
+     AC_DEFINE(HAVE_SYS_ERRLIST)
+     AC_DEFINE(HAVE_SYS_NERR)
+     ;;
+@@ -526,7 +526,7 @@
+     fi
+     ;;
+ 
+-  *-*-mingw32*)
++  *-*-mingw32* | *-*-win32elf*)
+     # Under mingw32, sys_nerr and sys_errlist exist, but they are
+     # macros, so the test below won't find them.
+     libiberty_cv_var_sys_nerr=yes
+@@ -611,7 +611,7 @@
+ 
+ # Figure out which version of pexecute to use.
+ case "${host}" in
+-     *-*-mingw* | *-*-winnt*)	pexecute=./pex-win32.o  ;;
++     *-*-mingw* | *-*-winnt* | *-*-win32elf)	pexecute=./pex-win32.o  ;;
+      *-*-msdosdjgpp*)		pexecute=./pex-djgpp.o  ;;
+      *-*-msdos*)		pexecute=./pex-msdos.o  ;;
+      *)				pexecute=./pex-unix.o   ;;

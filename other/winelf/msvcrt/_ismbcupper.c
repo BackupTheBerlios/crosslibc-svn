@@ -9,3 +9,8 @@ void _elfimplib__ismbcupper() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcupper));
 }
 
+void _elfimplibmang__ismbcupper() asm("_ismbcupper");
+void _elfimplibmang__ismbcupper() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbcupper));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__pctype() {
 asm("leave\njmp *%0" : : "r"(_imp___pctype));
 }
 
+void _elfimplibmang__pctype() asm("_pctype");
+void _elfimplibmang__pctype() {
+asm("leave\njmp *%0" : : "r"(_imp___pctype));
+}
+

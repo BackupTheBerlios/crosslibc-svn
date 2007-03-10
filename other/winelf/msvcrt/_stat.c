@@ -9,3 +9,8 @@ void _elfimplib__stat() {
 asm("leave\njmp *%0" : : "r"(_imp___stat));
 }
 
+void _elfimplibmang__stat() asm("_stat");
+void _elfimplibmang__stat() {
+asm("leave\njmp *%0" : : "r"(_imp___stat));
+}
+

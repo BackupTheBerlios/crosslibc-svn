@@ -9,3 +9,8 @@ void _elfimplib__osver() {
 asm("leave\njmp *%0" : : "r"(_imp___osver));
 }
 
+void _elfimplibmang__osver() asm("_osver");
+void _elfimplibmang__osver() {
+asm("leave\njmp *%0" : : "r"(_imp___osver));
+}
+

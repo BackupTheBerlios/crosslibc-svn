@@ -9,3 +9,8 @@ void _elfimplib__dup2() {
 asm("leave\njmp *%0" : : "r"(_imp___dup2));
 }
 
+void _elfimplibmang__dup2() asm("_dup2");
+void _elfimplibmang__dup2() {
+asm("leave\njmp *%0" : : "r"(_imp___dup2));
+}
+

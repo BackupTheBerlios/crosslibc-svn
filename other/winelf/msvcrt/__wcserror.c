@@ -9,3 +9,8 @@ void _elfimplib___wcserror() {
 asm("leave\njmp *%0" : : "r"(_imp____wcserror));
 }
 
+void _elfimplibmang___wcserror() asm("__wcserror");
+void _elfimplibmang___wcserror() {
+asm("leave\njmp *%0" : : "r"(_imp____wcserror));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib___STRINGTOLD() {
 asm("leave\njmp *%0" : : "r"(_imp____STRINGTOLD));
 }
 
+void _elfimplibmang___STRINGTOLD() asm("__STRINGTOLD");
+void _elfimplibmang___STRINGTOLD() {
+asm("leave\njmp *%0" : : "r"(_imp____STRINGTOLD));
+}
+

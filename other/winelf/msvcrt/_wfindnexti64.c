@@ -9,3 +9,8 @@ void _elfimplib__wfindnexti64() {
 asm("leave\njmp *%0" : : "r"(_imp___wfindnexti64));
 }
 
+void _elfimplibmang__wfindnexti64() asm("_wfindnexti64");
+void _elfimplibmang__wfindnexti64() {
+asm("leave\njmp *%0" : : "r"(_imp___wfindnexti64));
+}
+

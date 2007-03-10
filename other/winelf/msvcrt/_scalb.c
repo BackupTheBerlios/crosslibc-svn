@@ -9,3 +9,8 @@ void _elfimplib__scalb() {
 asm("leave\njmp *%0" : : "r"(_imp___scalb));
 }
 
+void _elfimplibmang__scalb() asm("_scalb");
+void _elfimplibmang__scalb() {
+asm("leave\njmp *%0" : : "r"(_imp___scalb));
+}
+

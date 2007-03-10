@@ -9,3 +9,8 @@ void _elfimplib__ismbclower() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbclower));
 }
 
+void _elfimplibmang__ismbclower() asm("_ismbclower");
+void _elfimplibmang__ismbclower() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbclower));
+}
+

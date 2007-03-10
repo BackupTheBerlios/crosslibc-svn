@@ -9,3 +9,8 @@ void _elfimplib__heapset() {
 asm("leave\njmp *%0" : : "r"(_imp___heapset));
 }
 
+void _elfimplibmang__heapset() asm("_heapset");
+void _elfimplibmang__heapset() {
+asm("leave\njmp *%0" : : "r"(_imp___heapset));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__umask() {
 asm("leave\njmp *%0" : : "r"(_imp___umask));
 }
 
+void _elfimplibmang__umask() asm("_umask");
+void _elfimplibmang__umask() {
+asm("leave\njmp *%0" : : "r"(_imp___umask));
+}
+

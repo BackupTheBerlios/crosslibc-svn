@@ -9,3 +9,8 @@ void _elfimplib__ungetwch() {
 asm("leave\njmp *%0" : : "r"(_imp___ungetwch));
 }
 
+void _elfimplibmang__ungetwch() asm("_ungetwch");
+void _elfimplibmang__ungetwch() {
+asm("leave\njmp *%0" : : "r"(_imp___ungetwch));
+}
+

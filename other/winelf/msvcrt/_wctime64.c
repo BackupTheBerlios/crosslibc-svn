@@ -9,3 +9,8 @@ void _elfimplib__wctime64() {
 asm("leave\njmp *%0" : : "r"(_imp___wctime64));
 }
 
+void _elfimplibmang__wctime64() asm("_wctime64");
+void _elfimplibmang__wctime64() {
+asm("leave\njmp *%0" : : "r"(_imp___wctime64));
+}
+

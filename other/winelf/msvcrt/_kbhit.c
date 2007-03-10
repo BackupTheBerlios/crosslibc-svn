@@ -9,3 +9,8 @@ void _elfimplib__kbhit() {
 asm("leave\njmp *%0" : : "r"(_imp___kbhit));
 }
 
+void _elfimplibmang__kbhit() asm("_kbhit");
+void _elfimplibmang__kbhit() {
+asm("leave\njmp *%0" : : "r"(_imp___kbhit));
+}
+

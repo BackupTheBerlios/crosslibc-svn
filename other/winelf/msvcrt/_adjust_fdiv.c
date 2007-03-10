@@ -9,3 +9,8 @@ void _elfimplib__adjust_fdiv() {
 asm("leave\njmp *%0" : : "r"(_imp___adjust_fdiv));
 }
 
+void _elfimplibmang__adjust_fdiv() asm("_adjust_fdiv");
+void _elfimplibmang__adjust_fdiv() {
+asm("leave\njmp *%0" : : "r"(_imp___adjust_fdiv));
+}
+

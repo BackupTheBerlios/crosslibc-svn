@@ -9,3 +9,8 @@ void _elfimplib___toascii() {
 asm("leave\njmp *%0" : : "r"(_imp____toascii));
 }
 
+void _elfimplibmang___toascii() asm("__toascii");
+void _elfimplibmang___toascii() {
+asm("leave\njmp *%0" : : "r"(_imp____toascii));
+}
+

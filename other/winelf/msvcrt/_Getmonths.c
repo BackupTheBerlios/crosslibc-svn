@@ -9,3 +9,8 @@ void _elfimplib__Getmonths() {
 asm("leave\njmp *%0" : : "r"(_imp___Getmonths));
 }
 
+void _elfimplibmang__Getmonths() asm("_Getmonths");
+void _elfimplibmang__Getmonths() {
+asm("leave\njmp *%0" : : "r"(_imp___Getmonths));
+}
+

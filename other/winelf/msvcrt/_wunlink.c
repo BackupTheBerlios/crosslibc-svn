@@ -9,3 +9,8 @@ void _elfimplib__wunlink() {
 asm("leave\njmp *%0" : : "r"(_imp___wunlink));
 }
 
+void _elfimplibmang__wunlink() asm("_wunlink");
+void _elfimplibmang__wunlink() {
+asm("leave\njmp *%0" : : "r"(_imp___wunlink));
+}
+

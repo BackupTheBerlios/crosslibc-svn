@@ -9,3 +9,8 @@ void _elfimplib__cgets() {
 asm("leave\njmp *%0" : : "r"(_imp___cgets));
 }
 
+void _elfimplibmang__cgets() asm("_cgets");
+void _elfimplibmang__cgets() {
+asm("leave\njmp *%0" : : "r"(_imp___cgets));
+}
+

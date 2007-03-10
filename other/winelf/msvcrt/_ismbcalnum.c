@@ -9,3 +9,8 @@ void _elfimplib__ismbcalnum() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcalnum));
 }
 
+void _elfimplibmang__ismbcalnum() asm("_ismbcalnum");
+void _elfimplibmang__ismbcalnum() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbcalnum));
+}
+

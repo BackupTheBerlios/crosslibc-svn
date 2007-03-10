@@ -9,3 +9,8 @@ void _elfimplib__HUGE() {
 asm("leave\njmp *%0" : : "r"(_imp___HUGE));
 }
 
+void _elfimplibmang__HUGE() asm("_HUGE");
+void _elfimplibmang__HUGE() {
+asm("leave\njmp *%0" : : "r"(_imp___HUGE));
+}
+

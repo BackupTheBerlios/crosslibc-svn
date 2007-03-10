@@ -9,3 +9,8 @@ void _elfimplib__expand() {
 asm("leave\njmp *%0" : : "r"(_imp___expand));
 }
 
+void _elfimplibmang__expand() asm("_expand");
+void _elfimplibmang__expand() {
+asm("leave\njmp *%0" : : "r"(_imp___expand));
+}
+

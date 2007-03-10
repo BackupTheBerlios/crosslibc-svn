@@ -9,3 +9,8 @@ void _elfimplib__ismbcprint() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcprint));
 }
 
+void _elfimplibmang__ismbcprint() asm("_ismbcprint");
+void _elfimplibmang__ismbcprint() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbcprint));
+}
+

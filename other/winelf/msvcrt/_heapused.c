@@ -9,3 +9,8 @@ void _elfimplib__heapused() {
 asm("leave\njmp *%0" : : "r"(_imp___heapused));
 }
 
+void _elfimplibmang__heapused() asm("_heapused");
+void _elfimplibmang__heapused() {
+asm("leave\njmp *%0" : : "r"(_imp___heapused));
+}
+

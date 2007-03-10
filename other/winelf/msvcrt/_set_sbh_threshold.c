@@ -9,3 +9,8 @@ void _elfimplib__set_sbh_threshold() {
 asm("leave\njmp *%0" : : "r"(_imp___set_sbh_threshold));
 }
 
+void _elfimplibmang__set_sbh_threshold() asm("_set_sbh_threshold");
+void _elfimplibmang__set_sbh_threshold() {
+asm("leave\njmp *%0" : : "r"(_imp___set_sbh_threshold));
+}
+

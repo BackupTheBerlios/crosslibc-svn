@@ -9,3 +9,8 @@ void _elfimplib__mbsrchr() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsrchr));
 }
 
+void _elfimplibmang__mbsrchr() asm("_mbsrchr");
+void _elfimplibmang__mbsrchr() {
+asm("leave\njmp *%0" : : "r"(_imp___mbsrchr));
+}
+

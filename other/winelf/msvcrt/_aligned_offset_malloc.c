@@ -9,3 +9,8 @@ void _elfimplib__aligned_offset_malloc() {
 asm("leave\njmp *%0" : : "r"(_imp___aligned_offset_malloc));
 }
 
+void _elfimplibmang__aligned_offset_malloc() asm("_aligned_offset_malloc");
+void _elfimplibmang__aligned_offset_malloc() {
+asm("leave\njmp *%0" : : "r"(_imp___aligned_offset_malloc));
+}
+

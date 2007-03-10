@@ -9,3 +9,8 @@ void _elfimplib__wexecle() {
 asm("leave\njmp *%0" : : "r"(_imp___wexecle));
 }
 
+void _elfimplibmang__wexecle() asm("_wexecle");
+void _elfimplibmang__wexecle() {
+asm("leave\njmp *%0" : : "r"(_imp___wexecle));
+}
+

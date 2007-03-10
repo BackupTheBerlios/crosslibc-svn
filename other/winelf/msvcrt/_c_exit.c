@@ -9,3 +9,8 @@ void _elfimplib__c_exit() {
 asm("leave\njmp *%0" : : "r"(_imp___c_exit));
 }
 
+void _elfimplibmang__c_exit() asm("_c_exit");
+void _elfimplibmang__c_exit() {
+asm("leave\njmp *%0" : : "r"(_imp___c_exit));
+}
+

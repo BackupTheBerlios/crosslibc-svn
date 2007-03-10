@@ -9,3 +9,8 @@ void _elfimplib__mbctoupper() {
 asm("leave\njmp *%0" : : "r"(_imp___mbctoupper));
 }
 
+void _elfimplibmang__mbctoupper() asm("_mbctoupper");
+void _elfimplibmang__mbctoupper() {
+asm("leave\njmp *%0" : : "r"(_imp___mbctoupper));
+}
+

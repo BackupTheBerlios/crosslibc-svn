@@ -9,3 +9,8 @@ void _elfimplib__wtoi64() {
 asm("leave\njmp *%0" : : "r"(_imp___wtoi64));
 }
 
+void _elfimplibmang__wtoi64() asm("_wtoi64");
+void _elfimplibmang__wtoi64() {
+asm("leave\njmp *%0" : : "r"(_imp___wtoi64));
+}
+

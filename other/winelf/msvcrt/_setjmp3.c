@@ -9,3 +9,8 @@ void _elfimplib__setjmp3() {
 asm("leave\njmp *%0" : : "r"(_imp___setjmp3));
 }
 
+void _elfimplibmang__setjmp3() asm("_setjmp3");
+void _elfimplibmang__setjmp3() {
+asm("leave\njmp *%0" : : "r"(_imp___setjmp3));
+}
+

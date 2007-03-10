@@ -9,3 +9,8 @@ void _elfimplib__getmaxstdio() {
 asm("leave\njmp *%0" : : "r"(_imp___getmaxstdio));
 }
 
+void _elfimplibmang__getmaxstdio() asm("_getmaxstdio");
+void _elfimplibmang__getmaxstdio() {
+asm("leave\njmp *%0" : : "r"(_imp___getmaxstdio));
+}
+

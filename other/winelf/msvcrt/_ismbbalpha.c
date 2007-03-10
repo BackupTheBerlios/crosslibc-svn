@@ -9,3 +9,8 @@ void _elfimplib__ismbbalpha() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbalpha));
 }
 
+void _elfimplibmang__ismbbalpha() asm("_ismbbalpha");
+void _elfimplibmang__ismbbalpha() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbbalpha));
+}
+

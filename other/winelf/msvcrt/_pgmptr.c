@@ -9,3 +9,8 @@ void _elfimplib__pgmptr() {
 asm("leave\njmp *%0" : : "r"(_imp___pgmptr));
 }
 
+void _elfimplibmang__pgmptr() asm("_pgmptr");
+void _elfimplibmang__pgmptr() {
+asm("leave\njmp *%0" : : "r"(_imp___pgmptr));
+}
+

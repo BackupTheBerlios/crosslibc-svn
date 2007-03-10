@@ -9,3 +9,8 @@ void _elfimplib____lc_handle_func() {
 asm("leave\njmp *%0" : : "r"(_imp_____lc_handle_func));
 }
 
+void _elfimplibmang____lc_handle_func() asm("___lc_handle_func");
+void _elfimplibmang____lc_handle_func() {
+asm("leave\njmp *%0" : : "r"(_imp_____lc_handle_func));
+}
+

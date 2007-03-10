@@ -9,3 +9,8 @@ void _elfimplib__CIlog() {
 asm("leave\njmp *%0" : : "r"(_imp___CIlog));
 }
 
+void _elfimplibmang__CIlog() asm("_CIlog");
+void _elfimplibmang__CIlog() {
+asm("leave\njmp *%0" : : "r"(_imp___CIlog));
+}
+

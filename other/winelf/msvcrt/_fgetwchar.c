@@ -9,3 +9,8 @@ void _elfimplib__fgetwchar() {
 asm("leave\njmp *%0" : : "r"(_imp___fgetwchar));
 }
 
+void _elfimplibmang__fgetwchar() asm("_fgetwchar");
+void _elfimplibmang__fgetwchar() {
+asm("leave\njmp *%0" : : "r"(_imp___fgetwchar));
+}
+

@@ -172,6 +172,17 @@ int main(int argc, char **argv)
                 "\n",
                 argv[2], line, unmangled, line, line, argv[2], line, argv[2],
                 line, line, line);
+        
+        if (unmangled != line) {
+            /* include both unmangled and mangled */
+            fprintf(cfile, "void _elfimplibmang_%s() asm(\"%s\");\n"
+                    "void _elfimplibmang_%s() {\n"
+                    "asm(\"leave\\njmp *%0\" : : \"r\"(_imp__%s));\n"
+                    "}\n"
+                    "\n",
+                    line, line, line, line);
+        }
+        
         fclose(cfile);
     }
     

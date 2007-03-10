@@ -9,3 +9,8 @@ void _elfimplib__snscanf() {
 asm("leave\njmp *%0" : : "r"(_imp___snscanf));
 }
 
+void _elfimplibmang__snscanf() asm("_snscanf");
+void _elfimplibmang__snscanf() {
+asm("leave\njmp *%0" : : "r"(_imp___snscanf));
+}
+

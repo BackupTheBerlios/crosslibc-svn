@@ -9,3 +9,8 @@ void _elfimplib__mbclen() {
 asm("leave\njmp *%0" : : "r"(_imp___mbclen));
 }
 
+void _elfimplibmang__mbclen() asm("_mbclen");
+void _elfimplibmang__mbclen() {
+asm("leave\njmp *%0" : : "r"(_imp___mbclen));
+}
+

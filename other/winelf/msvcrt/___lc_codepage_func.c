@@ -9,3 +9,8 @@ void _elfimplib____lc_codepage_func() {
 asm("leave\njmp *%0" : : "r"(_imp_____lc_codepage_func));
 }
 
+void _elfimplibmang____lc_codepage_func() asm("___lc_codepage_func");
+void _elfimplibmang____lc_codepage_func() {
+asm("leave\njmp *%0" : : "r"(_imp_____lc_codepage_func));
+}
+

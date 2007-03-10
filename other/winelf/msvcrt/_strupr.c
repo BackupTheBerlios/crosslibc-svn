@@ -9,3 +9,8 @@ void _elfimplib__strupr() {
 asm("leave\njmp *%0" : : "r"(_imp___strupr));
 }
 
+void _elfimplibmang__strupr() asm("_strupr");
+void _elfimplibmang__strupr() {
+asm("leave\njmp *%0" : : "r"(_imp___strupr));
+}
+

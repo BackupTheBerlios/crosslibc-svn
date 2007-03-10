@@ -9,3 +9,8 @@ void _elfimplib__wcsnicoll() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsnicoll));
 }
 
+void _elfimplibmang__wcsnicoll() asm("_wcsnicoll");
+void _elfimplibmang__wcsnicoll() {
+asm("leave\njmp *%0" : : "r"(_imp___wcsnicoll));
+}
+

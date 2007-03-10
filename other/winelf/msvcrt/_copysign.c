@@ -9,3 +9,8 @@ void _elfimplib__copysign() {
 asm("leave\njmp *%0" : : "r"(_imp___copysign));
 }
 
+void _elfimplibmang__copysign() asm("_copysign");
+void _elfimplibmang__copysign() {
+asm("leave\njmp *%0" : : "r"(_imp___copysign));
+}
+

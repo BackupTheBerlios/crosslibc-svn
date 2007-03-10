@@ -9,3 +9,8 @@ void _elfimplib__XcptFilter() {
 asm("leave\njmp *%0" : : "r"(_imp___XcptFilter));
 }
 
+void _elfimplibmang__XcptFilter() asm("_XcptFilter");
+void _elfimplibmang__XcptFilter() {
+asm("leave\njmp *%0" : : "r"(_imp___XcptFilter));
+}
+

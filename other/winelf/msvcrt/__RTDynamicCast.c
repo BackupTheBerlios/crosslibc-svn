@@ -9,3 +9,8 @@ void _elfimplib___RTDynamicCast() {
 asm("leave\njmp *%0" : : "r"(_imp____RTDynamicCast));
 }
 
+void _elfimplibmang___RTDynamicCast() asm("__RTDynamicCast");
+void _elfimplibmang___RTDynamicCast() {
+asm("leave\njmp *%0" : : "r"(_imp____RTDynamicCast));
+}
+

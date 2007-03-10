@@ -9,3 +9,8 @@ void _elfimplib__wgetenv() {
 asm("leave\njmp *%0" : : "r"(_imp___wgetenv));
 }
 
+void _elfimplibmang__wgetenv() asm("_wgetenv");
+void _elfimplibmang__wgetenv() {
+asm("leave\njmp *%0" : : "r"(_imp___wgetenv));
+}
+

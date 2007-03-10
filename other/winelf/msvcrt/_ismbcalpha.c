@@ -9,3 +9,8 @@ void _elfimplib__ismbcalpha() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcalpha));
 }
 
+void _elfimplibmang__ismbcalpha() asm("_ismbcalpha");
+void _elfimplibmang__ismbcalpha() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbcalpha));
+}
+

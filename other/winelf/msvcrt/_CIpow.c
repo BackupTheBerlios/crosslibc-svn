@@ -9,3 +9,8 @@ void _elfimplib__CIpow() {
 asm("leave\njmp *%0" : : "r"(_imp___CIpow));
 }
 
+void _elfimplibmang__CIpow() asm("_CIpow");
+void _elfimplibmang__CIpow() {
+asm("leave\njmp *%0" : : "r"(_imp___CIpow));
+}
+

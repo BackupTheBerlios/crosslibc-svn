@@ -9,3 +9,8 @@ void _elfimplib___RTCastToVoid() {
 asm("leave\njmp *%0" : : "r"(_imp____RTCastToVoid));
 }
 
+void _elfimplibmang___RTCastToVoid() asm("__RTCastToVoid");
+void _elfimplibmang___RTCastToVoid() {
+asm("leave\njmp *%0" : : "r"(_imp____RTCastToVoid));
+}
+

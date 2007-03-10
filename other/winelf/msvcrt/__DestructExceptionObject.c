@@ -9,3 +9,8 @@ void _elfimplib___DestructExceptionObject() {
 asm("leave\njmp *%0" : : "r"(_imp____DestructExceptionObject));
 }
 
+void _elfimplibmang___DestructExceptionObject() asm("__DestructExceptionObject");
+void _elfimplibmang___DestructExceptionObject() {
+asm("leave\njmp *%0" : : "r"(_imp____DestructExceptionObject));
+}
+

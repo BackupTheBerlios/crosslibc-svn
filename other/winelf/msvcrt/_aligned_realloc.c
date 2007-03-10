@@ -9,3 +9,8 @@ void _elfimplib__aligned_realloc() {
 asm("leave\njmp *%0" : : "r"(_imp___aligned_realloc));
 }
 
+void _elfimplibmang__aligned_realloc() asm("_aligned_realloc");
+void _elfimplibmang__aligned_realloc() {
+asm("leave\njmp *%0" : : "r"(_imp___aligned_realloc));
+}
+

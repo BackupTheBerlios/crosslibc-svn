@@ -9,3 +9,8 @@ void _elfimplib___doserrno() {
 asm("leave\njmp *%0" : : "r"(_imp____doserrno));
 }
 
+void _elfimplibmang___doserrno() asm("__doserrno");
+void _elfimplibmang___doserrno() {
+asm("leave\njmp *%0" : : "r"(_imp____doserrno));
+}
+

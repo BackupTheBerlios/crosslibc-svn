@@ -9,3 +9,8 @@ void _elfimplib__CIexp() {
 asm("leave\njmp *%0" : : "r"(_imp___CIexp));
 }
 
+void _elfimplibmang__CIexp() asm("_CIexp");
+void _elfimplibmang__CIexp() {
+asm("leave\njmp *%0" : : "r"(_imp___CIexp));
+}
+

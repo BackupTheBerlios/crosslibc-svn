@@ -9,3 +9,8 @@ void _elfimplib__CIcosh() {
 asm("leave\njmp *%0" : : "r"(_imp___CIcosh));
 }
 
+void _elfimplibmang__CIcosh() asm("_CIcosh");
+void _elfimplibmang__CIcosh() {
+asm("leave\njmp *%0" : : "r"(_imp___CIcosh));
+}
+

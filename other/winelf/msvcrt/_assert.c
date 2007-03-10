@@ -9,3 +9,8 @@ void _elfimplib__assert() {
 asm("leave\njmp *%0" : : "r"(_imp___assert));
 }
 
+void _elfimplibmang__assert() asm("_assert");
+void _elfimplibmang__assert() {
+asm("leave\njmp *%0" : : "r"(_imp___assert));
+}
+

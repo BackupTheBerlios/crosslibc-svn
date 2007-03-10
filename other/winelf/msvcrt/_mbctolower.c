@@ -9,3 +9,8 @@ void _elfimplib__mbctolower() {
 asm("leave\njmp *%0" : : "r"(_imp___mbctolower));
 }
 
+void _elfimplibmang__mbctolower() asm("_mbctolower");
+void _elfimplibmang__mbctolower() {
+asm("leave\njmp *%0" : : "r"(_imp___mbctolower));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__statusfp() {
 asm("leave\njmp *%0" : : "r"(_imp___statusfp));
 }
 
+void _elfimplibmang__statusfp() asm("_statusfp");
+void _elfimplibmang__statusfp() {
+asm("leave\njmp *%0" : : "r"(_imp___statusfp));
+}
+

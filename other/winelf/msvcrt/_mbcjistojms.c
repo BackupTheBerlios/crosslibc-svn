@@ -9,3 +9,8 @@ void _elfimplib__mbcjistojms() {
 asm("leave\njmp *%0" : : "r"(_imp___mbcjistojms));
 }
 
+void _elfimplibmang__mbcjistojms() asm("_mbcjistojms");
+void _elfimplibmang__mbcjistojms() {
+asm("leave\njmp *%0" : : "r"(_imp___mbcjistojms));
+}
+

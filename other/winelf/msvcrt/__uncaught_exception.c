@@ -9,3 +9,8 @@ void _elfimplib___uncaught_exception() {
 asm("leave\njmp *%0" : : "r"(_imp____uncaught_exception));
 }
 
+void _elfimplibmang___uncaught_exception() asm("__uncaught_exception");
+void _elfimplibmang___uncaught_exception() {
+asm("leave\njmp *%0" : : "r"(_imp____uncaught_exception));
+}
+

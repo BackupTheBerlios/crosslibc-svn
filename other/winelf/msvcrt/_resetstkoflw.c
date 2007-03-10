@@ -9,3 +9,8 @@ void _elfimplib__resetstkoflw() {
 asm("leave\njmp *%0" : : "r"(_imp___resetstkoflw));
 }
 
+void _elfimplibmang__resetstkoflw() asm("_resetstkoflw");
+void _elfimplibmang__resetstkoflw() {
+asm("leave\njmp *%0" : : "r"(_imp___resetstkoflw));
+}
+

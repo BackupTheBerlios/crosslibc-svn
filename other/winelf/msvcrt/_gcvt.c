@@ -9,3 +9,8 @@ void _elfimplib__gcvt() {
 asm("leave\njmp *%0" : : "r"(_imp___gcvt));
 }
 
+void _elfimplibmang__gcvt() asm("_gcvt");
+void _elfimplibmang__gcvt() {
+asm("leave\njmp *%0" : : "r"(_imp___gcvt));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib___p__winver() {
 asm("leave\njmp *%0" : : "r"(_imp____p__winver));
 }
 
+void _elfimplibmang___p__winver() asm("__p__winver");
+void _elfimplibmang___p__winver() {
+asm("leave\njmp *%0" : : "r"(_imp____p__winver));
+}
+

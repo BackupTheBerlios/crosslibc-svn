@@ -9,3 +9,8 @@ void _elfimplib__CxxThrowException() {
 asm("leave\njmp *%0" : : "r"(_imp___CxxThrowException));
 }
 
+void _elfimplibmang__CxxThrowException() asm("_CxxThrowException");
+void _elfimplibmang__CxxThrowException() {
+asm("leave\njmp *%0" : : "r"(_imp___CxxThrowException));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__cwait() {
 asm("leave\njmp *%0" : : "r"(_imp___cwait));
 }
 
+void _elfimplibmang__cwait() asm("_cwait");
+void _elfimplibmang__cwait() {
+asm("leave\njmp *%0" : : "r"(_imp___cwait));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__ismbclegal() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbclegal));
 }
 
+void _elfimplibmang__ismbclegal() asm("_ismbclegal");
+void _elfimplibmang__ismbclegal() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbclegal));
+}
+

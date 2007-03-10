@@ -9,3 +9,8 @@ void _elfimplib___mb_cur_max() {
 asm("leave\njmp *%0" : : "r"(_imp____mb_cur_max));
 }
 
+void _elfimplibmang___mb_cur_max() asm("__mb_cur_max");
+void _elfimplibmang___mb_cur_max() {
+asm("leave\njmp *%0" : : "r"(_imp____mb_cur_max));
+}
+

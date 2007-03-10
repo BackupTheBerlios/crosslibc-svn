@@ -9,3 +9,8 @@ void _elfimplib__adj_fpatan() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fpatan));
 }
 
+void _elfimplibmang__adj_fpatan() asm("_adj_fpatan");
+void _elfimplibmang__adj_fpatan() {
+asm("leave\njmp *%0" : : "r"(_imp___adj_fpatan));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__lseeki64() {
 asm("leave\njmp *%0" : : "r"(_imp___lseeki64));
 }
 
+void _elfimplibmang__lseeki64() asm("_lseeki64");
+void _elfimplibmang__lseeki64() {
+asm("leave\njmp *%0" : : "r"(_imp___lseeki64));
+}
+

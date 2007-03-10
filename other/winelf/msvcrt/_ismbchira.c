@@ -9,3 +9,8 @@ void _elfimplib__ismbchira() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbchira));
 }
 
+void _elfimplibmang__ismbchira() asm("_ismbchira");
+void _elfimplibmang__ismbchira() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbchira));
+}
+

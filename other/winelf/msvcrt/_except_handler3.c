@@ -9,3 +9,8 @@ void _elfimplib__except_handler3() {
 asm("leave\njmp *%0" : : "r"(_imp___except_handler3));
 }
 
+void _elfimplibmang__except_handler3() asm("_except_handler3");
+void _elfimplibmang__except_handler3() {
+asm("leave\njmp *%0" : : "r"(_imp___except_handler3));
+}
+

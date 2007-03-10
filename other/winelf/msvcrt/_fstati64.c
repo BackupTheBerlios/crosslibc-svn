@@ -9,3 +9,8 @@ void _elfimplib__fstati64() {
 asm("leave\njmp *%0" : : "r"(_imp___fstati64));
 }
 
+void _elfimplibmang__fstati64() asm("_fstati64");
+void _elfimplibmang__fstati64() {
+asm("leave\njmp *%0" : : "r"(_imp___fstati64));
+}
+

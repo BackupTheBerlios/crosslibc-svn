@@ -9,3 +9,8 @@ void _elfimplib__CItanh() {
 asm("leave\njmp *%0" : : "r"(_imp___CItanh));
 }
 
+void _elfimplibmang__CItanh() asm("_CItanh");
+void _elfimplibmang__CItanh() {
+asm("leave\njmp *%0" : : "r"(_imp___CItanh));
+}
+

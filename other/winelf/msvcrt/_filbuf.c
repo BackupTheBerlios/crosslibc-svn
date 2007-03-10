@@ -9,3 +9,8 @@ void _elfimplib__filbuf() {
 asm("leave\njmp *%0" : : "r"(_imp___filbuf));
 }
 
+void _elfimplibmang__filbuf() asm("_filbuf");
+void _elfimplibmang__filbuf() {
+asm("leave\njmp *%0" : : "r"(_imp___filbuf));
+}
+

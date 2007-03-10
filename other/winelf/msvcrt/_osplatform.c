@@ -9,3 +9,8 @@ void _elfimplib__osplatform() {
 asm("leave\njmp *%0" : : "r"(_imp___osplatform));
 }
 
+void _elfimplibmang__osplatform() asm("_osplatform");
+void _elfimplibmang__osplatform() {
+asm("leave\njmp *%0" : : "r"(_imp___osplatform));
+}
+

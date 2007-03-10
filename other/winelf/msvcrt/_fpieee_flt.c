@@ -9,3 +9,8 @@ void _elfimplib__fpieee_flt() {
 asm("leave\njmp *%0" : : "r"(_imp___fpieee_flt));
 }
 
+void _elfimplibmang__fpieee_flt() asm("_fpieee_flt");
+void _elfimplibmang__fpieee_flt() {
+asm("leave\njmp *%0" : : "r"(_imp___fpieee_flt));
+}
+

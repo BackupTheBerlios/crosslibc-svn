@@ -9,3 +9,8 @@ void _elfimplib__mbctype() {
 asm("leave\njmp *%0" : : "r"(_imp___mbctype));
 }
 
+void _elfimplibmang__mbctype() asm("_mbctype");
+void _elfimplibmang__mbctype() {
+asm("leave\njmp *%0" : : "r"(_imp___mbctype));
+}
+

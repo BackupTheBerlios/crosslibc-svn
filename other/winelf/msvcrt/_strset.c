@@ -9,3 +9,8 @@ void _elfimplib__strset() {
 asm("leave\njmp *%0" : : "r"(_imp___strset));
 }
 
+void _elfimplibmang__strset() asm("_strset");
+void _elfimplibmang__strset() {
+asm("leave\njmp *%0" : : "r"(_imp___strset));
+}
+

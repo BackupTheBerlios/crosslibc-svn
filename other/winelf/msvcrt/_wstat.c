@@ -9,3 +9,8 @@ void _elfimplib__wstat() {
 asm("leave\njmp *%0" : : "r"(_imp___wstat));
 }
 
+void _elfimplibmang__wstat() asm("_wstat");
+void _elfimplibmang__wstat() {
+asm("leave\njmp *%0" : : "r"(_imp___wstat));
+}
+

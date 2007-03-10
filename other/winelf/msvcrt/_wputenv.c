@@ -9,3 +9,8 @@ void _elfimplib__wputenv() {
 asm("leave\njmp *%0" : : "r"(_imp___wputenv));
 }
 
+void _elfimplibmang__wputenv() asm("_wputenv");
+void _elfimplibmang__wputenv() {
+asm("leave\njmp *%0" : : "r"(_imp___wputenv));
+}
+

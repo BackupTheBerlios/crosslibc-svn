@@ -9,3 +9,8 @@ void _elfimplib__ismbbtrail() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbtrail));
 }
 
+void _elfimplibmang__ismbbtrail() asm("_ismbbtrail");
+void _elfimplibmang__ismbbtrail() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbbtrail));
+}
+

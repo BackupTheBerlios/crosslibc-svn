@@ -9,3 +9,8 @@ void _elfimplib___p__wenviron() {
 asm("leave\njmp *%0" : : "r"(_imp____p__wenviron));
 }
 
+void _elfimplibmang___p__wenviron() asm("__p__wenviron");
+void _elfimplibmang___p__wenviron() {
+asm("leave\njmp *%0" : : "r"(_imp____p__wenviron));
+}
+

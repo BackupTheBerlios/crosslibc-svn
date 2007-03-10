@@ -9,3 +9,8 @@ void _elfimplib__tzset() {
 asm("leave\njmp *%0" : : "r"(_imp___tzset));
 }
 
+void _elfimplibmang__tzset() asm("_tzset");
+void _elfimplibmang__tzset() {
+asm("leave\njmp *%0" : : "r"(_imp___tzset));
+}
+

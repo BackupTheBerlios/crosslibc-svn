@@ -9,3 +9,8 @@ void _elfimplib__wfindfirst() {
 asm("leave\njmp *%0" : : "r"(_imp___wfindfirst));
 }
 
+void _elfimplibmang__wfindfirst() asm("_wfindfirst");
+void _elfimplibmang__wfindfirst() {
+asm("leave\njmp *%0" : : "r"(_imp___wfindfirst));
+}
+

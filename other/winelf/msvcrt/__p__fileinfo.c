@@ -9,3 +9,8 @@ void _elfimplib___p__fileinfo() {
 asm("leave\njmp *%0" : : "r"(_imp____p__fileinfo));
 }
 
+void _elfimplibmang___p__fileinfo() asm("__p__fileinfo");
+void _elfimplibmang___p__fileinfo() {
+asm("leave\njmp *%0" : : "r"(_imp____p__fileinfo));
+}
+

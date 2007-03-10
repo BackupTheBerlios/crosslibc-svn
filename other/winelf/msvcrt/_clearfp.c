@@ -9,3 +9,8 @@ void _elfimplib__clearfp() {
 asm("leave\njmp *%0" : : "r"(_imp___clearfp));
 }
 
+void _elfimplibmang__clearfp() asm("_clearfp");
+void _elfimplibmang__clearfp() {
+asm("leave\njmp *%0" : : "r"(_imp___clearfp));
+}
+

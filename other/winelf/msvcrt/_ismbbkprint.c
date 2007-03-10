@@ -9,3 +9,8 @@ void _elfimplib__ismbbkprint() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbkprint));
 }
 
+void _elfimplibmang__ismbbkprint() asm("_ismbbkprint");
+void _elfimplibmang__ismbbkprint() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbbkprint));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__chkesp() {
 asm("leave\njmp *%0" : : "r"(_imp___chkesp));
 }
 
+void _elfimplibmang__chkesp() asm("_chkesp");
+void _elfimplibmang__chkesp() {
+asm("leave\njmp *%0" : : "r"(_imp___chkesp));
+}
+

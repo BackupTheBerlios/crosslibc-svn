@@ -9,3 +9,8 @@ void _elfimplib__chdir() {
 asm("leave\njmp *%0" : : "r"(_imp___chdir));
 }
 
+void _elfimplibmang__chdir() asm("_chdir");
+void _elfimplibmang__chdir() {
+asm("leave\njmp *%0" : : "r"(_imp___chdir));
+}
+

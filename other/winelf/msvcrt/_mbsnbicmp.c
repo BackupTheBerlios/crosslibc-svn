@@ -9,3 +9,8 @@ void _elfimplib__mbsnbicmp() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsnbicmp));
 }
 
+void _elfimplibmang__mbsnbicmp() asm("_mbsnbicmp");
+void _elfimplibmang__mbsnbicmp() {
+asm("leave\njmp *%0" : : "r"(_imp___mbsnbicmp));
+}
+

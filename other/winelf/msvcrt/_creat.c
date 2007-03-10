@@ -9,3 +9,8 @@ void _elfimplib__creat() {
 asm("leave\njmp *%0" : : "r"(_imp___creat));
 }
 
+void _elfimplibmang__creat() asm("_creat");
+void _elfimplibmang__creat() {
+asm("leave\njmp *%0" : : "r"(_imp___creat));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__getdllprocaddr() {
 asm("leave\njmp *%0" : : "r"(_imp___getdllprocaddr));
 }
 
+void _elfimplibmang__getdllprocaddr() asm("_getdllprocaddr");
+void _elfimplibmang__getdllprocaddr() {
+asm("leave\njmp *%0" : : "r"(_imp___getdllprocaddr));
+}
+

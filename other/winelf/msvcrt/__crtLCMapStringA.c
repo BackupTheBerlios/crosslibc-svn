@@ -9,3 +9,8 @@ void _elfimplib___crtLCMapStringA() {
 asm("leave\njmp *%0" : : "r"(_imp____crtLCMapStringA));
 }
 
+void _elfimplibmang___crtLCMapStringA() asm("__crtLCMapStringA");
+void _elfimplibmang___crtLCMapStringA() {
+asm("leave\njmp *%0" : : "r"(_imp____crtLCMapStringA));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__msize() {
 asm("leave\njmp *%0" : : "r"(_imp___msize));
 }
 
+void _elfimplibmang__msize() asm("_msize");
+void _elfimplibmang__msize() {
+asm("leave\njmp *%0" : : "r"(_imp___msize));
+}
+

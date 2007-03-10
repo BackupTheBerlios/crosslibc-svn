@@ -9,3 +9,8 @@ void _elfimplib__tolower() {
 asm("leave\njmp *%0" : : "r"(_imp___tolower));
 }
 
+void _elfimplibmang__tolower() asm("_tolower");
+void _elfimplibmang__tolower() {
+asm("leave\njmp *%0" : : "r"(_imp___tolower));
+}
+

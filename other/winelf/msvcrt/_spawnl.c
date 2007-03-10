@@ -9,3 +9,8 @@ void _elfimplib__spawnl() {
 asm("leave\njmp *%0" : : "r"(_imp___spawnl));
 }
 
+void _elfimplibmang__spawnl() asm("_spawnl");
+void _elfimplibmang__spawnl() {
+asm("leave\njmp *%0" : : "r"(_imp___spawnl));
+}
+

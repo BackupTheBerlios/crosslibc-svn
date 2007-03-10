@@ -9,3 +9,8 @@ void _elfimplib__CIcos() {
 asm("leave\njmp *%0" : : "r"(_imp___CIcos));
 }
 
+void _elfimplibmang__CIcos() asm("_CIcos");
+void _elfimplibmang__CIcos() {
+asm("leave\njmp *%0" : : "r"(_imp___CIcos));
+}
+

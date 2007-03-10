@@ -9,3 +9,8 @@ void _elfimplib__wasctime() {
 asm("leave\njmp *%0" : : "r"(_imp___wasctime));
 }
 
+void _elfimplibmang__wasctime() asm("_wasctime");
+void _elfimplibmang__wasctime() {
+asm("leave\njmp *%0" : : "r"(_imp___wasctime));
+}
+

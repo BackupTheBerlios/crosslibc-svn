@@ -9,3 +9,8 @@ void _elfimplib__sleep() {
 asm("leave\njmp *%0" : : "r"(_imp___sleep));
 }
 
+void _elfimplibmang__sleep() asm("_sleep");
+void _elfimplibmang__sleep() {
+asm("leave\njmp *%0" : : "r"(_imp___sleep));
+}
+

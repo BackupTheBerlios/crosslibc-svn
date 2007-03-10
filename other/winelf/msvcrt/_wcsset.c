@@ -9,3 +9,8 @@ void _elfimplib__wcsset() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsset));
 }
 
+void _elfimplibmang__wcsset() asm("_wcsset");
+void _elfimplibmang__wcsset() {
+asm("leave\njmp *%0" : : "r"(_imp___wcsset));
+}
+

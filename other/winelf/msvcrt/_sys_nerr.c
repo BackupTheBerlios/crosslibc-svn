@@ -9,3 +9,8 @@ void _elfimplib__sys_nerr() {
 asm("leave\njmp *%0" : : "r"(_imp___sys_nerr));
 }
 
+void _elfimplibmang__sys_nerr() asm("_sys_nerr");
+void _elfimplibmang__sys_nerr() {
+asm("leave\njmp *%0" : : "r"(_imp___sys_nerr));
+}
+

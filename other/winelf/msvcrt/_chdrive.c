@@ -9,3 +9,8 @@ void _elfimplib__chdrive() {
 asm("leave\njmp *%0" : : "r"(_imp___chdrive));
 }
 
+void _elfimplibmang__chdrive() asm("_chdrive");
+void _elfimplibmang__chdrive() {
+asm("leave\njmp *%0" : : "r"(_imp___chdrive));
+}
+

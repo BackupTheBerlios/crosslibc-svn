@@ -9,3 +9,8 @@ void _elfimplib__ismbblead() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbblead));
 }
 
+void _elfimplibmang__ismbblead() asm("_ismbblead");
+void _elfimplibmang__ismbblead() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbblead));
+}
+

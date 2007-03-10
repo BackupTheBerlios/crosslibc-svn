@@ -9,3 +9,8 @@ void _elfimplib__setsystime() {
 asm("leave\njmp *%0" : : "r"(_imp___setsystime));
 }
 
+void _elfimplibmang__setsystime() asm("_setsystime");
+void _elfimplibmang__setsystime() {
+asm("leave\njmp *%0" : : "r"(_imp___setsystime));
+}
+

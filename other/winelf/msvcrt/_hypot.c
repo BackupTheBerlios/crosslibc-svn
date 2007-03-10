@@ -9,3 +9,8 @@ void _elfimplib__hypot() {
 asm("leave\njmp *%0" : : "r"(_imp___hypot));
 }
 
+void _elfimplibmang__hypot() asm("_hypot");
+void _elfimplibmang__hypot() {
+asm("leave\njmp *%0" : : "r"(_imp___hypot));
+}
+

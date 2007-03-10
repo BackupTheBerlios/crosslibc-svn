@@ -9,3 +9,8 @@ void _elfimplib___pxcptinfoptrs() {
 asm("leave\njmp *%0" : : "r"(_imp____pxcptinfoptrs));
 }
 
+void _elfimplibmang___pxcptinfoptrs() asm("__pxcptinfoptrs");
+void _elfimplibmang___pxcptinfoptrs() {
+asm("leave\njmp *%0" : : "r"(_imp____pxcptinfoptrs));
+}
+

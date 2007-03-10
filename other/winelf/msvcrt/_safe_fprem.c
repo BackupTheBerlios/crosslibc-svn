@@ -9,3 +9,8 @@ void _elfimplib__safe_fprem() {
 asm("leave\njmp *%0" : : "r"(_imp___safe_fprem));
 }
 
+void _elfimplibmang__safe_fprem() asm("_safe_fprem");
+void _elfimplibmang__safe_fprem() {
+asm("leave\njmp *%0" : : "r"(_imp___safe_fprem));
+}
+

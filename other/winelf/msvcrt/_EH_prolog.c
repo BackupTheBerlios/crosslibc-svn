@@ -9,3 +9,8 @@ void _elfimplib__EH_prolog() {
 asm("leave\njmp *%0" : : "r"(_imp___EH_prolog));
 }
 
+void _elfimplibmang__EH_prolog() asm("_EH_prolog");
+void _elfimplibmang__EH_prolog() {
+asm("leave\njmp *%0" : : "r"(_imp___EH_prolog));
+}
+

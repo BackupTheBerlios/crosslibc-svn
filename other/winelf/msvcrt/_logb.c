@@ -9,3 +9,8 @@ void _elfimplib__logb() {
 asm("leave\njmp *%0" : : "r"(_imp___logb));
 }
 
+void _elfimplibmang__logb() asm("_logb");
+void _elfimplibmang__logb() {
+asm("leave\njmp *%0" : : "r"(_imp___logb));
+}
+

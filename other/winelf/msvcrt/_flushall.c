@@ -9,3 +9,8 @@ void _elfimplib__flushall() {
 asm("leave\njmp *%0" : : "r"(_imp___flushall));
 }
 
+void _elfimplibmang__flushall() asm("_flushall");
+void _elfimplibmang__flushall() {
+asm("leave\njmp *%0" : : "r"(_imp___flushall));
+}
+

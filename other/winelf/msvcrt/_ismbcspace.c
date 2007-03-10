@@ -9,3 +9,8 @@ void _elfimplib__ismbcspace() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcspace));
 }
 
+void _elfimplibmang__ismbcspace() asm("_ismbcspace");
+void _elfimplibmang__ismbcspace() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbcspace));
+}
+

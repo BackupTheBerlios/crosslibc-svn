@@ -9,3 +9,8 @@ void _elfimplib__tell() {
 asm("leave\njmp *%0" : : "r"(_imp___tell));
 }
 
+void _elfimplibmang__tell() asm("_tell");
+void _elfimplibmang__tell() {
+asm("leave\njmp *%0" : : "r"(_imp___tell));
+}
+

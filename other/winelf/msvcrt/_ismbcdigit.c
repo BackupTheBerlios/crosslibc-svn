@@ -9,3 +9,8 @@ void _elfimplib__ismbcdigit() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbcdigit));
 }
 
+void _elfimplibmang__ismbcdigit() asm("_ismbcdigit");
+void _elfimplibmang__ismbcdigit() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbcdigit));
+}
+

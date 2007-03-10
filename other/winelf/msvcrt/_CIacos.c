@@ -9,3 +9,8 @@ void _elfimplib__CIacos() {
 asm("leave\njmp *%0" : : "r"(_imp___CIacos));
 }
 
+void _elfimplibmang__CIacos() asm("_CIacos");
+void _elfimplibmang__CIacos() {
+asm("leave\njmp *%0" : : "r"(_imp___CIacos));
+}
+

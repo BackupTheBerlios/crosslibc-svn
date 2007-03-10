@@ -9,3 +9,8 @@ void _elfimplib__inpw() {
 asm("leave\njmp *%0" : : "r"(_imp___inpw));
 }
 
+void _elfimplibmang__inpw() asm("_inpw");
+void _elfimplibmang__inpw() {
+asm("leave\njmp *%0" : : "r"(_imp___inpw));
+}
+

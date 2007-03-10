@@ -9,3 +9,8 @@ void _elfimplib__safe_fdiv() {
 asm("leave\njmp *%0" : : "r"(_imp___safe_fdiv));
 }
 
+void _elfimplibmang__safe_fdiv() asm("_safe_fdiv");
+void _elfimplibmang__safe_fdiv() {
+asm("leave\njmp *%0" : : "r"(_imp___safe_fdiv));
+}
+

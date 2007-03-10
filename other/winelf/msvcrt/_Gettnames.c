@@ -9,3 +9,8 @@ void _elfimplib__Gettnames() {
 asm("leave\njmp *%0" : : "r"(_imp___Gettnames));
 }
 
+void _elfimplibmang__Gettnames() asm("_Gettnames");
+void _elfimplibmang__Gettnames() {
+asm("leave\njmp *%0" : : "r"(_imp___Gettnames));
+}
+

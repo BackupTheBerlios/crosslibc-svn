@@ -9,3 +9,8 @@ void _elfimplib__atoi64() {
 asm("leave\njmp *%0" : : "r"(_imp___atoi64));
 }
 
+void _elfimplibmang__atoi64() asm("_atoi64");
+void _elfimplibmang__atoi64() {
+asm("leave\njmp *%0" : : "r"(_imp___atoi64));
+}
+

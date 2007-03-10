@@ -9,3 +9,8 @@ void _elfimplib__setmbcp() {
 asm("leave\njmp *%0" : : "r"(_imp___setmbcp));
 }
 
+void _elfimplibmang__setmbcp() asm("_setmbcp");
+void _elfimplibmang__setmbcp() {
+asm("leave\njmp *%0" : : "r"(_imp___setmbcp));
+}
+

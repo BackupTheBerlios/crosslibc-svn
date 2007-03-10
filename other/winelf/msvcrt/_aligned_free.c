@@ -9,3 +9,8 @@ void _elfimplib__aligned_free() {
 asm("leave\njmp *%0" : : "r"(_imp___aligned_free));
 }
 
+void _elfimplibmang__aligned_free() asm("_aligned_free");
+void _elfimplibmang__aligned_free() {
+asm("leave\njmp *%0" : : "r"(_imp___aligned_free));
+}
+

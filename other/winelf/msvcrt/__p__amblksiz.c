@@ -9,3 +9,8 @@ void _elfimplib___p__amblksiz() {
 asm("leave\njmp *%0" : : "r"(_imp____p__amblksiz));
 }
 
+void _elfimplibmang___p__amblksiz() asm("__p__amblksiz");
+void _elfimplibmang___p__amblksiz() {
+asm("leave\njmp *%0" : : "r"(_imp____p__amblksiz));
+}
+

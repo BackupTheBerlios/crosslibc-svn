@@ -9,3 +9,8 @@ void _elfimplib___iscsymf() {
 asm("leave\njmp *%0" : : "r"(_imp____iscsymf));
 }
 
+void _elfimplibmang___iscsymf() asm("__iscsymf");
+void _elfimplibmang___iscsymf() {
+asm("leave\njmp *%0" : : "r"(_imp____iscsymf));
+}
+

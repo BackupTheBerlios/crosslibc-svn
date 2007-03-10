@@ -9,3 +9,8 @@ void _elfimplib__wcsupr() {
 asm("leave\njmp *%0" : : "r"(_imp___wcsupr));
 }
 
+void _elfimplibmang__wcsupr() asm("_wcsupr");
+void _elfimplibmang__wcsupr() {
+asm("leave\njmp *%0" : : "r"(_imp___wcsupr));
+}
+

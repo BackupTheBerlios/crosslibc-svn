@@ -9,3 +9,8 @@ void _elfimplib__ismbbalnum() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbalnum));
 }
 
+void _elfimplibmang__ismbbalnum() asm("_ismbbalnum");
+void _elfimplibmang__ismbbalnum() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbbalnum));
+}
+

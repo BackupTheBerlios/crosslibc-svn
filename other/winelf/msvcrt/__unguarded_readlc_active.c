@@ -9,3 +9,8 @@ void _elfimplib___unguarded_readlc_active() {
 asm("leave\njmp *%0" : : "r"(_imp____unguarded_readlc_active));
 }
 
+void _elfimplibmang___unguarded_readlc_active() asm("__unguarded_readlc_active");
+void _elfimplibmang___unguarded_readlc_active() {
+asm("leave\njmp *%0" : : "r"(_imp____unguarded_readlc_active));
+}
+

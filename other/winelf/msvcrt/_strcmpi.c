@@ -9,3 +9,8 @@ void _elfimplib__strcmpi() {
 asm("leave\njmp *%0" : : "r"(_imp___strcmpi));
 }
 
+void _elfimplibmang__strcmpi() asm("_strcmpi");
+void _elfimplibmang__strcmpi() {
+asm("leave\njmp *%0" : : "r"(_imp___strcmpi));
+}
+

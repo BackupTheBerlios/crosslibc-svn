@@ -9,3 +9,8 @@ void _elfimplib__wtol() {
 asm("leave\njmp *%0" : : "r"(_imp___wtol));
 }
 
+void _elfimplibmang__wtol() asm("_wtol");
+void _elfimplibmang__wtol() {
+asm("leave\njmp *%0" : : "r"(_imp___wtol));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__wchdir() {
 asm("leave\njmp *%0" : : "r"(_imp___wchdir));
 }
 
+void _elfimplibmang__wchdir() asm("_wchdir");
+void _elfimplibmang__wchdir() {
+asm("leave\njmp *%0" : : "r"(_imp___wchdir));
+}
+

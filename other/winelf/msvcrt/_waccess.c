@@ -9,3 +9,8 @@ void _elfimplib__waccess() {
 asm("leave\njmp *%0" : : "r"(_imp___waccess));
 }
 
+void _elfimplibmang__waccess() asm("_waccess");
+void _elfimplibmang__waccess() {
+asm("leave\njmp *%0" : : "r"(_imp___waccess));
+}
+

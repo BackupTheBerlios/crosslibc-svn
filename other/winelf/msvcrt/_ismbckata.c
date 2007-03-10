@@ -9,3 +9,8 @@ void _elfimplib__ismbckata() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbckata));
 }
 
+void _elfimplibmang__ismbckata() asm("_ismbckata");
+void _elfimplibmang__ismbckata() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbckata));
+}
+

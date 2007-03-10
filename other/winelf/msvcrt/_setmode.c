@@ -9,3 +9,8 @@ void _elfimplib__setmode() {
 asm("leave\njmp *%0" : : "r"(_imp___setmode));
 }
 
+void _elfimplibmang__setmode() asm("_setmode");
+void _elfimplibmang__setmode() {
+asm("leave\njmp *%0" : : "r"(_imp___setmode));
+}
+

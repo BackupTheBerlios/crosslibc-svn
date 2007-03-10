@@ -9,3 +9,8 @@ void _elfimplib__scprintf() {
 asm("leave\njmp *%0" : : "r"(_imp___scprintf));
 }
 
+void _elfimplibmang__scprintf() asm("_scprintf");
+void _elfimplibmang__scprintf() {
+asm("leave\njmp *%0" : : "r"(_imp___scprintf));
+}
+

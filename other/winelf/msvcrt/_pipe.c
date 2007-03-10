@@ -9,3 +9,8 @@ void _elfimplib__pipe() {
 asm("leave\njmp *%0" : : "r"(_imp___pipe));
 }
 
+void _elfimplibmang__pipe() asm("_pipe");
+void _elfimplibmang__pipe() {
+asm("leave\njmp *%0" : : "r"(_imp___pipe));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__tzname() {
 asm("leave\njmp *%0" : : "r"(_imp___tzname));
 }
 
+void _elfimplibmang__tzname() asm("_tzname");
+void _elfimplibmang__tzname() {
+asm("leave\njmp *%0" : : "r"(_imp___tzname));
+}
+

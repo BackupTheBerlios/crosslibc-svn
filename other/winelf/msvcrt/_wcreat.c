@@ -9,3 +9,8 @@ void _elfimplib__wcreat() {
 asm("leave\njmp *%0" : : "r"(_imp___wcreat));
 }
 
+void _elfimplibmang__wcreat() asm("_wcreat");
+void _elfimplibmang__wcreat() {
+asm("leave\njmp *%0" : : "r"(_imp___wcreat));
+}
+

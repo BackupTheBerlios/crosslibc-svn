@@ -9,3 +9,8 @@ void _elfimplib__wsetlocale() {
 asm("leave\njmp *%0" : : "r"(_imp___wsetlocale));
 }
 
+void _elfimplibmang__wsetlocale() asm("_wsetlocale");
+void _elfimplibmang__wsetlocale() {
+asm("leave\njmp *%0" : : "r"(_imp___wsetlocale));
+}
+

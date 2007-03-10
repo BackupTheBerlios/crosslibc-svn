@@ -9,3 +9,8 @@ void _elfimplib___threadhandle() {
 asm("leave\njmp *%0" : : "r"(_imp____threadhandle));
 }
 
+void _elfimplibmang___threadhandle() asm("__threadhandle");
+void _elfimplibmang___threadhandle() {
+asm("leave\njmp *%0" : : "r"(_imp____threadhandle));
+}
+

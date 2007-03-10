@@ -9,3 +9,8 @@ void _elfimplib__findnext64() {
 asm("leave\njmp *%0" : : "r"(_imp___findnext64));
 }
 
+void _elfimplibmang__findnext64() asm("_findnext64");
+void _elfimplibmang__findnext64() {
+asm("leave\njmp *%0" : : "r"(_imp___findnext64));
+}
+

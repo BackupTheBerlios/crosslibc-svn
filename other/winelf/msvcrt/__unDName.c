@@ -9,3 +9,8 @@ void _elfimplib___unDName() {
 asm("leave\njmp *%0" : : "r"(_imp____unDName));
 }
 
+void _elfimplibmang___unDName() asm("__unDName");
+void _elfimplibmang___unDName() {
+asm("leave\njmp *%0" : : "r"(_imp____unDName));
+}
+

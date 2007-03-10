@@ -9,3 +9,8 @@ void _elfimplib__atoldbl() {
 asm("leave\njmp *%0" : : "r"(_imp___atoldbl));
 }
 
+void _elfimplibmang__atoldbl() asm("_atoldbl");
+void _elfimplibmang__atoldbl() {
+asm("leave\njmp *%0" : : "r"(_imp___atoldbl));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib___CxxUnregisterExceptionObject() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxUnregisterExceptionObject));
 }
 
+void _elfimplibmang___CxxUnregisterExceptionObject() asm("__CxxUnregisterExceptionObject");
+void _elfimplibmang___CxxUnregisterExceptionObject() {
+asm("leave\njmp *%0" : : "r"(_imp____CxxUnregisterExceptionObject));
+}
+

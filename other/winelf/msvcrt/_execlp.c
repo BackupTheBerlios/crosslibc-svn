@@ -9,3 +9,8 @@ void _elfimplib__execlp() {
 asm("leave\njmp *%0" : : "r"(_imp___execlp));
 }
 
+void _elfimplibmang__execlp() asm("_execlp");
+void _elfimplibmang__execlp() {
+asm("leave\njmp *%0" : : "r"(_imp___execlp));
+}
+

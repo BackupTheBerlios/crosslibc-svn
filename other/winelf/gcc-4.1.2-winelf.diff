@@ -10,6 +10,39 @@ diff -ruN gcc-4.1.2/config.sub gcc-4.1.2-winelf/config.sub
  	      | -mingw32* | -linux-gnu* | -linux-uclibc* | -uxpv* | -beos* | -mpeix* | -udk* \
  	      | -interix* | -uwin* | -mks* | -rhapsody* | -darwin* | -opened* \
  	      | -openstep* | -oskit* | -conix* | -pw32* | -nonstopux* \
+diff -ruN gcc-4.1.2/fixincludes/configure gcc-4.1.2-winelf/fixincludes/configure
+--- gcc-4.1.2/fixincludes/configure	2005-07-16 07:17:51.000000000 -0700
++++ gcc-4.1.2-winelf/fixincludes/configure	2007-03-09 16:05:29.000000000 -0800
+@@ -2563,6 +2563,7 @@
+   case $host in
+ 	i?86-*-msdosdjgpp* | \
+ 	i?86-*-mingw32* | \
++        i?86-*-win32elf* | \
+ 	*-*-beos* )
+ 		TARGET=twoprocess
+ 		;;
+diff -ruN gcc-4.1.2/fixincludes/configure.ac gcc-4.1.2-winelf/fixincludes/configure.ac
+--- gcc-4.1.2/fixincludes/configure.ac	2005-07-16 07:17:51.000000000 -0700
++++ gcc-4.1.2-winelf/fixincludes/configure.ac	2007-03-09 16:05:20.000000000 -0800
+@@ -49,6 +49,7 @@
+ [case $host in
+ 	i?86-*-msdosdjgpp* | \
+ 	i?86-*-mingw32* | \
++        i?86-*-win32elf* | \
+ 	*-*-beos* )
+ 		TARGET=twoprocess
+ 		;;
+diff -ruN gcc-4.1.2/fixincludes/mkfixinc.sh gcc-4.1.2-winelf/fixincludes/mkfixinc.sh
+--- gcc-4.1.2/fixincludes/mkfixinc.sh	2004-11-23 14:45:53.000000000 -0800
++++ gcc-4.1.2-winelf/fixincludes/mkfixinc.sh	2007-03-09 15:54:32.000000000 -0800
+@@ -23,6 +23,7 @@
+     i?86-*-mingw32* | \
+     i?86-*-uwin* | \
+     i?86-*-interix* | \
++    i?86-*-win32elf* | \
+     powerpc-*-eabiaix* | \
+     powerpc-*-eabisim* | \
+     powerpc-*-eabi*    | \
 diff -ruN gcc-4.1.2/gcc/config/i386/win32elf.h gcc-4.1.2-winelf/gcc/config/i386/win32elf.h
 --- gcc-4.1.2/gcc/config/i386/win32elf.h	1969-12-31 16:00:00.000000000 -0800
 +++ gcc-4.1.2-winelf/gcc/config/i386/win32elf.h	2007-03-09 10:54:21.000000000 -0800
@@ -176,4 +209,27 @@ diff -ruN gcc-4.1.2/gcc/config.gcc gcc-4.1.2-winelf/gcc/config.gcc
  i[34567]86-*-kaos*)
  	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h i386/i386elf.h kaos.h i386/kaos-i386.h"
  	tmake_file="i386/t-i386elf t-svr4"
-Files gcc-4.1.2/gcc/.config.gcc.swp and gcc-4.1.2-winelf/gcc/.config.gcc.swp differ
+diff -ruN gcc-4.1.2/libiberty/configure gcc-4.1.2-winelf/libiberty/configure
+--- gcc-4.1.2/libiberty/configure	2005-07-21 20:14:38.000000000 -0700
++++ gcc-4.1.2-winelf/libiberty/configure	2007-03-09 16:59:10.000000000 -0800
+@@ -8083,7 +8083,7 @@
+ 
+ # Figure out which version of pexecute to use.
+ case "${host}" in
+-     *-*-mingw* | *-*-winnt*)	pexecute=./pex-win32.o  ;;
++     *-*-mingw* | *-*-winnt* | *-*-win32elf*)	pexecute=./pex-win32.o  ;;
+      *-*-msdosdjgpp*)		pexecute=./pex-djgpp.o  ;;
+      *-*-msdos*)		pexecute=./pex-msdos.o  ;;
+      *)				pexecute=./pex-unix.o   ;;
+diff -ruN gcc-4.1.2/libiberty/configure.ac gcc-4.1.2-winelf/libiberty/configure.ac
+--- gcc-4.1.2/libiberty/configure.ac	2005-07-21 20:14:38.000000000 -0700
++++ gcc-4.1.2-winelf/libiberty/configure.ac	2007-03-09 16:58:46.000000000 -0800
+@@ -595,7 +595,7 @@
+ 
+ # Figure out which version of pexecute to use.
+ case "${host}" in
+-     *-*-mingw* | *-*-winnt*)	pexecute=./pex-win32.o  ;;
++     *-*-mingw* | *-*-winnt* | *-*-win32elf*)	pexecute=./pex-win32.o  ;;
+      *-*-msdosdjgpp*)		pexecute=./pex-djgpp.o  ;;
+      *-*-msdos*)		pexecute=./pex-msdos.o  ;;
+      *)				pexecute=./pex-unix.o   ;;

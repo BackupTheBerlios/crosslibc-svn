@@ -9,3 +9,8 @@ void _elfimplib__ftime64() {
 asm("leave\njmp *%0" : : "r"(_imp___ftime64));
 }
 
+void _elfimplibmang__ftime64() asm("_ftime64");
+void _elfimplibmang__ftime64() {
+asm("leave\njmp *%0" : : "r"(_imp___ftime64));
+}
+

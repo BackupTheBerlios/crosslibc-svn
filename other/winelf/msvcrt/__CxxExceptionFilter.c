@@ -9,3 +9,8 @@ void _elfimplib___CxxExceptionFilter() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxExceptionFilter));
 }
 
+void _elfimplibmang___CxxExceptionFilter() asm("__CxxExceptionFilter");
+void _elfimplibmang___CxxExceptionFilter() {
+asm("leave\njmp *%0" : : "r"(_imp____CxxExceptionFilter));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__write() {
 asm("leave\njmp *%0" : : "r"(_imp___write));
 }
 
+void _elfimplibmang__write() asm("_write");
+void _elfimplibmang__write() {
+asm("leave\njmp *%0" : : "r"(_imp___write));
+}
+

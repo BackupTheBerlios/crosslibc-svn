@@ -9,3 +9,8 @@ void _elfimplib__longjmpex() {
 asm("leave\njmp *%0" : : "r"(_imp___longjmpex));
 }
 
+void _elfimplibmang__longjmpex() asm("_longjmpex");
+void _elfimplibmang__longjmpex() {
+asm("leave\njmp *%0" : : "r"(_imp___longjmpex));
+}
+

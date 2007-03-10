@@ -9,3 +9,8 @@ void _elfimplib__mbsdup() {
 asm("leave\njmp *%0" : : "r"(_imp___mbsdup));
 }
 
+void _elfimplibmang__mbsdup() asm("_mbsdup");
+void _elfimplibmang__mbsdup() {
+asm("leave\njmp *%0" : : "r"(_imp___mbsdup));
+}
+

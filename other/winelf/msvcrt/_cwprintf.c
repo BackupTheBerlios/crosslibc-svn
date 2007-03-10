@@ -9,3 +9,8 @@ void _elfimplib__cwprintf() {
 asm("leave\njmp *%0" : : "r"(_imp___cwprintf));
 }
 
+void _elfimplibmang__cwprintf() asm("_cwprintf");
+void _elfimplibmang__cwprintf() {
+asm("leave\njmp *%0" : : "r"(_imp___cwprintf));
+}
+

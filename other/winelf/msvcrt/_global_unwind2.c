@@ -9,3 +9,8 @@ void _elfimplib__global_unwind2() {
 asm("leave\njmp *%0" : : "r"(_imp___global_unwind2));
 }
 
+void _elfimplibmang__global_unwind2() asm("_global_unwind2");
+void _elfimplibmang__global_unwind2() {
+asm("leave\njmp *%0" : : "r"(_imp___global_unwind2));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__open_osfhandle() {
 asm("leave\njmp *%0" : : "r"(_imp___open_osfhandle));
 }
 
+void _elfimplibmang__open_osfhandle() asm("_open_osfhandle");
+void _elfimplibmang__open_osfhandle() {
+asm("leave\njmp *%0" : : "r"(_imp___open_osfhandle));
+}
+

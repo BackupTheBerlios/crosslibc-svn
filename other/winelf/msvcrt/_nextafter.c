@@ -9,3 +9,8 @@ void _elfimplib__nextafter() {
 asm("leave\njmp *%0" : : "r"(_imp___nextafter));
 }
 
+void _elfimplibmang__nextafter() asm("_nextafter");
+void _elfimplibmang__nextafter() {
+asm("leave\njmp *%0" : : "r"(_imp___nextafter));
+}
+

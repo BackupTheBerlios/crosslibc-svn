@@ -9,3 +9,8 @@ void _elfimplib__itoa() {
 asm("leave\njmp *%0" : : "r"(_imp___itoa));
 }
 
+void _elfimplibmang__itoa() asm("_itoa");
+void _elfimplibmang__itoa() {
+asm("leave\njmp *%0" : : "r"(_imp___itoa));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__beep() {
 asm("leave\njmp *%0" : : "r"(_imp___beep));
 }
 
+void _elfimplibmang__beep() asm("_beep");
+void _elfimplibmang__beep() {
+asm("leave\njmp *%0" : : "r"(_imp___beep));
+}
+

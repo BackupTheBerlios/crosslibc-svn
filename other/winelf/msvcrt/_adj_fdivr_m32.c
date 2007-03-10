@@ -9,3 +9,8 @@ void _elfimplib__adj_fdivr_m32() {
 asm("leave\njmp *%0" : : "r"(_imp___adj_fdivr_m32));
 }
 
+void _elfimplibmang__adj_fdivr_m32() asm("_adj_fdivr_m32");
+void _elfimplibmang__adj_fdivr_m32() {
+asm("leave\njmp *%0" : : "r"(_imp___adj_fdivr_m32));
+}
+

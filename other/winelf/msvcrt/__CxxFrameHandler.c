@@ -9,3 +9,8 @@ void _elfimplib___CxxFrameHandler() {
 asm("leave\njmp *%0" : : "r"(_imp____CxxFrameHandler));
 }
 
+void _elfimplibmang___CxxFrameHandler() asm("__CxxFrameHandler");
+void _elfimplibmang___CxxFrameHandler() {
+asm("leave\njmp *%0" : : "r"(_imp____CxxFrameHandler));
+}
+

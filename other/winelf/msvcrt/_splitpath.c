@@ -9,3 +9,8 @@ void _elfimplib__splitpath() {
 asm("leave\njmp *%0" : : "r"(_imp___splitpath));
 }
 
+void _elfimplibmang__splitpath() asm("_splitpath");
+void _elfimplibmang__splitpath() {
+asm("leave\njmp *%0" : : "r"(_imp___splitpath));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__getmbcp() {
 asm("leave\njmp *%0" : : "r"(_imp___getmbcp));
 }
 
+void _elfimplibmang__getmbcp() asm("_getmbcp");
+void _elfimplibmang__getmbcp() {
+asm("leave\njmp *%0" : : "r"(_imp___getmbcp));
+}
+

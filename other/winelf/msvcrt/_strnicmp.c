@@ -9,3 +9,8 @@ void _elfimplib__strnicmp() {
 asm("leave\njmp *%0" : : "r"(_imp___strnicmp));
 }
 
+void _elfimplibmang__strnicmp() asm("_strnicmp");
+void _elfimplibmang__strnicmp() {
+asm("leave\njmp *%0" : : "r"(_imp___strnicmp));
+}
+

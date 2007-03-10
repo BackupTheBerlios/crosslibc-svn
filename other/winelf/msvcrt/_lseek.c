@@ -9,3 +9,8 @@ void _elfimplib__lseek() {
 asm("leave\njmp *%0" : : "r"(_imp___lseek));
 }
 
+void _elfimplibmang__lseek() asm("_lseek");
+void _elfimplibmang__lseek() {
+asm("leave\njmp *%0" : : "r"(_imp___lseek));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__heapadd() {
 asm("leave\njmp *%0" : : "r"(_imp___heapadd));
 }
 
+void _elfimplibmang__heapadd() asm("_heapadd");
+void _elfimplibmang__heapadd() {
+asm("leave\njmp *%0" : : "r"(_imp___heapadd));
+}
+

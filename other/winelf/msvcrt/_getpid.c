@@ -9,3 +9,8 @@ void _elfimplib__getpid() {
 asm("leave\njmp *%0" : : "r"(_imp___getpid));
 }
 
+void _elfimplibmang__getpid() asm("_getpid");
+void _elfimplibmang__getpid() {
+asm("leave\njmp *%0" : : "r"(_imp___getpid));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__safe_fdivr() {
 asm("leave\njmp *%0" : : "r"(_imp___safe_fdivr));
 }
 
+void _elfimplibmang__safe_fdivr() asm("_safe_fdivr");
+void _elfimplibmang__safe_fdivr() {
+asm("leave\njmp *%0" : : "r"(_imp___safe_fdivr));
+}
+

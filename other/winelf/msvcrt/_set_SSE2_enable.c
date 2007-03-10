@@ -9,3 +9,8 @@ void _elfimplib__set_SSE2_enable() {
 asm("leave\njmp *%0" : : "r"(_imp___set_SSE2_enable));
 }
 
+void _elfimplibmang__set_SSE2_enable() asm("_set_SSE2_enable");
+void _elfimplibmang__set_SSE2_enable() {
+asm("leave\njmp *%0" : : "r"(_imp___set_SSE2_enable));
+}
+

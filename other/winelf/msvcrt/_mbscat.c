@@ -9,3 +9,8 @@ void _elfimplib__mbscat() {
 asm("leave\njmp *%0" : : "r"(_imp___mbscat));
 }
 
+void _elfimplibmang__mbscat() asm("_mbscat");
+void _elfimplibmang__mbscat() {
+asm("leave\njmp *%0" : : "r"(_imp___mbscat));
+}
+

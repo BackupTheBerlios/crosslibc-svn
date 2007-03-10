@@ -9,3 +9,8 @@ void _elfimplib___getmainargs() {
 asm("leave\njmp *%0" : : "r"(_imp____getmainargs));
 }
 
+void _elfimplibmang___getmainargs() asm("__getmainargs");
+void _elfimplibmang___getmainargs() {
+asm("leave\njmp *%0" : : "r"(_imp____getmainargs));
+}
+

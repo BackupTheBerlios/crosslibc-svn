@@ -9,3 +9,8 @@ void _elfimplib__wutime() {
 asm("leave\njmp *%0" : : "r"(_imp___wutime));
 }
 
+void _elfimplibmang__wutime() asm("_wutime");
+void _elfimplibmang__wutime() {
+asm("leave\njmp *%0" : : "r"(_imp___wutime));
+}
+

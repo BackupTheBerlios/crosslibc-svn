@@ -9,3 +9,8 @@ void _elfimplib__ctype() {
 asm("leave\njmp *%0" : : "r"(_imp___ctype));
 }
 
+void _elfimplibmang__ctype() asm("_ctype");
+void _elfimplibmang__ctype() {
+asm("leave\njmp *%0" : : "r"(_imp___ctype));
+}
+

@@ -9,3 +9,8 @@ void _elfimplib__wsearchenv() {
 asm("leave\njmp *%0" : : "r"(_imp___wsearchenv));
 }
 
+void _elfimplibmang__wsearchenv() asm("_wsearchenv");
+void _elfimplibmang__wsearchenv() {
+asm("leave\njmp *%0" : : "r"(_imp___wsearchenv));
+}
+

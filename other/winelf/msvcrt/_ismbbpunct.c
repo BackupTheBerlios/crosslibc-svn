@@ -9,3 +9,8 @@ void _elfimplib__ismbbpunct() {
 asm("leave\njmp *%0" : : "r"(_imp___ismbbpunct));
 }
 
+void _elfimplibmang__ismbbpunct() asm("_ismbbpunct");
+void _elfimplibmang__ismbbpunct() {
+asm("leave\njmp *%0" : : "r"(_imp___ismbbpunct));
+}
+

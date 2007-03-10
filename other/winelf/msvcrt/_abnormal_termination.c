@@ -9,3 +9,8 @@ void _elfimplib__abnormal_termination() {
 asm("leave\njmp *%0" : : "r"(_imp___abnormal_termination));
 }
 
+void _elfimplibmang__abnormal_termination() asm("_abnormal_termination");
+void _elfimplibmang__abnormal_termination() {
+asm("leave\njmp *%0" : : "r"(_imp___abnormal_termination));
+}
+

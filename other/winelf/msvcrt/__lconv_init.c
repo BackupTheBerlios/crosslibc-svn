@@ -9,3 +9,8 @@ void _elfimplib___lconv_init() {
 asm("leave\njmp *%0" : : "r"(_imp____lconv_init));
 }
 
+void _elfimplibmang___lconv_init() asm("__lconv_init");
+void _elfimplibmang___lconv_init() {
+asm("leave\njmp *%0" : : "r"(_imp____lconv_init));
+}
+
