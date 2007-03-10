@@ -24,9 +24,9 @@ one:	.double 1.0
  * Use the fyl2xp1 function when the argument is in the range -0.29 to 0.29,
  * otherwise fyl2x with the needed extra computation.
  */
-.globl _log1pl; 
+.globl log1pl; 
 	/* .def	_log1pl;	.scl	2;	.type	32;	.endef */
-_log1pl:
+log1pl:
 	fldln2
 	fldt	4(%esp)
 	fxam

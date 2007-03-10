@@ -17,9 +17,9 @@ limit:	.double 0.29
 
 	.text
 	.align 4
-.globl _log2l
+.globl log2l
 	/* .def	_log2l;	.scl	2;	.type	32;	.endef */
-_log2l:
+log2l:
 	fldl	one
 	fldt	4(%esp)		// x : 1
 	fxam

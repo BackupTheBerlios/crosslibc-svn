@@ -7,9 +7,9 @@
 	.file	"ilogb.S"
 	.text
 	.align 4
-.globl _ilogb
+.globl ilogb
 	/* .def	_ilogb;	.scl	2;	.type	32;	.endef */
-_ilogb:
+ilogb:
 
 	fldl	4(%esp)
 /* I added the following ugly construct because ilogb(+-Inf) is

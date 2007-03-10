@@ -1,0 +1,112 @@
+diff -ruN gdc-0.23/phobos/configure gdc-0.23-winelf/phobos/configure
+--- gdc-0.23/phobos/configure	2007-03-05 20:12:31.000000000 -0800
++++ gdc-0.23-winelf/phobos/configure	2007-03-09 20:29:45.000000000 -0800
+@@ -6539,7 +6539,8 @@
+     cygwin*) D_EXTRA_OBJS="$D_EXTRA_OBJS gcc/cbridge_stdio.o"
+ 	     DCFG_CBRIDGE_STDIO=GNU_CBridge_Stdio
+ 	     ;;
+-    mingw*)  #D_EXTRA_OBJS="$D_EXTRA_OBJS gcc/cbridge_stdio.o"
++    mingw* | win32elf*)
++             #D_EXTRA_OBJS="$D_EXTRA_OBJS gcc/cbridge_stdio.o"
+ 	     D_EXTRA_OBJS="$D_EXTRA_OBJS \$(WINDOWS_OBJS)"
+ 	     #DCFG_CBRIDGE_STDIO=GNU_CBridge_Stdio
+ 	     DCFG_UNIX=Windows
+@@ -8520,7 +8521,7 @@
+ D_GC_FLAGS=
+ 
+ case "$target_os" in
+-  mingw*)
++  mingw* | win32elf*)
+ 	    D_GC_MODULES=internal/gc/win32.o
+ 	    need_to_cfgr_gc=''
+ 	    ;;
+@@ -8868,7 +8869,7 @@
+ 	D_GENERATE_FRAGMENTS=''
+ 	case "$d_target_os" in
+ 	  darwin8*) D_FRAGMENT_SRCDIR='$(srcdir)/config/darwin8' ;;
+-	  mingw*) D_FRAGMENT_SRCDIR='$(srcdir)/config/mingw' ;;
++	  mingw* | win32elf*) D_FRAGMENT_SRCDIR='$(srcdir)/config/mingw' ;;
+ 	  skyos*) D_FRAGMENT_SRCDIR='$(srcdir)/config/skyos' ;;
+ 	  *)      { { echo "$as_me:$LINENO: error: Sorry, you must provide the target-specific configure fragments (--enable-phobos-config-dir)" >&5
+ echo "$as_me: error: Sorry, you must provide the target-specific configure fragments (--enable-phobos-config-dir)" >&2;}
+diff -ruN gdc-0.23/phobos/configure.in gdc-0.23-winelf/phobos/configure.in
+--- gdc-0.23/phobos/configure.in	2007-02-28 13:13:24.000000000 -0800
++++ gdc-0.23-winelf/phobos/configure.in	2007-03-09 20:28:37.000000000 -0800
+@@ -449,7 +449,8 @@
+     cygwin*) D_EXTRA_OBJS="$D_EXTRA_OBJS gcc/cbridge_stdio.o"
+ 	     DCFG_CBRIDGE_STDIO=GNU_CBridge_Stdio
+ 	     ;;
+-    mingw*)  #D_EXTRA_OBJS="$D_EXTRA_OBJS gcc/cbridge_stdio.o"
++    mingw* | win32elf*)
++             #D_EXTRA_OBJS="$D_EXTRA_OBJS gcc/cbridge_stdio.o"
+ 	     D_EXTRA_OBJS="$D_EXTRA_OBJS \$(WINDOWS_OBJS)"
+ 	     #DCFG_CBRIDGE_STDIO=GNU_CBridge_Stdio
+ 	     DCFG_UNIX=Windows
+@@ -525,7 +526,7 @@
+ D_GC_FLAGS=
+ 
+ case "$target_os" in
+-  mingw*)
++  mingw* | win32elf*)
+ 	    D_GC_MODULES=internal/gc/win32.o
+ 	    need_to_cfgr_gc=''
+ 	    ;;
+@@ -560,7 +561,7 @@
+ 	D_GENERATE_FRAGMENTS=''
+ 	case "$d_target_os" in
+ 	  darwin8*) D_FRAGMENT_SRCDIR='$(srcdir)/config/darwin8' ;;
+-	  mingw*) D_FRAGMENT_SRCDIR='$(srcdir)/config/mingw' ;;
++	  mingw* | win32elf*) D_FRAGMENT_SRCDIR='$(srcdir)/config/mingw' ;;
+ 	  skyos*) D_FRAGMENT_SRCDIR='$(srcdir)/config/skyos' ;;
+ 	  *)      AC_MSG_ERROR([Sorry, you must provide the target-specific configure fragments (--enable-phobos-config-dir)])
+ 	esac
+diff -ruN gdc-0.23/phobos/internal/gc/win32.d gdc-0.23-winelf/phobos/internal/gc/win32.d
+--- gdc-0.23/phobos/internal/gc/win32.d	2007-03-04 06:46:59.000000000 -0800
++++ gdc-0.23-winelf/phobos/internal/gc/win32.d	2007-03-10 00:29:33.000000000 -0800
+@@ -92,14 +92,24 @@
+ extern (C)
+ {
+     // TODO: skip the .rdata between .data and .bss?
+-    extern int _data_start__;
+-    extern int _bss_end__;
++    version (Win32ELF) {
++        extern int _etext;
++        extern int _end;
++    } else {
++        extern int _data_start__;
++        extern int _bss_end__;
++    }
+ }
+ 
+ void os_query_staticdataseg(void **base, uint *nbytes)
+ {
+-    *base = cast(void *)&_data_start__;
+-    *nbytes = cast(uint)(cast(char *)&_bss_end__ - cast(char *)&_data_start__);
++    version (Win32ELF) {
++        *base = cast(void *)&_etext;
++        *nbytes = cast(uint)(cast(char *)&_end - cast(char *)&_etext);
++    } else {
++        *base = cast(void *)&_data_start__;
++        *nbytes = cast(uint)(cast(char *)&_bss_end__ - cast(char *)&_data_start__);
++    }
+ }
+ 
+ }
+diff -ruN gdc-0.23/target-ver-syms.sh gdc-0.23-winelf/target-ver-syms.sh
+--- gdc-0.23/target-ver-syms.sh	2007-02-20 19:59:04.000000000 -0800
++++ gdc-0.23-winelf/target-ver-syms.sh	2007-03-09 23:48:53.000000000 -0800
+@@ -32,6 +32,7 @@
+ freebsd*) d_os_versym=freebsd ; d_unix=1 ;;
+ linux*) d_os_versym=linux ; d_unix=1 ;; 
+ mingw32*) d_os_versym=Win32; d_windows=1 ;;
++win32elf*) d_os_versym=Win32; d_os_versym2=Win32ELF; d_windows=1 ;;
+ pe*)    case "$target" in
+ 	    *-skyos*-*) d_os_versym=skyos ; d_unix=1 ;;
+ 	esac
+@@ -66,3 +67,6 @@
+ if test -n "$d_os_versym"; then
+     echo "#define D_OS_VERSYM \"$d_os_versym\""
+ fi
++if test -n "$d_os_versym2"; then
++    echo "#define D_OS_VERSYM2 \"$d_os_versym2\""
++fi

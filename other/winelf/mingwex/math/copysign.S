@@ -6,9 +6,9 @@
 	.file	"copysign.S"
 	.text
 	.align 4
-.globl _copysign
+.globl copysign
 	/* .def	_copysign;	.scl	2;	.type	32;	.endef */
-_copysign:
+copysign:
 	movl	16(%esp),%edx
 	movl	8(%esp),%eax
 	andl	$0x80000000,%edx

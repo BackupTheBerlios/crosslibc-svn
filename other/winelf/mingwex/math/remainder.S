@@ -6,9 +6,9 @@
 	.file	"remainder.S"
 	.text
 	.align 4
-.globl _remainder
+.globl remainder
 	/* .def	_remainder;	.scl	2;	.type	32;	.endef */
-_remainder:
+remainder:
 	fldl	12(%esp)
 	fldl	4(%esp)
 1:	fprem1

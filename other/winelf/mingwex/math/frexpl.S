@@ -13,8 +13,8 @@
  * between 0.5 and 1 to y.  Thus  x = y * 2**expn.
  */ 
 	.align 2
-.globl _frexpl
-_frexpl:
+.globl frexpl
+frexpl:
 	pushl %ebp
 	movl %esp,%ebp
 	subl $24,%esp

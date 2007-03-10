@@ -10,9 +10,9 @@
 	.file	"tanl.S"
 	.text
 	.align 4
-.globl _tanl
+.globl tanl
 	/* .def	_tanl;	.scl	2;	.type	32;	.endef */
-_tanl:
+tanl:
 	fldt	4(%esp)
 	fptan
 	fnstsw	%ax

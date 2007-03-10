@@ -9,9 +9,9 @@
 	.file	"remainderl.S"
 	.text
 	.align 4
-.globl _remainderl
+.globl remainderl
 	/* .def	_remainderl;	.scl	2;	.type	32;	.endef */
-_remainderl:
+remainderl:
 	fldt	16(%esp)
 	fldt	4(%esp)
 1:	fprem1

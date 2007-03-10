@@ -7,14 +7,14 @@
 	.file	"scalbnl.S"
 	.text
 	.align 4
-.globl _scalbnl
+.globl scalbnl
 	/* .def	_scalbnl;	.scl	2;	.type	32;	.endef */
-_scalbnl:
+scalbnl:
 	fildl	16(%esp)
 	fldt	4(%esp)
 	fscale
 	fstp	%st(1)
 	ret
 
-.globl _scalblnl
+.globl scalblnl
 	.set	_scalblnl,_scalbnl

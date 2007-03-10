@@ -6,9 +6,9 @@
 	.file	"ceilf.S"
 	.text
 	.align 4
-.globl _ceilf
+.globl ceilf
 	/* .def	_ceilf;	.scl	2;	.type	32;	.endef */
-_ceilf:
+ceilf:
 	flds	4(%esp)
 	subl	$8,%esp
 

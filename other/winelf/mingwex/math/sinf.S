@@ -11,9 +11,9 @@
 	.file	"sinf.S"
 	.text
 	.align 4
-.globl _sinf
+.globl sinf
 	/* .def	_sinf;	.scl	2;	.type	32;	.endef */
-_sinf:
+sinf:
 	flds	4(%esp)
 	fsin
 	fnstsw	%ax

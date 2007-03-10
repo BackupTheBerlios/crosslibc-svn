@@ -7,9 +7,9 @@
 	.file	"ilogbl.S"
 	.text
 	.align 4
-.globl _ilogbl
+.globl ilogbl
 	/* .def	_ilogbl;	.scl	2;	.type	32;	.endef */
-_ilogbl:
+ilogbl:
 	fldt	4(%esp)
 /* I added the following ugly construct because ilogb(+-Inf) is
    required to return INT_MAX in ISO C99.

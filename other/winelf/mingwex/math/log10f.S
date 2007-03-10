@@ -17,9 +17,9 @@ limit:	.double 0.29
 
 	.text
 	.align 4
-.globl _log10f
+.globl log10f
 	/* .def	_log10f;	.scl	2;	.type	32;	.endef */
-_log10f:
+log10f:
 	fldlg2			// log10(2)
 	flds	4(%esp)		// x : log10(2)
 	fxam

@@ -10,9 +10,9 @@
 	.file	"nearbyintf.S"
 	.text
 	.align 4
-.globl _nearbyintf
+.globl nearbyintf
 	/* .def	_nearbyintf;	.scl	2;	.type	32;	.endef */
-_nearbyintf:
+nearbyintf:
 	flds	4(%esp)
 	pushl	%eax
 	pushl	%ecx

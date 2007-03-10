@@ -9,9 +9,9 @@
 	.file	"cosl.S"
 	.text
 	.align 4
-.globl _cosl
+.globl cosl
 	/* .def	_cosl;	.scl	2;	.type	32;	.endef */
-_cosl:
+cosl:
 	fldt	4(%esp)
 	fcos
 	fnstsw	%ax

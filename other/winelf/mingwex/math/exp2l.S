@@ -7,9 +7,9 @@
 	.file	"exp2l.S"
 	.text
 	.align 4
-.globl _exp2l
+.globl exp2l
 	/* .def	_exp2l;	.scl	2;	.type	32;	.endef */
-_exp2l:
+exp2l:
 	fldt	4(%esp)
 /* I added the following ugly construct because exp(+-Inf) resulted
    in NaN.  The ugliness results from the bright minds at Intel.

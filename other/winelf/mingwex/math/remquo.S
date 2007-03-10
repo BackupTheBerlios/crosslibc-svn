@@ -9,8 +9,8 @@
 	.file	"remquo.S"
         .text
 	.align 4;
-.globl _remquo;
-_remquo:     
+.globl remquo;
+remquo:     
 	fldl 4 +8(%esp)
 	fldl 4(%esp)
 1:	fprem1

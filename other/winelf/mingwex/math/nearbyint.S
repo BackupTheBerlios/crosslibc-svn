@@ -11,9 +11,9 @@
 	.file	"nearbyint.S"
 	.text
 	.align 4
-.globl _nearbyint
+.globl nearbyint
 	/* .def	_nearbyint;	.scl	2;	.type	32;	.endef */
-_nearbyint:
+nearbyint:
 	fldl	4(%esp)
 	pushl	%eax
 	pushl	%ecx

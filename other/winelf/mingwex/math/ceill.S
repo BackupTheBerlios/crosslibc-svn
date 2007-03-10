@@ -8,9 +8,9 @@
 	.file	"ceill.S"
 	.text
 	.align 4
-.globl _ceill
+.globl ceill
 	/* .def	_ceill;	.scl	2;	.type	32;	.endef */
-_ceill:
+ceill:
 	fldt	4(%esp)
 	subl	$8,%esp
 

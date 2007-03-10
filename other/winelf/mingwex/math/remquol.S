@@ -7,7 +7,7 @@
  */
         .text
 	.align 4;
-.globl _remquol;
+.globl remquol;
  _remquol:
         fldt 4 +12(%esp)
         fldt 4(%esp)

@@ -8,9 +8,9 @@
 	.file	"floorl.S"
 	.text
 	.align 4
-.globl _floorl
+.globl floorl
 	/* .def	_floorl;	.scl	2;	.type	32;	.endef */
-_floorl:
+floorl:
 	fldt	4(%esp)
 	subl	$8,%esp
 

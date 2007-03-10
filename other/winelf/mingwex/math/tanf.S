@@ -8,9 +8,9 @@
 	.file	"tanf.S"
 	.text
 	.align 4
-.globl _tanf
+.globl tanf
 	/* .def	_tanf;	.scl	2;	.type	32;	.endef */
-_tanf:
+tanf:
 	flds	4(%esp)
 	fptan
 	fnstsw	%ax
