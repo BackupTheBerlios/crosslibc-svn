@@ -26,11 +26,11 @@ AM_CONDITIONAL(HAVE_LIBDL, test "x$HAVE_LIBDL" = "xtrue")
 ORIG_LDFLAGS="$LDFLAGS"
 LDFLAGS="$LDFLAGS -Wl,--section-start,.dynsym=0x18000000"
 export LDFLAGS
-AC_RUN_IFELSE(AC_LANG_PROGRAM([], []), [], [
+AC_LINK_IFELSE(AC_LANG_PROGRAM([], []), [], [
     # OK, try with --image-base
     LDFLAGS="$ORIG_LDFLAGS -Wl,--image-base,0x18000000"
     export LDFLAGS
-    AC_RUN_IFELSE(AC_LANG_PROGRAM([], []), [], [
+    AC_LINK_IFELSE(AC_LANG_PROGRAM([], []), [], [
         # Too bad, this can't be done
         LDFLAGS="$ORIG_LDFLAGS"
         export LDFLAGS
