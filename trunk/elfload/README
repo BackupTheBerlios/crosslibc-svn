@@ -1,0 +1,2 @@
+This is elfload, a portable runtime ELF loader. It lets you use ELF on
+platforms that don't natively support ELF!

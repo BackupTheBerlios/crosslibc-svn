@@ -1,0 +1,2 @@
+void puts(){}
+void printf(){}

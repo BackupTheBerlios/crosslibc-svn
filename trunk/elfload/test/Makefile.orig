@@ -1,0 +1,35 @@
+CC=gcc
+CFLAGS=
+LDFLAGS=
+SOFLAGS=-shared -soname=
+
+TESTSTATIC_OBJS=teststatic.o
+TESTHOST_OBJS=testhost.o
+TESTSO_OBJS=testso.o
+TESTDL_OBJS=testdl.o
+
+all: teststatic testhost testso.so testdl
+
+teststatic: $(TESTSTATIC_OBJS)
+	ld $(LDFLAGS) $(TESTSTATIC_OBJS) -o teststatic
+
+testhost: $(TESTHOST_OBJS) testso.so
+	ld $(LDFLAGS) $(TESTHOST_OBJS) testso.so -o testhost
+
+testso.so: $(TESTSO_OBJS)
+	ld $(LDFLAGS) $(TESTSO_OBJS) $(SOFLAGS)testso.so -o testso.so
+
+testdl: $(TESTDL_OBJS)
+	ld $(LDFLAGS) $(TESTDL_OBJS) -o testdl
+
+.s.o:
+	$(CC) $(CFLAGS) -c $< -o $@
+
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f teststatic $(TESTSTATIC_OBJS)
+	rm -f testhost $(TESTHOST_OBJS)
+	rm -f testso.so $(TESTSO_OBJS)
+	rm -f testdl $(TESTDL_OBJS)
