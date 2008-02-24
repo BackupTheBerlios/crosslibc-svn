@@ -368,6 +368,7 @@ void readFile(char *nm, struct ELF_File *ef)
 #else
     char *buf;
     int bufsz, rdtotal, rd;
+    FILE *f;
 
     /* OK, use stdio */
     f = fopen(nm, "rb");

@@ -24,11 +24,12 @@ AM_CONDITIONAL(HAVE_LIBDL, test "x$HAVE_LIBDL" = "xtrue")
 
 # Check if we can rebase the program at 0x18000000
 ORIG_LDFLAGS="$LDFLAGS"
-LDFLAGS="$LDFLAGS -Wl,--section-start,.dynsym=0x18000000"
+LDFLAGS="$LDFLAGS -Wl,--image-base,0x18000000"
 export LDFLAGS
 AC_LINK_IFELSE(AC_LANG_PROGRAM([], []), [], [
-    # OK, try with --image-base
-    LDFLAGS="$ORIG_LDFLAGS -Wl,--image-base,0x18000000"
+    # OK, try with --section-start. This test comes second because MingW allows
+    # it, though it doesn't work
+    LDFLAGS="$ORIG_LDFLAGS -Wl,--section-start,.dynsym=0x18000000"
     export LDFLAGS
     AC_LINK_IFELSE(AC_LANG_PROGRAM([], []), [], [
         # Too bad, this can't be done
