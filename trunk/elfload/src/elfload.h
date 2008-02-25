@@ -55,6 +55,7 @@ struct ELF_File {
 };
 
 struct ELF_File *loadELF(char *nm);
+void initELF(struct ELF_File *except);
 void readFile(char *nm, struct ELF_File *ef);
 void closeFile(struct ELF_File *ef);
 void *findELFSymbol(char *nm, int localin, int notin, Elf32_Sym **syminto);

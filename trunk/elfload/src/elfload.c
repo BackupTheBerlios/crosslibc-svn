@@ -263,6 +263,29 @@ struct ELF_File *loadELF(char *nm)
     return f;
 }
 
+/* Initialize every ELF loaded /except/ for f (usually the binary) */
+void initELF(struct ELF_File *except)
+{
+    int i;
+    struct ELF_File *f;
+    Elf32_Dyn *dyn;
+
+    for (i = elfFileCount - 1; i >= 0; i--) {
+        f = &(elfFiles[i]);
+        if (f == except) continue;
+
+        /* init is in the dynamic section */
+        if (f->dynamic == NULL) continue;
+        for (dyn = f->dynamic; dyn && dyn->d_tag != DT_NULL; dyn++) {
+            if (dyn->d_tag == DT_INIT) {
+                /* call it */
+                ((void(*)()) (dyn->d_un.d_ptr + f->offset))();
+                break;
+            }
+        }
+    }
+}
+
 /* Find a symbol within the currently loaded ELF files
  * localin: The number of the current file, where STB_LOCAL symbols are OK
  * notin: Do not bind to symbols in this file 

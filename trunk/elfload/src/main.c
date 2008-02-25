@@ -18,9 +18,11 @@ int main(int argc, char **argv, char **envp)
     /* load them all in */
     f = loadELF(argv[1]);
 
-    for (envc = 0; envp[envc]; envc++);
+    /* initialize .so files */
+    initELF(f);
 
     /* make its stack */
+    for (envc = 0; envp[envc]; envc++);
     newstack = (void**)
         alloca((argc + envc + 3) * sizeof(void*));
     newstack[0] = (void*) argc;
@@ -34,6 +36,6 @@ int main(int argc, char **argv, char **envp)
     }
     newstack[i+argc+2] = NULL;
 
-    /* FIXME: more steps here */
+    /* and call it */
     WITHSTACK_JMP(newstack, f->ehdr->e_entry + f->offset);
 }
