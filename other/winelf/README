@@ -20,10 +20,14 @@ Then compile and install libc here:
 make all install PREFIX=/opt/crossc/i686-winelf
 
 And remove a broken header from the installation:
-rm -f /opt/crossc/i686-winelf/lib/gcc/i686-mingw32/<version>/include/limits.h
+find /opt/crossc/i686-winelf/lib/gcc -name limits.h | xargs rm -f
+
+At this point you can (if you'd like) compile a more complete GCC:
+../configure --prefix=/opt/crossc/i686-winelf --target=i686-win32elf
+make all install
 
 
-The ELF binaries can be run with rtload.exe, provided in crosslibc.
+The ELF binaries can be run with elfload.exe, provided in crosslibc.
 
 
 For reference, the GCC configure flags:

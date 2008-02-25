@@ -45,8 +45,8 @@ diff -ruN gcc-4.2.3/fixincludes/mkfixinc.sh gcc-4.2.3-winelf/fixincludes/mkfixin
      powerpc-*-eabi*    | \
 diff -ruN gcc-4.2.3/gcc/config/i386/win32elf.h gcc-4.2.3-winelf/gcc/config/i386/win32elf.h
 --- gcc-4.2.3/gcc/config/i386/win32elf.h	1969-12-31 16:00:00.000000000 -0800
-+++ gcc-4.2.3-winelf/gcc/config/i386/win32elf.h	2008-02-24 16:26:59.000000000 -0800
-@@ -0,0 +1,147 @@
++++ gcc-4.2.3-winelf/gcc/config/i386/win32elf.h	2008-02-24 22:29:39.000000000 -0800
+@@ -0,0 +1,149 @@
 +/* Target definitions for GCC for Intel 80386 using ELF
 +   Copyright (C) 1988, 1991, 1995, 2000, 2001, 2002
 +   Free Software Foundation, Inc.
@@ -110,9 +110,11 @@ diff -ruN gcc-4.2.3/gcc/config/i386/win32elf.h gcc-4.2.3-winelf/gcc/config/i386/
 +
 +#define STARTFILE_SPEC "%{!shared: \
 +			 %{!symbolic: \
-+			  %{pg:gcrt0.o%s}%{!pg:%{p:mcrt0.o%s}%{!p:crt0.o%s}}}}\
-+                        crt1.o%s\
++			  %{pg:gcrt0.o%s}%{!pg:%{p:mcrt0.o%s}%{!p:crt0.o%s}}} \
++                         crt1.o%s} \
 +			crtbegin.o%s"
++
++#define LINK_SPEC "%{shared:-shared}"
 +
 +#undef DBX_REGISTER_NUMBER
 +#define DBX_REGISTER_NUMBER(n) \
