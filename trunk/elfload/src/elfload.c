@@ -6,6 +6,8 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
+#include "bbuffer.h"
+
 #include "../config.h"
 
 #ifdef HAVE_MMAP
@@ -108,30 +110,16 @@ struct ELF_File *loadELF(char *nm)
 
     /* with this size info, we can allocate the space */
     f->memsz = f->max - f->min;
-#ifdef HAVE_MMAP
+    
     /* if this is a binary, try to allocate it in place. elfload is addressed above 0x18000000 */
     if (f->ehdr->e_type == ET_EXEC && f->max < (void *) 0x18000000) {
-        f->loc = mmap(f->min, f->memsz, PROT_EXEC|PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_FIXED,
-                      -1, 0);
+        f->loc = bbuffer(f->min, f->memsz);
 
     } else {
-        f->loc = mmap(NULL, f->memsz, PROT_EXEC|PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS,
-                      -1, 0);
-    }
-    if (f->loc == NULL) {
-        perror("mmap");
-        exit(1);
+        f->loc = bbuffer(NULL, f->memsz);
+
     }
     memset(f->loc, 0, f->memsz);
-
-#else
-    f->loc = calloc(f->memsz, 1);
-    if (f->loc == NULL) {
-        perror("calloc");
-        exit(1);
-    }
-
-#endif
 
     f->offset = f->loc - f->min;
 
