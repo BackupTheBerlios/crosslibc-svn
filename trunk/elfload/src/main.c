@@ -24,17 +24,17 @@ int main(int argc, char **argv, char **envp)
     /* make its stack */
     for (envc = 0; envp[envc]; envc++);
     newstack = (void**)
-        alloca((argc + envc + 3) * sizeof(void*));
-    newstack[0] = (void*) argc;
-    for (i = 0; i < argc; i++) {
-        newstack[i+1] = (void*) argv[i];
+        alloca((argc + envc + 2) * sizeof(void*));
+    newstack[0] = (void*) (argc - 1);
+    for (i = 1; i < argc; i++) {
+        newstack[i] = (void*) argv[i];
     }
-    newstack[i+1] = NULL;
+    newstack[i] = NULL;
 
     for (i = 0; i < envc; i++) {
-        newstack[i+argc+2] = (void*) envp[i];
+        newstack[i+argc+1] = (void*) envp[i];
     }
-    newstack[i+argc+2] = NULL;
+    newstack[i+argc+1] = NULL;
 
     /* and call it */
     WITHSTACK_JMP(newstack, f->ehdr->e_entry + f->offset);
