@@ -18,6 +18,13 @@
 #include <dlfcn.h>
 #endif
 
+#ifdef __WIN32
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
+#include <windows.h>
+#endif
+
 #include "elfload.h"
 
 /* An array of files currently in the process of loading */
@@ -49,8 +56,14 @@ struct ELF_File *loadELF(char *nm)
     /* if this is a host library, circumvent all the ELF stuff and go straight for the host */
     if (strncmp(nm, "libhost_", 8) == 0) {
         f->hostlib = 1;
-#ifdef HAVE_DLFCN_H
+#if defined(HAVE_DLFCN_H)
         f->prog = dlopen(nm + 8, RTLD_NOW|RTLD_GLOBAL);
+        if (f->prog == NULL) {
+            fprintf(stderr, "Could not resolve host library %s.\n", nm + 8);
+            exit(1);
+        }
+#elif defined(__WIN32)
+        f->prog = LoadLibrary(nm + 8);
         if (f->prog == NULL) {
             fprintf(stderr, "Could not resolve host library %s.\n", nm + 8);
             exit(1);
@@ -272,8 +285,17 @@ void *findELFSymbol(char *nm, int localin, int notin, Elf32_Sym **syminto)
 
         /* if this is a host library, just try the host method */
         if (f->hostlib) {
-#ifdef HAVE_DLFCN_H
+#if defined(HAVE_DLFCN_H)
             hostsym = dlsym(f->prog, nm);
+            if (hostsym) return hostsym;
+#elif defined(__WIN32)
+            /* Try adding a _ first, to get the cdecl version */
+            char csym[1024];
+            snprintf(csym, 1024, "_%s", nm);
+            hostsym = GetProcAddress(f->prog, csym);
+            if (hostsym == NULL) {
+                hostsym = GetProcAddress(f->prog, nm);
+            }
             if (hostsym) return hostsym;
 #endif
             continue;
@@ -380,6 +402,14 @@ void readFile(char *nm, struct ELF_File *ef)
         if (rdtotal != bufsz) {
             /* done reading */
             break;
+
+        } else {
+            bufsz <<= 1;
+            buf = realloc(buf, bufsz);
+            if (buf == NULL) {
+                perror("realloc");
+                exit(1);
+            }
         }
     }
     if (ferror(f)) {

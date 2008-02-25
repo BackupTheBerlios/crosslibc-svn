@@ -48,46 +48,60 @@ void *bbuffer(void *loc, size_t sz)
     /* shockingly, Windows makes this far more difficult than it needs to be */
     SYSTEM_INFO si;
     MEMORY_BASIC_INFORMATION mbi;
-    ssize_t agrn, offset;
+    ssize_t agrn, offset, szoffset;
     void *q, *ret;
 
-    /* get the allocation granularity */
-    GetSystemInfo(&si);
-    agrn = si.dwAllocationGranularity;
+    if (loc) {
+        /* the complicated case */
 
-    /* make sure it's on the allocation granularity */
-    offset = (ssize_t) loc % agrn;
-    if (offset) {
-        sz += offset;
-        loc -= offset;
-    }
+        /* get the allocation granularity */
+        GetSystemInfo(&si);
+        agrn = si.dwAllocationGranularity;
 
-    /* then make sure sz is also aligned */
-    offset = sz % agrn;
-    if (offset) {
-        sz += (agrn - offset);
-    }
+        /* make sure it's on the allocation granularity */
+        offset = (ssize_t) loc % agrn;
+        if (offset) {
+            sz += offset;
+            loc -= offset;
+        }
 
-    /* free everything */
-    for (q = loc; q < loc + sz; q += agrn) {
-        if (VirtualQuery(q, &mbi, agrn) >= sizeof(mbi)) {
-            if (mbi.State != MEM_FREE) {
-                /* get rid of it */
-                if (mbi.Type & MEM_IMAGE)
-                    UnmapViewOfFile(mbi.AllocationBase);
-                VirtualFree(mbi.AllocationBase, 0, MEM_RELEASE);
+        /* then make sure sz is also aligned */
+        szoffset = sz % agrn;
+        if (szoffset) {
+            sz += (agrn - szoffset);
+        }
+
+        /* free everything */
+        for (q = loc; q < loc + sz; q += agrn) {
+            if (VirtualQuery(q, &mbi, agrn) >= sizeof(mbi)) {
+                if (mbi.State != MEM_FREE) {
+                    /* get rid of it */
+                    if (mbi.Type & MEM_IMAGE)
+                        UnmapViewOfFile(mbi.AllocationBase);
+                    VirtualFree(mbi.AllocationBase, 0, MEM_RELEASE);
+                }
             }
         }
-    }
 
-    /* finally, allocate */
-    ret = VirtualAlloc(loc, sz, MEM_RESERVE|MEM_COMMIT, PAGE_EXECUTE_READWRITE);
-    if (ret == NULL) {
-        fprintf(stderr, "VirtualAlloc failed with error %d\n", GetLastError());
-        exit(1);
-    }
+        /* finally, allocate */
+        ret = VirtualAlloc(loc, sz, MEM_RESERVE|MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+        if (ret == NULL) {
+            fprintf(stderr, "VirtualAlloc failed with error %d\n", GetLastError());
+            exit(1);
+        }
 
-    return ret;
+        return ret + offset;
+
+    } else {
+        ret = VirtualAlloc(NULL, sz, MEM_RESERVE|MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+        if (ret == NULL) {
+            fprintf(stderr, "VirtualAlloc failed with error %d\n", GetLastError());
+            exit(1);
+        }
+
+        return ret;
+
+    }
 }
 
 #else
