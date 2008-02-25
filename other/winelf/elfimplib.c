@@ -62,52 +62,14 @@ int main(int argc, char **argv)
         }
     }
     
-    /* write out the main file */
+    /* start writing out the file */
     mkdir(argv[2], 0755);
-    snprintf(fname, FNAMELEN, "%s/dll_%s.c", argv[2], argv[2]);
+    snprintf(fname, FNAMELEN, "%s/%s.c", argv[2], argv[2]);
     cfile = fopen(fname, "w");
     if (!cfile) {
         perror(fname);
         return 1;
     }
-    fprintf(cfile, "#ifndef WIN32_LEAN_AND_MEAN\n"
-            "#define WIN32_LEAN_AND_MEAN\n"
-            "#endif\n"
-            "#include <windows.h>\n"
-            "\n"
-            "extern WINBASEAPI HMODULE WINAPI (*_elf_LoadLibraryA)(LPCSTR);\n"
-            "extern WINBASEAPI FARPROC WINAPI (*_elf_GetProcAddress)(HMODULE,LPCSTR);\n"
-            "\n"
-            "HMODULE _dll_%s = NULL;\n"
-            "\n"
-            "void load_dll_%s() {\n"
-            "if (!_dll_%s) {\n"
-            "_dll_%s = _elf_LoadLibraryA(\"%s\");\n"
-            "}\n"
-            "}\n"
-            "\n",
-            argv[2], argv[2], argv[2], argv[2], argv[2]);
-    fclose(cfile);
-    
-    /* write out the header file */
-    snprintf(fname, FNAMELEN, "%s/%s.h", argv[2], argv[2]);
-    cfile = fopen(fname, "w");
-    if (!cfile) {
-        perror(fname);
-        return 1;
-    }
-    fprintf(cfile, "#ifndef WIN32_LEAN_AND_MEAN\n"
-            "#define WIN32_LEAN_AND_MEAN\n"
-            "#endif\n"
-            "#include <windows.h>\n"
-            "\n"
-            "extern WINBASEAPI HMODULE WINAPI (*_elf_LoadLibraryA)(LPCSTR);\n"
-            "extern WINBASEAPI FARPROC WINAPI (*_elf_GetProcAddress)(HMODULE,LPCSTR);\n"
-            "\n"
-            "extern HMODULE _dll_%s;\n"
-            "\n"
-            "void load_dll_%s();\n",
-            argv[2], argv[2]);
     
     /* read in the symbols */
     while (!feof(objdump) && !ferror(objdump)) {
@@ -144,49 +106,21 @@ int main(int argc, char **argv)
                 (line[i] != '_')) break;
         }
         if (i < llen) continue;
-        
-        /* if it starts with '_', it's probably just C-mangled */
-        if (line[0] == '_') {
-            unmangled = line + 1;
-        } else {
-            unmangled = line;
-        }
+
+        /* unmangle c-decl functions */
+        unmangled = line;
+        if (unmangled[0] == '_') unmangled++;
         
         /* write out the loader */
-        snprintf(fname, FNAMELEN, "%s/%s.c", argv[2], line);
-        cfile = fopen(fname, "w");
-        if (!cfile) {
-            perror(fname);
-            return 1;
-        }
-        fprintf(cfile, "#include \"%s.h\"\n"
-                "void _elfimplib_%s() asm(\"%s\");\n"
-                "void *_imp__%s = NULL;\n"
-                "__attribute__((constructor)) void _elfimplib_init_%s() {\n"
-                "load_dll_%s();\n"
-                "_imp__%s = (void *) _elf_GetProcAddress(_dll_%s, \"%s\");\n"
-                "}\n"
-                "void _elfimplib_%s() {\n"
-                "asm(\"leave\\njmp *%0\" : : \"r\"(_imp__%s));\n"
-                "}\n"
-                "\n",
-                argv[2], line, unmangled, line, line, argv[2], line, argv[2],
-                line, line, line);
-        
-        if (unmangled != line) {
-            /* include both unmangled and mangled */
-            fprintf(cfile, "void _elfimplibmang_%s() asm(\"%s\");\n"
-                    "void _elfimplibmang_%s() {\n"
-                    "asm(\"leave\\njmp *%0\" : : \"r\"(_imp__%s));\n"
-                    "}\n"
-                    "\n",
-                    line, line, line, line);
-        }
-        
-        fclose(cfile);
+        fprintf(cfile, "#ifndef %s_linked\n"
+                "#define %s_linked\n"
+                "void %s() {}\n"
+                "#endif\n", unmangled, unmangled, unmangled);
     }
     
     pclose(objdump);
+
+    fclose(cfile);
     
     /* generate a useful Makefile */
     snprintf(fname, FNAMELEN, "%s/Makefile", argv[2]);
@@ -195,17 +129,19 @@ int main(int argc, char **argv)
         perror(fname);
         return 1;
     }
-    fprintf(cfile, "CC=i686-win32elf-gcc\n"
-            "CFLAGS=\n"
-            "AR=i686-win32elf-ar\n"
-            "RANLIB=i686-win32elf-ranlib\n"
-            "all: lib%s.a\n"
+    fprintf(cfile, "CROSS=i686-win32elf-\n"
+            "CC=$(CROSS)gcc\n"
+            "LD=$(CROSS)ld\n"
+            "CFLAGS=-fPIC\n"
+            "LDFLAGS=-shared -soname=libhost_%s.dll\n"
             "\n"
-            "lib%s.a:\n"
-            "\t$CC $CFLAGS -c *.c\n"
-            "\t$AR rc lib%s.a *.o\n"
-            "\t$RANLIB lib%s.a\n",
-            argv[2], argv[2], argv[2], argv[2]);
+            "all: lib%s.so\n"
+            "\n"
+            "lib%s.so:\n"
+            "\t$(CC) $(CFLAGS) -c %s.c -o %s.o\n"
+            "\t$(LD) $(LDFLAGS) %s.o -o lib%s.so\n",
+            argv[2], argv[2], argv[2], argv[2], argv[2],
+            argv[2], argv[2]);
     fclose(cfile);
     
     return 0;

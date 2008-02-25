@@ -1,0 +1,107 @@
+diff -ruN binutils-2.18/bfd/config.bfd binutils-2.18-winelf/bfd/config.bfd
+--- binutils-2.18/bfd/config.bfd	2007-08-28 10:19:33.000000000 -0700
++++ binutils-2.18-winelf/bfd/config.bfd	2008-02-24 16:20:57.000000000 -0800
+@@ -478,7 +478,8 @@
+     ;;
+   i[3-7]86-*-sysv4* | i[3-7]86-*-unixware* | \
+   i[3-7]86-*-elf | i[3-7]86-*-sco3.2v5* | \
+-  i[3-7]86-*-dgux* | i[3-7]86-*-sysv5*)
++  i[3-7]86-*-dgux* | i[3-7]86-*-sysv5* | \
++  i[3-7]86-*-win32elf*)
+     targ_defvec=bfd_elf32_i386_vec
+     targ_selvecs=i386coff_vec
+     ;;
+diff -ruN binutils-2.18/config.sub binutils-2.18-winelf/config.sub
+--- binutils-2.18/config.sub	2007-08-06 13:00:30.000000000 -0700
++++ binutils-2.18-winelf/config.sub	2008-02-24 16:20:57.000000000 -0800
+@@ -1217,7 +1217,7 @@
+ 	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
+ 	      | -udi* | -eabi* | -lites* | -ieee* | -go32* | -aux* \
+ 	      | -chorusos* | -chorusrdb* \
+-	      | -cygwin* | -pe* | -psos* | -moss* | -proelf* | -rtems* \
++	      | -cygwin* | -pe* | -psos* | -moss* | -proelf* | -rtems* | -win32elf* \
+ 	      | -mingw32* | -linux-gnu* | -linux-newlib* | -linux-uclibc* \
+ 	      | -uxpv* | -beos* | -mpeix* | -udk* \
+ 	      | -interix* | -uwin* | -mks* | -rhapsody* | -darwin* | -opened* \
+diff -ruN binutils-2.18/gas/configure.tgt binutils-2.18-winelf/gas/configure.tgt
+--- binutils-2.18/gas/configure.tgt	2007-08-28 10:19:36.000000000 -0700
++++ binutils-2.18-winelf/gas/configure.tgt	2008-02-24 16:21:28.000000000 -0800
+@@ -221,6 +221,7 @@
+       x86_64*)				fmt=coff em=pep ;;
+       i*)				fmt=coff em=pe ;;
+     esac ;;
++  i386-*-win32elf*)			fmt=elf ;;
+   i386-*-nto-qnx*)			fmt=elf ;;
+   i386-*-*nt*)				fmt=coff em=pe ;;
+   i386-*-chaos)				fmt=elf ;;
+diff -ruN binutils-2.18/ld/configure.tgt binutils-2.18-winelf/ld/configure.tgt
+--- binutils-2.18/ld/configure.tgt	2007-08-28 10:19:42.000000000 -0700
++++ binutils-2.18-winelf/ld/configure.tgt	2008-02-24 16:20:57.000000000 -0800
+@@ -267,6 +267,7 @@
+ 			targ_extra_ofiles="deffilep.o pep-dll.o" ;;
+ i[3-7]86-*-interix*)	targ_emul=i386pe_posix;
+  			targ_extra_ofiles="deffilep.o pe-dll.o" ;;
++i[3-7]86-*-win32elf*)   targ_emul=elf_i386 ;;
+ i[3-7]86-*-beospe*)	targ_emul=i386beos ;;
+ i[3-7]86-*-beos*)	targ_emul=elf_i386_be ;;
+ i[3-7]86-*-vxworks*)	targ_emul=elf_i386_vxworks ;;
+diff -ruN binutils-2.18/libiberty/configure binutils-2.18-winelf/libiberty/configure
+--- binutils-2.18/libiberty/configure	2007-08-06 12:59:45.000000000 -0700
++++ binutils-2.18-winelf/libiberty/configure	2008-02-24 16:20:57.000000000 -0800
+@@ -6012,7 +6012,7 @@
+ 
+ 
+ case "${host}" in
+-  *-*-cygwin* | *-*-mingw*)
++  *-*-cygwin* | *-*-mingw* | *-*-win32elf*)
+     cat >>confdefs.h <<\_ACEOF
+ #define HAVE_SYS_ERRLIST 1
+ _ACEOF
+@@ -6196,7 +6196,7 @@
+     fi
+     ;;
+ 
+-  *-*-mingw32*)
++  *-*-mingw32* | *-*-win32elf*)
+     # Under mingw32, sys_nerr and sys_errlist exist, but they are
+     # macros, so the test below won't find them.
+     libiberty_cv_var_sys_nerr=yes
+@@ -8517,7 +8517,7 @@
+ 
+ # Figure out which version of pexecute to use.
+ case "${host}" in
+-     *-*-mingw* | *-*-winnt*)	pexecute=./pex-win32.o  ;;
++     *-*-mingw* | *-*-winnt* | *-*-win32elf*)	pexecute=./pex-win32.o  ;;
+      *-*-msdosdjgpp*)		pexecute=./pex-djgpp.o  ;;
+      *-*-msdos*)		pexecute=./pex-msdos.o  ;;
+      *)				pexecute=./pex-unix.o   ;;
+diff -ruN binutils-2.18/libiberty/configure.ac binutils-2.18-winelf/libiberty/configure.ac
+--- binutils-2.18/libiberty/configure.ac	2007-08-06 12:59:45.000000000 -0700
++++ binutils-2.18-winelf/libiberty/configure.ac	2008-02-24 16:20:57.000000000 -0800
+@@ -502,7 +502,7 @@
+ AC_SUBST(target_header_dir)
+ 
+ case "${host}" in
+-  *-*-cygwin* | *-*-mingw*)
++  *-*-cygwin* | *-*-mingw* | *-*-win32elf*)
+     AC_DEFINE(HAVE_SYS_ERRLIST)
+     AC_DEFINE(HAVE_SYS_NERR)
+     ;;
+@@ -594,7 +594,7 @@
+     fi
+     ;;
+ 
+-  *-*-mingw32*)
++  *-*-mingw32* | *-*-win32elf*)
+     # Under mingw32, sys_nerr and sys_errlist exist, but they are
+     # macros, so the test below won't find them.
+     libiberty_cv_var_sys_nerr=yes
+@@ -679,7 +679,7 @@
+ 
+ # Figure out which version of pexecute to use.
+ case "${host}" in
+-     *-*-mingw* | *-*-winnt*)	pexecute=./pex-win32.o  ;;
++     *-*-mingw* | *-*-winnt* | *-*-win32elf)	pexecute=./pex-win32.o  ;;
+      *-*-msdosdjgpp*)		pexecute=./pex-djgpp.o  ;;
+      *-*-msdos*)		pexecute=./pex-msdos.o  ;;
+      *)				pexecute=./pex-unix.o   ;;

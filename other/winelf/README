@@ -33,7 +33,7 @@ These allow the compiler to build without a C library:
 --with-newlib
 --disable-threads
 --disable-shared
---disable-static
+--enable-static
 --enable-languages=c
 --disable-libssp
 
