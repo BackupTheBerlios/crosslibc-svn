@@ -1,6 +1,6 @@
 diff -ruN gcc-4.2.3/config.sub gcc-4.2.3-winelf/config.sub
 --- gcc-4.2.3/config.sub	2006-10-15 20:27:17.000000000 -0700
-+++ gcc-4.2.3-winelf/config.sub	2008-02-24 16:27:38.000000000 -0800
++++ gcc-4.2.3-winelf/config.sub	2008-02-26 14:48:59.000000000 -0800
 @@ -1210,7 +1210,7 @@
  	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
  	      | -udi* | -eabi* | -lites* | -ieee* | -go32* | -aux* \
@@ -12,7 +12,7 @@ diff -ruN gcc-4.2.3/config.sub gcc-4.2.3-winelf/config.sub
  	      | -interix* | -uwin* | -mks* | -rhapsody* | -darwin* | -opened* \
 diff -ruN gcc-4.2.3/fixincludes/configure gcc-4.2.3-winelf/fixincludes/configure
 --- gcc-4.2.3/fixincludes/configure	2006-05-16 17:31:31.000000000 -0700
-+++ gcc-4.2.3-winelf/fixincludes/configure	2008-02-24 16:26:59.000000000 -0800
++++ gcc-4.2.3-winelf/fixincludes/configure	2008-02-26 14:48:59.000000000 -0800
 @@ -2563,6 +2563,7 @@
    case $host in
  	i?86-*-msdosdjgpp* | \
@@ -23,7 +23,7 @@ diff -ruN gcc-4.2.3/fixincludes/configure gcc-4.2.3-winelf/fixincludes/configure
  		;;
 diff -ruN gcc-4.2.3/fixincludes/configure.ac gcc-4.2.3-winelf/fixincludes/configure.ac
 --- gcc-4.2.3/fixincludes/configure.ac	2006-05-16 17:31:31.000000000 -0700
-+++ gcc-4.2.3-winelf/fixincludes/configure.ac	2008-02-24 16:26:59.000000000 -0800
++++ gcc-4.2.3-winelf/fixincludes/configure.ac	2008-02-26 14:48:59.000000000 -0800
 @@ -49,6 +49,7 @@
  [case $host in
  	i?86-*-msdosdjgpp* | \
@@ -34,7 +34,7 @@ diff -ruN gcc-4.2.3/fixincludes/configure.ac gcc-4.2.3-winelf/fixincludes/config
  		;;
 diff -ruN gcc-4.2.3/fixincludes/mkfixinc.sh gcc-4.2.3-winelf/fixincludes/mkfixinc.sh
 --- gcc-4.2.3/fixincludes/mkfixinc.sh	2004-11-23 14:45:53.000000000 -0800
-+++ gcc-4.2.3-winelf/fixincludes/mkfixinc.sh	2008-02-24 16:26:59.000000000 -0800
++++ gcc-4.2.3-winelf/fixincludes/mkfixinc.sh	2008-02-26 14:48:59.000000000 -0800
 @@ -23,6 +23,7 @@
      i?86-*-mingw32* | \
      i?86-*-uwin* | \
@@ -45,8 +45,8 @@ diff -ruN gcc-4.2.3/fixincludes/mkfixinc.sh gcc-4.2.3-winelf/fixincludes/mkfixin
      powerpc-*-eabi*    | \
 diff -ruN gcc-4.2.3/gcc/config/i386/win32elf.h gcc-4.2.3-winelf/gcc/config/i386/win32elf.h
 --- gcc-4.2.3/gcc/config/i386/win32elf.h	1969-12-31 16:00:00.000000000 -0800
-+++ gcc-4.2.3-winelf/gcc/config/i386/win32elf.h	2008-02-24 22:29:39.000000000 -0800
-@@ -0,0 +1,149 @@
++++ gcc-4.2.3-winelf/gcc/config/i386/win32elf.h	2008-02-26 14:49:55.000000000 -0800
+@@ -0,0 +1,151 @@
 +/* Target definitions for GCC for Intel 80386 using ELF
 +   Copyright (C) 1988, 1991, 1995, 2000, 2001, 2002
 +   Free Software Foundation, Inc.
@@ -110,8 +110,10 @@ diff -ruN gcc-4.2.3/gcc/config/i386/win32elf.h gcc-4.2.3-winelf/gcc/config/i386/
 +
 +#define STARTFILE_SPEC "%{!shared: \
 +			 %{!symbolic: \
-+			  %{pg:gcrt0.o%s}%{!pg:%{p:mcrt0.o%s}%{!p:crt0.o%s}}} \
-+                         crt1.o%s} \
++			  %{pg:gcrt0.o%s}%{!pg:%{p:mcrt0.o%s}%{!p:crt0.o%s}} \
++                         crt1.o%s \
++                          }} \
++                        crti.o%s \
 +			crtbegin.o%s"
 +
 +#define LINK_SPEC "%{shared:-shared}"
@@ -198,7 +200,7 @@ diff -ruN gcc-4.2.3/gcc/config/i386/win32elf.h gcc-4.2.3-winelf/gcc/config/i386/
 +  asm_output_aligned_bss (FILE, DECL, NAME, SIZE, ALIGN)
 diff -ruN gcc-4.2.3/gcc/config.gcc gcc-4.2.3-winelf/gcc/config.gcc
 --- gcc-4.2.3/gcc/config.gcc	2007-12-27 01:45:20.000000000 -0800
-+++ gcc-4.2.3-winelf/gcc/config.gcc	2008-02-24 16:26:59.000000000 -0800
++++ gcc-4.2.3-winelf/gcc/config.gcc	2008-02-26 14:48:59.000000000 -0800
 @@ -1340,6 +1340,11 @@
  		tm_file="${tm_file} dbxcoff.h"
  	fi
@@ -213,7 +215,7 @@ diff -ruN gcc-4.2.3/gcc/config.gcc gcc-4.2.3-winelf/gcc/config.gcc
  	tmake_file="i386/t-i386elf t-svr4"
 diff -ruN gcc-4.2.3/libiberty/configure gcc-4.2.3-winelf/libiberty/configure
 --- gcc-4.2.3/libiberty/configure	2006-08-30 06:46:50.000000000 -0700
-+++ gcc-4.2.3-winelf/libiberty/configure	2008-02-24 16:26:59.000000000 -0800
++++ gcc-4.2.3-winelf/libiberty/configure	2008-02-26 14:48:59.000000000 -0800
 @@ -8400,7 +8400,7 @@
  
  # Figure out which version of pexecute to use.
@@ -225,7 +227,7 @@ diff -ruN gcc-4.2.3/libiberty/configure gcc-4.2.3-winelf/libiberty/configure
       *)				pexecute=./pex-unix.o   ;;
 diff -ruN gcc-4.2.3/libiberty/configure.ac gcc-4.2.3-winelf/libiberty/configure.ac
 --- gcc-4.2.3/libiberty/configure.ac	2006-08-30 06:46:50.000000000 -0700
-+++ gcc-4.2.3-winelf/libiberty/configure.ac	2008-02-24 16:26:59.000000000 -0800
++++ gcc-4.2.3-winelf/libiberty/configure.ac	2008-02-26 14:48:59.000000000 -0800
 @@ -660,7 +660,7 @@
  
  # Figure out which version of pexecute to use.
