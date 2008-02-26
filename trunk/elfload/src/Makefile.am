@@ -10,4 +10,4 @@ if HAVE_LIBDL
     elfload_LDADD += -ldl
 endif
 
-libelfload_a_SOURCES = bbuffer.c elfload.c
+libelfload_a_SOURCES = bbuffer.c elfload.c dlfcn.c

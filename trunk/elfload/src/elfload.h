@@ -1,7 +1,13 @@
 #ifndef ELFLOAD_H
 #define ELFLOAD_H
 
+#include <sys/types.h>
+
 #include "elfload_elf.h"
+
+#define HOSTLIB_NOT  0
+#define HOSTLIB_HOST 1
+#define HOSTLIB_DL   2
 
 /* Basic structure for ELF files mid-load */
 struct ELF_File {
@@ -54,11 +60,12 @@ struct ELF_File {
     size_t jmprelsz;
 };
 
-struct ELF_File *loadELF(char *nm);
+struct ELF_File *loadELF(const char *nm);
 void initELF(struct ELF_File *except);
-void readFile(char *nm, struct ELF_File *ef);
+void readFile(const char *nm, struct ELF_File *ef);
 void closeFile(struct ELF_File *ef);
-void *findELFSymbol(char *nm, int localin, int notin, Elf32_Sym **syminto);
+void *findELFSymbol(const char *nm, struct ELF_File *onlyin, int localin, int notin,
+                    Elf32_Sym **syminto);
 Elf32_Word elf_hash(const unsigned char *name);
 
 #endif

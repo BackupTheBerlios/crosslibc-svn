@@ -26,6 +26,7 @@
 #endif
 
 #include "elfload.h"
+#include "elfload_dlfcn.h"
 
 /* An array of files currently in the process of loading */
 #define MAX_ELF_FILES 255
@@ -33,7 +34,7 @@ struct ELF_File elfFiles[MAX_ELF_FILES];
 int elfFileCount = 0;
 
 /* The function to actually load ELF files into memory */
-struct ELF_File *loadELF(char *nm)
+struct ELF_File *loadELF(const char *nm)
 {
     int i, fileNo, phdri;
     struct ELF_File *f;
@@ -55,7 +56,7 @@ struct ELF_File *loadELF(char *nm)
 
     /* if this is a host library, circumvent all the ELF stuff and go straight for the host */
     if (strncmp(nm, "libhost_", 8) == 0) {
-        f->hostlib = 1;
+        f->hostlib = HOSTLIB_HOST;
 #if defined(HAVE_DLFCN_H)
         f->prog = dlopen(nm + 8, RTLD_NOW|RTLD_GLOBAL);
         if (f->prog == NULL) {
@@ -73,6 +74,19 @@ struct ELF_File *loadELF(char *nm)
                 nm + 8);
         exit(1);
 #endif
+        return f;
+
+    } else if (strncmp(nm, "libloader_", 10) == 0) {
+        /* must be provided by the loader. Only dl.0 is provided right now */
+        if (strcmp(nm, "libloader_dl.0") == 0) {
+            f->hostlib = HOSTLIB_DL;
+
+        } else {
+            fprintf(stderr, "Loader lib %s unsupported.\n", nm);
+            exit(1);
+
+        }
+
         return f;
     }
 
@@ -202,7 +216,7 @@ struct ELF_File *loadELF(char *nm)
 #define REL_P ((ssize_t) (currel->r_offset + f->offset))
 #define REL_S ((ssize_t) (findELFSymbol( \
                 f->strtab + f->symtab[ELF32_R_SYM(currel->r_info)].st_name, \
-                fileNo, -1, NULL)))
+                NULL, fileNo, -1, NULL)))
 #define REL_A (*((ssize_t *) REL_P))
 #define WORD32_REL(to) REL_A = (ssize_t) (to)
 
@@ -226,7 +240,7 @@ struct ELF_File *loadELF(char *nm)
                     localsym = &(f->symtab[ELF32_R_SYM(currel->r_info)]);
                     void *soptr = findELFSymbol(
                             f->strtab + localsym->st_name,
-                            -1, fileNo, &sosym);
+                            NULL, -1, fileNo, &sosym);
 
                     /* OK, we should have both, so copy it over */
                     if (localsym && sosym) {
@@ -290,7 +304,7 @@ void initELF(struct ELF_File *except)
  * localin: The number of the current file, where STB_LOCAL symbols are OK
  * notin: Do not bind to symbols in this file 
  * Either can be -1 */
-void *findELFSymbol(char *nm, int localin, int notin, Elf32_Sym **syminto)
+void *findELFSymbol(const char *nm, struct ELF_File *onlyin, int localin, int notin, Elf32_Sym **syminto)
 {
     int i;
     struct ELF_File *f;
@@ -305,9 +319,10 @@ void *findELFSymbol(char *nm, int localin, int notin, Elf32_Sym **syminto)
         if (i == notin) continue;
 
         f = &(elfFiles[i]);
+        if (onlyin && f != onlyin) continue;
 
         /* if this is a host library, just try the host method */
-        if (f->hostlib) {
+        if (f->hostlib == HOSTLIB_HOST) {
 #if defined(HAVE_DLFCN_H)
             hostsym = dlsym(f->prog, nm);
             if (hostsym) return hostsym;
@@ -322,6 +337,10 @@ void *findELFSymbol(char *nm, int localin, int notin, Elf32_Sym **syminto)
             if (hostsym) return hostsym;
 #endif
             continue;
+
+        } else if (f->hostlib == HOSTLIB_DL) {
+            return elfload_dl(nm);
+
         }
 
         /* figure out the bucket ... */
@@ -367,7 +386,7 @@ Elf32_Word elf_hash(const unsigned char *name)
 }
 
 /* A handy function to read a file or mmap it, as appropriate */
-void readFile(char *nm, struct ELF_File *ef)
+void readFile(const char *nm, struct ELF_File *ef)
 {
 #ifdef HAVE_MMAP
     void *buf;
