@@ -19,8 +19,8 @@
 
 int main(int, char **, char **);
 
-/* _winelf_callmain: Arrange arguments appropriately and call main */
-int _winelf_callmain(int argc)
+/* _winelf_main: Arrange arguments appropriately and call main */
+int _winelf_main(int argc)
 {
     char **argv, **envp;
     

@@ -6,13 +6,16 @@ CC=$(TARGET)-gcc
 HOSTCC=gcc
 EXEEXT=
 CFLAGS=
+LDFLAGS=
+SOFLAGS=-shared -Wl,-soname=
 AR=$(TARGET)-ar
 RANLIB=$(TARGET)-ranlib
 
 LIBC_OBJS=$(MSVCRT_OBJS) $(KERNEL32_OBJS) $(USER32_OBJS)
 
 all: msvcrt/libmsvcrt.so kernel32/libkernel32.so user32/libuser32.so \
-     crt0.o crt1.o crtn.o \
+     libdl.so \
+     crt0.o crt1.o crti.o crtn.o \
      mingwex/libmingwex.a \
      elfimplib$(EXEEXT)
 
@@ -27,6 +30,9 @@ kernel32/libkernel32.so:
 user32/libuser32.so:
 	cd user32 ; \
 	$(MAKE) CC=$(CC)
+
+libdl.so:
+	$(CC) $(CFLAGS) $(LDFLAGS) $(SOFLAGS)libloader_dl.0 -nostdlib -o libdl.so dlfcn.c
 
 mingwex/libmingwex.a:
 	cd mingwex ; \
@@ -48,8 +54,9 @@ install:
 	mkdir -p $(PREFIX)/$(TARGET)/lib
 	mkdir -p $(PREFIX)/$(TARGET)/include
 	mkdir -p $(PREFIX)/bin
-	cp -f crt0.o crt1.o crtn.o libc.so msvcrt/libmsvcrt.so \
+	cp -f crt0.o crt1.o crti.o crtn.o libc.so msvcrt/libmsvcrt.so \
 	    kernel32/libkernel32.so user32/libuser32.so \
+	    libdl.so \
 	    $(PREFIX)/$(TARGET)/lib
 	cp -f elfimplib$(EXEEXT) $(PREFIX)/bin
 	cp -Rf include/* $(PREFIX)/$(TARGET)/include
@@ -57,6 +64,7 @@ install:
 	$(RANLIB) $(PREFIX)/$(TARGET)/lib/libg.a
 
 clean:
-	rm -f crt0.o crt1.o crtn.o libc.a $(LIBC_OBJS)
+	rm -f crt0.o crt1.o crti.o crtn.o libc.a $(LIBC_OBJS)
 	rm -f elfimplib$(EXEEXT)
+	rm -f libdl.so
 	cd mingwex ; make distclean
