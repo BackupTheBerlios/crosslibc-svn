@@ -23,7 +23,7 @@
 
 int main(int argc, char **argv)
 {
-    char *objdumpcmd, *unmangled;
+    char *objdumpcmd, *unmangled, *defobjdump;
     FILE *objdump, *cfile;
 #define LINELEN 1024
     char line[LINELEN + 1];
@@ -34,14 +34,20 @@ int main(int argc, char **argv)
     line[LINELEN] = '\0';
     fname[FNAMELEN] = '\0';
     
-    if (argc != 3) {
-        fprintf(stderr, "Use: elfimplib <.dll file> <short name>\n");
+    if (argc < 3) {
+        fprintf(stderr, "Use: elfimplib <.dll file> <short name> [objdump]\n");
         return 1;
     }
     
+    /* if objdump was not provided, assume "objdump" */
+    defobjdump = "objdump";
+    if (argc >= 4) {
+        defobjdump = argv[3];
+    }
+    
     /* get the objdump command */
-    objdumpcmd = (char *) malloc(strlen(argv[1]) + 25);
-    sprintf(objdumpcmd, "i686-mingw32-objdump -p %s", argv[1]);
+    objdumpcmd = (char *) malloc(strlen(defobjdump) + strlen(argv[1]) + 5);
+    sprintf(objdumpcmd, "%s -p %s", defobjdump, argv[1]);
     
     /* popen it */
     objdump = popen(objdumpcmd, "r");
@@ -116,6 +122,14 @@ int main(int argc, char **argv)
                 "#define %s_linked\n"
                 "void %s() {}\n"
                 "#endif\n", unmangled, unmangled, unmangled);
+
+        /* and if it was mangled, write an original one too */
+        if (unmangled != line) {
+            fprintf(cfile, "#ifndef %s_linked\n"
+                    "#define %s_linked\n"
+                    "void %s() {}\n"
+                    "#endif\n", line, line, line);
+        }
     }
     
     pclose(objdump);

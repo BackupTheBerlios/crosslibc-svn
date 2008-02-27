@@ -1,3 +1,3 @@
 /* GNU ld script
    This simply links in the standard Windows host libraries instead of some pseudo "libc" */
-GROUP ( -lmsvcrt -lkernel32 -luser32 )
+GROUP ( -lmsvcrt -lkernel32 -luser32 -lmingwex )

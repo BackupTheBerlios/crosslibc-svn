@@ -3190,33 +3190,65 @@ void WriteTapemark() {}
 #define hread_linked
 void hread() {}
 #endif
+#ifndef _hread_linked
+#define _hread_linked
+void _hread() {}
+#endif
 #ifndef hwrite_linked
 #define hwrite_linked
 void hwrite() {}
+#endif
+#ifndef _hwrite_linked
+#define _hwrite_linked
+void _hwrite() {}
 #endif
 #ifndef lclose_linked
 #define lclose_linked
 void lclose() {}
 #endif
+#ifndef _lclose_linked
+#define _lclose_linked
+void _lclose() {}
+#endif
 #ifndef lcreat_linked
 #define lcreat_linked
 void lcreat() {}
+#endif
+#ifndef _lcreat_linked
+#define _lcreat_linked
+void _lcreat() {}
 #endif
 #ifndef llseek_linked
 #define llseek_linked
 void llseek() {}
 #endif
+#ifndef _llseek_linked
+#define _llseek_linked
+void _llseek() {}
+#endif
 #ifndef lopen_linked
 #define lopen_linked
 void lopen() {}
+#endif
+#ifndef _lopen_linked
+#define _lopen_linked
+void _lopen() {}
 #endif
 #ifndef lread_linked
 #define lread_linked
 void lread() {}
 #endif
+#ifndef _lread_linked
+#define _lread_linked
+void _lread() {}
+#endif
 #ifndef lwrite_linked
 #define lwrite_linked
 void lwrite() {}
+#endif
+#ifndef _lwrite_linked
+#define _lwrite_linked
+void _lwrite() {}
 #endif
 #ifndef lstrcat_linked
 #define lstrcat_linked
