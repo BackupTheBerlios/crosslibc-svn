@@ -121,14 +121,16 @@ int main(int argc, char **argv)
         fprintf(cfile, "#ifndef %s_linked\n"
                 "#define %s_linked\n"
                 "void %s() {}\n"
-                "#endif\n", unmangled, unmangled, unmangled);
+                "void *_imp__%s;\n"
+                "#endif\n", unmangled, unmangled, unmangled, unmangled);
 
         /* and if it was mangled, write an original one too */
         if (unmangled != line) {
             fprintf(cfile, "#ifndef %s_linked\n"
                     "#define %s_linked\n"
                     "void %s() {}\n"
-                    "#endif\n", line, line, line);
+                    "void *_imp__%s;\n"
+                    "#endif\n", line, line, line, line);
         }
     }
     
