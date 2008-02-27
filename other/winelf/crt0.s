@@ -1,4 +1,5 @@
 .globl _start
+.globl _init
 
 _start:
     call _init
