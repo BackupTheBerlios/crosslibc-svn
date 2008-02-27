@@ -246,7 +246,12 @@ struct ELF_File *loadELF(const char *nm)
                     if (localsym && sosym) {
                         memcpy((void *) (localsym->st_value + f->offset),
                                soptr, sosym->st_size);
-                    } /* FIXME: else */
+                    } else {
+                        /* depend on localsym's size */
+                        memcpy((void *) (localsym->st_value + f->offset),
+                               soptr, localsym->st_size);
+
+                    }
 
                     break;
                 }
@@ -327,14 +332,37 @@ void *findELFSymbol(const char *nm, struct ELF_File *onlyin, int localin, int no
             hostsym = dlsym(f->prog, nm);
             if (hostsym) return hostsym;
 #elif defined(__WIN32)
-            /* Try adding a _ first, to get the cdecl version */
             char csym[1024];
+            int isimp = 0;
+
+            /* Remove _imp__ if it's present */
+            if (strncmp(nm, "_imp__", 6) == 0) {
+                isimp = 1;
+                nm += 6;
+            }
+
+            /* Try adding a _ first, to get the cdecl version */
             snprintf(csym, 1024, "_%s", nm);
             hostsym = GetProcAddress(f->prog, csym);
             if (hostsym == NULL) {
                 hostsym = GetProcAddress(f->prog, nm);
             }
-            if (hostsym) return hostsym;
+            if (hostsym) {
+                if (isimp) {
+                    /* Need a pointer to this pointer */
+                    void **pptr = (void **) malloc(sizeof(void*));
+                    if (pptr == NULL) {
+                        perror("malloc");
+                        exit(1);
+                    }
+                    *pptr = hostsym;
+                    return (void *) pptr;
+                    
+                } else {
+                    return hostsym;
+
+                }
+            }
 #endif
             continue;
 
